@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:uniqkids_suarakita/screens/home_screen.dart';
+import 'package:uniqkids_suarakita/views/main_menu_screen.dart';
+import 'package:uniqkids_suarakita/views/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
