@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:uniqkids_suarakita/views/main_menu_screen.dart';
-import 'package:uniqkids_suarakita/views/splash_screen.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:uniqkids_suarakita/routes/app_pages.dart';
+import 'package:uniqkids_suarakita/translations/app_translation.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,13 +20,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'SuaraKita ACC',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'SF Pro Display',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashScreen(),
+      translations: AppTranslations(),
+      locale: Locale('en', 'US'),
+      fallbackLocale: Locale('en', 'US'),
+     initialRoute: AppPages.INITIAL,
+     getPages: AppPages.routes,
     );
   }
 }

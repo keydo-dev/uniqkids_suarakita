@@ -12,11 +12,38 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   get: ^4.7.2
+  drift: ^2.29.0
+  drift_flutter: ^0.2.7
+  path_provider: ^2.1.5
+  flutter_reorderable_list: ^1.3.1
+  flutter_sound: ^9.28.0
+  lottie: ^3.3.2
+  permission_handler: ^12.0.1
+  image_picker: ^1.2.0
+  uuid: ^4.5.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  drift_dev: ^2.29.0
+  build_runner: ^2.4.13
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: SF Pro Display
+      fonts:
+        - asset: assets/fonts/SFProDisplay-BlackItalic.otf
+        - asset: assets/fonts/SFProDisplay-Bold.otf
+        - asset: assets/fonts/SFProDisplay-HeavyItalic.otf
+        - asset: assets/fonts/SFProDisplay-LightItalic.otf
+        - asset: assets/fonts/SFProDisplay-Medium.otf
+        - asset: assets/fonts/SFProDisplay-Regular.otf
+        - asset: assets/fonts/SFProDisplay-SemiBoldItalic.otf
+        - asset: assets/fonts/SFProDisplay-ThinItalic.otf
+        - asset: assets/fonts/SFProDisplay-UltraLightItalic.otf

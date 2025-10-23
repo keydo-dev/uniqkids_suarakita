@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:uniqkids_suarakita/const.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     Future.delayed(const Duration(seconds: 4), () {
-      Navigator.pushReplacementNamed(context, '/home');
+      Get.offAllNamed('/main');
     });
   }
 
@@ -60,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen>
                       Image.asset('assets/images/logo.png', width: 70),
                       const SizedBox(height: 8),
                       Text(
-                        "SuaraKita AAC",
+                        'app_name'.tr,
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -80,12 +81,11 @@ class _SplashScreenState extends State<SplashScreen>
                   Text(
                     "from",
                     style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey[700],
+                      fontSize: 18,
+                      color: Colors.grey[800],
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  const SizedBox(height: 6),
                   Image.asset(
                     'assets/images/uniqkids-logo.png',
                     width: MediaQuery.of(context).size.width * 0.3,
