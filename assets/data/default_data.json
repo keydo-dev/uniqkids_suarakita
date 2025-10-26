@@ -1,0 +1,17 @@
+{
+    "categories": [
+        {"id": "1", "name": "Makanan", "enName": "Food"},
+        {"id": "2", "name": "", "enName": "Food"}
+    ],
+    "cards": [
+        {
+            "id": "1",
+            "categoryId": "1",
+            "name": "Apel",
+            "enName": "Apple",
+            "imagePath": "assets/images/img_asset/apel.png",
+            "audioPath": "assets/sound/id/Apel.m4a",
+            "enAudiopath": "assets/sound/en/Apple.m4a"
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uniqkids_suarakita/const.dart';
 import '../controllers/card_controller.dart';
 import '../controllers/category_controller.dart';
 import '../models/database.dart' as db;
@@ -14,7 +15,12 @@ class PlayScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('play_title'.tr),
+        backgroundColor: btnPrimaryColor,
+        title: Text('play_title'.tr, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+          onPressed: () => Get.back(),
+        ),
         centerTitle: true,
       ),
       body: Column(
@@ -22,7 +28,7 @@ class PlayScreen extends StatelessWidget {
           Container(
             clipBehavior: Clip.none,
             height: 160,
-            color: Colors.grey[100],
+            color: primaryColor,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -104,7 +110,7 @@ class PlayScreen extends StatelessWidget {
             ),
           ),
 
-          const Divider(thickness: 2),
+          const Divider(thickness: 2, color: btnPrimaryColor),
 
           Expanded(
             child: StreamBuilder<List<db.CardWithCategory>>(
@@ -257,8 +263,8 @@ class PlayScreen extends StatelessWidget {
                             const BorderRadius.vertical(top: Radius.circular(8)),
                       ),
                       child: card.imagePath != null
-                          ? const Center(child: Icon(Icons.image, size: 40))
-                          : const Center(child: Icon(Icons.music_note, size: 40)),
+                      ? Image.asset(card.imagePath!, fit: BoxFit.cover)
+                      : const Icon(Icons.music_note, size: 40),
                     ),
                   ),
                   Padding(
