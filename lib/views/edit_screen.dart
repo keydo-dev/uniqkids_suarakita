@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -47,10 +45,7 @@ class EditScreen extends StatelessWidget {
                   icon: const Icon(Icons.add, color: Colors.white),
                   label: const Text(
                     'Tambah kategori',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF3E4A59),
@@ -69,10 +64,7 @@ class EditScreen extends StatelessWidget {
                   icon: const Icon(Icons.add, color: Colors.white),
                   label: const Text(
                     'Tambah kosa kata',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF3E4A59),
@@ -143,9 +135,7 @@ class AddCategoryDialog extends StatelessWidget {
 
     return Dialog(
       backgroundColor: const Color(0xFFD4EEF5),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Container(
         width: 400,
         padding: const EdgeInsets.all(24),
@@ -174,21 +164,23 @@ class AddCategoryDialog extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24),
-            Obx(() => Container(
-              width: 120,
-              height: 140,
-              decoration: BoxDecoration(
-                color: colors[selectedColorIndex.value],
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
+            Obx(
+              () => Container(
+                width: 120,
+                height: 140,
+                decoration: BoxDecoration(
+                  color: colors[selectedColorIndex.value],
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
               ),
-            )),
+            ),
             const SizedBox(height: 24),
             TextField(
               controller: controller,
@@ -269,14 +261,27 @@ class AddVocabularyDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textController1 = TextEditingController();
+    final selectedCategory = ''.obs;
     final textController2 = TextEditingController();
+    final textController3 = TextEditingController();
+
+    final categories = [
+      'kata benda',
+      'kata ganti orang',
+      'orang-orang',
+      'objek',
+      'kata kerja',
+      'kata sifat',
+      'preposisi',
+      'warna',
+      'tubuh',
+      'bentuk',
+      'kata tanya',
+    ];
 
     return Dialog(
       backgroundColor: const Color(0xFFD4EEF5),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Container(
         width: 400,
         padding: const EdgeInsets.all(24),
@@ -344,8 +349,41 @@ class AddVocabularyDialog extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
+            Obx(
+              () => Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 4,
+                ),
+                child: DropdownButton<String>(
+                  value: selectedCategory.value.isEmpty
+                      ? null
+                      : selectedCategory.value,
+                  hint: const Text('Pilih kategori'),
+                  isExpanded: true,
+                  underline: const SizedBox(),
+                  items: categories.map((String category) {
+                    return DropdownMenuItem<String>(
+                      value: category,
+                      child: Text(category),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    if (newValue != null) {
+                      selectedCategory.value =
+                          newValue;
+                    }
+                  },
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
             TextField(
-              controller: textController1,
+              controller: textController2,
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
