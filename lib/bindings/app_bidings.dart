@@ -5,14 +5,21 @@ import 'package:uniqkids_suarakita/controllers/languages_controller.dart';
 import 'package:uniqkids_suarakita/models/database.dart';
 import 'package:uniqkids_suarakita/services/audio_services.dart';
 
-class AppBidings extends Bindings {
-  @override
-  void dependencies() {
-  Get.put<AudioService>(AudioService(), permanent: true);
+class AppBindings {
+  final AppDatabase db;
 
-  Get.put<AppDatabase>(AppDatabase(), permanent: true);
-  Get.put<LanguagesController>(LanguagesController(), permanent: true);
-  Get.put<CategoryController>(CategoryController(Get.find<AppDatabase>()), permanent: true);
-  Get.put<CardController>(CardController(Get.find<AppDatabase>()), permanent: true);
+  AppBindings(this.db);
+
+  void dependencies() {
+    // Audio service permanen
+    Get.put<AudioService>(AudioService(), permanent: true);
+
+    // Database
+    Get.put<AppDatabase>(db, permanent: true);
+
+    // Controllers
+    Get.put<LanguagesController>(LanguagesController(), permanent: true);
+    Get.put<CategoryController>(CategoryController(db), permanent: true);
+    Get.put<CardController>(CardController(db), permanent: true);
   }
 }

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cat1",
+    "name": "Kata Benda",
+    "enName": "Nouns",
+    "parent_id": null
+  },
+  {
+    "id": "cat2",
+    "name": "Makanan",
+    "enName": "Foods",
+    "parent_id": "cat1"
+  },
+  {
+    "id": "cat3",
+    "name": "Benda",
+    "enName": "Objects",
+    "parent_id": "cat1"
+  },
+  {
+    "id": "cat4",
+    "name": "Hewan",
+    "enName": "Animals",
+    "parent_id": "cat1"
+  },
+  {
+    "id": "cat5",
+    "name": "Kata Kerja",
+    "enName": "Verbs",
+    "parent_id": null
+  },
+  {
+    "id": "cat6",
+    "name": "Aktivitas",
+    "enName": "Activities",
+    "parent_id": "cat5"
+  },
+  {
+    "id": "cat7",
+    "name": "Kata Sifat",
+    "enName": "Adjectives",
+    "parent_id": null
+  }
+]

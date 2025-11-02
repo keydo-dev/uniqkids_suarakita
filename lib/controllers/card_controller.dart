@@ -6,10 +6,10 @@ import 'package:drift/drift.dart' as drift;
 
 class CardController extends GetxController {
   final AppDatabase db;
-  final _uuid = Uuid();
+  final _uuid = const Uuid();
   final _audioService = AudioService();
 
-  var cards = <Card>[].obs; // pakai tipe dari Drift
+  var cards = <Card>[].obs;
   var selectedCards = <Card>[].obs;
   var isTextMode = false.obs;
 
@@ -21,24 +21,29 @@ class CardController extends GetxController {
     loadCards();
   }
 
+  // Load semua kartu dari database
   Future<void> loadCards() async {
     final allCards = await db.select(db.cards).get();
     cards.assignAll(allCards);
   }
 
-  //add card
+  // Tambah kartu baru
   Future<void> addCard({
     required String name,
     required String categoryId,
+    String? enName,
     String? imagePath,
     String? soundPath,
+    String? enSoundPath,
   }) async {
     final cardCompanion = CardsCompanion.insert(
       id: _uuid.v4(),
       name: name,
+      enName: drift.Value(enName),
       categoryId: categoryId,
       imagePath: drift.Value(imagePath),
       soundPath: drift.Value(soundPath),
+      enSoundPath: drift.Value(enSoundPath),
       createdAt: DateTime.now(),
     );
 
@@ -46,41 +51,44 @@ class CardController extends GetxController {
     await loadCards();
   }
 
-  //remove card by id
+  // Hapus kartu berdasarkan ID
   Future<void> deleteCard(String cardId) async {
     await (db.delete(db.cards)..where((tbl) => tbl.id.equals(cardId))).go();
     await loadCards();
   }
 
-  // ambil card berdasarkan kategori
+  // Ambil semua kartu berdasarkan kategori
   Future<List<Card>> getCardsByCategory(String categoryId) async {
     return await (db.select(db.cards)
       ..where((tbl) => tbl.categoryId.equals(categoryId)))
       .get();
   }
 
-  //select card untuk ditampilkan/ dimainkan
+  // Tambahkan kartu ke daftar terpilih
   void addToSelected(Card card) {
     if (!selectedCards.contains(card)) {
       selectedCards.add(card);
     }
   }
 
+  // Hapus kartu dari daftar terpilih
   void removeFromSelected(Card card) {
     selectedCards.remove(card);
   }
 
+  // Reorder posisi kartu di daftar terpilih
   void reorderSelectedCards(int oldIndex, int newIndex) {
     if (newIndex > oldIndex) newIndex--;
     final card = selectedCards.removeAt(oldIndex);
     selectedCards.insert(newIndex, card);
   }
 
+  // Ganti mode tampilan teks/gambar
   void toggleViewMode() {
     isTextMode.value = !isTextMode.value;
   }
 
-  // play suara dari selected card
+  // Putar suara dari semua kartu terpilih
   Future<void> playSelectedCards() async {
     if (selectedCards.isEmpty) return;
 
@@ -94,12 +102,13 @@ class CardController extends GetxController {
     }
   }
 
+  // Hapus semua kartu yang terpilih
   void clearSelection() {
     selectedCards.clear();
   }
 
-  // helper untuk stream agar bisa dipanggil dari controller/UI
+  // Stream untuk ambil kartu beserta kategorinya
   Stream<List<CardWithCategory>> watchCardsWithCategories() {
-  return db.watchCardsWithCategories();
-}
+    return db.watchCardsWithCategories();
+  }
 }

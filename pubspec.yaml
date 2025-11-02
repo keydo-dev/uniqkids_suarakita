@@ -33,7 +33,12 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/data/
     - assets/images/
+    - assets/images/img_asset/
+    - assets/sound/en/
+    - assets/sound/id/
+
 
   fonts:
     - family: SF Pro Display

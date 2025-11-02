@@ -47,15 +47,6 @@ class $CategoriesTable extends Categories
     type: DriftSqlType.string,
     requiredDuringInsert: false,
   );
-  static const VerificationMeta _levelMeta = const VerificationMeta('level');
-  @override
-  late final GeneratedColumn<int> level = GeneratedColumn<int>(
-    'level',
-    aliasedName,
-    false,
-    type: DriftSqlType.int,
-    requiredDuringInsert: true,
-  );
   static const VerificationMeta _imagePathMeta = const VerificationMeta(
     'imagePath',
   );
@@ -67,14 +58,23 @@ class $CategoriesTable extends Categories
     type: DriftSqlType.string,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _colorMeta = const VerificationMeta('color');
+  @override
+  late final GeneratedColumn<int> color = GeneratedColumn<int>(
+    'color',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
     name,
     enName,
     parentId,
-    level,
     imagePath,
+    color,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -113,18 +113,16 @@ class $CategoriesTable extends Categories
         parentId.isAcceptableOrUnknown(data['parent_id']!, _parentIdMeta),
       );
     }
-    if (data.containsKey('level')) {
-      context.handle(
-        _levelMeta,
-        level.isAcceptableOrUnknown(data['level']!, _levelMeta),
-      );
-    } else if (isInserting) {
-      context.missing(_levelMeta);
-    }
     if (data.containsKey('image_path')) {
       context.handle(
         _imagePathMeta,
         imagePath.isAcceptableOrUnknown(data['image_path']!, _imagePathMeta),
+      );
+    }
+    if (data.containsKey('color')) {
+      context.handle(
+        _colorMeta,
+        color.isAcceptableOrUnknown(data['color']!, _colorMeta),
       );
     }
     return context;
@@ -152,13 +150,13 @@ class $CategoriesTable extends Categories
         DriftSqlType.string,
         data['${effectivePrefix}parent_id'],
       ),
-      level: attachedDatabase.typeMapping.read(
-        DriftSqlType.int,
-        data['${effectivePrefix}level'],
-      )!,
       imagePath: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}image_path'],
+      ),
+      color: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}color'],
       ),
     );
   }
@@ -174,15 +172,15 @@ class Category extends DataClass implements Insertable<Category> {
   final String name;
   final String? enName;
   final String? parentId;
-  final int level;
   final String? imagePath;
+  final int? color;
   const Category({
     required this.id,
     required this.name,
     this.enName,
     this.parentId,
-    required this.level,
     this.imagePath,
+    this.color,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -195,9 +193,11 @@ class Category extends DataClass implements Insertable<Category> {
     if (!nullToAbsent || parentId != null) {
       map['parent_id'] = Variable<String>(parentId);
     }
-    map['level'] = Variable<int>(level);
     if (!nullToAbsent || imagePath != null) {
       map['image_path'] = Variable<String>(imagePath);
+    }
+    if (!nullToAbsent || color != null) {
+      map['color'] = Variable<int>(color);
     }
     return map;
   }
@@ -212,10 +212,12 @@ class Category extends DataClass implements Insertable<Category> {
       parentId: parentId == null && nullToAbsent
           ? const Value.absent()
           : Value(parentId),
-      level: Value(level),
       imagePath: imagePath == null && nullToAbsent
           ? const Value.absent()
           : Value(imagePath),
+      color: color == null && nullToAbsent
+          ? const Value.absent()
+          : Value(color),
     );
   }
 
@@ -229,8 +231,8 @@ class Category extends DataClass implements Insertable<Category> {
       name: serializer.fromJson<String>(json['name']),
       enName: serializer.fromJson<String?>(json['enName']),
       parentId: serializer.fromJson<String?>(json['parentId']),
-      level: serializer.fromJson<int>(json['level']),
       imagePath: serializer.fromJson<String?>(json['imagePath']),
+      color: serializer.fromJson<int?>(json['color']),
     );
   }
   @override
@@ -241,8 +243,8 @@ class Category extends DataClass implements Insertable<Category> {
       'name': serializer.toJson<String>(name),
       'enName': serializer.toJson<String?>(enName),
       'parentId': serializer.toJson<String?>(parentId),
-      'level': serializer.toJson<int>(level),
       'imagePath': serializer.toJson<String?>(imagePath),
+      'color': serializer.toJson<int?>(color),
     };
   }
 
@@ -251,15 +253,15 @@ class Category extends DataClass implements Insertable<Category> {
     String? name,
     Value<String?> enName = const Value.absent(),
     Value<String?> parentId = const Value.absent(),
-    int? level,
     Value<String?> imagePath = const Value.absent(),
+    Value<int?> color = const Value.absent(),
   }) => Category(
     id: id ?? this.id,
     name: name ?? this.name,
     enName: enName.present ? enName.value : this.enName,
     parentId: parentId.present ? parentId.value : this.parentId,
-    level: level ?? this.level,
     imagePath: imagePath.present ? imagePath.value : this.imagePath,
+    color: color.present ? color.value : this.color,
   );
   Category copyWithCompanion(CategoriesCompanion data) {
     return Category(
@@ -267,8 +269,8 @@ class Category extends DataClass implements Insertable<Category> {
       name: data.name.present ? data.name.value : this.name,
       enName: data.enName.present ? data.enName.value : this.enName,
       parentId: data.parentId.present ? data.parentId.value : this.parentId,
-      level: data.level.present ? data.level.value : this.level,
       imagePath: data.imagePath.present ? data.imagePath.value : this.imagePath,
+      color: data.color.present ? data.color.value : this.color,
     );
   }
 
@@ -279,14 +281,14 @@ class Category extends DataClass implements Insertable<Category> {
           ..write('name: $name, ')
           ..write('enName: $enName, ')
           ..write('parentId: $parentId, ')
-          ..write('level: $level, ')
-          ..write('imagePath: $imagePath')
+          ..write('imagePath: $imagePath, ')
+          ..write('color: $color')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, name, enName, parentId, level, imagePath);
+  int get hashCode => Object.hash(id, name, enName, parentId, imagePath, color);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -295,8 +297,8 @@ class Category extends DataClass implements Insertable<Category> {
           other.name == this.name &&
           other.enName == this.enName &&
           other.parentId == this.parentId &&
-          other.level == this.level &&
-          other.imagePath == this.imagePath);
+          other.imagePath == this.imagePath &&
+          other.color == this.color);
 }
 
 class CategoriesCompanion extends UpdateCompanion<Category> {
@@ -304,16 +306,16 @@ class CategoriesCompanion extends UpdateCompanion<Category> {
   final Value<String> name;
   final Value<String?> enName;
   final Value<String?> parentId;
-  final Value<int> level;
   final Value<String?> imagePath;
+  final Value<int?> color;
   final Value<int> rowid;
   const CategoriesCompanion({
     this.id = const Value.absent(),
     this.name = const Value.absent(),
     this.enName = const Value.absent(),
     this.parentId = const Value.absent(),
-    this.level = const Value.absent(),
     this.imagePath = const Value.absent(),
+    this.color = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   CategoriesCompanion.insert({
@@ -321,19 +323,18 @@ class CategoriesCompanion extends UpdateCompanion<Category> {
     required String name,
     this.enName = const Value.absent(),
     this.parentId = const Value.absent(),
-    required int level,
     this.imagePath = const Value.absent(),
+    this.color = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : id = Value(id),
-       name = Value(name),
-       level = Value(level);
+       name = Value(name);
   static Insertable<Category> custom({
     Expression<String>? id,
     Expression<String>? name,
     Expression<String>? enName,
     Expression<String>? parentId,
-    Expression<int>? level,
     Expression<String>? imagePath,
+    Expression<int>? color,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -341,8 +342,8 @@ class CategoriesCompanion extends UpdateCompanion<Category> {
       if (name != null) 'name': name,
       if (enName != null) 'en_name': enName,
       if (parentId != null) 'parent_id': parentId,
-      if (level != null) 'level': level,
       if (imagePath != null) 'image_path': imagePath,
+      if (color != null) 'color': color,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -352,8 +353,8 @@ class CategoriesCompanion extends UpdateCompanion<Category> {
     Value<String>? name,
     Value<String?>? enName,
     Value<String?>? parentId,
-    Value<int>? level,
     Value<String?>? imagePath,
+    Value<int?>? color,
     Value<int>? rowid,
   }) {
     return CategoriesCompanion(
@@ -361,8 +362,8 @@ class CategoriesCompanion extends UpdateCompanion<Category> {
       name: name ?? this.name,
       enName: enName ?? this.enName,
       parentId: parentId ?? this.parentId,
-      level: level ?? this.level,
       imagePath: imagePath ?? this.imagePath,
+      color: color ?? this.color,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -382,11 +383,11 @@ class CategoriesCompanion extends UpdateCompanion<Category> {
     if (parentId.present) {
       map['parent_id'] = Variable<String>(parentId.value);
     }
-    if (level.present) {
-      map['level'] = Variable<int>(level.value);
-    }
     if (imagePath.present) {
       map['image_path'] = Variable<String>(imagePath.value);
+    }
+    if (color.present) {
+      map['color'] = Variable<int>(color.value);
     }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
@@ -401,8 +402,8 @@ class CategoriesCompanion extends UpdateCompanion<Category> {
           ..write('name: $name, ')
           ..write('enName: $enName, ')
           ..write('parentId: $parentId, ')
-          ..write('level: $level, ')
           ..write('imagePath: $imagePath, ')
+          ..write('color: $color, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -945,8 +946,8 @@ typedef $$CategoriesTableCreateCompanionBuilder =
       required String name,
       Value<String?> enName,
       Value<String?> parentId,
-      required int level,
       Value<String?> imagePath,
+      Value<int?> color,
       Value<int> rowid,
     });
 typedef $$CategoriesTableUpdateCompanionBuilder =
@@ -955,8 +956,8 @@ typedef $$CategoriesTableUpdateCompanionBuilder =
       Value<String> name,
       Value<String?> enName,
       Value<String?> parentId,
-      Value<int> level,
       Value<String?> imagePath,
+      Value<int?> color,
       Value<int> rowid,
     });
 
@@ -989,13 +990,13 @@ class $$CategoriesTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
-  ColumnFilters<int> get level => $composableBuilder(
-    column: $table.level,
+  ColumnFilters<String> get imagePath => $composableBuilder(
+    column: $table.imagePath,
     builder: (column) => ColumnFilters(column),
   );
 
-  ColumnFilters<String> get imagePath => $composableBuilder(
-    column: $table.imagePath,
+  ColumnFilters<int> get color => $composableBuilder(
+    column: $table.color,
     builder: (column) => ColumnFilters(column),
   );
 }
@@ -1029,13 +1030,13 @@ class $$CategoriesTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
-  ColumnOrderings<int> get level => $composableBuilder(
-    column: $table.level,
+  ColumnOrderings<String> get imagePath => $composableBuilder(
+    column: $table.imagePath,
     builder: (column) => ColumnOrderings(column),
   );
 
-  ColumnOrderings<String> get imagePath => $composableBuilder(
-    column: $table.imagePath,
+  ColumnOrderings<int> get color => $composableBuilder(
+    column: $table.color,
     builder: (column) => ColumnOrderings(column),
   );
 }
@@ -1061,11 +1062,11 @@ class $$CategoriesTableAnnotationComposer
   GeneratedColumn<String> get parentId =>
       $composableBuilder(column: $table.parentId, builder: (column) => column);
 
-  GeneratedColumn<int> get level =>
-      $composableBuilder(column: $table.level, builder: (column) => column);
-
   GeneratedColumn<String> get imagePath =>
       $composableBuilder(column: $table.imagePath, builder: (column) => column);
+
+  GeneratedColumn<int> get color =>
+      $composableBuilder(column: $table.color, builder: (column) => column);
 }
 
 class $$CategoriesTableTableManager
@@ -1100,16 +1101,16 @@ class $$CategoriesTableTableManager
                 Value<String> name = const Value.absent(),
                 Value<String?> enName = const Value.absent(),
                 Value<String?> parentId = const Value.absent(),
-                Value<int> level = const Value.absent(),
                 Value<String?> imagePath = const Value.absent(),
+                Value<int?> color = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => CategoriesCompanion(
                 id: id,
                 name: name,
                 enName: enName,
                 parentId: parentId,
-                level: level,
                 imagePath: imagePath,
+                color: color,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -1118,16 +1119,16 @@ class $$CategoriesTableTableManager
                 required String name,
                 Value<String?> enName = const Value.absent(),
                 Value<String?> parentId = const Value.absent(),
-                required int level,
                 Value<String?> imagePath = const Value.absent(),
+                Value<int?> color = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => CategoriesCompanion.insert(
                 id: id,
                 name: name,
                 enName: enName,
                 parentId: parentId,
-                level: level,
                 imagePath: imagePath,
+                color: color,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0

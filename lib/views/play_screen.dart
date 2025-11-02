@@ -1,37 +1,46 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uniqkids_suarakita/const.dart';
 import '../controllers/card_controller.dart';
 import '../controllers/category_controller.dart';
+import '../services/audio_services.dart';
 import '../models/database.dart' as db;
 
 class PlayScreen extends StatelessWidget {
   final CardController cardController = Get.find<CardController>();
   final CategoryController categoryController = Get.find<CategoryController>();
+  final AudioService audioService = AudioService();
 
   PlayScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    audioService.init();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: btnPrimaryColor,
-        title: Text('play_title'.tr, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        title: Text(
+          'play_title'.tr,
+          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () => Get.back(),
         ),
         centerTitle: true,
       ),
       body: Column(
         children: [
+          // SECTION: Selected Cards
           Container(
-            clipBehavior: Clip.none,
             height: 160,
             color: primaryColor,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Header + tombol
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -40,17 +49,19 @@ class PlayScreen extends StatelessWidget {
                       Text(
                         'play_selected'.tr,
                         style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       Row(
                         children: [
                           Obx(() => ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: btnPrimaryColor,
+                                ),
                                 onPressed: cardController.selectedCards.isEmpty
                                     ? null
                                     : cardController.playSelectedCards,
-                                child: Text('play_button'.tr),
+                                child: Text('play_button'.tr,
+                                    style: const TextStyle(color: Colors.white)),
                               )),
                           const SizedBox(width: 8),
                           Obx(() => ToggleButtons(
@@ -63,14 +74,12 @@ class PlayScreen extends StatelessWidget {
                                 },
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(horizontal: 8),
-                                    child: Text('play_mode_abc'.tr),
+                                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                                    child: Text('ABC'),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(horizontal: 8),
-                                    child: Text('play_mode_image'.tr),
+                                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                                    child: const Icon(Icons.image),
                                   ),
                                 ],
                               )),
@@ -79,29 +88,26 @@ class PlayScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+
+                // Selected cards list
                 Expanded(
                   child: Obx(
                     () => cardController.selectedCards.isEmpty
                         ? Center(
                             child: Text(
                               'play_empty'.tr,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.grey,
-                              ),
+                              style: const TextStyle(fontSize: 14, color: textprimaryColor),
                             ),
                           )
                         : ReorderableListView(
                             scrollDirection: Axis.horizontal,
                             onReorder: (oldIndex, newIndex) {
-                              cardController.reorderSelectedCards(
-                                  oldIndex, newIndex);
+                              cardController.reorderSelectedCards(oldIndex, newIndex);
                             },
                             children: cardController.selectedCards
                                 .asMap()
                                 .entries
-                                .map((entry) => _buildSelectedCard(
-                                    entry.value, entry.key))
+                                .map((entry) => _buildSelectedCard(entry.value, entry.key))
                                 .toList(),
                           ),
                   ),
@@ -112,6 +118,7 @@ class PlayScreen extends StatelessWidget {
 
           const Divider(thickness: 2, color: btnPrimaryColor),
 
+          // SECTION: Available Cards
           Expanded(
             child: StreamBuilder<List<db.CardWithCategory>>(
               stream: cardController.watchCardsWithCategories(),
@@ -121,26 +128,25 @@ class PlayScreen extends StatelessWidget {
                 }
 
                 final cards = snapshot.data!;
+                if (cards.isEmpty) {
+                  return const Center(child: Text('Belum ada kartu.'));
+                }
+
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text(
                         'play_available'.tr,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ),
                     Expanded(
                       child: Obx(
                         () => GridView.builder(
                           padding: const EdgeInsets.all(8),
-                          physics: AlwaysScrollableScrollPhysics(),
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount:
                                 cardController.isTextMode.value ? 1 : 2,
                             childAspectRatio:
@@ -150,8 +156,8 @@ class PlayScreen extends StatelessWidget {
                           ),
                           itemCount: cards.length,
                           itemBuilder: (context, index) {
-                            final card = cards[index];
-                            return _buildAvailableCard(card);
+                            final cardData = cards[index];
+                            return _buildAvailableCard(cardData);
                           },
                         ),
                       ),
@@ -166,20 +172,17 @@ class PlayScreen extends StatelessWidget {
     );
   }
 
+  // Widget kartu yang sedang dipilih
   Widget _buildSelectedCard(db.Card card, int index) {
     return Container(
       key: ValueKey(card.id),
-      width: 100,
-      height: 120,
-      margin: const EdgeInsets.all(4),
+      width: 110,
+      margin: const EdgeInsets.all(6),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(10),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 4,
-          ),
+          BoxShadow(color: Colors.black.withAlpha(30), blurRadius: 4),
         ],
       ),
       child: Stack(
@@ -188,19 +191,14 @@ class PlayScreen extends StatelessWidget {
             children: [
               if (!cardController.isTextMode.value && card.imagePath != null)
                 Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius:
-                          const BorderRadius.vertical(top: Radius.circular(8)),
-                    ),
-                    child: const Center(
-                      child: Icon(Icons.image, size: 30),
-                    ),
+                  child: ClipRRect(
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(10)),
+                    child: _buildImage(card.imagePath!),
                   ),
                 ),
-              Container(
-                padding: const EdgeInsets.all(8),
+              Padding(
+                padding: const EdgeInsets.all(6),
                 child: Text(
                   card.name,
                   textAlign: TextAlign.center,
@@ -217,16 +215,10 @@ class PlayScreen extends StatelessWidget {
             child: GestureDetector(
               onTap: () => cardController.removeFromSelected(card),
               child: Container(
-                padding: const EdgeInsets.all(2),
                 decoration: const BoxDecoration(
-                  color: Colors.red,
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.close,
-                  size: 16,
-                  color: Colors.white,
-                ),
+                    color: Colors.red, shape: BoxShape.circle),
+                padding: const EdgeInsets.all(2),
+                child: const Icon(Icons.close, size: 14, color: Colors.white),
               ),
             ),
           ),
@@ -235,6 +227,7 @@ class PlayScreen extends StatelessWidget {
     );
   }
 
+  // Widget kartu yang tersedia
   Widget _buildAvailableCard(db.CardWithCategory cardData) {
     final card = cardData.card;
     final category = cardData.category;
@@ -244,31 +237,34 @@ class PlayScreen extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey[300]!),
         ),
         child: cardController.isTextMode.value
             ? ListTile(
                 title: Text(card.name),
                 subtitle: Text(category?.name ?? ''),
-                trailing: const Icon(Icons.add_circle_outline),
+                trailing: IconButton(
+                  icon: const Icon(Icons.volume_up),
+                  onPressed: () {
+                    if (card.soundPath != null &&
+                        File(card.soundPath!).existsSync()) {
+                      audioService.playFile(card.soundPath!);
+                    }
+                  },
+                ),
               )
             : Column(
                 children: [
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius:
-                            const BorderRadius.vertical(top: Radius.circular(8)),
-                      ),
-                      child: card.imagePath != null
-                      ? Image.asset(card.imagePath!, fit: BoxFit.cover)
-                      : const Icon(Icons.music_note, size: 40),
+                    child: ClipRRect(
+                      borderRadius:
+                          const BorderRadius.vertical(top: Radius.circular(10)),
+                      child: _buildImage(card.imagePath),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(6),
                     child: Column(
                       children: [
                         Text(
@@ -279,12 +275,19 @@ class PlayScreen extends StatelessWidget {
                         ),
                         Text(
                           category?.name ?? '',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey[600],
-                          ),
+                          style:
+                              TextStyle(fontSize: 12, color: Colors.grey[600]),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.volume_up, size: 18),
+                          onPressed: () {
+                            if (card.soundPath != null &&
+                                File(card.soundPath!).existsSync()) {
+                              audioService.playFile(card.soundPath!);
+                            }
+                          },
                         ),
                       ],
                     ),
@@ -294,4 +297,29 @@ class PlayScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildImage(String? path) {
+  Widget imageWidget;
+
+  if (path == null) {
+    imageWidget = const Icon(Icons.image_not_supported, size: 30);
+  } else if (path.startsWith('assets/')) {
+    imageWidget = Image.asset(path, fit: BoxFit.cover);
+  } else if (File(path).existsSync()) {
+    imageWidget = Image.file(File(path), fit: BoxFit.cover);
+  } else {
+    imageWidget = const Icon(Icons.broken_image, size: 30);
+  }
+
+  return Padding(
+    padding: const EdgeInsets.all(10), // atur sesuai kebutuhan
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Container(
+        color: Colors.transparent,
+        child: imageWidget,
+      ),
+    ),
+  );
+}
 }

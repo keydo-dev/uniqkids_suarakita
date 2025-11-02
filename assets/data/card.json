@@ -1,0 +1,67 @@
+{
+  "cards": [
+    {
+      "id": "c1",
+      "name": "Apel",
+      "enName": "Apple",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/apel.png",
+      "soundPath": "assets/sound/id/Apel.m4a",
+      "enSoundPath": "assets/sound/en/Apple.m4a"
+    },
+    {
+      "id": "c2",
+      "name": "Meja",
+      "enName": "Table",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/keju.png",
+      "soundPath": "assets/sound/id/Meja.m4a",
+      "enSoundPath": "assets/sound/en/Table.m4a"
+    },
+    {
+      "id": "c3",
+      "name": "Keju",
+      "enName": "Cheese",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/keju.png",
+      "soundPath": "assets/sound/id/Keju.m4a",
+      "enSoundPath": "assets/sound/en/Cheese.m4a"
+    },
+    {
+      "id": "c4",
+      "name": "Donat",
+      "enName": "Donut",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/donat.png",
+      "soundPath": "assets/sound/id/Keju.m4a",
+      "enSoundPath": "assets/sound/en/Donut.m4a"
+    },
+    {
+      "id": "c5",
+      "name": "Mobil",
+      "enName": "Car",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/mobil.png",
+      "soundPath": "assets/sound/id/Mobil.m4a",
+      "enSoundPath": "assets/sound/en/Car.m4a"
+    },
+    {
+      "id": "c6",
+      "name": "Kursi",
+      "enName": "Cahir",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/kursi.png",
+      "soundPath": "assets/sound/id/Kursi.m4a",
+      "enSoundPath": "assets/sound/en/Chair.m4a"
+    },
+    {
+      "id": "c7",
+      "name": "Lampu",
+      "enName": "Lamp",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/lampu.png",
+      "soundPath": "assets/sound/id/Lampu.m4a",
+      "enSoundPath": "assets/sound/en/Lamp.m4a"
+    }
+  ]
+}
