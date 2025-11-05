@@ -148,7 +148,7 @@ class PlayScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(8),
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount:
-                                cardController.isTextMode.value ? 1 : 2,
+                                cardController.isTextMode.value ? 1 : 5,
                             childAspectRatio:
                                 cardController.isTextMode.value ? 8 : 1,
                             crossAxisSpacing: 8,
