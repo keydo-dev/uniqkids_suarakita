@@ -2,22 +2,39 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uniqkids_suarakita/const.dart';
+import 'package:uniqkids_suarakita/controllers/languages_controller.dart';
 import '../controllers/card_controller.dart';
 import '../controllers/category_controller.dart';
 import '../services/audio_services.dart';
 import '../models/database.dart' as db;
 
-class PlayScreen extends StatelessWidget {
+class PlayScreen extends StatefulWidget {
+  const PlayScreen({super.key});
+
+  @override
+  State<PlayScreen> createState() => _PlayScreenState();
+}
+
+class _PlayScreenState extends State<PlayScreen> {
   final CardController cardController = Get.find<CardController>();
   final CategoryController categoryController = Get.find<CategoryController>();
+  final LanguagesController langController = Get.find<LanguagesController>();
   final AudioService audioService = AudioService();
 
-  PlayScreen({super.key});
+  @override
+  void initState() {
+    super.initState();
+    audioService.init();
+  }
+
+  @override
+  void dispose() {
+    audioService.stopPlayer();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    audioService.init();
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: btnPrimaryColor,
@@ -27,7 +44,11 @@ class PlayScreen extends StatelessWidget {
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-          onPressed: () => Get.back(),
+          onPressed: () {
+            audioService.stopPlayer();
+            cardController.clearSelection();
+            Get.back();
+          },
         ),
         centerTitle: true,
       ),
@@ -61,6 +82,20 @@ class PlayScreen extends StatelessWidget {
                                     ? null
                                     : cardController.playSelectedCards,
                                 child: Text('play_button'.tr,
+                                    style: const TextStyle(color: Colors.white)),
+                              )),
+                          const SizedBox(width: 8),
+                          Obx(() => ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red,
+                                ),
+                                onPressed: cardController.selectedCards.isEmpty
+                                    ? null
+                                    : () {
+                                        audioService.stopPlayer();
+                                        cardController.clearSelection();
+                                      },
+                                child: Text('clear_button'.tr,
                                     style: const TextStyle(color: Colors.white)),
                               )),
                           const SizedBox(width: 8),
@@ -200,7 +235,7 @@ class PlayScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(6),
                 child: Text(
-                  card.name,
+                  langController.currentLanguage.value == 'en' ? card.enName ?? card.name : card.name,
                   textAlign: TextAlign.center,
                   style: const TextStyle(fontSize: 12),
                   maxLines: 2,
@@ -232,6 +267,22 @@ class PlayScreen extends StatelessWidget {
     final card = cardData.card;
     final category = cardData.category;
 
+    String? getSoundPath() {
+      if (langController.currentLanguage.value == 'en') {
+        return card.enSoundPath;
+      } else {
+        return card.soundPath;
+      }
+    }
+
+    String getCardName() {
+      if (langController.currentLanguage.value == 'en') {
+        return card.enName ?? card.name;
+      } else {
+        return card.name;
+      }
+    }
+
     return GestureDetector(
       onTap: () => cardController.addToSelected(card),
       child: Container(
@@ -242,14 +293,14 @@ class PlayScreen extends StatelessWidget {
         ),
         child: cardController.isTextMode.value
             ? ListTile(
-                title: Text(card.name),
+                title: Text(getCardName()),
                 subtitle: Text(category?.name ?? ''),
                 trailing: IconButton(
                   icon: const Icon(Icons.volume_up),
                   onPressed: () {
-                    if (card.soundPath != null &&
-                        File(card.soundPath!).existsSync()) {
-                      audioService.playFile(card.soundPath!);
+                    final soundPath = getSoundPath();
+                    if (soundPath != null) {
+                      audioService.playFile(soundPath);
                     }
                   },
                 ),
@@ -268,7 +319,7 @@ class PlayScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          card.name,
+                          getCardName(),
                           style: const TextStyle(fontWeight: FontWeight.bold),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -283,9 +334,9 @@ class PlayScreen extends StatelessWidget {
                         IconButton(
                           icon: const Icon(Icons.volume_up, size: 18),
                           onPressed: () {
-                            if (card.soundPath != null &&
-                                File(card.soundPath!).existsSync()) {
-                              audioService.playFile(card.soundPath!);
+                            final soundPath = getSoundPath();
+                            if (soundPath != null) {
+                              audioService.playFile(soundPath);
                             }
                           },
                         ),

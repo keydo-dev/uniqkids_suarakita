@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/services.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
@@ -7,6 +8,7 @@ class AudioService {
   FlutterSoundRecorder? _recorder;
   FlutterSoundPlayer? _player;
   bool _initialized = false;
+  bool _isStopped = false;
 
   static final AudioService _instance = AudioService._internal();
   factory AudioService() => _instance;
@@ -57,9 +59,19 @@ class AudioService {
   Future<void> playFile(String filePath) async {
     if (!_initialized) await init();
     if (_player == null || !_player!.isOpen()) return;
-    if (!File(filePath).existsSync()) return;
 
-    await _player!.startPlayer(fromURI: filePath);
+    if (filePath.startsWith('assets/')) {
+      try {
+        ByteData data = await rootBundle.load(filePath);
+        Uint8List bytes = data.buffer.asUint8List();
+        await _player!.startPlayer(fromDataBuffer: bytes, codec: Codec.aacADTS);
+      } catch (e) {
+        print('Error playing asset $filePath: $e');
+      }
+    } else {
+      if (!File(filePath).existsSync()) return;
+      await _player!.startPlayer(fromURI: filePath);
+    }
   }
 
   // Stop player
@@ -67,6 +79,7 @@ class AudioService {
     if (_player?.isPlaying ?? false) {
       await _player!.stopPlayer();
     }
+    _isStopped = true;
   }
 
   // Play beberapa file secara berurutan
@@ -75,14 +88,32 @@ class AudioService {
     if (filePaths.isEmpty || _player == null) return;
     if (_player!.isPlaying) return; // cegah overlap
 
-    for (final filePath in filePaths) {
-      if (!File(filePath).existsSync()) continue;
+    _isStopped = false;
 
-      await _player!.startPlayer(fromURI: filePath);
-      while (_player!.isPlaying) {
-        await Future.delayed(const Duration(milliseconds: 100));
+    for (final filePath in filePaths) {
+      if (_isStopped) break;
+
+      if (filePath.startsWith('assets/')) {
+        try {
+          ByteData data = await rootBundle.load(filePath);
+          Uint8List bytes = data.buffer.asUint8List();
+          await _player!.startPlayer(fromDataBuffer: bytes, codec: Codec.aacADTS);
+        } catch (e) {
+          print('Error playing asset $filePath: $e');
+          continue;
+        }
+      } else {
+        if (!File(filePath).existsSync()) continue;
+        await _player!.startPlayer(fromURI: filePath);
       }
-      await Future.delayed(const Duration(milliseconds: 300));
+      while (_player!.isPlaying) {
+        await Future.delayed(const Duration(milliseconds: 1));
+        if (_isStopped) {
+          await _player!.stopPlayer();
+          break;
+        }
+      }
+      await Future.delayed(const Duration(milliseconds: 1));
     }
   }
 

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:uniqkids_suarakita/controllers/languages_controller.dart';
 import 'package:uniqkids_suarakita/models/database.dart';
 import 'package:uniqkids_suarakita/services/audio_services.dart';
 import 'package:uuid/uuid.dart';
@@ -8,6 +9,7 @@ class CardController extends GetxController {
   final AppDatabase db;
   final _uuid = const Uuid();
   final _audioService = AudioService();
+  final langController = Get.find<LanguagesController>();
 
   var cards = <Card>[].obs;
   var selectedCards = <Card>[].obs;
@@ -92,10 +94,13 @@ class CardController extends GetxController {
   Future<void> playSelectedCards() async {
     if (selectedCards.isEmpty) return;
 
-    final soundPaths = selectedCards
-        .where((card) => card.soundPath != null && card.soundPath!.isNotEmpty)
-        .map((card) => card.soundPath!)
-        .toList();
+    final soundPaths = selectedCards.map((card) {
+      if (langController.currentLanguage.value == 'en') {
+        return card.enSoundPath;
+      } else {
+        return card.soundPath;
+      }
+    }).where((path) => path != null && path.isNotEmpty).map((path) => path!).toList();
 
     if (soundPaths.isNotEmpty) {
       await _audioService.playMultipleFiles(soundPaths);

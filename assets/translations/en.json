@@ -9,6 +9,7 @@
   "play_selected": "Selected Cards",
   "play_available": "Available Cards",
   "play_button": "Play All",
+  "clear_button": "Clear",
   "play_mode_abc": "ABC",
   "play_mode_image": "IMAGE",
   "play_empty": "No cards selected",

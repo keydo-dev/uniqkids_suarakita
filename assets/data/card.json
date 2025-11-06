@@ -14,7 +14,7 @@
       "name": "Meja",
       "enName": "Table",
       "categoryId": "cat1",
-      "imagePath": "assets/images/img_asset/keju.png",
+      "imagePath": "assets/images/img_asset/meja.png",
       "soundPath": "assets/sound/id/Meja.m4a",
       "enSoundPath": "assets/sound/en/Table.m4a"
     },
@@ -33,7 +33,7 @@
       "enName": "Donut",
       "categoryId": "cat1",
       "imagePath": "assets/images/img_asset/donat.png",
-      "soundPath": "assets/sound/id/Keju.m4a",
+      "soundPath": "assets/sound/id/Donat.m4a",
       "enSoundPath": "assets/sound/en/Donut.m4a"
     },
     {
