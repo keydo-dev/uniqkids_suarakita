@@ -497,6 +497,21 @@ class $CardsTable extends Cards with TableInfo<$CardsTable, Card> {
     type: DriftSqlType.dateTime,
     requiredDuringInsert: true,
   );
+  static const VerificationMeta _isAssetMeta = const VerificationMeta(
+    'isAsset',
+  );
+  @override
+  late final GeneratedColumn<bool> isAsset = GeneratedColumn<bool>(
+    'is_asset',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("is_asset" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -507,6 +522,7 @@ class $CardsTable extends Cards with TableInfo<$CardsTable, Card> {
     soundPath,
     enSoundPath,
     createdAt,
+    isAsset,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -576,6 +592,12 @@ class $CardsTable extends Cards with TableInfo<$CardsTable, Card> {
     } else if (isInserting) {
       context.missing(_createdAtMeta);
     }
+    if (data.containsKey('is_asset')) {
+      context.handle(
+        _isAssetMeta,
+        isAsset.isAcceptableOrUnknown(data['is_asset']!, _isAssetMeta),
+      );
+    }
     return context;
   }
 
@@ -617,6 +639,10 @@ class $CardsTable extends Cards with TableInfo<$CardsTable, Card> {
         DriftSqlType.dateTime,
         data['${effectivePrefix}created_at'],
       )!,
+      isAsset: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}is_asset'],
+      )!,
     );
   }
 
@@ -635,6 +661,7 @@ class Card extends DataClass implements Insertable<Card> {
   final String? soundPath;
   final String? enSoundPath;
   final DateTime createdAt;
+  final bool isAsset;
   const Card({
     required this.id,
     required this.name,
@@ -644,6 +671,7 @@ class Card extends DataClass implements Insertable<Card> {
     this.soundPath,
     this.enSoundPath,
     required this.createdAt,
+    required this.isAsset,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -664,6 +692,7 @@ class Card extends DataClass implements Insertable<Card> {
       map['en_sound_path'] = Variable<String>(enSoundPath);
     }
     map['created_at'] = Variable<DateTime>(createdAt);
+    map['is_asset'] = Variable<bool>(isAsset);
     return map;
   }
 
@@ -685,6 +714,7 @@ class Card extends DataClass implements Insertable<Card> {
           ? const Value.absent()
           : Value(enSoundPath),
       createdAt: Value(createdAt),
+      isAsset: Value(isAsset),
     );
   }
 
@@ -702,6 +732,7 @@ class Card extends DataClass implements Insertable<Card> {
       soundPath: serializer.fromJson<String?>(json['soundPath']),
       enSoundPath: serializer.fromJson<String?>(json['enSoundPath']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      isAsset: serializer.fromJson<bool>(json['isAsset']),
     );
   }
   @override
@@ -716,6 +747,7 @@ class Card extends DataClass implements Insertable<Card> {
       'soundPath': serializer.toJson<String?>(soundPath),
       'enSoundPath': serializer.toJson<String?>(enSoundPath),
       'createdAt': serializer.toJson<DateTime>(createdAt),
+      'isAsset': serializer.toJson<bool>(isAsset),
     };
   }
 
@@ -728,6 +760,7 @@ class Card extends DataClass implements Insertable<Card> {
     Value<String?> soundPath = const Value.absent(),
     Value<String?> enSoundPath = const Value.absent(),
     DateTime? createdAt,
+    bool? isAsset,
   }) => Card(
     id: id ?? this.id,
     name: name ?? this.name,
@@ -737,6 +770,7 @@ class Card extends DataClass implements Insertable<Card> {
     soundPath: soundPath.present ? soundPath.value : this.soundPath,
     enSoundPath: enSoundPath.present ? enSoundPath.value : this.enSoundPath,
     createdAt: createdAt ?? this.createdAt,
+    isAsset: isAsset ?? this.isAsset,
   );
   Card copyWithCompanion(CardsCompanion data) {
     return Card(
@@ -752,6 +786,7 @@ class Card extends DataClass implements Insertable<Card> {
           ? data.enSoundPath.value
           : this.enSoundPath,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      isAsset: data.isAsset.present ? data.isAsset.value : this.isAsset,
     );
   }
 
@@ -765,7 +800,8 @@ class Card extends DataClass implements Insertable<Card> {
           ..write('imagePath: $imagePath, ')
           ..write('soundPath: $soundPath, ')
           ..write('enSoundPath: $enSoundPath, ')
-          ..write('createdAt: $createdAt')
+          ..write('createdAt: $createdAt, ')
+          ..write('isAsset: $isAsset')
           ..write(')'))
         .toString();
   }
@@ -780,6 +816,7 @@ class Card extends DataClass implements Insertable<Card> {
     soundPath,
     enSoundPath,
     createdAt,
+    isAsset,
   );
   @override
   bool operator ==(Object other) =>
@@ -792,7 +829,8 @@ class Card extends DataClass implements Insertable<Card> {
           other.imagePath == this.imagePath &&
           other.soundPath == this.soundPath &&
           other.enSoundPath == this.enSoundPath &&
-          other.createdAt == this.createdAt);
+          other.createdAt == this.createdAt &&
+          other.isAsset == this.isAsset);
 }
 
 class CardsCompanion extends UpdateCompanion<Card> {
@@ -804,6 +842,7 @@ class CardsCompanion extends UpdateCompanion<Card> {
   final Value<String?> soundPath;
   final Value<String?> enSoundPath;
   final Value<DateTime> createdAt;
+  final Value<bool> isAsset;
   final Value<int> rowid;
   const CardsCompanion({
     this.id = const Value.absent(),
@@ -814,6 +853,7 @@ class CardsCompanion extends UpdateCompanion<Card> {
     this.soundPath = const Value.absent(),
     this.enSoundPath = const Value.absent(),
     this.createdAt = const Value.absent(),
+    this.isAsset = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   CardsCompanion.insert({
@@ -825,6 +865,7 @@ class CardsCompanion extends UpdateCompanion<Card> {
     this.soundPath = const Value.absent(),
     this.enSoundPath = const Value.absent(),
     required DateTime createdAt,
+    this.isAsset = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : id = Value(id),
        name = Value(name),
@@ -839,6 +880,7 @@ class CardsCompanion extends UpdateCompanion<Card> {
     Expression<String>? soundPath,
     Expression<String>? enSoundPath,
     Expression<DateTime>? createdAt,
+    Expression<bool>? isAsset,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -850,6 +892,7 @@ class CardsCompanion extends UpdateCompanion<Card> {
       if (soundPath != null) 'sound_path': soundPath,
       if (enSoundPath != null) 'en_sound_path': enSoundPath,
       if (createdAt != null) 'created_at': createdAt,
+      if (isAsset != null) 'is_asset': isAsset,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -863,6 +906,7 @@ class CardsCompanion extends UpdateCompanion<Card> {
     Value<String?>? soundPath,
     Value<String?>? enSoundPath,
     Value<DateTime>? createdAt,
+    Value<bool>? isAsset,
     Value<int>? rowid,
   }) {
     return CardsCompanion(
@@ -874,6 +918,7 @@ class CardsCompanion extends UpdateCompanion<Card> {
       soundPath: soundPath ?? this.soundPath,
       enSoundPath: enSoundPath ?? this.enSoundPath,
       createdAt: createdAt ?? this.createdAt,
+      isAsset: isAsset ?? this.isAsset,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -905,6 +950,9 @@ class CardsCompanion extends UpdateCompanion<Card> {
     if (createdAt.present) {
       map['created_at'] = Variable<DateTime>(createdAt.value);
     }
+    if (isAsset.present) {
+      map['is_asset'] = Variable<bool>(isAsset.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -922,6 +970,7 @@ class CardsCompanion extends UpdateCompanion<Card> {
           ..write('soundPath: $soundPath, ')
           ..write('enSoundPath: $enSoundPath, ')
           ..write('createdAt: $createdAt, ')
+          ..write('isAsset: $isAsset, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -1163,6 +1212,7 @@ typedef $$CardsTableCreateCompanionBuilder =
       Value<String?> soundPath,
       Value<String?> enSoundPath,
       required DateTime createdAt,
+      Value<bool> isAsset,
       Value<int> rowid,
     });
 typedef $$CardsTableUpdateCompanionBuilder =
@@ -1175,6 +1225,7 @@ typedef $$CardsTableUpdateCompanionBuilder =
       Value<String?> soundPath,
       Value<String?> enSoundPath,
       Value<DateTime> createdAt,
+      Value<bool> isAsset,
       Value<int> rowid,
     });
 
@@ -1223,6 +1274,11 @@ class $$CardsTableFilterComposer extends Composer<_$AppDatabase, $CardsTable> {
 
   ColumnFilters<DateTime> get createdAt => $composableBuilder(
     column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get isAsset => $composableBuilder(
+    column: $table.isAsset,
     builder: (column) => ColumnFilters(column),
   );
 }
@@ -1275,6 +1331,11 @@ class $$CardsTableOrderingComposer
     column: $table.createdAt,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<bool> get isAsset => $composableBuilder(
+    column: $table.isAsset,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$CardsTableAnnotationComposer
@@ -1313,6 +1374,9 @@ class $$CardsTableAnnotationComposer
 
   GeneratedColumn<DateTime> get createdAt =>
       $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<bool> get isAsset =>
+      $composableBuilder(column: $table.isAsset, builder: (column) => column);
 }
 
 class $$CardsTableTableManager
@@ -1351,6 +1415,7 @@ class $$CardsTableTableManager
                 Value<String?> soundPath = const Value.absent(),
                 Value<String?> enSoundPath = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
+                Value<bool> isAsset = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => CardsCompanion(
                 id: id,
@@ -1361,6 +1426,7 @@ class $$CardsTableTableManager
                 soundPath: soundPath,
                 enSoundPath: enSoundPath,
                 createdAt: createdAt,
+                isAsset: isAsset,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -1373,6 +1439,7 @@ class $$CardsTableTableManager
                 Value<String?> soundPath = const Value.absent(),
                 Value<String?> enSoundPath = const Value.absent(),
                 required DateTime createdAt,
+                Value<bool> isAsset = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => CardsCompanion.insert(
                 id: id,
@@ -1383,6 +1450,7 @@ class $$CardsTableTableManager
                 soundPath: soundPath,
                 enSoundPath: enSoundPath,
                 createdAt: createdAt,
+                isAsset: isAsset,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0

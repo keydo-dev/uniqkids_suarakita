@@ -1,12 +1,15 @@
 import 'dart:io';
+import 'package:flutter/services.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
+import '../utils/asset_helper.dart';
 
 class AudioService {
   FlutterSoundRecorder? _recorder;
   FlutterSoundPlayer? _player;
   bool _initialized = false;
+  bool _isStopped = false;
 
   static final AudioService _instance = AudioService._internal();
   factory AudioService() => _instance;
@@ -21,6 +24,7 @@ class AudioService {
 
     await _recorder!.openRecorder();
     await _player!.openPlayer();
+    await _player!.setVolume(1.0);
 
     _initialized = true;
   }
@@ -30,13 +34,12 @@ class AudioService {
     return status == PermissionStatus.granted;
   }
 
-  // Mulai rekam
-  Future<String?> startRecording() async {
+  Future<String?> startRecording({required String fileName, required String lang}) async {
     if (!_initialized) await init();
     if (!await requestPermissions()) return null;
 
     final directory = await getApplicationDocumentsDirectory();
-    final filePath = '${directory.path}/${DateTime.now().millisecondsSinceEpoch}.aac';
+    final filePath = '${directory.path}/$fileName-$lang.aac';
 
     await _recorder!.startRecorder(
       toFile: filePath,
@@ -54,12 +57,20 @@ class AudioService {
   }
 
   // Play file tunggal
-  Future<void> playFile(String filePath) async {
+  Future<void> playFile(String? filePath) async {
     if (!_initialized) await init();
-    if (_player == null || !_player!.isOpen()) return;
-    if (!File(filePath).existsSync()) return;
+    if (_player == null || !_player!.isOpen() || filePath == null) return;
 
-    await _player!.startPlayer(fromURI: filePath);
+    if (filePath.startsWith('assets/')) {
+      try {
+        final data = await rootBundle.load(filePath);
+        await _player!.startPlayer(fromDataBuffer: data.buffer.asUint8List());
+      } catch (e) {
+        print('Error playing asset $filePath: $e');
+      }
+    } else {
+      await _player!.startPlayer(fromURI: filePath);
+    }
   }
 
   // Stop player
@@ -67,22 +78,42 @@ class AudioService {
     if (_player?.isPlaying ?? false) {
       await _player!.stopPlayer();
     }
+    _isStopped = true;
   }
 
   // Play beberapa file secara berurutan
-  Future<void> playMultipleFiles(List<String> filePaths) async {
+  Future<void> playMultipleFiles(List<String?> filePaths) async {
     if (!_initialized) await init();
     if (filePaths.isEmpty || _player == null) return;
     if (_player!.isPlaying) return; // cegah overlap
 
-    for (final filePath in filePaths) {
-      if (!File(filePath).existsSync()) continue;
+    _isStopped = false;
 
-      await _player!.startPlayer(fromURI: filePath);
-      while (_player!.isPlaying) {
-        await Future.delayed(const Duration(milliseconds: 100));
+    for (final filePath in filePaths) {
+      if (_isStopped) break;
+
+      if (filePath == null) continue;
+
+      if (filePath.startsWith('assets/')) {
+        try {
+          final data = await rootBundle.load(filePath);
+          await _player!.startPlayer(fromDataBuffer: data.buffer.asUint8List());
+        } catch (e) {
+          print('Error playing asset $filePath: $e');
+          continue;
+        }
+      } else {
+        await _player!.startPlayer(fromURI: filePath);
       }
-      await Future.delayed(const Duration(milliseconds: 300));
+
+      while (_player!.isPlaying) {
+        await Future.delayed(const Duration(milliseconds: 1));
+        if (_isStopped) {
+          await _player!.stopPlayer();
+          break;
+        }
+      }
+      await Future.delayed(const Duration(milliseconds: 1));
     }
   }
 

@@ -1,13 +1,16 @@
 import 'package:get/get.dart';
+import 'package:uniqkids_suarakita/controllers/languages_controller.dart';
 import 'package:uniqkids_suarakita/models/database.dart';
 import 'package:uniqkids_suarakita/services/audio_services.dart';
+import 'package:uniqkids_suarakita/utils/asset_helper.dart';
 import 'package:uuid/uuid.dart';
 import 'package:drift/drift.dart' as drift;
 
 class CardController extends GetxController {
   final AppDatabase db;
   final _uuid = const Uuid();
-  final _audioService = AudioService();
+  final _audioService = Get.find<AudioService>();
+  final langController = Get.find<LanguagesController>();
 
   var cards = <Card>[].obs;
   var selectedCards = <Card>[].obs;
@@ -35,6 +38,7 @@ class CardController extends GetxController {
     String? imagePath,
     String? soundPath,
     String? enSoundPath,
+    bool isAsset = false,
   }) async {
     final cardCompanion = CardsCompanion.insert(
       id: _uuid.v4(),
@@ -45,6 +49,7 @@ class CardController extends GetxController {
       soundPath: drift.Value(soundPath),
       enSoundPath: drift.Value(enSoundPath),
       createdAt: DateTime.now(),
+      isAsset: drift.Value(isAsset),
     );
 
     await db.into(db.cards).insert(cardCompanion);
@@ -64,15 +69,17 @@ class CardController extends GetxController {
       .get();
   }
 
-  // Tambahkan kartu ke daftar terpilih
-  void addToSelected(Card card) {
-    if (!selectedCards.contains(card)) {
+  // Toggle card selection
+  void toggleCardSelection(Card card) {
+    if (selectedCards.contains(card)) {
+      selectedCards.remove(card);
+    } else {
       selectedCards.add(card);
     }
   }
 
   // Hapus kartu dari daftar terpilih
-  void removeFromSelected(Card card) {
+  void removeCard(Card card) {
     selectedCards.remove(card);
   }
 
@@ -92,19 +99,28 @@ class CardController extends GetxController {
   Future<void> playSelectedCards() async {
     if (selectedCards.isEmpty) return;
 
-    final soundPaths = selectedCards
-        .where((card) => card.soundPath != null && card.soundPath!.isNotEmpty)
-        .map((card) => card.soundPath!)
-        .toList();
+    final resolvedSoundPaths = <String>[];
+    for (final card in selectedCards) {
+      final originalPath = langController.currentLanguage.value == 'en'
+          ? card.enSoundPath
+          : card.soundPath;
+      final resolvedPath = await AssetHelper.getSound(originalPath);
+      resolvedSoundPaths.add(resolvedPath);
+    }
 
-    if (soundPaths.isNotEmpty) {
-      await _audioService.playMultipleFiles(soundPaths);
+    if (resolvedSoundPaths.isNotEmpty) {
+      await _audioService.playMultipleFiles(resolvedSoundPaths);
     }
   }
 
   // Hapus semua kartu yang terpilih
   void clearSelection() {
     selectedCards.clear();
+  }
+
+  // Stream untuk ambil kartu berdasarkan kategori
+  Stream<List<Card>> watchCardsByCategoryId(String categoryId) {
+    return (db.select(db.cards)..where((tbl) => tbl.categoryId.equals(categoryId))).watch();
   }
 
   // Stream untuk ambil kartu beserta kategorinya

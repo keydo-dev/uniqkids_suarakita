@@ -1,0 +1,13 @@
+
+[
+  { "id": "gen_cat1", "name": "Hewan", "enName": "Animals", "parent_id": null },
+  { "id": "gen_cat2", "name": "Buah-buahan", "enName": "Fruits", "parent_id": null },
+  { "id": "gen_cat3", "name": "Sayuran", "enName": "Vegetables", "parent_id": null },
+  { "id": "gen_cat4", "name": "Transportasi", "enName": "Transportation", "parent_id": null },
+  { "id": "gen_cat5", "name": "Pakaian", "enName": "Clothing", "parent_id": null },
+  { "id": "gen_cat6", "name": "Bagian Tubuh", "enName": "Body Parts", "parent_id": null },
+  { "id": "gen_cat7", "name": "Warna", "enName": "Colors", "parent_id": null },
+  { "id": "gen_cat8", "name": "Angka", "enName": "Numbers", "parent_id": null },
+  { "id": "gen_cat9", "name": "Bentuk", "enName": "Shapes", "parent_id": null },
+  { "id": "gen_cat10", "name": "Sekolah", "enName": "School", "parent_id": null }
+]

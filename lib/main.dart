@@ -7,6 +7,8 @@ import 'package:uniqkids_suarakita/models/database.dart';
 import 'package:uniqkids_suarakita/routes/app_pages.dart';
 import 'package:uniqkids_suarakita/translations/app_translation.dart';
 
+import 'package:uniqkids_suarakita/services/audio_services.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -17,13 +19,7 @@ void main() async {
     ]);
   }
 
-  // Inisialisasi DB dan default data
-  final db = AppDatabase();
-  await db.initializeData(); // pastikan JSON masuk DB
-
-  // Inisialisasi controller & bindings
-  final appBindings = AppBindings(db);
-  appBindings.dependencies();
+  await AppTranslations.init();
 
   runApp(const MyApp());
 }
@@ -43,6 +39,7 @@ class MyApp extends StatelessWidget {
       translations: AppTranslations(),
       locale: const Locale('en', 'US'),
       fallbackLocale: const Locale('en', 'US'),
+      initialBinding: AppBindings(),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     );
