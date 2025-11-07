@@ -38,6 +38,10 @@ flutter:
     - assets/images/img_asset/
     - assets/sound/en/
     - assets/sound/id/
+    - assets/translations/
+    - assets/images/img_asset/default.png
+    - assets/sound/en/default.mp3
+    - assets/sound/id/default.mp3
 
 
   fonts:

@@ -2,8 +2,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import '../utils/asset_helper.dart';
 import '../controllers/category_controller.dart';
 import '../controllers/card_controller.dart';
+import '../controllers/languages_controller.dart';
 import '../services/audio_services.dart';
 import '../models/database.dart' as db;
 
@@ -36,8 +38,8 @@ class EditScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
-          'Kotak Kata',
+        title: Text(
+          'edit_card_box_title'.tr,
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
@@ -56,8 +58,8 @@ class EditScreen extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: _showAddCategoryDialog,
                   icon: const Icon(Icons.add, color: Colors.white),
-                  label: const Text(
-                    'Tambah kategori',
+                  label: Text(
+                    'edit_add_category_button'.tr,
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -75,8 +77,8 @@ class EditScreen extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: _showAddVocabularyDialog,
                   icon: const Icon(Icons.add, color: Colors.white),
-                  label: const Text(
-                    'Tambah kosa kata',
+                  label: Text(
+                    'edit_add_vocabulary_button'.tr,
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -110,7 +112,7 @@ class EditScreen extends StatelessWidget {
                         crossAxisCount: 4,
                         crossAxisSpacing: 20,
                         mainAxisSpacing: 20,
-                        childAspectRatio: 0.85,
+                        childAspectRatio: 1.7,
                       ),
                       itemCount: categories.length,
                       itemBuilder: (context, index) {
@@ -150,7 +152,7 @@ class CategoryCardsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(category.color ?? 0xFF3E4A59),
         title: Text(
-          category.name,
+          Get.locale?.languageCode == 'id' ? category.name : category.enName ?? category.name,
           style: const TextStyle(color: Colors.white),
         ),
         leading: IconButton(
@@ -166,11 +168,11 @@ class CategoryCardsScreen extends StatelessWidget {
           }
           
           final cards = snapshot.data!;
-          
+
           if (cards.isEmpty) {
-            return const Center(
+            return Center(
               child: Text(
-                'Belum ada kartu di kategori ini',
+                'edit_no_cards_in_category'.tr,
                 style: TextStyle(fontSize: 16),
               ),
             );
@@ -199,31 +201,10 @@ class CategoryCardsScreen extends StatelessWidget {
 // Widget untuk menampilkan card item
 class CardItem extends StatelessWidget {
   final db.Card card;
-  final AudioService audioService = AudioService();
+  final AudioService audioService = Get.find<AudioService>();
+  final LanguagesController langController = Get.find<LanguagesController>();
 
   CardItem({super.key, required this.card});
-
-  Widget _buildImage(String? path) {
-    if (path == null) {
-      return Container(
-        color: Colors.grey[200],
-        child: const Icon(Icons.image_not_supported, size: 40),
-      );
-    }
-
-    if (path.startsWith('assets/')) {
-      return Image.asset(path, fit: BoxFit.cover);
-    }
-
-    if (File(path).existsSync()) {
-      return Image.file(File(path), fit: BoxFit.cover);
-    }
-
-    return Container(
-      color: Colors.grey[200],
-      child: const Icon(Icons.broken_image, size: 40),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -246,7 +227,23 @@ class CardItem extends StatelessWidget {
             flex: 3,
             child: ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-              child: _buildImage(card.imagePath),
+              child: FutureBuilder<String>(
+                future: AssetHelper.getImage(card.imagePath),
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Image.asset('assets/images/img_default.png', fit: BoxFit.cover);
+                  }
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    final imagePath = snapshot.data!;
+                    final isAsset = imagePath.startsWith('assets/');
+                    return isAsset
+                        ? Image.asset(imagePath, fit: BoxFit.cover)
+                        : Image.file(File(imagePath), fit: BoxFit.cover);
+                  } else {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                },
+              ),
             ),
           ),
           Expanded(
@@ -281,12 +278,14 @@ class CardItem extends StatelessWidget {
                   ],
                   IconButton(
                     icon: const Icon(Icons.volume_up, size: 20),
-                    onPressed: () {
-                      if (card.soundPath != null &&
-                          File(card.soundPath!).existsSync()) {
-                        audioService.playFile(card.soundPath!);
-                      }
-                    },
+                          onPressed: () async {
+                            final soundPath = await AssetHelper.getSound(
+                              langController.currentLanguage.value == 'en'
+                                  ? card.enSoundPath
+                                  : card.soundPath,
+                            );
+                            audioService.playFile(soundPath);
+                          },
                   ),
                 ],
               ),
@@ -331,8 +330,8 @@ class AddCategoryDialog extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const SizedBox(width: 24),
-                const Text(
-                  'Tambah kategori',
+                Text(
+                  'edit_add_category_dialog_title'.tr,
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
@@ -416,7 +415,7 @@ class AddCategoryDialog extends StatelessWidget {
             TextField(
               controller: controller,
               decoration: InputDecoration(
-                hintText: 'Nama kategori',
+                hintText: 'edit_category_name_hint'.tr,
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
@@ -445,8 +444,8 @@ class AddCategoryDialog extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  child: const Text(
-                    'Batal',
+                  child: Text(
+                    'edit_cancel_button'.tr,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -475,8 +474,8 @@ class AddCategoryDialog extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  child: const Text(
-                    'Tambah',
+                  child: Text(
+                    'edit_add_button'.tr,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -503,15 +502,17 @@ class AddVocabularyDialog extends StatefulWidget {
 class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
   final CardController cardController = Get.find<CardController>();
   final CategoryController categoryController = Get.find<CategoryController>();
-  final AudioService audioService = AudioService();
+  final AudioService audioService = Get.find<AudioService>();
   
   final TextEditingController indoController = TextEditingController();
   final TextEditingController engController = TextEditingController();
   final selectedCategory = Rxn<db.Category>();
   
   File? imageFile;
-  String? recordedSoundPath;
-  bool isRecording = false;
+  String? recordedSoundPathId;
+  String? recordedSoundPathEn;
+  bool isRecordingId = false;
+  bool isRecordingEn = false;
 
   @override
   void initState() {
@@ -527,16 +528,32 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
     }
   }
 
-  Future<void> _toggleRecording() async {
+  Future<void> _toggleRecording(String lang) async {
+    final isRecording = lang == 'id' ? isRecordingId : isRecordingEn;
     if (isRecording) {
       await audioService.stopRecording();
-      setState(() => isRecording = false);
+      setState(() {
+        if (lang == 'id') {
+          isRecordingId = false;
+        } else {
+          isRecordingEn = false;
+        }
+      });
     } else {
-      final path = await audioService.startRecording();
+      if (indoController.text.isEmpty) {
+        Get.snackbar('Error', 'Please enter the Indonesian word first.');
+        return;
+      }
+      final path = await audioService.startRecording(fileName: indoController.text, lang: lang);
       if (path != null) {
         setState(() {
-          isRecording = true;
-          recordedSoundPath = path;
+          if (lang == 'id') {
+            isRecordingId = true;
+            recordedSoundPathId = path;
+          } else {
+            isRecordingEn = true;
+            recordedSoundPathEn = path;
+          }
         });
       }
     }
@@ -559,10 +576,10 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const SizedBox(width: 24),
-                const Text(
-                  'Tambah kosa kata',
+                Text(
+                  'edit_add_vocabulary_dialog_title'.tr,
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: Color(0xFF2C3E50),
                   ),
@@ -597,7 +614,7 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
                       )
                     : Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Icon(
                             Icons.add_photo_alternate_outlined,
                             size: 48,
@@ -605,10 +622,10 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
                           ),
                           SizedBox(height: 8),
                           Text(
-                            'Masukkan\nGambar',
+                            'edit_add_image_text'.tr,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 16,
                               color: Color(0xFF2C3E50),
                               fontWeight: FontWeight.w500,
                             ),
@@ -635,13 +652,13 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
                     ),
                     child: DropdownButton<db.Category>(
                       value: selectedCategory.value,
-                      hint: const Text('Pilih kategori'),
+                      hint: Text('edit_select_category_hint'.tr),
                       isExpanded: true,
                       underline: const SizedBox(),
                       items: categories
                           .map((c) => DropdownMenuItem(
                                 value: c,
-                                child: Text(c.name),
+                                child: Text(Get.locale?.languageCode == 'en' ? c.enName ?? c.name : c.name),
                               ))
                           .toList(),
                       onChanged: (val) => selectedCategory.value = val,
@@ -654,7 +671,7 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
             TextField(
               controller: indoController,
               decoration: InputDecoration(
-                hintText: 'Masukkan Kata Indonesia',
+                hintText: 'edit_enter_indonesian_word_hint'.tr,
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
@@ -671,7 +688,7 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
             TextField(
               controller: engController,
               decoration: InputDecoration(
-                hintText: 'Masukkan Kata English',
+                hintText: 'edit_enter_english_word_hint'.tr,
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
@@ -685,60 +702,125 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
               ),
             ),
             const SizedBox(height: 24),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: isRecording
-                          ? Colors.red
-                          : const Color(0xFFFF8A5B),
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      onPressed: _toggleRecording,
-                      icon: Icon(
-                        isRecording ? Icons.stop : Icons.mic,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Text('edit_record_id_label'.tr, style: TextStyle(fontSize: 16)),
+                    Container(
+                      decoration: BoxDecoration(
                         color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
                       ),
-                      padding: const EdgeInsets.all(12),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Text(
-                      isRecording ? 'Recording...' : 'Rec',
-                      style: TextStyle(
-                        color: isRecording
-                            ? Colors.red
-                            : const Color(0xFFFF8A5B),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: isRecordingId
+                                  ? Colors.red
+                                  : const Color(0xFFFF8A5B),
+                              shape: BoxShape.circle,
+                            ),
+                            child: IconButton(
+                              onPressed: () => _toggleRecording('id'),
+                              icon: Icon(
+                                isRecordingId ? Icons.stop : Icons.mic,
+                                color: Colors.white,
+                              ),
+                              padding: const EdgeInsets.all(12),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 12),
+                            child: Text(
+                              isRecordingId ? 'edit_recording_text'.tr : 'edit_rec_text'.tr,
+                              style: TextStyle(
+                                color: isRecordingId
+                                    ? Colors.red
+                                    : const Color(0xFFFF8A5B),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('edit_record_en_label'.tr, style: TextStyle(fontSize: 16)),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: isRecordingEn
+                                  ? Colors.red
+                                  : const Color(0xFFFF8A5B),
+                              shape: BoxShape.circle,
+                            ),
+                            child: IconButton(
+                              onPressed: () => _toggleRecording('en'),
+                              icon: Icon(
+                                isRecordingEn ? Icons.stop : Icons.mic,
+                                color: Colors.white,
+                              ),
+                              padding: const EdgeInsets.all(12),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 12),
+                            child: Text(
+                              isRecordingEn ? 'edit_recording_text'.tr : 'edit_rec_text'.tr,
+                              style: TextStyle(
+                                color: isRecordingEn
+                                    ? Colors.red
+                                    : const Color(0xFFFF8A5B),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
             const SizedBox(height: 24),
             ElevatedButton(
               onPressed: () {
-                if (selectedCategory.value != null &&
-                    indoController.text.isNotEmpty &&
-                    engController.text.isNotEmpty) {
-                  cardController.addCard(
-                    name: indoController.text,
-                    enName: engController.text,
-                    categoryId: selectedCategory.value!.id,
-                    imagePath: imageFile?.path,
-                    soundPath: recordedSoundPath,
-                  );
+                if (selectedCategory.value == null) {
+                  Get.snackbar('error_snackbar_title'.tr, 'error_select_category_snackbar'.tr);
+                  return;
                 }
+                if (indoController.text.isEmpty) {
+                  Get.snackbar('error_snackbar_title'.tr, 'error_enter_indonesian_word_snackbar'.tr);
+                  return;
+                }
+                if (engController.text.isEmpty) {
+                  Get.snackbar('error_snackbar_title'.tr, 'error_enter_english_word_snackbar'.tr);
+                  return;
+                }
+
+                cardController.addCard(
+                  name: indoController.text,
+                  enName: engController.text,
+                  categoryId: selectedCategory.value!.id,
+                  imagePath: imageFile?.path,
+                  soundPath: recordedSoundPathId,
+                  enSoundPath: recordedSoundPathEn,
+                );
                 Get.back();
               },
               style: ElevatedButton.styleFrom(
@@ -751,11 +833,11 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
                   borderRadius: BorderRadius.circular(30),
                 ),
               ),
-              child: const Text(
-                'Tambah',
+              child: Text(
+                'edit_add_button'.tr,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -803,7 +885,7 @@ class CategoryCard extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(12),
                 child: Text(
-                  category.name,
+                  Get.locale?.languageCode == 'id' ? category.name : category.enName ?? category.name,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,

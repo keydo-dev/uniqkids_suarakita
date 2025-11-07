@@ -4,7 +4,7 @@
       "id": "c1",
       "name": "Apel",
       "enName": "Apple",
-      "categoryId": "cat1",
+      "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/apel.png",
       "soundPath": "assets/sound/id/Apel.m4a",
       "enSoundPath": "assets/sound/en/Apple.m4a"
@@ -13,7 +13,7 @@
       "id": "c2",
       "name": "Meja",
       "enName": "Table",
-      "categoryId": "cat1",
+      "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/meja.png",
       "soundPath": "assets/sound/id/Meja.m4a",
       "enSoundPath": "assets/sound/en/Table.m4a"
@@ -22,7 +22,7 @@
       "id": "c3",
       "name": "Keju",
       "enName": "Cheese",
-      "categoryId": "cat1",
+      "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/keju.png",
       "soundPath": "assets/sound/id/Keju.m4a",
       "enSoundPath": "assets/sound/en/Cheese.m4a"
@@ -31,7 +31,7 @@
       "id": "c4",
       "name": "Donat",
       "enName": "Donut",
-      "categoryId": "cat1",
+      "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/donat.png",
       "soundPath": "assets/sound/id/Donat.m4a",
       "enSoundPath": "assets/sound/en/Donut.m4a"
@@ -40,7 +40,7 @@
       "id": "c5",
       "name": "Mobil",
       "enName": "Car",
-      "categoryId": "cat1",
+      "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/mobil.png",
       "soundPath": "assets/sound/id/Mobil.m4a",
       "enSoundPath": "assets/sound/en/Car.m4a"
@@ -48,8 +48,8 @@
     {
       "id": "c6",
       "name": "Kursi",
-      "enName": "Cahir",
-      "categoryId": "cat1",
+      "enName": "Chair",
+      "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kursi.png",
       "soundPath": "assets/sound/id/Kursi.m4a",
       "enSoundPath": "assets/sound/en/Chair.m4a"
@@ -58,10 +58,370 @@
       "id": "c7",
       "name": "Lampu",
       "enName": "Lamp",
-      "categoryId": "cat1",
+      "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/lampu.png",
       "soundPath": "assets/sound/id/Lampu.m4a",
       "enSoundPath": "assets/sound/en/Lamp.m4a"
+    },
+    {
+      "id": "c8",
+      "name": "Kucing",
+      "enName": "Cat",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/kucing.png",
+      "soundPath": "assets/sound/id/Kucing.m4a",
+      "enSoundPath": "assets/sound/en/Cat.m4a"
+    },
+    {
+      "id": "c9",
+      "name": "Anjing",
+      "enName": "Dog",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/anjing.png",
+      "soundPath": "assets/sound/id/Anjing.m4a",
+      "enSoundPath": "assets/sound/en/Dog.m4a"
+    },
+    {
+      "id": "c10",
+      "name": "Burung",
+      "enName": "Bird",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/burung.png",
+      "soundPath": "assets/sound/id/Burung.m4a",
+      "enSoundPath": "assets/sound/en/Bird.m4a"
+    },
+    {
+      "id": "c11",
+      "name": "Membaca",
+      "enName": "Reading",
+      "categoryId": "cat6",
+      "imagePath": "assets/images/img_asset/membaca.png",
+      "soundPath": "assets/sound/id/Membaca.m4a",
+      "enSoundPath": "assets/sound/en/Reading.m4a"
+    },
+    {
+      "id": "c12",
+      "name": "Menulis",
+      "enName": "Writing",
+      "categoryId": "cat6",
+      "imagePath": "assets/images/img_asset/menulis.png",
+      "soundPath": "assets/sound/id/Menulis.m4a",
+      "enSoundPath": "assets/sound/en/Writing.m4a"
+    },
+    {
+      "id": "c13",
+      "name": "Bermain",
+      "enName": "Playing",
+      "categoryId": "cat6",
+      "imagePath": "assets/images/img_asset/bermain.png",
+      "soundPath": "assets/sound/id/Bermain.m4a",
+      "enSoundPath": "assets/sound/en/Playing.m4a"
+    },
+    {
+      "id": "c14",
+      "name": "Besar",
+      "enName": "Big",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/besar.png",
+      "soundPath": "assets/sound/id/Besar.m4a",
+      "enSoundPath": "assets/sound/en/Big.m4a"
+    },
+    {
+      "id": "c15",
+      "name": "Kecil",
+      "enName": "Small",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/kecil.png",
+      "soundPath": "assets/sound/id/Kecil.m4a",
+      "enSoundPath": "assets/sound/en/Small.m4a"
+    },
+    {
+      "id": "c16",
+      "name": "Cepat",
+      "enName": "Fast",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/cepat.png",
+      "soundPath": "assets/sound/id/Cepat.m4a",
+      "enSoundPath": "assets/sound/en/Fast.m4a"
+    },
+    {
+      "id": "c17",
+      "name": "Pisang",
+      "enName": "Banana",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/pisang.png",
+      "soundPath": "assets/sound/id/Pisang.m4a",
+      "enSoundPath": "assets/sound/en/Banana.m4a"
+    },
+    {
+      "id": "c18",
+      "name": "Buku",
+      "enName": "Book",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/buku.png",
+      "soundPath": "assets/sound/id/Buku.m4a",
+      "enSoundPath": "assets/sound/en/Book.m4a"
+    },
+    {
+      "id": "c19",
+      "name": "Ikan",
+      "enName": "Fish",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/ikan.png",
+      "soundPath": "assets/sound/id/Ikan.m4a",
+      "enSoundPath": "assets/sound/en/Fish.m4a"
+    },
+    {
+      "id": "c20",
+      "name": "Makan",
+      "enName": "Eat",
+      "categoryId": "cat6",
+      "imagePath": "assets/images/img_asset/makan.png",
+      "soundPath": "assets/sound/id/Makan.m4a",
+      "enSoundPath": "assets/sound/en/Eat.m4a"
+    },
+    {
+      "id": "c21",
+      "name": "Minum",
+      "enName": "Drink",
+      "categoryId": "cat6",
+      "imagePath": "assets/images/img_asset/minum.png",
+      "soundPath": "assets/sound/id/Minum.m4a",
+      "enSoundPath": "assets/sound/en/Drink.m4a"
+    },
+    {
+      "id": "c22",
+      "name": "Lambat",
+      "enName": "Slow",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/lambat.png",
+      "soundPath": "assets/sound/id/Lambat.m4a",
+      "enSoundPath": "assets/sound/en/Slow.m4a"
+    },
+    {
+      "id": "c23",
+      "name": "Gajah",
+      "enName": "Elephant",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/gajah.png",
+      "soundPath": "assets/sound/id/Gajah.m4a",
+      "enSoundPath": "assets/sound/en/Elephant.m4a"
+    },
+    {
+      "id": "c24",
+      "name": "Singa",
+      "enName": "Lion",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/singa.png",
+      "soundPath": "assets/sound/id/Singa.m4a",
+      "enSoundPath": "assets/sound/en/Lion.m4a"
+    },
+    {
+      "id": "c25",
+      "name": "Harimau",
+      "enName": "Tiger",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/harimau.png",
+      "soundPath": "assets/sound/id/Harimau.m4a",
+      "enSoundPath": "assets/sound/en/Tiger.m4a"
+    },
+    {
+      "id": "c26",
+      "name": "Jerapah",
+      "enName": "Giraffe",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/jerapah.png",
+      "soundPath": "assets/sound/id/Jerapah.m4a",
+      "enSoundPath": "assets/sound/en/Giraffe.m4a"
+    },
+    {
+      "id": "c27",
+      "name": "Zebra",
+      "enName": "Zebra",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/zebra.png",
+      "soundPath": "assets/sound/id/Zebra.m4a",
+      "enSoundPath": "assets/sound/en/Zebra.m4a"
+    },
+    {
+      "id": "c28",
+      "name": "Monyet",
+      "enName": "Monkey",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/monyet.png",
+      "soundPath": "assets/sound/id/Monyet.m4a",
+      "enSoundPath": "assets/sound/en/Monkey.m4a"
+    },
+    {
+      "id": "c29",
+      "name": "Beruang",
+      "enName": "Bear",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/beruang.png",
+      "soundPath": "assets/sound/id/Beruang.m4a",
+      "enSoundPath": "assets/sound/en/Bear.m4a"
+    },
+    {
+      "id": "c30",
+      "name": "Serigala",
+      "enName": "Wolf",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/serigala.png",
+      "soundPath": "assets/sound/id/Serigala.m4a",
+      "enSoundPath": "assets/sound/en/Wolf.m4a"
+    },
+    {
+      "id": "c31",
+      "name": "Rubah",
+      "enName": "Fox",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/rubah.png",
+      "soundPath": "assets/sound/id/Rubah.m4a",
+      "enSoundPath": "assets/sound/en/Fox.m4a"
+    },
+    {
+      "id": "c32",
+      "name": "Kelinci",
+      "enName": "Rabbit",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/kelinci.png",
+      "soundPath": "assets/sound/id/Kelinci.m4a",
+      "enSoundPath": "assets/sound/en/Rabbit.m4a"
+    },
+    {
+      "id": "c33",
+      "name": "Kura-kura",
+      "enName": "Turtle",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/kura-kura.png",
+      "soundPath": "assets/sound/id/Kura-kura.m4a",
+      "enSoundPath": "assets/sound/en/Turtle.m4a"
+    },
+    {
+      "id": "c34",
+      "name": "Ular",
+      "enName": "Snake",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/ular.png",
+      "soundPath": "assets/sound/id/Ular.m4a",
+      "enSoundPath": "assets/sound/en/Snake.m4a"
+    },
+    {
+      "id": "c35",
+      "name": "Buaya",
+      "enName": "Crocodile",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/buaya.png",
+      "soundPath": "assets/sound/id/Buaya.m4a",
+      "enSoundPath": "assets/sound/en/Crocodile.m4a"
+    },
+    {
+      "id": "c36",
+      "name": "Katak",
+      "enName": "Frog",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/katak.png",
+      "soundPath": "assets/sound/id/Katak.m4a",
+      "enSoundPath": "assets/sound/en/Frog.m4a"
+    },
+    {
+      "id": "c37",
+      "name": "Lebah",
+      "enName": "Bee",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/lebah.png",
+      "soundPath": "assets/sound/id/Lebah.m4a",
+      "enSoundPath": "assets/sound/en/Bee.m4a"
+    },
+    {
+      "id": "c38",
+      "name": "Roti",
+      "enName": "Bread",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/roti.png",
+      "soundPath": "assets/sound/id/Roti.m4a",
+      "enSoundPath": "assets/sound/en/Bread.m4a"
+    },
+    {
+      "id": "c39",
+      "name": "Susu",
+      "enName": "Milk",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/susu.png",
+      "soundPath": "assets/sound/id/Susu.m4a",
+      "enSoundPath": "assets/sound/en/Milk.m4a"
+    },
+    {
+      "id": "c40",
+      "name": "Nasi",
+      "enName": "Rice",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/nasi.png",
+      "soundPath": "assets/sound/id/Nasi.m4a",
+      "enSoundPath": "assets/sound/en/Rice.m4a"
+    },
+    {
+      "id": "c41",
+      "name": "Ayam",
+      "enName": "Chicken",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/ayam.png",
+      "soundPath": "assets/sound/id/Ayam.m4a",
+      "enSoundPath": "assets/sound/en/Chicken.m4a"
+    },
+    {
+      "id": "c42",
+      "name": "Telur",
+      "enName": "Egg",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/telur.png",
+      "soundPath": "assets/sound/id/Telur.m4a",
+      "enSoundPath": "assets/sound/en/Egg.m4a"
+    },
+    {
+      "id": "c43",
+      "name": "Pintu",
+      "enName": "Door",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/pintu.png",
+      "soundPath": "assets/sound/id/Pintu.m4a",
+      "enSoundPath": "assets/sound/en/Door.m4a"
+    },
+    {
+      "id": "c44",
+      "name": "Jendela",
+      "enName": "Window",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/jendela.png",
+      "soundPath": "assets/sound/id/Jendela.m4a",
+      "enSoundPath": "assets/sound/en/Window.m4a"
+    },
+    {
+      "id": "c45",
+      "name": "Atap",
+      "enName": "Roof",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/atap.png",
+      "soundPath": "assets/sound/id/Atap.m4a",
+      "enSoundPath": "assets/sound/en/Roof.m4a"
+    },
+    {
+      "id": "c46",
+      "name": "Dinding",
+      "enName": "Wall",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/dinding.png",
+      "soundPath": "assets/sound/id/Dinding.m4a",
+      "enSoundPath": "assets/sound/en/Wall.m4a"
+    },
+    {
+      "id": "c47",
+      "name": "Lantai",
+      "enName": "Floor",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/lantai.png",
+      "soundPath": "assets/sound/id/Lantai.m4a",
+      "enSoundPath": "assets/sound/en/Floor.m4a"
     }
   ]
 }

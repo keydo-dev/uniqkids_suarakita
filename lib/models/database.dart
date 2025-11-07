@@ -30,6 +30,7 @@ class Cards extends Table {
   TextColumn get soundPath => text().nullable()();
   TextColumn get enSoundPath => text().nullable()();
   DateTimeColumn get createdAt => dateTime()();
+  BoolColumn get isAsset => boolean().withDefault(const Constant(true))();
 
   @override
   Set<Column> get primaryKey => {id};
@@ -44,7 +45,21 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase._internal() : super(_openConnection());
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
+
+  @override
+  MigrationStrategy get migration {
+    return MigrationStrategy(
+      onCreate: (m) async {
+        await m.createAll();
+      },
+      onUpgrade: (m, from, to) async {
+        if (from < 3) {
+          await m.addColumn(cards, cards.isAsset);
+        }
+      },
+    );
+  }
 
   Future<void> initializeData() async {
     try {
@@ -58,6 +73,13 @@ class AppDatabase extends _$AppDatabase {
       final categoriesJson = await rootBundle.loadString('assets/data/categories.json');
       final List<dynamic> categoriesData = json.decode(categoriesJson);
       print('Categories loaded: ${categoriesData.length}');
+
+      // Load generated_categories.json and add to the list
+      print('Loading generated_categories.json...');
+      final generatedCategoriesJson = await rootBundle.loadString('assets/data/generated_categories.json');
+      final List<dynamic> generatedCategoriesData = json.decode(generatedCategoriesJson);
+      categoriesData.addAll(generatedCategoriesData);
+      print('Total categories after adding generated data: ${categoriesData.length}');
 
       // 3. Warna default
       final List<int> defaultColors = [
@@ -106,6 +128,14 @@ class AppDatabase extends _$AppDatabase {
       final List<dynamic> cardsData = cardsMap['cards'];
       print('Cards loaded: ${cardsData.length}');
 
+      // Load generated_cards.json and add to the list
+      print('Loading generated_cards.json...');
+      final generatedCardsJson = await rootBundle.loadString('assets/data/generated_cards.json');
+      final Map<String, dynamic> generatedCardsMap = json.decode(generatedCardsJson);
+      final List<dynamic> generatedCardsData = generatedCardsMap['cards'];
+      cardsData.addAll(generatedCardsData);
+      print('Total cards after adding generated data: ${cardsData.length}');
+
       // 6. Insert cards dengan cek duplikat
       for (var card in cardsData) {
         try {
@@ -124,6 +154,7 @@ class AppDatabase extends _$AppDatabase {
                 soundPath: Value(card['soundPath']),
                 enSoundPath: Value(card['enSoundPath']),
                 createdAt: DateTime.now(),
+                isAsset: const Value(true), // Assume true for all JSON data
               ),
             );
             print('Inserted card: ${card['name']}');

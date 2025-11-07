@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uniqkids_suarakita/const.dart';
 
+import 'package:uniqkids_suarakita/models/database.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -31,6 +33,11 @@ class _SplashScreenState extends State<SplashScreen>
       CurvedAnimation(parent: _controller, curve: Curves.easeOutBack),
     );
 
+    _initApp();
+  }
+
+  Future<void> _initApp() async {
+    await Get.find<AppDatabase>().initializeData();
     Future.delayed(const Duration(seconds: 4), () {
       Get.offAllNamed('/main');
     });
@@ -75,20 +82,20 @@ class _SplashScreenState extends State<SplashScreen>
             ),
 
             Positioned(
-              bottom: 30,
+              bottom: 10,
               child: Column(
                 children: [
                   Text(
-                    "from",
+                    "made with ♥ by",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 16,
                       color: Colors.grey[800],
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   Image.asset(
                     'assets/images/uniqkids-logo.png',
-                    width: MediaQuery.of(context).size.width * 0.3,
+                    width: MediaQuery.of(context).size.width * 0.6,
                   ),
                 ],
               ),

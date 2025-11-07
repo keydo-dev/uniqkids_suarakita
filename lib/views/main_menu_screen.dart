@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:uniqkids_suarakita/const.dart';
 import 'package:uniqkids_suarakita/controllers/languages_controller.dart';
 
+import 'package:flutter/services.dart';
+
 class MainMenuScreen extends StatelessWidget {
   final LanguagesController languageController = Get.find<LanguagesController>();
 
@@ -50,6 +52,12 @@ class MainMenuScreen extends StatelessWidget {
                     _buildMenuButton(
                       label: 'menu_edit'.tr,
                       onTap: () => Get.toNamed('/edit'),
+                    ),
+                    const SizedBox(height: 20),
+                    _buildMenuButton(
+                      label: 'menu_exit'.tr,
+                      onTap: () => SystemNavigator.pop(),
+                      color: Colors.red,
                     ),
                     const Spacer(flex: 3),
                   ],
@@ -108,6 +116,7 @@ class MainMenuScreen extends StatelessWidget {
   Widget _buildMenuButton({
     required String label,
     required VoidCallback onTap,
+    Color? color,
   }) {
     return SizedBox(
       width: 200,
@@ -115,7 +124,7 @@ class MainMenuScreen extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onTap,
         style: ElevatedButton.styleFrom(
-          backgroundColor: btnPrimaryColor,
+          backgroundColor: color ?? btnPrimaryColor,
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
