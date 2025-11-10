@@ -12,6 +12,8 @@ import '../models/database.dart' as db;
 class EditScreen extends StatelessWidget {
   final CategoryController categoryController = Get.find<CategoryController>();
   final CardController cardController = Get.find<CardController>();
+  final isDeleteMode = false.obs;
+  final selectedCategories = <db.Category>[].obs;
 
   EditScreen({super.key});
 
@@ -27,19 +29,94 @@ class EditScreen extends StatelessWidget {
     Get.to(() => CategoryCardsScreen(category: category));
   }
 
+  void _toggleDeleteMode() {
+    isDeleteMode.value = !isDeleteMode.value;
+    if (!isDeleteMode.value) {
+      selectedCategories.clear();
+    }
+  }
+
+  void _toggleCategorySelection(db.Category category) {
+    if (selectedCategories.contains(category)) {
+      selectedCategories.remove(category);
+    } else {
+      selectedCategories.add(category);
+    }
+  }
+
+  void _showDeleteConfirmation() {
+    if (selectedCategories.isEmpty) {
+      Get.snackbar(
+        'error_snackbar_title'.tr,
+        'Pilih minimal satu kategori untuk dihapus',
+        backgroundColor: Colors.red[100],
+        colorText: Colors.red[900],
+      );
+      return;
+    }
+
+    Get.dialog(
+      AlertDialog(
+        title: Text('Konfirmasi Hapus'),
+        content: Text(
+          'Apakah Anda yakin ingin menghapus ${selectedCategories.length} kategori beserta semua kartu di dalamnya?',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(),
+            child: Text('Batal'),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              Get.back();
+              for (var category in selectedCategories) {
+                // Hapus semua kartu dalam kategori
+                final cards = await cardController.getCardsByCategory(category.id);
+                for (var card in cards) {
+                  await cardController.deleteCard(card.id);
+                }
+                // Hapus kategori
+                await categoryController.deleteCategory(category.id);
+              }
+              selectedCategories.clear();
+              isDeleteMode.value = false;
+              Get.snackbar(
+                'Berhasil',
+                'Kategori berhasil dihapus',
+                backgroundColor: Colors.green[100],
+                colorText: Colors.green[900],
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+            ),
+            child: Text('Hapus', style: TextStyle(color: Colors.white)),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Obx(() => Scaffold(
       backgroundColor: const Color(0xFFE8F4F8),
       appBar: AppBar(
         backgroundColor: const Color(0xFF3E4A59),
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Get.back(),
-        ),
+        leading: isDeleteMode.value
+            ? IconButton(
+                icon: const Icon(Icons.close, color: Colors.white),
+                onPressed: _toggleDeleteMode,
+              )
+            : IconButton(
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
+                onPressed: () => Get.back(),
+              ),
         title: Text(
-          'edit_card_box_title'.tr,
+          isDeleteMode.value 
+              ? '${selectedCategories.length} dipilih'
+              : 'edit_card_box_title'.tr,
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
@@ -47,54 +124,67 @@ class EditScreen extends StatelessWidget {
           ),
         ),
         centerTitle: true,
+        actions: [
+          if (!isDeleteMode.value)
+            IconButton(
+              icon: const Icon(Icons.delete_outline, color: Colors.white),
+              onPressed: _toggleDeleteMode,
+            )
+          else
+            IconButton(
+              icon: const Icon(Icons.check, color: Colors.white),
+              onPressed: _showDeleteConfirmation,
+            ),
+        ],
       ),
       body: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 40),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: _showAddCategoryDialog,
-                  icon: const Icon(Icons.add, color: Colors.white),
-                  label: Text(
-                    'edit_add_category_button'.tr,
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF3E4A59),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 16,
+          if (!isDeleteMode.value)
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: _showAddCategoryDialog,
+                    icon: const Icon(Icons.add, color: Colors.white),
+                    label: Text(
+                      'edit_add_category_button'.tr,
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 16),
-                ElevatedButton.icon(
-                  onPressed: _showAddVocabularyDialog,
-                  icon: const Icon(Icons.add, color: Colors.white),
-                  label: Text(
-                    'edit_add_vocabulary_button'.tr,
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF3E4A59),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 16,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF3E4A59),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 16,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(width: 16),
+                  ElevatedButton.icon(
+                    onPressed: _showAddVocabularyDialog,
+                    icon: const Icon(Icons.add, color: Colors.white),
+                    label: Text(
+                      'edit_add_vocabulary_button'.tr,
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF3E4A59),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 16,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
           Expanded(
             child: Container(
               color: Colors.white,
@@ -118,11 +208,41 @@ class EditScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final category = categories[index];
                         final color = Color(category.color ?? 0xFF6DB5C6);
+                        final isSelected = selectedCategories.contains(category);
+                        
                         return GestureDetector(
-                          onTap: () => _showCategoryCards(category),
-                          child: CategoryCard(
-                            category: category,
-                            color: color,
+                          onTap: () {
+                            if (isDeleteMode.value) {
+                              _toggleCategorySelection(category);
+                            } else {
+                              _showCategoryCards(category);
+                            }
+                          },
+                          child: Stack(
+                            children: [
+                              CategoryCard(
+                                category: category,
+                                color: color,
+                              ),
+                              if (isDeleteMode.value)
+                                Positioned(
+                                  top: 8,
+                                  right: 8,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: isSelected ? Colors.blue : Colors.grey,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    child: isSelected
+                                        ? Icon(Icons.check_circle, color: Colors.blue, size: 24)
+                                        : Icon(Icons.circle_outlined, color: Colors.grey, size: 24),
+                                  ),
+                                ),
+                            ],
                           ),
                         );
                       },
@@ -134,34 +254,124 @@ class EditScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ));
   }
 }
 
 // Screen untuk menampilkan cards dalam kategori
-class CategoryCardsScreen extends StatelessWidget {
+class CategoryCardsScreen extends StatefulWidget {
   final db.Category category;
-  final CardController cardController = Get.find<CardController>();
 
-  CategoryCardsScreen({super.key, required this.category});
+  const CategoryCardsScreen({super.key, required this.category});
+
+  @override
+  State<CategoryCardsScreen> createState() => _CategoryCardsScreenState();
+}
+
+class _CategoryCardsScreenState extends State<CategoryCardsScreen> {
+  final CardController cardController = Get.find<CardController>();
+  final isDeleteMode = false.obs;
+  final selectedCards = <db.Card>[].obs;
+
+  void _toggleDeleteMode() {
+    isDeleteMode.value = !isDeleteMode.value;
+    if (!isDeleteMode.value) {
+      selectedCards.clear();
+    }
+  }
+
+  void _toggleCardSelection(db.Card card) {
+    if (selectedCards.contains(card)) {
+      selectedCards.remove(card);
+    } else {
+      selectedCards.add(card);
+    }
+  }
+
+  void _showDeleteConfirmation() {
+    if (selectedCards.isEmpty) {
+      Get.snackbar(
+        'error_snackbar_title'.tr,
+        'Pilih minimal satu kartu untuk dihapus',
+        backgroundColor: Colors.red[100],
+        colorText: Colors.red[900],
+      );
+      return;
+    }
+
+    Get.dialog(
+      AlertDialog(
+        title: Text('Konfirmasi Hapus'),
+        content: Text(
+          'Apakah Anda yakin ingin menghapus ${selectedCards.length} kartu?',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(),
+            child: Text('Batal'),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              Get.back();
+              for (var card in selectedCards) {
+                await cardController.deleteCard(card.id);
+              }
+              selectedCards.clear();
+              isDeleteMode.value = false;
+              Get.snackbar(
+                'Berhasil',
+                'Kartu berhasil dihapus',
+                backgroundColor: Colors.green[100],
+                colorText: Colors.green[900],
+              );
+              setState(() {}); // Refresh UI
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+            ),
+            child: Text('Hapus', style: TextStyle(color: Colors.white)),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Obx(() => Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(category.color ?? 0xFF3E4A59),
+        backgroundColor: Color(widget.category.color ?? 0xFF3E4A59),
         title: Text(
-          Get.locale?.languageCode == 'id' ? category.name : category.enName ?? category.name,
+          isDeleteMode.value
+              ? '${selectedCards.length} dipilih'
+              : Get.locale?.languageCode == 'id' ? widget.category.name : widget.category.enName ?? widget.category.name,
           style: const TextStyle(color: Colors.white),
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Get.back(),
-        ),
+        leading: isDeleteMode.value
+            ? IconButton(
+                icon: const Icon(Icons.close, color: Colors.white),
+                onPressed: _toggleDeleteMode,
+              )
+            : IconButton(
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
+                onPressed: () => Get.back(),
+              ),
+        actions: [
+          if (!isDeleteMode.value)
+            IconButton(
+              icon: const Icon(Icons.delete_outline, color: Colors.white),
+              onPressed: _toggleDeleteMode,
+            )
+          else
+            IconButton(
+              icon: const Icon(Icons.check, color: Colors.white),
+              onPressed: _showDeleteConfirmation,
+            ),
+        ],
       ),
       body: FutureBuilder<List<db.Card>>(
-        future: cardController.getCardsByCategory(category.id),
+        future: cardController.getCardsByCategory(widget.category.id),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -189,110 +399,152 @@ class CategoryCardsScreen extends StatelessWidget {
             itemCount: cards.length,
             itemBuilder: (context, index) {
               final card = cards[index];
-              return CardItem(card: card);
+              final isSelected = selectedCards.contains(card);
+              
+              return GestureDetector(
+                onTap: () {
+                  if (isDeleteMode.value) {
+                    _toggleCardSelection(card);
+                  }
+                },
+                child: CardItem(
+                  card: card,
+                  isDeleteMode: isDeleteMode.value,
+                  isSelected: isSelected,
+                ),
+              );
             },
           );
         },
       ),
-    );
+    ));
   }
 }
 
 // Widget untuk menampilkan card item
 class CardItem extends StatelessWidget {
   final db.Card card;
+  final bool isDeleteMode;
+  final bool isSelected;
   final AudioService audioService = Get.find<AudioService>();
   final LanguagesController langController = Get.find<LanguagesController>();
 
-  CardItem({super.key, required this.card});
+  CardItem({
+    super.key,
+    required this.card,
+    this.isDeleteMode = false,
+    this.isSelected = false,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey[300]!),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Expanded(
-            flex: 3,
-            child: ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-              child: FutureBuilder<String>(
-                future: AssetHelper.getImage(card.imagePath),
-                builder: (context, snapshot) {
-                  if (snapshot.hasError) {
-                    return Image.asset('assets/images/img_default.png', fit: BoxFit.cover);
-                  }
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    final imagePath = snapshot.data!;
-                    final isAsset = imagePath.startsWith('assets/');
-                    return isAsset
-                        ? Image.asset(imagePath, fit: BoxFit.cover)
-                        : Image.file(File(imagePath), fit: BoxFit.cover);
-                  } else {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-                },
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: Colors.grey[300]!),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                blurRadius: 4,
+                offset: const Offset(0, 2),
               ),
-            ),
+            ],
           ),
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    card.name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                    ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
+          child: Column(
+            children: [
+              Expanded(
+                flex: 3,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+                  child: FutureBuilder<String>(
+                    future: AssetHelper.getImage(card.imagePath),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) {
+                        return Image.asset('assets/images/img_default.png', fit: BoxFit.contain);
+                      }
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        final imagePath = snapshot.data!;
+                        final isAsset = imagePath.startsWith('assets/');
+                        return isAsset
+                            ? Image.asset(imagePath, fit: BoxFit.contain, width: double.infinity)
+                            : Image.file(File(imagePath), fit: BoxFit.contain, width: double.infinity);
+                      } else {
+                        return const Center(child: CircularProgressIndicator());
+                      }
+                    },
                   ),
-                  if (card.enName != null) ...[
-                    const SizedBox(height: 4),
-                    Text(
-                      card.enName!,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey[600],
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        card.name,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                  IconButton(
-                    icon: const Icon(Icons.volume_up, size: 20),
-                          onPressed: () async {
-                            final soundPath = await AssetHelper.getSound(
-                              langController.currentLanguage.value == 'en'
-                                  ? card.enSoundPath
-                                  : card.soundPath,
-                            );
-                            audioService.playFile(soundPath);
-                          },
+                      if (card.enName != null) ...[
+                        const SizedBox(height: 4),
+                        Text(
+                          card.enName!,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey[600],
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                      IconButton(
+                        icon: const Icon(Icons.volume_up, size: 20),
+                        onPressed: () async {
+                          final soundPath = await AssetHelper.getSound(
+                            langController.currentLanguage.value == 'en'
+                                ? card.enSoundPath
+                                : card.soundPath,
+                          );
+                          audioService.playFile(soundPath);
+                        },
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
+            ],
+          ),
+        ),
+        if (isDeleteMode)
+          Positioned(
+            top: 8,
+            right: 8,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: isSelected ? Colors.blue : Colors.grey,
+                  width: 2,
+                ),
+              ),
+              child: isSelected
+                  ? Icon(Icons.check_circle, color: Colors.blue, size: 24)
+                  : Icon(Icons.circle_outlined, color: Colors.grey, size: 24),
             ),
           ),
-        ],
-      ),
+      ],
     );
   }
 }

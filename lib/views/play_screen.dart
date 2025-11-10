@@ -328,7 +328,7 @@ class _PlayScreenState extends State<PlayScreen> {
             ),
           ),
 
-          const Divider(thickness: 2, color: btnPrimaryColor),
+          const Divider(thickness: 1, color: btnPrimaryColor),
 
           // SECTION: Available Cards
           Expanded(
@@ -344,14 +344,10 @@ class _PlayScreenState extends State<PlayScreen> {
                   return const Center(child: Text('No categories available.'));
                 }
 
-                final screenWidth = MediaQuery
-                    .of(context)
-                    .size
-                    .width;
+                final screenWidth = MediaQuery.of(context).size.width;
                 const spacing = 8.0;
                 const padding = 8.0;
-                final itemWidth = (screenWidth - (10 * spacing) -
-                    (2 * padding)) / 11;
+                final itemWidth = (screenWidth - (10 * spacing) - (2 * padding)) / 11;
 
                 return ListView.builder(
                   itemCount: categories.length,
