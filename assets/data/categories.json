@@ -3,42 +3,70 @@
     "id": "cat1",
     "name": "Kata Benda",
     "enName": "Nouns",
+    "defaultColor": "#FD8448",
     "parent_id": null
   },
   {
     "id": "cat2",
     "name": "Makanan",
     "enName": "Foods",
+    "defaultColor": null,
     "parent_id": "cat1"
   },
   {
     "id": "cat3",
     "name": "Benda",
     "enName": "Objects",
+    "defaultColor": "#FFC300",
     "parent_id": "cat1"
   },
   {
     "id": "cat4",
     "name": "Hewan",
     "enName": "Animals",
+    "defaultColor": null,
     "parent_id": "cat1"
   },
   {
     "id": "cat5",
     "name": "Kata Kerja",
     "enName": "Verbs",
+    "defaultColor": "#7BCFF6",
     "parent_id": null
   },
   {
     "id": "cat6",
     "name": "Aktivitas",
     "enName": "Activities",
+    "defaultColor": null,
     "parent_id": "cat5"
   },
   {
     "id": "cat7",
     "name": "Kata Sifat",
     "enName": "Adjectives",
+    "defaultColor": "#4583CF",
+    "parent_id": null
+  },
+  {
+    "id": "cat8",
+    "name": "Preposisi",
+    "enName": "Prepositions",
+    "defaultColor": "#48DA8A",
+    "parent_id": null
+  },
+  {
+    "id": "cat9",
+    "name": "Kata Ganti Orang",
+    "enName": "Pronouns",
+    "defaultColor": "#FF5857",
+    "parent_id": null
+  },
+  {
+    "id": "cat10",
+    "name": "Bodypart Warna Bentuk Kata Tanya",
+    "enName": "Bodyparts Colors Shapes Questions",
+    "defaultColor": "#FFFFFF",
     "parent_id": null
   }
 ]

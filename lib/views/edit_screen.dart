@@ -273,6 +273,12 @@ class _CategoryCardsScreenState extends State<CategoryCardsScreen> {
   final isDeleteMode = false.obs;
   final selectedCards = <db.Card>[].obs;
 
+  // Helper function untuk menentukan warna text berdasarkan brightness background
+  Color _getTextColor(Color backgroundColor) {
+    final luminance = backgroundColor.computeLuminance();
+    return luminance > 0.5 ? Colors.black : Colors.white;
+  }
+
   void _toggleDeleteMode() {
     isDeleteMode.value = !isDeleteMode.value;
     if (!isDeleteMode.value) {
@@ -342,30 +348,34 @@ class _CategoryCardsScreenState extends State<CategoryCardsScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Color(widget.category.color ?? 0xFF3E4A59),
+        elevation: 4,
+        shadowColor: Colors.black.withOpacity(0.3),
         title: Text(
           isDeleteMode.value
               ? '${selectedCards.length} dipilih'
               : Get.locale?.languageCode == 'id' ? widget.category.name : widget.category.enName ?? widget.category.name,
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: _getTextColor(Color(widget.category.color ?? 0xFF3E4A59)),
+          ),
         ),
         leading: isDeleteMode.value
             ? IconButton(
-                icon: const Icon(Icons.close, color: Colors.white),
+                icon: Icon(Icons.close, color: _getTextColor(Color(widget.category.color ?? 0xFF3E4A59))),
                 onPressed: _toggleDeleteMode,
               )
             : IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.white),
+                icon: Icon(Icons.arrow_back, color: _getTextColor(Color(widget.category.color ?? 0xFF3E4A59))),
                 onPressed: () => Get.back(),
               ),
         actions: [
           if (!isDeleteMode.value)
             IconButton(
-              icon: const Icon(Icons.delete_outline, color: Colors.white),
+              icon: Icon(Icons.delete_outline, color: _getTextColor(Color(widget.category.color ?? 0xFF3E4A59))),
               onPressed: _toggleDeleteMode,
             )
           else
             IconButton(
-              icon: const Icon(Icons.check, color: Colors.white),
+              icon: Icon(Icons.check, color: _getTextColor(Color(widget.category.color ?? 0xFF3E4A59))),
               onPressed: _showDeleteConfirmation,
             ),
         ],
@@ -409,6 +419,7 @@ class _CategoryCardsScreenState extends State<CategoryCardsScreen> {
                 },
                 child: CardItem(
                   card: card,
+                  category: widget.category,
                   isDeleteMode: isDeleteMode.value,
                   isSelected: isSelected,
                 ),
@@ -424,6 +435,7 @@ class _CategoryCardsScreenState extends State<CategoryCardsScreen> {
 // Widget untuk menampilkan card item
 class CardItem extends StatelessWidget {
   final db.Card card;
+  final db.Category category;
   final bool isDeleteMode;
   final bool isSelected;
   final AudioService audioService = Get.find<AudioService>();
@@ -432,6 +444,7 @@ class CardItem extends StatelessWidget {
   CardItem({
     super.key,
     required this.card,
+    required this.category,
     this.isDeleteMode = false,
     this.isSelected = false,
   });
@@ -480,47 +493,64 @@ class CardItem extends StatelessWidget {
               ),
               Expanded(
                 flex: 2,
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        card.name,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              card.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                            ),
+                            if (card.enName != null) ...[
+                              const SizedBox(height: 4),
+                              Text(
+                                card.enName!,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey[600],
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                            IconButton(
+                              icon: const Icon(Icons.volume_up, size: 20),
+                              onPressed: () async {
+                                final soundPath = await AssetHelper.getSound(
+                                  langController.currentLanguage.value == 'en'
+                                      ? card.enSoundPath
+                                      : card.soundPath,
+                                );
+                                audioService.playFile(soundPath);
+                              },
+                            ),
+                          ],
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
                       ),
-                      if (card.enName != null) ...[
-                        const SizedBox(height: 4),
-                        Text(
-                          card.enName!,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey[600],
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.center,
+                    ),
+                    // Strip warna kategori
+                    Container(
+                      height: 8,
+                      decoration: BoxDecoration(
+                        color: Color(category.color ?? 0xFF6DB5C6),
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(11),
+                          bottomRight: Radius.circular(11),
                         ),
-                      ],
-                      IconButton(
-                        icon: const Icon(Icons.volume_up, size: 20),
-                        onPressed: () async {
-                          final soundPath = await AssetHelper.getSound(
-                            langController.currentLanguage.value == 'en'
-                                ? card.enSoundPath
-                                : card.soundPath,
-                          );
-                          audioService.playFile(soundPath);
-                        },
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -1111,6 +1141,12 @@ class CategoryCard extends StatelessWidget {
     required this.color,
   });
 
+  // Helper function untuk menentukan warna text berdasarkan brightness background
+  Color _getTextColor(Color backgroundColor) {
+    final luminance = backgroundColor.computeLuminance();
+    return luminance > 0.5 ? Colors.black : Colors.white;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -1139,8 +1175,8 @@ class CategoryCard extends StatelessWidget {
                 child: Text(
                   Get.locale?.languageCode == 'id' ? category.name : category.enName ?? category.name,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: _getTextColor(color),
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),

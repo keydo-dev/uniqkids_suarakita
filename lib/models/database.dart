@@ -75,47 +75,47 @@ class AppDatabase extends _$AppDatabase {
       print('Categories loaded: ${categoriesData.length}');
 
       // Load generated_categories.json and add to the list
-      print('Loading generated_categories.json...');
-      final generatedCategoriesJson = await rootBundle.loadString('assets/data/generated_categories.json');
-      final List<dynamic> generatedCategoriesData = json.decode(generatedCategoriesJson);
-      categoriesData.addAll(generatedCategoriesData);
-      print('Total categories after adding generated data: ${categoriesData.length}');
+      // print('Loading generated_categories.json...');
+      // final generatedCategoriesJson = await rootBundle.loadString('assets/data/generated_categories.json');
+      // final List<dynamic> generatedCategoriesData = json.decode(generatedCategoriesJson);
+      // categoriesData.addAll(generatedCategoriesData);
+      // print('Total categories after adding generated data: ${categoriesData.length}');
 
-      // 3. Warna default
-      final List<int> defaultColors = [
-        0xFFFF8A5B, // Orange
-        0xFFFF6B6B, // Red
-        0xFFFFC107, // Yellow
-        0xFF64C5F2, // Light Blue
-        0xFF5B8DEF, // Blue
-        0xFF4ECB71, // Green
-        0xFF6DB5C6, // Teal
-        0xFF9C27B0, // Purple
-        0xFFE91E63, // Pink
-      ];
+      final Map<String, int?> colorCache = {};
 
-      final random = Random();
-
-      // 4. Insert categories dengan cek duplikat
       for (var item in categoriesData) {
         try {
           final existingCat = await (select(categories)
                 ..where((tbl) => tbl.id.equals(item['id'])))
               .getSingleOrNull();
 
-          if (existingCat == null) {
-            await into(categories).insert(
-              CategoriesCompanion.insert(
-                id: item['id'],
-                name: item['name'],
-                enName: Value(item['enName']),
-                parentId: Value(item['parent_id']),
-                imagePath: const Value(null),
-                color: Value(defaultColors[random.nextInt(defaultColors.length)]),
-              ),
-            );
-            print('Inserted category: ${item['name']}');
+          if (existingCat != null) continue;
+
+          // Ambil warna dari JSON
+          final String? hexColor = item['defaultColor'];
+          int? resolvedColor;
+
+          if (hexColor != null) {
+            resolvedColor = int.parse(hexColor.replaceFirst('#', '0xFF'));
+          } else {
+            final parentId = item['parent_id'];
+            resolvedColor = colorCache[parentId];
           }
+
+          colorCache[item['id']] = resolvedColor;
+
+          await into(categories).insert(
+            CategoriesCompanion.insert(
+              id: item['id'],
+              name: item['name'],
+              enName: Value(item['enName']),
+              parentId: Value(item['parent_id']),
+              imagePath: const Value(null),
+              color: Value(resolvedColor),
+            ),
+          );
+
+          print('Inserted category: ${item['name']} | color: $resolvedColor');
         } catch (e) {
           print('Error inserting category ${item['id']}: $e');
         }
@@ -129,12 +129,12 @@ class AppDatabase extends _$AppDatabase {
       print('Cards loaded: ${cardsData.length}');
 
       // Load generated_cards.json and add to the list
-      print('Loading generated_cards.json...');
-      final generatedCardsJson = await rootBundle.loadString('assets/data/generated_cards.json');
-      final Map<String, dynamic> generatedCardsMap = json.decode(generatedCardsJson);
-      final List<dynamic> generatedCardsData = generatedCardsMap['cards'];
-      cardsData.addAll(generatedCardsData);
-      print('Total cards after adding generated data: ${cardsData.length}');
+      // print('Loading generated_cards.json...');
+      // final generatedCardsJson = await rootBundle.loadString('assets/data/generated_cards.json');
+      // final Map<String, dynamic> generatedCardsMap = json.decode(generatedCardsJson);
+      // final List<dynamic> generatedCardsData = generatedCardsMap['cards'];
+      // cardsData.addAll(generatedCardsData);
+      // print('Total cards after adding generated data: ${cardsData.length}');
 
       // 6. Insert cards dengan cek duplikat
       for (var card in cardsData) {

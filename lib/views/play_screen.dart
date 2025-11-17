@@ -90,14 +90,15 @@ class _PlayScreenState extends State<PlayScreen> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                padding: const EdgeInsets.fromLTRB(4.0, 0, 4.0, 10.0),
                                 child: Text(
                                   langController.currentLanguage.value == 'en'
                                       ? card.enName ?? card.name
                                       : card.name,
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
-                                      fontWeight: FontWeight.bold),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -119,6 +120,32 @@ class _PlayScreenState extends State<PlayScreen> {
                           ),
                         ),
                     ],
+                  ),
+                  // STRIP WARNA KATEGORI
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    child: FutureBuilder<db.Category?>(
+                      future: Future.value(
+                        categoryController.getCategoryById(card.categoryId),
+                      ),
+                      builder: (context, snap) {
+                        final color = snap.data?.color != null
+                            ? Color(snap.data!.color!)
+                            : Colors.grey;
+                        return Container(
+                          height: 8,
+                          decoration: BoxDecoration(
+                            color: color,
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(7),
+                              bottomRight: Radius.circular(7),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                   Positioned(
                     top: 0,
@@ -192,6 +219,19 @@ class _PlayScreenState extends State<PlayScreen> {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
+                  // Strip warna kategori
+                  Container(
+                    height: 8,
+                    decoration: BoxDecoration(
+                      color: cardWithCategory.category?.color != null 
+                        ? Color(cardWithCategory.category!.color!)
+                        : Colors.grey,
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(7),
+                        bottomRight: Radius.circular(7),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -210,7 +250,7 @@ class _PlayScreenState extends State<PlayScreen> {
               color: Colors.white, fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             audioService.stopPlayer();
             cardController.clearSelection();
