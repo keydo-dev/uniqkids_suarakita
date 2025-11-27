@@ -69,7 +69,7 @@
       "enName": "Basket",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/keranjang.png",
-      "soundPath": "",
+      "soundPath": "assets/sound/id/Keranjang.m4a",
       "enSoundPath": ""
     },
     {
@@ -78,8 +78,8 @@
       "enName": "Book",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/buku.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Buku.m4a",
+      "enSoundPath": "assets/sound/en/book.mp3"
     },
     {
       "id": "c10",
@@ -87,8 +87,8 @@
       "enName": "Tooth Brush",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sikat gigi.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Sikat gigi.m4a",
+      "enSoundPath": "assets/sound/en/tooth brush.mp3"
     },
     {
       "id": "c11",
@@ -96,8 +96,8 @@
       "enName": "Tooth Paste",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/odol.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Odol.m4a",
+      "enSoundPath": "assets/sound/en/tooth paste.mp3"
     },
     {
       "id": "c12",
@@ -105,8 +105,8 @@
       "enName": "Hat",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/topi.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Topi.m4a",
+      "enSoundPath": "assets/sound/en/hat.mp3"
     },
     {
       "id": "c13",
@@ -114,8 +114,8 @@
       "enName": "Bread",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/roti.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Roti.m4a",
+      "enSoundPath": "assets/sound/en/bread.mp3"
     },
     {
       "id": "c14",
@@ -123,8 +123,8 @@
       "enName": "Bottle",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/botol.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Botol.m4a",
+      "enSoundPath": "assets/sound/en/bottle.mp3"
     },
     {
       "id": "c15",
@@ -132,8 +132,8 @@
       "enName": "Plate",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/piring.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Piring.m4a",
+      "enSoundPath": "assets/sound/en/plate.mp3"
     },
     {
       "id": "c16",
@@ -141,8 +141,8 @@
       "enName": "Spoon",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sendok.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Sendok.m4a",
+      "enSoundPath": "assets/sound/en/spoon.mp3"
     },
     {
       "id": "c17",
@@ -150,8 +150,8 @@
       "enName": "Spider",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/laba laba.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Laba laba.m4a",
+      "enSoundPath": "assets/sound/en/spider.mp3"
     },
     {
       "id": "c18",
@@ -159,8 +159,8 @@
       "enName": "Calender",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kalender.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Kalender.m4a",
+      "enSoundPath": "assets/sound/en/calender.mp3"
     },
     {
       "id": "c19",
@@ -168,8 +168,8 @@
       "enName": "Ball",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/bola.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Bola.m4a",
+      "enSoundPath": "assets/sound/en/ball.mp3"
     },
     {
       "id": "c20",
@@ -177,8 +177,8 @@
       "enName": "Shoes",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sepatu copy.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Sepatu.m4a",
+      "enSoundPath": "assets/sound/en/shoes.mp3"
     },
     {
       "id": "c21",
@@ -186,8 +186,8 @@
       "enName": "Socks",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kaus kaki.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Kaus kaki.m4a",
+      "enSoundPath": "assets/sound/en/socks.mp3"
     },
     {
       "id": "c22",
@@ -195,8 +195,8 @@
       "enName": "Glasses",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kaca mata.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Kaca mata.m4a",
+      "enSoundPath": "assets/sound/en/glasses.mp3"
     },
     {
       "id": "c23",
@@ -204,8 +204,8 @@
       "enName": "Dog",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/anjing.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Anjing.m4a",
+      "enSoundPath": "assets/sound/en/dog.mp3"
     },
     {
       "id": "c24",
@@ -213,8 +213,8 @@
       "enName": "Soap",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sabun.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Sabun.m4a",
+      "enSoundPath": "assets/sound/en/soap.mp3"
     },
     {
       "id": "c25",
@@ -222,8 +222,8 @@
       "enName": "Bird",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/burung.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Burung.m4a",
+      "enSoundPath": "assets/sound/en/bird.mp3"
     },
     {
       "id": "c26",
@@ -231,8 +231,8 @@
       "enName": "Towel",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/handuk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Handuk.m4a",
+      "enSoundPath": "assets/sound/en/towel.mp3"
     },
     {
       "id": "c27",
@@ -240,8 +240,8 @@
       "enName": "Banana",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/pisang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Pisang.m4a",
+      "enSoundPath": "assets/sound/en/banana.mp3"
     },
     {
       "id": "c28",
@@ -249,8 +249,8 @@
       "enName": "Sandal",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sendal.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Sendal.m4a",
+      "enSoundPath": "assets/sound/en/sandal.mp3"
     },
     {
       "id": "c29",
@@ -258,8 +258,8 @@
       "enName": "Bowl",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/mangkuk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Mangkuk.m4a",
+      "enSoundPath": "assets/sound/en/bowl.mp3"
     },
     {
       "id": "c30",
@@ -267,8 +267,8 @@
       "enName": "Chicken",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/ayam.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Ayam.m4a",
+      "enSoundPath": "assets/sound/en/chicken.mp3"
     },
     {
       "id": "c31",
@@ -276,8 +276,8 @@
       "enName": "Motorbike",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/motor.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Motor.m4a",
+      "enSoundPath": "assets/sound/en/motorbike.mp3"
     },
     {
       "id": "c32",
@@ -285,8 +285,8 @@
       "enName": "Phone",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/telepon.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Telepon.m4a",
+      "enSoundPath": "assets/sound/en/phone.mp3"
     },
     {
       "id": "c33",
@@ -294,7 +294,7 @@
       "enName": "Duck",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/bebek.png",
-      "soundPath": "",
+      "soundPath": "assets/sound/id/Bebek.m4a",
       "enSoundPath": ""
     },
     {
@@ -303,8 +303,8 @@
       "enName": "Flower",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/bunga.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Bunga.m4a",
+      "enSoundPath": "assets/sound/en/duck.mp3"
     },
     {
       "id": "c35",
@@ -312,8 +312,8 @@
       "enName": "Sofa",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sofa.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Sofa.m4a",
+      "enSoundPath": "assets/sound/en/sofa.mp3"
     },
     {
       "id": "c36",
@@ -321,8 +321,8 @@
       "enName": "Bag",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/tas.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Tas.m4a",
+      "enSoundPath": "assets/sound/en/bag.mp3"
     },
     {
       "id": "c37",
@@ -330,8 +330,8 @@
       "enName": "AC",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/ac.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Ac.m4a",
+      "enSoundPath": "assets/sound/en/ac.mp3"
     },
     {
       "id": "c38",
@@ -339,8 +339,8 @@
       "enName": "Elephant",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/gajah.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Gajah.m4a",
+      "enSoundPath": "assets/sound/en/elephant.mp3"
     },
     {
       "id": "c39",
@@ -348,8 +348,8 @@
       "enName": "Plane",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/pesawat.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Pesawat.mp3",
+      "enSoundPath": "assets/sound/en/plane.mp3"
     },
     {
       "id": "c40",
@@ -357,8 +357,8 @@
       "enName": "Pinale",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/nanas.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/nanas.mp3",
+      "enSoundPath": "assets/sound/en/pineapple.mp3"
     },
     {
       "id": "c41",
@@ -366,8 +366,8 @@
       "enName": "Comb",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sisir.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/sisir.mp3",
+      "enSoundPath": "assets/sound/en/comb.mp3"
     },
     {
       "id": "c42",
@@ -375,8 +375,8 @@
       "enName": "Book Shelf",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/rak buku.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/rak buku.mp3",
+      "enSoundPath": "assets/sound/en/book shelf.mp3"
     },
     {
       "id": "c43",
@@ -384,8 +384,8 @@
       "enName": "Fish",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/ikan.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/ikan.mp3",
+      "enSoundPath": "assets/sound/en/fish.mp3"
     },
     {
       "id": "c44",
@@ -393,8 +393,8 @@
       "enName": "Cat",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/kucing.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kucing.mp3",
+      "enSoundPath": "assets/sound/en/cat.mp3"
     },
     {
       "id": "c45",
@@ -402,8 +402,8 @@
       "enName": "Milk Bottle",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/botol susu.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/botol susu.mp3",
+      "enSoundPath": "assets/sound/en/milk bottle.mp3"
     },
     {
       "id": "c46",
@@ -411,8 +411,8 @@
       "enName": "Bed",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/ranjang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/ranjang.mp3",
+      "enSoundPath": "assets/sound/en/bed.mp3"
     },
     {
       "id": "c47",
@@ -420,8 +420,8 @@
       "enName": "Pencil",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/pensil.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/pensil.mp3",
+      "enSoundPath": "assets/sound/en/pencil.mp3"
     },
     {
       "id": "c48",
@@ -429,15 +429,15 @@
       "enName": "Frog",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/kodok.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kodok.mp3",
+      "enSoundPath": "assets/sound/en/frog.mp3"
     },
     {
       "id": "c49",
       "name": "Lampu",
       "enName": "Lamp",
       "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/lemari-1.png",
+      "imagePath": "assets/images/img_asset/lampu.png",
       "soundPath": "assets/sound/id/Lampu.m4a",
       "enSoundPath": "assets/sound/en/Lamp.m4a"
     },
@@ -447,8 +447,8 @@
       "enName": "Wardrobe",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/lemari.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/lemari.mp3",
+      "enSoundPath": "assets/sound/en/wardrop.mp3"
     },
     {
       "id": "c51",
@@ -456,8 +456,8 @@
       "enName": "Watch",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/jam tangan.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/jam tangan.mp3",
+      "enSoundPath": "assets/sound/en/watch.mp3"
     },
     {
       "id": "c52",
@@ -465,8 +465,8 @@
       "enName": "Snake",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/ular.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/ular.mp3",
+      "enSoundPath": "assets/sound/en/snake.mp3"
     },
     {
       "id": "c53",
@@ -474,8 +474,8 @@
       "enName": "Giraffe",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/jerapah.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/jerapah.mp3",
+      "enSoundPath": "assets/sound/en/giraffe.mp3"
     },
     {
       "id": "c54",
@@ -483,7 +483,7 @@
       "enName": "Shoes Shelf",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/rak sepatu.png",
-      "soundPath": "",
+      "soundPath": "assets/sound/id/rak sepatu.mp3",
       "enSoundPath": ""
     },
     {
@@ -492,8 +492,8 @@
       "enName": "Trolley",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/troli.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/troli.mp3",
+      "enSoundPath": "assets/sound/en/trolley.mp3"
     },
     {
       "id": "c56",
@@ -501,8 +501,8 @@
       "enName": "Ballon",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/balon.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/balon.mp3",
+      "enSoundPath": "assets/sound/en/ballon.mp3"
     },
     {
       "id": "c57",
@@ -510,8 +510,8 @@
       "enName": "Swing",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/ayunan.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/ayunan.mp3",
+      "enSoundPath": "assets/sound/en/swing.mp3"
     },
     {
       "id": "c58",
@@ -519,8 +519,8 @@
       "enName": "Bus",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/bis.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/bis.mp3",
+      "enSoundPath": "assets/sound/en/bus.mp3"
     },
     {
       "id": "c59",
@@ -528,8 +528,8 @@
       "enName": "Dipper",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/gayung.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/gayung.mp3",
+      "enSoundPath": "assets/sound/en/dipper.mp3"
     },
     {
       "id": "c60",
@@ -537,8 +537,8 @@
       "enName": "Helicopter",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/helikopter.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/helikopter.mp3",
+      "enSoundPath": "assets/sound/en/helicopter.mp3"
     },
     {
       "id": "c61",
@@ -546,8 +546,8 @@
       "enName": "Horse",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/kuda.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kuda.mp3",
+      "enSoundPath": "assets/sound/en/horse.mp3"
     },
     {
       "id": "c62",
@@ -555,8 +555,8 @@
       "enName": "Clock",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/jam dinding.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/jam dinding.mp3",
+      "enSoundPath": "assets/sound/en/clock.mp3"
     },
     {
       "id": "c63",
@@ -564,17 +564,17 @@
       "enName": "French Fries",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kentang goreng.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kentang goreng.mp3",
+      "enSoundPath": "assets/sound/en/french fries.mp3"
     },
     {
       "id": "c64",
       "name": "Minum",
       "enName": "Drink",
       "categoryId": "cat1",
-      "imagePath": "assets/images/img_asset/minum-1.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "imagePath": "assets/images/img_asset/minum.png",
+      "soundPath": "assets/sound/id/minum.mp3",
+      "enSoundPath": "assets/sound/en/shoes shelf.mp3"
     },
     {
       "id": "c65",
@@ -582,8 +582,8 @@
       "enName": "Drawer",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/laci.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/laci.mp3",
+      "enSoundPath": "assets/sound/en/drawer.mp3"
     },
     {
       "id": "c66",
@@ -591,8 +591,8 @@
       "enName": "Biscuit",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/biskuit.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/biskuit.mp3",
+      "enSoundPath": "assets/sound/en/biscuit.mp3"
     },
     {
       "id": "c67",
@@ -600,8 +600,8 @@
       "enName": "Chocolate",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/coklat.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/coklat.mp3",
+      "enSoundPath": "assets/sound/en/chocolate.mp3"
     },
     {
       "id": "c68",
@@ -609,8 +609,8 @@
       "enName": "Milk",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/susu.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/susu.mp3",
+      "enSoundPath": "assets/sound/en/milk.mp3"
     },
     {
       "id": "c69",
@@ -618,8 +618,8 @@
       "enName": "Bubbles",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/bubbles.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/bubbles indo.mp3",
+      "enSoundPath": "assets/sound/en/bubbles.mp3"
     },
     {
       "id": "c70",
@@ -627,8 +627,8 @@
       "enName": "Cake",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/kue-1.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kue.mp3",
+      "enSoundPath": "assets/sound/en/cake.mp3"
     },
     {
       "id": "c71",
@@ -636,8 +636,8 @@
       "enName": "Candy",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/permen.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/permen.mp3",
+      "enSoundPath": "assets/sound/en/candy.mp3"
     },
     {
       "id": "c72",
@@ -645,8 +645,8 @@
       "enName": "Puzzle",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/puzzle.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/puzzle indo.mp3",
+      "enSoundPath": "assets/sound/en/puzzle.mp3"
     },
     {
       "id": "c73",
@@ -654,8 +654,8 @@
       "enName": "Orange",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/jeruk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/jeruk.mp3",
+      "enSoundPath": "assets/sound/en/orange.mp3"
     },
     {
       "id": "c74",
@@ -663,8 +663,8 @@
       "enName": "Money",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/uang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/uang.mp3",
+      "enSoundPath": "assets/sound/en/money.mp3"
     },
     {
       "id": "c75",
@@ -672,8 +672,8 @@
       "enName": "Cake",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/kue.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kue.mp3",
+      "enSoundPath": "assets/sound/en/cake.mp3"
     },
     {
       "id": "c76",
@@ -681,8 +681,8 @@
       "enName": "Clothes Peg",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/jepit jemuran.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/jepit jemuran.mp3",
+      "enSoundPath": "assets/sound/en/clothes peg.mp3"
     },
     {
       "id": "c77",
@@ -690,8 +690,8 @@
       "enName": "Grape",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/anggur.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/anggur.mp3",
+      "enSoundPath": "assets/sound/en/grape.mp3"
     },
     {
       "id": "c78",
@@ -699,8 +699,8 @@
       "enName": "Faucet",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/keran air.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/keran air.mp3",
+      "enSoundPath": "assets/sound/en/faucet.mp3"
     },
     {
       "id": "c79",
@@ -708,7 +708,7 @@
       "enName": "Cow",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/sapi.png",
-      "soundPath": "",
+      "soundPath": "assets/sound/id/sapi.mp3",
       "enSoundPath": ""
     },
     {
@@ -717,8 +717,8 @@
       "enName": "Watermelon",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/semangka.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/semangka.mp3",
+      "enSoundPath": "assets/sound/en/cow.mp3"
     },
     {
       "id": "c81",
@@ -726,16 +726,16 @@
       "enName": "Crayon",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/crayon.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/crayon indo.mp3",
+      "enSoundPath": "assets/sound/en/crayon.mp3"
     },
     {
       "id": "c82",
       "name": "Cacing",
-      "enName": "Warm",
+      "enName": "Worm",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/cacing.png",
-      "soundPath": "",
+      "soundPath": "assets/sound/id/cacing.mp3",
       "enSoundPath": ""
     },
     {
@@ -744,8 +744,8 @@
       "enName": "Rabit",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/kelinci.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kelinci.mp3",
+      "enSoundPath": "assets/sound/en/worm.mp3"
     },
     {
       "id": "c84",
@@ -753,8 +753,8 @@
       "enName": "Maraca",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/maraca.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/maraca indo.mp3",
+      "enSoundPath": "assets/sound/en/maraca.mp3"
     },
     {
       "id": "c85",
@@ -762,8 +762,8 @@
       "enName": "Pizza",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/pizza.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/pizza indo.mp3",
+      "enSoundPath": "assets/sound/en/pizza.mp3"
     },
     {
       "id": "c86",
@@ -771,8 +771,8 @@
       "enName": "Short Pants",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/celana pendek.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/celana pendek.mp3",
+      "enSoundPath": "assets/sound/en/shortpant.mp3"
     },
     {
       "id": "c87",
@@ -780,8 +780,8 @@
       "enName": "Fan",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kipas.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kipas.mp3",
+      "enSoundPath": "assets/sound/en/fan.mp3"
     },
     {
       "id": "c88",
@@ -789,8 +789,8 @@
       "enName": "Fork",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/garpu.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/garpu.mp3",
+      "enSoundPath": "assets/sound/en/fork.mp3"
     },
     {
       "id": "c89",
@@ -798,8 +798,8 @@
       "enName": "Scissor",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/gunting.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/gunting.mp3",
+      "enSoundPath": "assets/sound/en/scissor.mp3"
     },
     {
       "id": "c90",
@@ -807,8 +807,8 @@
       "enName": "Pen",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/pen.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/pulpen.mp3",
+      "enSoundPath": "assets/sound/en/pen.mp3"
     },
     {
       "id": "c91",
@@ -816,8 +816,8 @@
       "enName": "HP",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/hp.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/hp.mp3",
+      "enSoundPath": "assets/sound/en/handphone.mp3"
     },
     {
       "id": "c92",
@@ -825,8 +825,8 @@
       "enName": "Pillow",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/bantal.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/bantal.mp3",
+      "enSoundPath": "assets/sound/en/pillow.mp3"
     },
     {
       "id": "c93",
@@ -834,8 +834,8 @@
       "enName": "Block",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/balok.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/balok.mp3",
+      "enSoundPath": "assets/sound/en/block.mp3"
     },
     {
       "id": "c94",
@@ -843,8 +843,8 @@
       "enName": "Star",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/bintang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/bintang.mp3",
+      "enSoundPath": "assets/sound/en/star.mp3"
     },
     {
       "id": "c95",
@@ -852,8 +852,8 @@
       "enName": "Bucket",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/ember.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/ember.mp3",
+      "enSoundPath": "assets/sound/en/bucket.mp3"
     },
     {
       "id": "c96",
@@ -861,8 +861,8 @@
       "enName": "Water Hose",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/selang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/selang.mp3",
+      "enSoundPath": "assets/sound/en/water hose.mp3"
     },
     {
       "id": "c97",
@@ -870,8 +870,8 @@
       "enName": "Bag Pack",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/ransel.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/ransel.mp3",
+      "enSoundPath": "assets/sound/en/bag pack.mp3"
     },
     {
       "id": "c98",
@@ -879,8 +879,8 @@
       "enName": "Computer",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/komputer.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/komputer.mp3",
+      "enSoundPath": "assets/sound/en/computer.mp3"
     },
     {
       "id": "c99",
@@ -888,8 +888,8 @@
       "enName": "Hanger",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/gantungan baju.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/gantungan baju.mp3",
+      "enSoundPath": "assets/sound/en/hanger.mp3"
     },
     {
       "id": "c100",
@@ -897,8 +897,8 @@
       "enName": "Stove",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kompor.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kompor.mp3",
+      "enSoundPath": "assets/sound/en/stove.mp3"
     },
     {
       "id": "c101",
@@ -906,8 +906,8 @@
       "enName": "Strawberry",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/stroberi.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/stroberi.mp3",
+      "enSoundPath": "assets/sound/en/strawberry.mp3"
     },
     {
       "id": "c102",
@@ -915,8 +915,8 @@
       "enName": "Stair",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/tangga.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tangga.mp3",
+      "enSoundPath": "assets/sound/en/stair.mp3"
     },
     {
       "id": "c103",
@@ -924,8 +924,8 @@
       "enName": "Tissue",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/tissue.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tissu.mp3",
+      "enSoundPath": "assets/sound/en/tissue.mp3"
     },
     {
       "id": "c104",
@@ -933,8 +933,8 @@
       "enName": "Tshirt",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/t shirt.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kaos.mp3",
+      "enSoundPath": "assets/sound/en/tshirt.mp3"
     },
     {
       "id": "c105",
@@ -942,8 +942,8 @@
       "enName": "Playdough",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/playdough.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/playdough indo.mp3",
+      "enSoundPath": "assets/sound/en/playdough.mp3"
     },
     {
       "id": "c106",
@@ -951,8 +951,8 @@
       "enName": "Rice",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/nasi.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/nasi.mp3",
+      "enSoundPath": "assets/sound/en/rice.mp3"
     },
     {
       "id": "c107",
@@ -960,8 +960,8 @@
       "enName": "Fried Chicken",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/ayam copy.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Ayam.m4a",
+      "enSoundPath": "assets/sound/en/Fried Chicken.mp3"
     },
     {
       "id": "c108",
@@ -969,8 +969,8 @@
       "enName": "Shirt",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kemeja.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kemeja.mp3",
+      "enSoundPath": "assets/sound/en/shirt.mp3"
     },
     {
       "id": "c109",
@@ -978,8 +978,8 @@
       "enName": "Slide",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/perosotan.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/prosotan.mp3",
+      "enSoundPath": "assets/sound/en/slide.mp3"
     },
     {
       "id": "c110",
@@ -987,8 +987,8 @@
       "enName": "Peace",
       "categoryId": "cat1",
       "imagePath": "assets/images/img_asset/peace.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/peace indo.mp3",
+      "enSoundPath": "assets/sound/en/peace.mp3"
     },
     {
       "id": "c111",
@@ -996,8 +996,8 @@
       "enName": "Pants",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/celana panjang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/celana panjang.mp3",
+      "enSoundPath": "assets/sound/en/Pants.mp3"
     },
     {
       "id": "c112",
@@ -1005,8 +1005,8 @@
       "enName": "Noodle",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/mie.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/mie.mp3",
+      "enSoundPath": "assets/sound/en/noodle.mp3"
     },
     {
       "id": "c113",
@@ -1014,8 +1014,8 @@
       "enName": "Thumb",
       "categoryId": "cat1",
       "imagePath": "assets/images/img_asset/ibu jari.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/ibu jari.mp3",
+      "enSoundPath": "assets/sound/en/thumb.mp3"
     },
     {
       "id": "c114",
@@ -1023,8 +1023,8 @@
       "enName": "Bed",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/tempat tidur.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tempat tidur.mp3",
+      "enSoundPath": "assets/sound/en/bed.mp3"
     },
     {
       "id": "c115",
@@ -1032,8 +1032,8 @@
       "enName": "Point",
       "categoryId": "cat1",
       "imagePath": "assets/images/img_asset/telunjuk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/telunjuk.mp3",
+      "enSoundPath": "assets/sound/en/point.mp3"
     },
     {
       "id": "c116",
@@ -1041,8 +1041,8 @@
       "enName": "Tree",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/pohon.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/pohon.mp3",
+      "enSoundPath": "assets/sound/en/tree.mp3"
     },
     {
       "id": "c117",
@@ -1050,34 +1050,34 @@
       "enName": "Ant",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/semut.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/semut.mp3",
+      "enSoundPath": "assets/sound/en/ant.mp3"
     },
     {
       "id": "c118",
       "name": "Pisau",
       "enName": "Knife",
       "categoryId": "cat3",
-      "imagePath": "",
-      "soundPath": "",
-      "enSoundPath": ""
+      "imagePath": "assets/images/img_asset/pisau.png",
+      "soundPath": "assets/sound/id/pisau.mp3",
+      "enSoundPath": "assets/sound/en/knife.mp3"
     },
     {
       "id": "c119",
       "name": "Jungkat Jungkit",
       "enName": "See Saw",
       "categoryId": "cat3",
-      "imagePath": "",
-      "soundPath": "",
-      "enSoundPath": ""
+      "imagePath": "assets/images/img_asset/jungkat jungkit.png",
+      "soundPath": "assets/sound/id/jukngkat jungkit.mp3",
+      "enSoundPath": "assets/sound/en/see saw.mp3"
     },
     {
       "id": "c120",
       "name": "Closet",
       "enName": "Closet",
       "categoryId": "cat3",
-      "imagePath": "",
-      "soundPath": "",
+      "imagePath": "assets/images/img_asset/closet.png",
+      "soundPath": "assets/sound/id/closet indo.mp3",
       "enSoundPath": ""
     },
     {
@@ -1085,9 +1085,9 @@
       "name": "Celana Pendek",
       "enName": "Shortpant",
       "categoryId": "cat3",
-      "imagePath": "celana pendek-2.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "imagePath": "assets/images/img_asset/celana pendek copy.png",
+      "soundPath": "assets/sound/id/celana pendek.mp3",
+      "enSoundPath": "assets/sound/en/closet.mp3"
     },
     {
       "id": "c121",
@@ -1095,8 +1095,8 @@
       "enName": "Bra",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/bra.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/bra indo.mp3",
+      "enSoundPath": "assets/sound/en/bra.mp3"
     },
     {
       "id": "c122",
@@ -1104,8 +1104,8 @@
       "enName": "Shaver",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/alat cukur.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/alat cukur.mp3",
+      "enSoundPath": "assets/sound/en/shiver.mp3"
     },
     {
       "id": "c123",
@@ -1113,8 +1113,8 @@
       "enName": "Jacket",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/jacket.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/jaket.mp3",
+      "enSoundPath": "assets/sound/en/jacket.mp3"
     },
     {
       "id": "c124",
@@ -1122,8 +1122,8 @@
       "enName": "Switch",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/saklar lampu.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/saklar lampu.mp3",
+      "enSoundPath": "assets/sound/en/switch.mp3"
     },
     {
       "id": "c125",
@@ -1131,8 +1131,8 @@
       "enName": "Shoes",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sepatu copy.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Sepatu.m4a",
+      "enSoundPath": "assets/sound/en/shoes.mp3"
     },
     {
       "id": "c126",
@@ -1140,8 +1140,8 @@
       "enName": "Soap",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sabun cair.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/sabun cair.mp3",
+      "enSoundPath": "assets/sound/en/soup.mp3"
     },
     {
       "id": "c127",
@@ -1149,8 +1149,8 @@
       "enName": "Underware",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/celana dalam.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/celana dalam.mp3",
+      "enSoundPath": "assets/sound/en/underware.mp3"
     },
     {
       "id": "c128",
@@ -1158,8 +1158,8 @@
       "enName": "Ring",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/cincin.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/cincin.mp3",
+      "enSoundPath": "assets/sound/en/ring.mp3"
     },
     {
       "id": "c129",
@@ -1167,8 +1167,8 @@
       "enName": "Medicine",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/obat.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/obat.mp3",
+      "enSoundPath": "assets/sound/en/medicine.mp3"
     },
     {
       "id": "c130",
@@ -1176,8 +1176,8 @@
       "enName": "Dress",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/gaun.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/gaun.mp3",
+      "enSoundPath": "assets/sound/en/dress.mp3"
     },
     {
       "id": "c131",
@@ -1185,8 +1185,8 @@
       "enName": "Halte",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/halte.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/halte indo.mp3",
+      "enSoundPath": "assets/sound/en/halte.mp3"
     },
     {
       "id": "c132",
@@ -1194,8 +1194,8 @@
       "enName": "Fire",
       "categoryId": "cat1",
       "imagePath": "assets/images/img_asset/api.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/api.mp3",
+      "enSoundPath": "assets/sound/en/fire.mp3"
     },
     {
       "id": "c133",
@@ -1203,8 +1203,8 @@
       "enName": "Sweater",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sweater.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/sweater indo.mp3",
+      "enSoundPath": "assets/sound/en/sweater.mp3"
     },
     {
       "id": "c134",
@@ -1212,8 +1212,8 @@
       "enName": "Truck",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/truk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/truk.mp3",
+      "enSoundPath": "assets/sound/en/truck.mp3"
     },
     {
       "id": "c135",
@@ -1221,8 +1221,8 @@
       "enName": "TV",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/tv.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tv indo.mp3",
+      "enSoundPath": "assets/sound/en/tv.mp3"
     },
     {
       "id": "c136",
@@ -1230,8 +1230,8 @@
       "enName": "Butterfly",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/kupu-kupu.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kupu-kupu.mp3",
+      "enSoundPath": "assets/sound/en/butterfly.mp3"
     },
     {
       "id": "c137",
@@ -1239,8 +1239,8 @@
       "enName": "Leaf",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/daun.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/daun.mp3",
+      "enSoundPath": "assets/sound/en/leaf.mp3"
     },
     {
       "id": "c138",
@@ -1248,8 +1248,8 @@
       "enName": "Shrimp",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/udang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/udang.mp3",
+      "enSoundPath": "assets/sound/en/shrimp.mp3"
     },
     {
       "id": "c139",
@@ -1257,8 +1257,8 @@
       "enName": "Shower Jet",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/semprotan.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/semprotan.mp3",
+      "enSoundPath": "assets/sound/en/shower jet.mp3"
     },
     {
       "id": "c140",
@@ -1266,8 +1266,8 @@
       "enName": "Cable",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kabel.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kabel.mp3",
+      "enSoundPath": "assets/sound/en/cable.mp3"
     },
     {
       "id": "c141",
@@ -1275,8 +1275,8 @@
       "enName": "Powder",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/bedak.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/bedak.mp3",
+      "enSoundPath": "assets/sound/en/powder.mp3"
     },
     {
       "id": "c142",
@@ -1284,8 +1284,8 @@
       "enName": "SunScreen",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sun screen.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/sunscreen indo.mp3",
+      "enSoundPath": "assets/sound/en/sunscreen.mp3"
     },
     {
       "id": "c143",
@@ -1293,8 +1293,8 @@
       "enName": "Fridge",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kulkas.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kulkas.mp3",
+      "enSoundPath": "assets/sound/en/fridge.mp3"
     },
     {
       "id": "c144",
@@ -1302,8 +1302,8 @@
       "enName": "CCTV",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/cctv.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/cctv.mp3",
+      "enSoundPath": "assets/sound/en/cctv.mp3"
     },
     {
       "id": "c145",
@@ -1311,8 +1311,8 @@
       "enName": "Shower",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sweater.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/sweater indo.mp3",
+      "enSoundPath": "assets/sound/en/shower.mp3"
     },
     {
       "id": "c146",
@@ -1320,8 +1320,8 @@
       "enName": "Sandal",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sendal copy.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/Sendal.m4a",
+      "enSoundPath": "assets/sound/en/sandal.mp3"
     },
     {
       "id": "c147",
@@ -1329,8 +1329,8 @@
       "enName": "Mouse",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/tikus.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tikus.mp3",
+      "enSoundPath": "assets/sound/en/mouse.mp3"
     },
     {
       "id": "c148",
@@ -1338,8 +1338,8 @@
       "enName": "Boat",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/perahu.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/perahu.mp3",
+      "enSoundPath": "assets/sound/en/boat.mp3"
     },
     {
       "id": "c149",
@@ -1347,8 +1347,8 @@
       "enName": "Train",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kereta api.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kereta api.mp3",
+      "enSoundPath": "assets/sound/en/train.mp3"
     },
     {
       "id": "c150",
@@ -1356,8 +1356,8 @@
       "enName": "Gift",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/hadiah.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/hadiah.mp3",
+      "enSoundPath": "assets/sound/en/gift.mp3"
     },
     {
       "id": "c151",
@@ -1365,8 +1365,8 @@
       "enName": "Wallet",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/dompet.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/dompet.mp3",
+      "enSoundPath": "assets/sound/en/wallet.mp3"
     },
     {
       "id": "c152",
@@ -1374,8 +1374,8 @@
       "enName": "Lipstick",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/lipstik.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/lipstik.mp3",
+      "enSoundPath": "assets/sound/en/lipstick.mp3"
     },
     {
       "id": "c153",
@@ -1383,8 +1383,8 @@
       "enName": "Camera",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kamera.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kamera.mp3",
+      "enSoundPath": "assets/sound/en/camera.mp3"
     },
     {
       "id": "c154",
@@ -1392,8 +1392,8 @@
       "enName": "Ruler",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/penggaris.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/penggaris.mp3",
+      "enSoundPath": "assets/sound/en/ruler.mp3"
     },
     {
       "id": "c155",
@@ -1401,8 +1401,8 @@
       "enName": "Durian",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/durian.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/durian.mp3",
+      "enSoundPath": "assets/sound/en/durian.mp3"
     },
     {
       "id": "c156",
@@ -1410,8 +1410,8 @@
       "enName": "Papaya",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/pepaya.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/pepaya.mp3",
+      "enSoundPath": "assets/sound/en/papaya.mp3"
     },
     {
       "id": "c157",
@@ -1419,8 +1419,8 @@
       "enName": "Soup",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sup.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/sup.mp3",
+      "enSoundPath": "assets/sound/en/soup.mp3"
     },
     {
       "id": "c158",
@@ -1428,8 +1428,8 @@
       "enName": "Washing Mechine",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/mesin cuci.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/mesin cuci.mp3",
+      "enSoundPath": "assets/sound/en/washing mechine.mp3"
     },
     {
       "id": "c159",
@@ -1437,8 +1437,8 @@
       "enName": "Hanger",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/gantungan baju-1.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/gantungan baju.mp3",
+      "enSoundPath": "assets/sound/en/hanger.mp3"
     },
     {
       "id": "c160",
@@ -1446,8 +1446,8 @@
       "enName": "Key",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kunci.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/kunci.mp3",
+      "enSoundPath": "assets/sound/en/key.mp3"
     },
     {
       "id": "c161",
@@ -1455,8 +1455,8 @@
       "enName": "Remote",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/remote.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/remot.mp3",
+      "enSoundPath": "assets/sound/en/remote.mp3"
     },
     {
       "id": "c162",
@@ -1464,8 +1464,8 @@
       "enName": "Hands on Hip",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tangan dipinggang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tangan dipinggang.mp3",
+      "enSoundPath": "assets/sound/en/hand on hip.mp3"
     },
     {
       "id": "c163",
@@ -1473,8 +1473,8 @@
       "enName": "Swin",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/berenang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/berenang.mp3",
+      "enSoundPath": "assets/sound/en/swim.mp3"
     },
     {
       "id": "c164",
@@ -1482,8 +1482,8 @@
       "enName": "Write",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menulis.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menulis.mp3",
+      "enSoundPath": "assets/sound/en/write.mp3"
     },
     {
       "id": "c165",
@@ -1491,8 +1491,8 @@
       "enName": "Drink",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/minum.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/minum.mp3",
+      "enSoundPath": "assets/sound/en/drink.mp3"
     },
     {
       "id": "c166",
@@ -1500,8 +1500,8 @@
       "enName": "Walk",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/jalan.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/jalan.mp3",
+      "enSoundPath": "assets/sound/en/walk.mp3"
     },
     {
       "id": "c167",
@@ -1509,8 +1509,8 @@
       "enName": "Cook",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/memasak.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/memasak.mp3",
+      "enSoundPath": "assets/sound/en/cook.mp3"
     },
     {
       "id": "c168",
@@ -1519,7 +1519,7 @@
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/bediri.png",
       "soundPath": "",
-      "enSoundPath": ""
+      "enSoundPath": "assets/sound/en/stand up.mp3"
     },
     {
       "id": "c169",
@@ -1527,8 +1527,8 @@
       "enName": "Going Up",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/naik.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/berdiri.mp3",
+      "enSoundPath": "assets/sound/en/going up.mp3"
     },
     {
       "id": "c170",
@@ -1536,8 +1536,8 @@
       "enName": "Biking",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/bersepeda.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/bersepeda.mp3",
+      "enSoundPath": "assets/sound/en/biking.mp3"
     },
     {
       "id": "c171",
@@ -1545,8 +1545,8 @@
       "enName": "Read",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/membaca.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/membaca.mp3",
+      "enSoundPath": "assets/sound/en/read.mp3"
     },
     {
       "id": "c172",
@@ -1554,8 +1554,8 @@
       "enName": "Brushing Teeth",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menyikat gigi.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menyikat gigi.mp3",
+      "enSoundPath": "assets/sound/en/brushing teeth.mp3"
     },
     {
       "id": "c173",
@@ -1563,8 +1563,8 @@
       "enName": "Jump",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/lompat.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/lompat.mp3",
+      "enSoundPath": "assets/sound/en/jump.mp3"
     },
     {
       "id": "c174",
@@ -1572,8 +1572,8 @@
       "enName": "Combing",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menyisir.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menyisir.mp3",
+      "enSoundPath": "assets/sound/en/combing.mp3"
     },
     {
       "id": "c175",
@@ -1581,8 +1581,8 @@
       "enName": "Sleep",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tidur.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tidur.mp3",
+      "enSoundPath": "assets/sound/en/sleep.mp3"
     },
     {
       "id": "c176",
@@ -1590,8 +1590,8 @@
       "enName": "Sit",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/duduk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/duduk.mp3",
+      "enSoundPath": "assets/sound/en/sit.mp3"
     },
     {
       "id": "c177",
@@ -1599,8 +1599,8 @@
       "enName": "Showering",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/mandi.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/mandi.mp3",
+      "enSoundPath": "assets/sound/en/showering.mp3"
     },
     {
       "id": "c178",
@@ -1608,8 +1608,8 @@
       "enName": "Throw to Bin",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/buang sampah.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/buang sampah.mp3",
+      "enSoundPath": "assets/sound/en/throw to bin.mp3"
     },
     {
       "id": "c179",
@@ -1617,8 +1617,8 @@
       "enName": "Cutting",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menggunting.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menggunting.mp3",
+      "enSoundPath": "assets/sound/en/cutting.mp3"
     },
     {
       "id": "c180",
@@ -1626,8 +1626,8 @@
       "enName": "Wash",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/cebok.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/cebok.mp3",
+      "enSoundPath": "assets/sound/en/wash (cebok).mp3"
     },
     {
       "id": "c181",
@@ -1635,8 +1635,8 @@
       "enName": "Pour",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menuang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menuang.mp3",
+      "enSoundPath": "assets/sound/en/pour.mp3"
     },
     {
       "id": "c182",
@@ -1644,8 +1644,8 @@
       "enName": "Crawl",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/merangkak.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/merangkak.mp3",
+      "enSoundPath": "assets/sound/en/crawl.mp3"
     },
     {
       "id": "c183",
@@ -1653,8 +1653,8 @@
       "enName": "Kick",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menendang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menendang.mp3",
+      "enSoundPath": "assets/sound/en/kick.mp3"
     },
     {
       "id": "c184",
@@ -1662,8 +1662,8 @@
       "enName": "Pray",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/berdoa.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/berdoa.mp3",
+      "enSoundPath": "assets/sound/en/pray.mp3"
     },
     {
       "id": "c185",
@@ -1671,8 +1671,8 @@
       "enName": "Sing",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menyanyi.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menyanyi.mp3",
+      "enSoundPath": "assets/sound/en/sing.mp3"
     },
     {
       "id": "c186",
@@ -1680,8 +1680,8 @@
       "enName": "Cry",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menangis.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menangis.mp3",
+      "enSoundPath": "assets/sound/en/cry.mp3"
     },
     {
       "id": "c187",
@@ -1689,8 +1689,8 @@
       "enName": "Mirroring",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/berkaca.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/berkaca.mp3",
+      "enSoundPath": "assets/sound/en/mirroring.mp3"
     },
     {
       "id": "c188",
@@ -1698,8 +1698,8 @@
       "enName": "Run",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/berlari.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/berlari.mp3",
+      "enSoundPath": "assets/sound/en/run.mp3"
     },
     {
       "id": "c189",
@@ -1707,8 +1707,8 @@
       "enName": "Ironing",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menyetrika.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menyetrika.mp3",
+      "enSoundPath": "assets/sound/en/ironing.mp3"
     },
     {
       "id": "c190",
@@ -1716,8 +1716,8 @@
       "enName": "Drive",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/mengendarai.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/mengendarai.mp3",
+      "enSoundPath": "assets/sound/en/drive.mp3"
     },
     {
       "id": "c191",
@@ -1725,8 +1725,8 @@
       "enName": "Knock",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/mengetuk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/mengetuk.mp3",
+      "enSoundPath": "assets/sound/en/knock.mp3"
     },
     {
       "id": "c192",
@@ -1734,8 +1734,8 @@
       "enName": "Smile",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/senyum.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/senyum.mp3",
+      "enSoundPath": "assets/sound/en/smile.mp3"
     },
     {
       "id": "c193",
@@ -1743,8 +1743,8 @@
       "enName": "Eat",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/makan.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/makan.mp3",
+      "enSoundPath": "assets/sound/en/eat.mp3"
     },
     {
       "id": "c194",
@@ -1752,8 +1752,8 @@
       "enName": "Blow",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/meniup.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/meniup.mp3",
+      "enSoundPath": "assets/sound/en/blow.mp3"
     },
     {
       "id": "c195",
@@ -1761,8 +1761,8 @@
       "enName": "Pull",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tarik.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tarik.mp3",
+      "enSoundPath": "assets/sound/en/pull.mp3"
     },
     {
       "id": "c196",
@@ -1770,8 +1770,8 @@
       "enName": "Mop",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/mengepel.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/mengepel.mp3",
+      "enSoundPath": "assets/sound/en/mop.mp3"
     },
     {
       "id": "c197",
@@ -1779,8 +1779,8 @@
       "enName": "Brooming",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menyapu.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menyapu.mp3",
+      "enSoundPath": "assets/sound/en/brooming.mp3"
     },
     {
       "id": "c198",
@@ -1788,8 +1788,8 @@
       "enName": "Cutting",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/memotong.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/memotong.mp3",
+      "enSoundPath": "assets/sound/en/cutting.mp3"
     },
     {
       "id": "c199",
@@ -1797,17 +1797,17 @@
       "enName": "Push",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/dorong.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/dorong.mp3",
+      "enSoundPath": "assets/sound/en/push.mp3"
     },
     {
       "id": "c200",
       "name": "Main",
-      "enName": "Paly",
+      "enName": "Play",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/main.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/main.mp3",
+      "enSoundPath": "assets/sound/en/play.mp3"
     },
     {
       "id": "c201",
@@ -1815,7 +1815,7 @@
       "enName": "Quite",
       "categoryId": "KATEGORI PUTIH INI",
       "imagePath": "assets/images/img_asset/diam.png",
-      "soundPath": "",
+      "soundPath": "assets/sound/id/diam.mp3",
       "enSoundPath": ""
     },
     {
@@ -1824,8 +1824,8 @@
       "enName": "Shake Hand",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/salaman.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/salaman.mp3",
+      "enSoundPath": "assets/sound/en/shake hand.mp3"
     },
     {
       "id": "c203",
@@ -1833,8 +1833,8 @@
       "enName": "Fell Down",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/jatuh.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/jatuh.mp3",
+      "enSoundPath": "assets/sound/en/fell down.mp3"
     },
     {
       "id": "c204",
@@ -1842,8 +1842,8 @@
       "enName": "Touch",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/pegang.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/pegang.mp3",
+      "enSoundPath": "assets/sound/en/touch.mp3"
     },
     {
       "id": "c205",
@@ -1851,8 +1851,8 @@
       "enName": "Calling",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/menelpon.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menelepon.mp3",
+      "enSoundPath": "assets/sound/en/calling.mp3"
     },
     {
       "id": "c206",
@@ -1860,8 +1860,8 @@
       "enName": "Point to",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tunjuk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tunjuk.mp3",
+      "enSoundPath": "assets/sound/en/point to.mp3"
     },
     {
       "id": "c207",
@@ -1869,8 +1869,8 @@
       "enName": "Clap Hands",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tepuk tangan.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tepuk tangan.mp3",
+      "enSoundPath": "assets/sound/en/clap hands.mp3"
     },
     {
       "id": "c208",
@@ -1878,8 +1878,8 @@
       "enName": "Wash Hands",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/cuci tangan.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/cuci tangan.mp3",
+      "enSoundPath": "assets/sound/en/wash hands.mp3"
     },
     {
       "id": "c209",
@@ -1887,8 +1887,8 @@
       "enName": "Crossleg",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/bersila.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/bersila.mp3",
+      "enSoundPath": "assets/sound/en/crossleg.mp3"
     },
     {
       "id": "c210",
@@ -1896,8 +1896,8 @@
       "enName": "Bye bye",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/dadah.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/dadah.mp3",
+      "enSoundPath": "assets/sound/en/bye bye.mp3"
     },
     {
       "id": "c211",
@@ -1905,8 +1905,8 @@
       "enName": "Stiring",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/mengaduk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/mengaduk.mp3",
+      "enSoundPath": "assets/sound/en/stiring.mp3"
     },
     {
       "id": "c212",
@@ -1915,7 +1915,7 @@
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/pipis.png",
       "soundPath": "",
-      "enSoundPath": ""
+      "enSoundPath": "assets/sound/en/pee.mp3"
     },
     {
       "id": "c213",
@@ -1923,8 +1923,8 @@
       "enName": "Hand to the Air",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tangan ke samping.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tangan ke samping.mp3",
+      "enSoundPath": "assets/sound/en/hand o the air.mp3"
     },
     {
       "id": "c214",
@@ -1932,8 +1932,8 @@
       "enName": "Hands Up",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tangan ke atas.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tangan ke atas.mp3",
+      "enSoundPath": "assets/sound/en/hands up.mp3"
     },
     {
       "id": "c215",
@@ -1941,8 +1941,8 @@
       "enName": "Squat",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/jongkok.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/jongkok.mp3",
+      "enSoundPath": "assets/sound/en/squat.mp3"
     },
     {
       "id": "c216",
@@ -1950,8 +1950,8 @@
       "enName": "Fold Hands",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tangan dilipat.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tangan dilipat.mp3",
+      "enSoundPath": "assets/sound/en/fold hands.mp3"
     },
     {
       "id": "c217",
@@ -1959,8 +1959,8 @@
       "enName": "Yawn",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menguap.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menguap.mp3",
+      "enSoundPath": "assets/sound/en/yawn.mp3"
     },
     {
       "id": "c218",
@@ -1968,8 +1968,8 @@
       "enName": "Poo",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/pup.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/pup.mp3",
+      "enSoundPath": "assets/sound/en/poo.mp3"
     },
     {
       "id": "c219",
@@ -1977,8 +1977,8 @@
       "enName": "Throw",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/lempar.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/lempar.mp3",
+      "enSoundPath": "assets/sound/en/throw.mp3"
     },
     {
       "id": "c220",
@@ -1987,7 +1987,7 @@
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tos.png",
       "soundPath": "",
-      "enSoundPath": ""
+      "enSoundPath": "assets/sound/en/high five.mp3"
     },
     {
       "id": "c221",
@@ -1995,8 +1995,8 @@
       "enName": "Catch",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menangkap.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menangkap.mp3",
+      "enSoundPath": "assets/sound/en/catch.mp3"
     },
     {
       "id": "c222",
@@ -2004,8 +2004,8 @@
       "enName": "Scratch",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menggaruk.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menggaruk.mp3",
+      "enSoundPath": "assets/sound/en/scratch.mp3"
     },
     {
       "id": "c223",
@@ -2013,8 +2013,8 @@
       "enName": "Head Ache",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/sakit kepala.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/sakit kepala.mp3",
+      "enSoundPath": "assets/sound/en/head ache.mp3"
     },
     {
       "id": "c224",
@@ -2022,8 +2022,8 @@
       "enName": "Tummy Ache",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/sakit perut.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/sakit perut.mp3",
+      "enSoundPath": "assets/sound/en/tummy ache.mp3"
     },
     {
       "id": "c225",
@@ -2031,8 +2031,8 @@
       "enName": "Hourse Riding",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/berkuda.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/berkuda.mp3",
+      "enSoundPath": "assets/sound/en/horse riding.mp3"
     },
     {
       "id": "c226",
@@ -2040,8 +2040,8 @@
       "enName": "Drawing",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menggambar.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/menggambar.mp3",
+      "enSoundPath": "assets/sound/en/drawing.mp3"
     },
     {
       "id": "c227",
@@ -2049,8 +2049,8 @@
       "enName": "Typing",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/mengetik.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/mengetik.mp3",
+      "enSoundPath": "assets/sound/en/typing.mp3"
     },
     {
       "id": "c228",
@@ -2058,8 +2058,8 @@
       "enName": "Laugh",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/tertawa.png",
-      "soundPath": "",
-      "enSoundPath": ""
+      "soundPath": "assets/sound/id/tertawa.mp3",
+      "enSoundPath": "assets/sound/en/laugh.mp3"
     }
   ]
 }
