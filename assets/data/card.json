@@ -70,7 +70,7 @@
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/keranjang.png",
       "soundPath": "assets/sound/id/Keranjang.m4a",
-      "enSoundPath": ""
+      "enSoundPath": "assets/sound/en/Basket.mp3"
     },
     {
       "id": "c9",
@@ -156,7 +156,7 @@
     {
       "id": "c18",
       "name": "Kalender",
-      "enName": "Calender",
+      "enName": "Calendar",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/kalender.png",
       "soundPath": "assets/sound/id/Kalender.m4a",
@@ -295,7 +295,7 @@
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/bebek.png",
       "soundPath": "assets/sound/id/Bebek.m4a",
-      "enSoundPath": ""
+      "enSoundPath": "assets/sound/en/duck.mp3"
     },
     {
       "id": "c34",
@@ -304,7 +304,7 @@
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/bunga.png",
       "soundPath": "assets/sound/id/Bunga.m4a",
-      "enSoundPath": "assets/sound/en/duck.mp3"
+      "enSoundPath": "assets/sound/en/flower.mp3"
     },
     {
       "id": "c35",
@@ -354,7 +354,7 @@
     {
       "id": "c40",
       "name": "Nanas",
-      "enName": "Pinale",
+      "enName": "Pineapple",
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/nanas.png",
       "soundPath": "assets/sound/id/nanas.mp3",
@@ -433,15 +433,6 @@
       "enSoundPath": "assets/sound/en/frog.mp3"
     },
     {
-      "id": "c49",
-      "name": "Lampu",
-      "enName": "Lamp",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/lampu.png",
-      "soundPath": "assets/sound/id/Lampu.m4a",
-      "enSoundPath": "assets/sound/en/Lamp.m4a"
-    },
-    {
       "id": "c50",
       "name": "Lemari",
       "enName": "Wardrobe",
@@ -484,7 +475,7 @@
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/rak sepatu.png",
       "soundPath": "assets/sound/id/rak sepatu.mp3",
-      "enSoundPath": ""
+      "enSoundPath": "assets/sound/en/shoes shelf.mp3"
     },
     {
       "id": "c55",
@@ -498,7 +489,7 @@
     {
       "id": "c56",
       "name": "Balon",
-      "enName": "Ballon",
+      "enName": "Balloon",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/balon.png",
       "soundPath": "assets/sound/id/balon.mp3",
@@ -574,7 +565,7 @@
       "categoryId": "cat1",
       "imagePath": "assets/images/img_asset/minum.png",
       "soundPath": "assets/sound/id/minum.mp3",
-      "enSoundPath": "assets/sound/en/shoes shelf.mp3"
+      "enSoundPath": "assets/sound/en/drink.mp3"
     },
     {
       "id": "c65",
@@ -709,7 +700,7 @@
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/sapi.png",
       "soundPath": "assets/sound/id/sapi.mp3",
-      "enSoundPath": ""
+      "enSoundPath": "assets/sound/en/cow.mp3"
     },
     {
       "id": "c80",
@@ -718,7 +709,7 @@
       "categoryId": "cat2",
       "imagePath": "assets/images/img_asset/semangka.png",
       "soundPath": "assets/sound/id/semangka.mp3",
-      "enSoundPath": "assets/sound/en/cow.mp3"
+      "enSoundPath": "assets/sound/en/watermelon.mp3"
     },
     {
       "id": "c81",
@@ -736,16 +727,16 @@
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/cacing.png",
       "soundPath": "assets/sound/id/cacing.mp3",
-      "enSoundPath": ""
+      "enSoundPath": "assets/sound/en/worm.mp3"
     },
     {
       "id": "c83",
       "name": "Kelinci",
-      "enName": "Rabit",
+      "enName": "Rabbit",
       "categoryId": "cat4",
       "imagePath": "assets/images/img_asset/kelinci.png",
       "soundPath": "assets/sound/id/kelinci.mp3",
-      "enSoundPath": "assets/sound/en/worm.mp3"
+      "enSoundPath": "assets/sound/en/rabbit.mp3"
     },
     {
       "id": "c84",
@@ -1078,16 +1069,16 @@
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/closet.png",
       "soundPath": "assets/sound/id/closet indo.mp3",
-      "enSoundPath": ""
+      "enSoundPath": "assets/sound/en/closet.mp3"
     },
     {
-      "id": "c120",
+      "id": "c229",
       "name": "Celana Pendek",
       "enName": "Shortpant",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/celana pendek copy.png",
       "soundPath": "assets/sound/id/celana pendek.mp3",
-      "enSoundPath": "assets/sound/en/closet.mp3"
+      "enSoundPath": "assets/sound/en/shortpant.mp3"
     },
     {
       "id": "c121",
@@ -1124,15 +1115,6 @@
       "imagePath": "assets/images/img_asset/saklar lampu.png",
       "soundPath": "assets/sound/id/saklar lampu.mp3",
       "enSoundPath": "assets/sound/en/switch.mp3"
-    },
-    {
-      "id": "c125",
-      "name": "Sepatu",
-      "enName": "Shoes",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sepatu copy.png",
-      "soundPath": "assets/sound/id/Sepatu.m4a",
-      "enSoundPath": "assets/sound/en/shoes.mp3"
     },
     {
       "id": "c126",
@@ -1199,7 +1181,7 @@
     },
     {
       "id": "c133",
-      "name": "Switer",
+      "name": "Sweater",
       "enName": "Sweater",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/sweater.png",
@@ -1310,8 +1292,8 @@
       "name": "Shower",
       "enName": "Shower",
       "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sweater.png",
-      "soundPath": "assets/sound/id/sweater indo.mp3",
+      "imagePath": "assets/images/img_asset/shower.png",
+      "soundPath": "assets/sound/id/shower indo.mp3",
       "enSoundPath": "assets/sound/en/shower.mp3"
     },
     {
@@ -1425,7 +1407,7 @@
     {
       "id": "c158",
       "name": "Mesin Cuci",
-      "enName": "Washing Mechine",
+      "enName": "Washing Machine",
       "categoryId": "cat3",
       "imagePath": "assets/images/img_asset/mesin cuci.png",
       "soundPath": "assets/sound/id/mesin cuci.mp3",
@@ -1470,7 +1452,7 @@
     {
       "id": "c163",
       "name": "Berenang",
-      "enName": "Swin",
+      "enName": "Swim",
       "categoryId": "cat6",
       "imagePath": "assets/images/img_asset/berenang.png",
       "soundPath": "assets/sound/id/berenang.mp3",
@@ -1518,7 +1500,7 @@
       "enName": "Stand Up",
       "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/bediri.png",
-      "soundPath": "",
+      "soundPath": "assets/sound/id/berdiri.mp3",
       "enSoundPath": "assets/sound/en/stand up.mp3"
     },
     {

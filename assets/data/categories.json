@@ -3,14 +3,14 @@
     "id": "cat1",
     "name": "Kata Benda",
     "enName": "Nouns",
-    "defaultColor": "#FD8448",
+    "defaultColor": "#FFC300",
     "parent_id": null
   },
   {
     "id": "cat2",
     "name": "Makanan",
     "enName": "Foods",
-    "defaultColor": null,
+    "defaultColor": "#FD8448",
     "parent_id": "cat1"
   },
   {
@@ -24,42 +24,42 @@
     "id": "cat4",
     "name": "Hewan",
     "enName": "Animals",
-    "defaultColor": null,
+    "defaultColor": "#2E8B57",
     "parent_id": "cat1"
   },
   {
     "id": "cat5",
     "name": "Kata Kerja",
     "enName": "Verbs",
-    "defaultColor": "#7BCFF6",
+    "defaultColor": "#4DB8FF",
     "parent_id": null
   },
   {
     "id": "cat6",
     "name": "Aktivitas",
     "enName": "Activities",
-    "defaultColor": null,
+    "defaultColor": "#03B5E5",
     "parent_id": "cat5"
   },
   {
     "id": "cat7",
     "name": "Kata Sifat",
     "enName": "Adjectives",
-    "defaultColor": "#4583CF",
+    "defaultColor": "#0A3D91",
     "parent_id": null
   },
   {
     "id": "cat8",
     "name": "Preposisi",
     "enName": "Prepositions",
-    "defaultColor": "#48DA8A",
+    "defaultColor": "#32C96A",
     "parent_id": null
   },
   {
     "id": "cat9",
     "name": "Kata Ganti Orang",
     "enName": "Pronouns",
-    "defaultColor": "#FF5857",
+    "defaultColor": "#FF4A4A",
     "parent_id": null
   },
   {

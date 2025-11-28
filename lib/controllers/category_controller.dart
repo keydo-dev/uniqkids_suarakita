@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:uniqkids_suarakita/models/database.dart';
+import 'package:SuaraKita/models/database.dart';
 import 'package:uuid/uuid.dart';
 import 'package:drift/drift.dart' as drift;
 
@@ -68,6 +68,24 @@ class CategoryController extends GetxController {
   Category? getCategoryById(String id) {
     try {
       return categories.firstWhere((cat) => cat.id == id);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Stream untuk ambil kategori berdasarkan ID
+  Stream<Category?> watchCategoryById(String id) {
+    return (db.select(db.categories)..where((tbl) => tbl.id.equals(id)))
+        .watchSingleOrNull();
+  }
+
+  // Ambil parent kategori
+  Category? getParentCategory(Category category) {
+    if (category.parentId == null) {
+      return null;
+    }
+    try {
+      return categories.firstWhere((cat) => cat.id == category.parentId);
     } catch (e) {
       return null;
     }

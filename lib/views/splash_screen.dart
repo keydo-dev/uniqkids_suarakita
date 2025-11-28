@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:uniqkids_suarakita/const.dart';
+import 'package:SuaraKita/const.dart';
 
-import 'package:uniqkids_suarakita/models/database.dart';
+import 'package:SuaraKita/models/database.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -65,10 +65,10 @@ class _SplashScreenState extends State<SplashScreen>
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset('assets/images/logo.png', width: 70),
-                      const SizedBox(height: 8),
-                      Text(
-                        'app_name'.tr,
+                      Image.asset('assets/images/logo.png', width: 100),
+                      const SizedBox(height: 16),
+                      const Text(
+                        'OurVoice AAC',
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -80,9 +80,8 @@ class _SplashScreenState extends State<SplashScreen>
                 ),
               ),
             ),
-
             Positioned(
-              bottom: 10,
+              bottom: 32,
               child: Column(
                 children: [
                   Text(
@@ -95,7 +94,7 @@ class _SplashScreenState extends State<SplashScreen>
                   ),
                   Image.asset(
                     'assets/images/uniqkids-logo.png',
-                    width: MediaQuery.of(context).size.width * 0.6,
+                    width: MediaQuery.of(context).size.width * 0.3,
                   ),
                 ],
               ),

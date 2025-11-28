@@ -2,12 +2,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:uniqkids_suarakita/bindings/app_bidings.dart';
-import 'package:uniqkids_suarakita/models/database.dart';
-import 'package:uniqkids_suarakita/routes/app_pages.dart';
-import 'package:uniqkids_suarakita/translations/app_translation.dart';
+import 'package:SuaraKita/bindings/app_bidings.dart';
+import 'package:SuaraKita/models/database.dart';
+import 'package:SuaraKita/routes/app_pages.dart';
+import 'package:SuaraKita/translations/app_translation.dart';
 
-import 'package:uniqkids_suarakita/services/audio_services.dart';
+import 'package:SuaraKita/services/audio_services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'SuaraKita AAC',
+      title: 'SuaraKita',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'SF Pro Display',
