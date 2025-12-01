@@ -36,89 +36,64 @@ class _PlayScreenState extends State<PlayScreen> {
   }
 
   Widget _buildSelectedCard(db.Card card, int key) {
-    return ReorderableDragStartListener(
-      index: key,
-      key: ValueKey(key),
-      child: Obx(
-        () => Container(
-          width: 100,
-          margin: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.grey.shade300),
-          ),
-          child: Stack(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (!cardController.isTextMode.value)
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: FutureBuilder<String>(
-                                future: AssetHelper.getImage(card.imagePath),
-                                builder: (context, snapshot) {
-                                  if (snapshot.connectionState ==
-                                      ConnectionState.waiting) {
-                                    return const Center(
-                                      child: CircularProgressIndicator(),
-                                    );
-                                  }
-                                  if (snapshot.hasError ||
-                                      !snapshot.hasData ||
-                                      snapshot.data!.isEmpty) {
-                                    return const Icon(
-                                      Icons.image_not_supported,
-                                      color: Colors.grey,
-                                    );
-                                  }
-                                  final imagePath = snapshot.data!;
-                                  return imagePath.startsWith('assets/')
-                                      ? Image.asset(
-                                          imagePath,
-                                          fit: BoxFit.contain,
-                                        )
-                                      : Image.file(
-                                          File(imagePath),
-                                          fit: BoxFit.contain,
-                                        );
-                                },
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(
-                              4.0,
-                              0,
-                              4.0,
-                              10.0,
-                            ),
-                            child: Text(
-                              langController.currentLanguage.value == 'en'
-                                  ? card.enName ?? card.name
-                                  : card.name,
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                              ),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
+  return ReorderableDragStartListener(
+    index: key,
+    key: ValueKey(key),
+    child: Obx(
+      () => Container(
+        width: 100,
+        margin: const EdgeInsets.all(4),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: Colors.grey.shade300),
+        ),
+        child: Stack(
+          children: [
+            // Main content (image/text)
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (!cardController.isTextMode.value)
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FutureBuilder<String>(
+                        future: AssetHelper.getImage(card.imagePath),
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+                          if (snapshot.hasError ||
+                              !snapshot.hasData ||
+                              snapshot.data!.isEmpty) {
+                            return const Icon(
+                              Icons.image_not_supported,
+                              color: Colors.grey,
+                            );
+                          }
+                          final imagePath = snapshot.data!;
+                          return imagePath.startsWith('assets/')
+                              ? Image.asset(
+                                  imagePath,
+                                  fit: BoxFit.contain,
+                                )
+                              : Image.file(
+                                  File(imagePath),
+                                  fit: BoxFit.contain,
+                                );
+                        },
                       ),
                     ),
-                  if (cardController.isTextMode.value)
-                    Expanded(
-                      child: Center(
+                  ),
+                if (cardController.isTextMode.value)
+                  Expanded(
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
                         child: Text(
                           langController.currentLanguage.value == 'en'
                               ? card.enName ?? card.name
@@ -128,62 +103,85 @@ class _PlayScreenState extends State<PlayScreen> {
                         ),
                       ),
                     ),
-                ],
-              ),
-              // STRIP WARNA KATEGORI
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: StreamBuilder<db.Category?>(
-                  stream: categoryController.watchCategoryById(card.categoryId),
-                  builder: (context, snapshot) {
-                    final category = snapshot.data;
-                              Color color = Colors.grey;
-                              if (category != null) {
-                                if (category.color != null) {
-                                  color = Color(category.color!);
-                                } else {
-                                  final parent = categoryController.getParentCategory(category!);
-                                  if (parent?.color != null) {
-                                    color = Color(parent!.color!);
-                                  }
-                                }
-                              }                    return Container(
-                      height: 8,
-                      decoration: BoxDecoration(
-                        color: color,
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(7),
-                          bottomRight: Radius.circular(7),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-              Positioned(
-                top: 0,
-                right: 0,
-                child: GestureDetector(
-                  onTap: () => cardController.removeCard(card),
-                  child: const CircleAvatar(
-                    radius: 12,
-                    backgroundColor: Colors.red,
-                    child: Icon(Icons.close, color: Colors.white, size: 16),
                   ),
+                // Text label (always show in image mode)
+                if (!cardController.isTextMode.value)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(4.0, 0, 4.0, 18.0), // Extra padding bottom untuk strip
+                    child: Text(
+                      langController.currentLanguage.value == 'en'
+                          ? card.enName ?? card.name
+                          : card.name,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                // Spacer for strip in text mode
+                if (cardController.isTextMode.value)
+                  const SizedBox(height: 8),
+              ],
+            ),
+            
+            // STRIP WARNA KATEGORI - Always at bottom
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: StreamBuilder<db.Category?>(
+                stream: categoryController.watchCategoryById(card.categoryId),
+                builder: (context, snapshot) {
+                  final category = snapshot.data;
+                  Color color = Colors.grey;
+                  if (category != null) {
+                    if (category.color != null) {
+                      color = Color(category.color!);
+                    } else {
+                      final parent = categoryController.getParentCategory(category);
+                      if (parent?.color != null) {
+                        color = Color(parent!.color!);
+                      }
+                    }
+                  }
+                  return Container(
+                    height: 8,
+                    decoration: BoxDecoration(
+                      color: color,
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(7),
+                        bottomRight: Radius.circular(7),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            
+            // Close button
+            Positioned(
+              top: 0,
+              right: 0,
+              child: GestureDetector(
+                onTap: () => cardController.removeCard(card),
+                child: const CircleAvatar(
+                  radius: 12,
+                  backgroundColor: Colors.red,
+                  child: Icon(Icons.close, color: Colors.white, size: 16),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
-  Widget _buildAvailableCard(
-    db.CardWithCategory cardWithCategory,
-  ) {
+  Widget _buildAvailableCard(db.CardWithCategory cardWithCategory) {
     return AvailableCard(
       cardWithCategory: cardWithCategory,
       cardController: cardController,

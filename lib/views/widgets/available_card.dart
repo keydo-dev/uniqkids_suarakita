@@ -77,31 +77,46 @@ class AvailableCard extends StatelessWidget {
                           );
                         }
                         final imagePath = snapshot.data!;
-                                                        return imagePath.startsWith('assets/')
-                                                            ? Image.asset(
-                                                                  imagePath,
-                                                                  fit: BoxFit.contain,
-                                                                )
-                                                            : Image.file(
-                                                                  File(imagePath),
-                                                                  fit: BoxFit.contain,
-                                                                );                      },
+                        return imagePath.startsWith('assets/')
+                            ? Image.asset(imagePath, fit: BoxFit.contain)
+                            : Image.file(File(imagePath), fit: BoxFit.contain);
+                      },
                     ),
                   ),
                 ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Text(
-                  langController.currentLanguage.value == 'en'
-                      ? card.enName ?? card.name
-                      : card.name,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+              
+              if (cardController.isTextMode.value)
+                Expanded(
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        langController.currentLanguage.value == 'en'
+                            ? card.enName ?? card.name
+                            : card.name,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-              // Strip warna kategori
+              
+              if (!cardController.isTextMode.value)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(4.0, 0, 4.0, 0),
+                  child: Text(
+                    langController.currentLanguage.value == 'en'
+                        ? card.enName ?? card.name
+                        : card.name,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              
               Container(
                 height: 8,
                 decoration: BoxDecoration(
