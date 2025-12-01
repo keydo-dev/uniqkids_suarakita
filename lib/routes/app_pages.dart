@@ -1,8 +1,8 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:uniqkids_suarakita/views/edit_screen.dart';
-import 'package:uniqkids_suarakita/views/main_menu_screen.dart';
-import 'package:uniqkids_suarakita/views/play_screen.dart';
-import 'package:uniqkids_suarakita/views/splash_screen.dart';
+import 'package:SuaraKita/views/edit_screen.dart';
+import 'package:SuaraKita/views/main_menu_screen.dart';
+import 'package:SuaraKita/views/play_screen.dart';
+import 'package:SuaraKita/views/splash_screen.dart';
 
 class AppPages {
   static const INITIAL = '/splash';

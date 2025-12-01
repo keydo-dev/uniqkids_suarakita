@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:uniqkids_suarakita/const.dart';
-import 'package:uniqkids_suarakita/controllers/languages_controller.dart';
+import 'package:SuaraKita/const.dart';
+import 'package:SuaraKita/controllers/languages_controller.dart';
 
 import 'package:flutter/services.dart';
 

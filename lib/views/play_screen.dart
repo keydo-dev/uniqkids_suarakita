@@ -1,12 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:uniqkids_suarakita/const.dart';
-import 'package:uniqkids_suarakita/controllers/languages_controller.dart';
+import 'package:SuaraKita/const.dart';
+import 'package:SuaraKita/controllers/languages_controller.dart';
 import '../controllers/card_controller.dart';
 import '../controllers/category_controller.dart';
 import '../services/audio_services.dart';
 import '../models/database.dart' as db;
+import 'package:SuaraKita/views/widgets/available_card.dart';
 import '../utils/asset_helper.dart';
 
 class PlayScreen extends StatefulWidget {
@@ -39,260 +40,137 @@ class _PlayScreenState extends State<PlayScreen> {
       index: key,
       key: ValueKey(key),
       child: Obx(
-            () =>
-            Container(
-              width: 100,
-              margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.grey.shade300),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: Stack(
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      if (!cardController.isTextMode.value)
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: FutureBuilder<String>(
-                                    future: AssetHelper.getImage(card.imagePath),
-                                    builder: (context, snapshot) {
-                                      if (snapshot.connectionState ==
-                                          ConnectionState.waiting) {
-                                        return const Center(
-                                            child: CircularProgressIndicator());
-                                      }
-                                      if (snapshot.hasError ||
-                                          !snapshot.hasData ||
-                                          snapshot.data!.isEmpty) {
-                                        return const Icon(
-                                            Icons.image_not_supported,
-                                            color: Colors.grey);
-                                      }
-                                      final imagePath = snapshot.data!;
-                                      return imagePath.startsWith('assets/')
-                                          ? Image.asset(imagePath,
-                                              key: UniqueKey(),
-                                              fit: BoxFit.contain)
-                                          : Image.file(File(imagePath),
-                                              key: UniqueKey(),
-                                              fit: BoxFit.contain);
-                                    },
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(4.0, 0, 4.0, 10.0),
-                                child: Text(
-                                  langController.currentLanguage.value == 'en'
-                                      ? card.enName ?? card.name
-                                      : card.name,
-                                  textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      if (cardController.isTextMode.value)
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10.0),
-                            child: Center(
-                              child: Text(
-                                langController.currentLanguage.value == 'en'
-                                    ? card.enName ?? card.name
-                                    : card.name,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12),
-                              ),
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: Obx(() {
-                      final category = categoryController.getCategoryById(card.categoryId);
-                      final color = category?.color != null
-                          ? Color(category!.color!)
-                          : Colors.grey;
-                      return Container(
-                        height: 8,
-                        decoration: BoxDecoration(
-                          color: color,
-                          borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(7),
-                            bottomRight: Radius.circular(7),
-                          ),
-                        ),
-                      );
-                    }),
-                  ),
-                  Positioned(
-                    top: 4,
-                    right: 4,
-                    child: GestureDetector(
-                      onTap: () => cardController.removeCard(card),
-                      child: Container(
-                        width: 20,
-                        height: 20,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
-                              blurRadius: 4,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
-                        ),
-                        child: const Icon(
-                          Icons.close,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-      ),
-    );
-  }
-
-  Widget _buildAvailableCard(
-    db.CardWithCategory cardWithCategory,
-    double itemWidth,
-  ) {
-    final card = cardWithCategory.card;
-    return Obx(
-      () => GestureDetector(
-        onTap: () => cardController.toggleCardSelection(card),
-        child: Container(
+        () => Container(
+          width: 100,
+          margin: const EdgeInsets.all(4),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: cardController.selectedCards.contains(card)
-                  ? Colors.green
-                  : Colors.grey.shade300,
-              width: cardController.selectedCards.contains(card) ? 2.0 : 1.0,
-            ),
+            border: Border.all(color: Colors.grey.shade300),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Stack(
             children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (!cardController.isTextMode.value)
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: FutureBuilder<String>(
-                            future: AssetHelper.getImage(card.imagePath),
-                            builder: (context, snapshot) {
-                              if (snapshot.connectionState ==
-                                  ConnectionState.waiting) {
-                                return const Center(
-                                  child: CircularProgressIndicator(),
-                                );
-                              }
-                              if (snapshot.hasError ||
-                                  !snapshot.hasData ||
-                                  snapshot.data!.isEmpty) {
-                                return const Icon(
-                                  Icons.image_not_supported,
-                                  color: Colors.grey,
-                                );
-                              }
-                              final imagePath = snapshot.data!;
-                              return imagePath.startsWith('assets/')
-                                  ? Image.asset(
-                                      imagePath,
-                                      key: UniqueKey(),
-                                      fit: BoxFit.contain,
-                                    )
-                                  : Image.file(
-                                      File(imagePath),
-                                      key: UniqueKey(),
-                                      fit: BoxFit.contain,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (!cardController.isTextMode.value)
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: FutureBuilder<String>(
+                                future: AssetHelper.getImage(card.imagePath),
+                                builder: (context, snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return const Center(
+                                      child: CircularProgressIndicator(),
                                     );
-                            },
-                          ),
-                        ),
-                      ),
-                    if (cardController.isTextMode.value)
-                      Center(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                          child: Text(
-                            langController.currentLanguage.value == 'en'
-                                ? card.enName ?? card.name
-                                : card.name,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
+                                  }
+                                  if (snapshot.hasError ||
+                                      !snapshot.hasData ||
+                                      snapshot.data!.isEmpty) {
+                                    return const Icon(
+                                      Icons.image_not_supported,
+                                      color: Colors.grey,
+                                    );
+                                  }
+                                  final imagePath = snapshot.data!;
+                                  return imagePath.startsWith('assets/')
+                                      ? Image.asset(
+                                          imagePath,
+                                          fit: BoxFit.contain,
+                                        )
+                                      : Image.file(
+                                          File(imagePath),
+                                          fit: BoxFit.contain,
+                                        );
+                                },
+                              ),
                             ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
                           ),
-                        ),
-                      )
-                    else
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                              4.0,
+                              0,
+                              4.0,
+                              10.0,
+                            ),
+                            child: Text(
+                              langController.currentLanguage.value == 'en'
+                                  ? card.enName ?? card.name
+                                  : card.name,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                              ),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  if (cardController.isTextMode.value)
+                    Expanded(
+                      child: Center(
                         child: Text(
                           langController.currentLanguage.value == 'en'
                               ? card.enName ?? card.name
                               : card.name,
                           textAlign: TextAlign.center,
                           style: const TextStyle(fontWeight: FontWeight.bold),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                  ],
+                    ),
+                ],
+              ),
+              // STRIP WARNA KATEGORI
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: StreamBuilder<db.Category?>(
+                  stream: categoryController.watchCategoryById(card.categoryId),
+                  builder: (context, snapshot) {
+                    final category = snapshot.data;
+                              Color color = Colors.grey;
+                              if (category != null) {
+                                if (category.color != null) {
+                                  color = Color(category.color!);
+                                } else {
+                                  final parent = categoryController.getParentCategory(category!);
+                                  if (parent?.color != null) {
+                                    color = Color(parent!.color!);
+                                  }
+                                }
+                              }                    return Container(
+                      height: 8,
+                      decoration: BoxDecoration(
+                        color: color,
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(7),
+                          bottomRight: Radius.circular(7),
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
-              Container(
-                height: 8,
-                decoration: BoxDecoration(
-                  color: cardWithCategory.category?.color != null
-                      ? Color(cardWithCategory.category!.color!)
-                      : Colors.grey,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(7),
-                    bottomRight: Radius.circular(7),
+              Positioned(
+                top: 0,
+                right: 0,
+                child: GestureDetector(
+                  onTap: () => cardController.removeCard(card),
+                  child: const CircleAvatar(
+                    radius: 12,
+                    backgroundColor: Colors.red,
+                    child: Icon(Icons.close, color: Colors.white, size: 16),
                   ),
                 ),
               ),
@@ -300,6 +178,17 @@ class _PlayScreenState extends State<PlayScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildAvailableCard(
+    db.CardWithCategory cardWithCategory,
+  ) {
+    return AvailableCard(
+      cardWithCategory: cardWithCategory,
+      cardController: cardController,
+      categoryController: categoryController,
+      langController: langController,
     );
   }
 
@@ -519,7 +408,6 @@ class _PlayScreenState extends State<PlayScreen> {
                                 final card = cards[cardIndex];
                                 return _buildAvailableCard(
                                   db.CardWithCategory(card, category),
-                                  itemWidth,
                                 );
                               },
                             ),

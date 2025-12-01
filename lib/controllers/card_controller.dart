@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:uniqkids_suarakita/controllers/languages_controller.dart';
-import 'package:uniqkids_suarakita/models/database.dart';
-import 'package:uniqkids_suarakita/services/audio_services.dart';
-import 'package:uniqkids_suarakita/utils/asset_helper.dart';
+import 'package:SuaraKita/controllers/languages_controller.dart';
+import 'package:SuaraKita/models/database.dart';
+import 'package:SuaraKita/services/audio_services.dart';
+import 'package:SuaraKita/utils/asset_helper.dart';
 import 'package:uuid/uuid.dart';
 import 'package:drift/drift.dart' as drift;
 
