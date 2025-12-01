@@ -17,7 +17,7 @@
     "id": "cat3",
     "name": "Benda",
     "enName": "Objects",
-    "defaultColor": "#FFC300",
+    "defaultColor": null,
     "parent_id": "cat1"
   },
   {
@@ -67,6 +67,13 @@
     "name": "Bodypart Warna Bentuk Kata Tanya",
     "enName": "Bodyparts Colors Shapes Questions",
     "defaultColor": "#FFFFFF",
+    "parent_id": null
+  },
+  {
+    "id": "cat11",
+    "name": "Benda Umum",
+    "enName": "General Objects",
+    "defaultColor": "#FFC300",
     "parent_id": null
   }
 ]
