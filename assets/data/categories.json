@@ -64,13 +64,41 @@
   },
   {
     "id": "cat10",
-    "name": "Bodypart Warna Bentuk Kata Tanya",
-    "enName": "Bodyparts Colors Shapes Questions",
+    "name": "Bodypart",
+    "enName": "Bodyparts",
     "defaultColor": "#FFFFFF",
     "parent_id": null
   },
   {
     "id": "cat11",
+    "name": "Warna",
+    "enName": "Colors",
+    "defaultColor": "#FFFFFF",
+    "parent_id": null
+  },
+  {
+    "id": "cat12",
+    "name": "Bentuk",
+    "enName": "Shapes",
+    "defaultColor": "#FFFFFF",
+    "parent_id": null
+  },
+  {
+    "id": "cat13",
+    "name": "Kata Tanya",
+    "enName": "Questions",
+    "defaultColor": "#FFFFFF",
+    "parent_id": null
+  },
+  {
+    "id": "cat14",
+    "name": "Perasaan",
+    "enName": "Feelings",
+    "defaultColor": "#FFFFFF",
+    "parent_id": null
+  },
+  {
+    "id": "cat15",
     "name": "Benda Umum",
     "enName": "General Objects",
     "defaultColor": "#FFC300",
