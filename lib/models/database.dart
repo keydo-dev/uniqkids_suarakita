@@ -31,6 +31,7 @@ class Cards extends Table {
   TextColumn get enSoundPath => text().nullable()();
   DateTimeColumn get createdAt => dateTime()();
   BoolColumn get isAsset => boolean().withDefault(const Constant(true))();
+  IntColumn get usageCount => integer().withDefault(const Constant(0))();
 
   @override
   Set<Column> get primaryKey => {id};
@@ -193,6 +194,17 @@ class AppDatabase extends _$AppDatabase {
       }).toList();
     });
   }
+
+  Stream<List<Card>> watchShortcutCards() {
+  return (select(cards)
+        ..where((tbl) => tbl.usageCount.isBiggerOrEqualValue(10))
+        ..orderBy([
+          (tbl) => OrderingTerm(
+              expression: tbl.usageCount,
+              mode: OrderingMode.desc)
+        ]))
+      .watch();
+}
 
   // Method untuk reset database (untuk testing)
   Future<void> resetDatabase() async {

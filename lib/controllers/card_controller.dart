@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:SuaraKita/controllers/languages_controller.dart';
 import 'package:SuaraKita/models/database.dart';
 import 'package:SuaraKita/services/audio_services.dart';
-import 'package:SuaraKita/utils/asset_helper.dart';
 import 'package:uuid/uuid.dart';
 import 'package:drift/drift.dart' as drift;
 
@@ -97,25 +96,59 @@ class CardController extends GetxController {
 
   // Putar suara dari semua kartu terpilih
   Future<void> playSelectedCards() async {
-    if (selectedCards.isEmpty) return;
+  if (selectedCards.isEmpty) return;
 
-    final resolvedSoundPaths = <String>[];
-    for (final card in selectedCards) {
-      final originalPath = langController.currentLanguage.value == 'en'
-          ? card.enSoundPath
+  try {
+    for (var card in selectedCards) {
+      final langController = Get.find<LanguagesController>();
+      final soundPath = langController.currentLanguage.value == 'en' 
+          ? card.enSoundPath ?? card.soundPath 
           : card.soundPath;
-      final resolvedPath = await AssetHelper.getSound(originalPath);
-      resolvedSoundPaths.add(resolvedPath);
+      
+      if (soundPath != null && soundPath.isNotEmpty) {
+        await _audioService.playMultipleFiles([soundPath]);
+        
+        await Future.delayed(const Duration(milliseconds: 500));
+      }
+      
+      await incrementUsage(card);
     }
-
-    if (resolvedSoundPaths.isNotEmpty) {
-      await _audioService.playMultipleFiles(resolvedSoundPaths);
-    }
+    
+    print('Finished playing ${selectedCards.length} cards');
+  } catch (e) {
+    print('Error playing selected cards: $e');
   }
+}
 
   // Hapus semua kartu yang terpilih
   void clearSelection() {
     selectedCards.clear();
+  }
+
+  // Stream untuk shortcut cards (usageCount >= 10)
+  Stream<List<Card>> watchShortcutCards() {
+    return db.watchShortcutCards();
+  }
+
+  // Increment usage count untuk satu card
+  Future<void> incrementUsage(Card card) async {
+    try {
+      // Ambil current usage count
+      final currentCount = card.usageCount;
+      
+      // Update ke database dengan nilai baru
+      await (db.update(db.cards)
+            ..where((tbl) => tbl.id.equals(card.id)))
+          .write(
+        CardsCompanion(
+          usageCount: drift.Value(currentCount + 1),
+        ),
+      );
+      
+      print('Incremented usage count for ${card.name}: ${currentCount} -> ${currentCount + 1}');
+    } catch (e) {
+      print('Error incrementing usage count for ${card.id}: $e');
+    }
   }
 
   // Stream untuk ambil kartu berdasarkan kategori
