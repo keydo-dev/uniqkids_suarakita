@@ -95,7 +95,7 @@ class _AddVocabularyDialogState extends State<AddVocabularyDialog> {
                   'edit_add_vocabulary_dialog_title'.tr,
                   style: TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.bold,
                     color: Color(0xFF2C3E50),
                   ),
                 ),

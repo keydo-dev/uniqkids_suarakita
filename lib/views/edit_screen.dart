@@ -154,7 +154,7 @@ class EditScreen extends StatelessWidget {
                     icon: const Icon(Icons.add, color: Colors.white),
                     label: Text(
                       'edit_add_category_button'.tr,
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF3E4A59),
@@ -173,7 +173,7 @@ class EditScreen extends StatelessWidget {
                     icon: const Icon(Icons.add, color: Colors.white),
                     label: Text(
                       'edit_add_vocabulary_button'.tr,
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF3E4A59),

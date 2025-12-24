@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:convert';
-import 'dart:math';
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:flutter/services.dart';
@@ -111,7 +110,7 @@ class AppDatabase extends _$AppDatabase {
               name: item['name'],
               enName: Value(item['enName']),
               parentId: Value(item['parent_id']),
-              imagePath: const Value(null),
+              imagePath: Value(item['imagePath']),
               color: Value(resolvedColor),
             ),
           );
