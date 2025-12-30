@@ -5,6 +5,7 @@ import 'package:drift/native.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
+import 'package:uuid/uuid.dart';
 
 part 'database.g.dart';
 
@@ -36,7 +37,20 @@ class Cards extends Table {
   Set<Column> get primaryKey => {id};
 }
 
-@DriftDatabase(tables: [Categories, Cards])
+// ========== TABLE BARU: SHORTCUTS ==========
+class Shortcuts extends Table {
+  TextColumn get id => text()();
+  TextColumn get cardId => text()();  // Reference ke Cards table
+  IntColumn get sortOrder => integer()();  // Urutan tampil
+  BoolColumn get isDefault => boolean().withDefault(const Constant(false))();  // Default atau user-added
+  BoolColumn get isActive => boolean().withDefault(const Constant(true))();  // Aktif atau tidak
+  DateTimeColumn get createdAt => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+@DriftDatabase(tables: [Categories, Cards, Shortcuts])
 class AppDatabase extends _$AppDatabase {
   static final AppDatabase _instance = AppDatabase._internal();
 
@@ -45,7 +59,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase._internal() : super(_openConnection());
 
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;  // Increment version
 
   @override
   MigrationStrategy get migration {
@@ -57,6 +71,10 @@ class AppDatabase extends _$AppDatabase {
         if (from < 3) {
           await m.addColumn(cards, cards.isAsset);
         }
+        if (from < 4) {
+          // Tambah table shortcuts
+          await m.createTable(shortcuts);
+        }
       },
     );
   }
@@ -65,21 +83,11 @@ class AppDatabase extends _$AppDatabase {
     try {
       print('=== INITIALIZE DATA ===');
 
-      // Tidak perlu cek existing data, kita akan insert data dari JSON
-      // hanya jika ID-nya belum ada di database
-
-      // 2. Load categories.json
+      // Load categories.json
       print('Loading categories.json...');
       final categoriesJson = await rootBundle.loadString('assets/data/categories.json');
       final List<dynamic> categoriesData = json.decode(categoriesJson);
       print('Categories loaded: ${categoriesData.length}');
-
-      // Load generated_categories.json and add to the list
-      // print('Loading generated_categories.json...');
-      // final generatedCategoriesJson = await rootBundle.loadString('assets/data/generated_categories.json');
-      // final List<dynamic> generatedCategoriesData = json.decode(generatedCategoriesJson);
-      // categoriesData.addAll(generatedCategoriesData);
-      // print('Total categories after adding generated data: ${categoriesData.length}');
 
       final Map<String, int?> colorCache = {};
 
@@ -121,22 +129,14 @@ class AppDatabase extends _$AppDatabase {
         }
       }
 
-      // 5. Load cards.json
+      // Load cards.json
       print('Loading cards.json...');
       final cardsJson = await rootBundle.loadString('assets/data/card.json');
       final Map<String, dynamic> cardsMap = json.decode(cardsJson);
       final List<dynamic> cardsData = cardsMap['cards'];
       print('Cards loaded: ${cardsData.length}');
 
-      // Load generated_cards.json and add to the list
-      // print('Loading generated_cards.json...');
-      // final generatedCardsJson = await rootBundle.loadString('assets/data/generated_cards.json');
-      // final Map<String, dynamic> generatedCardsMap = json.decode(generatedCardsJson);
-      // final List<dynamic> generatedCardsData = generatedCardsMap['cards'];
-      // cardsData.addAll(generatedCardsData);
-      // print('Total cards after adding generated data: ${cardsData.length}');
-
-      // 6. Insert cards dengan cek duplikat
+      // Insert cards dengan cek duplikat
       for (var card in cardsData) {
         try {
           final existingCard = await (select(cards)
@@ -154,7 +154,7 @@ class AppDatabase extends _$AppDatabase {
                 soundPath: Value(card['soundPath']),
                 enSoundPath: Value(card['enSoundPath']),
                 createdAt: DateTime.now(),
-                isAsset: const Value(true), // Assume true for all JSON data
+                isAsset: const Value(true),
               ),
             );
             print('Inserted card: ${card['name']}');
@@ -166,17 +166,157 @@ class AppDatabase extends _$AppDatabase {
 
       print('=== INITIALIZATION COMPLETE ===');
       
+      // Initialize default shortcuts
+      await initializeDefaultShortcuts();
+      
       // Verifikasi data terinsert
       final finalCategories = await select(categories).get();
       final finalCards = await select(cards).get();
+      final finalShortcuts = await select(shortcuts).get();
       print('Final categories count: ${finalCategories.length}');
       print('Final cards count: ${finalCards.length}');
+      print('Final shortcuts count: ${finalShortcuts.length}');
 
     } catch (e) {
       print('ERROR in initializeData: $e');
       rethrow;
     }
   }
+
+  // ========== SHORTCUT METHODS ==========
+  
+  // Initialize default shortcuts
+  Future<void> initializeDefaultShortcuts() async {
+    print('=== INITIALIZE DEFAULT SHORTCUTS ===');
+    
+    // Check if already initialized
+    final existing = await select(shortcuts).get();
+    if (existing.isNotEmpty) {
+      print('Shortcuts already initialized');
+      return;
+    }
+
+    final defaultShortcutCardIds = [
+      'c193',
+      'c165',
+      'c175',
+      'c215',
+      'c220',
+      'c226',
+    ];
+
+    for (int i = 0; i < defaultShortcutCardIds.length; i++) {
+      try {
+        // Verify card exists
+        final card = await (select(cards)
+          ..where((tbl) => tbl.id.equals(defaultShortcutCardIds[i])))
+          .getSingleOrNull();
+        
+        if (card != null) {
+          await into(shortcuts).insert(
+            ShortcutsCompanion.insert(
+              id: const Uuid().v4(),
+              cardId: defaultShortcutCardIds[i],
+              sortOrder: i,
+              isDefault: const Value(true),
+              isActive: const Value(true),
+              createdAt: DateTime.now(),
+            ),
+          );
+          print('Added default shortcut: ${card.name}');
+        } else {
+          print('Card not found: ${defaultShortcutCardIds[i]}');
+        }
+      } catch (e) {
+        print('Error adding default shortcut: $e');
+      }
+    }
+    
+    print('=== DEFAULT SHORTCUTS INITIALIZED ===');
+  }
+
+  // Stream untuk watch active shortcuts dengan card data
+Stream<List<ShortcutWithCard>> watchActiveShortcuts() {
+  return (select(shortcuts).join([
+    innerJoin(cards, cards.id.equalsExp(shortcuts.cardId)),
+  ])
+  ..where(shortcuts.isActive.equals(true))
+  ..orderBy([OrderingTerm(expression: shortcuts.sortOrder)]))
+  .watch()
+  .map((rows) {
+    return rows.map((row) {
+      final shortcut = row.readTable(shortcuts);
+      final card = row.readTable(cards);
+      return ShortcutWithCard(shortcut, card);
+    }).toList();
+  });
+}
+
+// Get all shortcuts (untuk settings page)
+Future<List<ShortcutWithCard>> getAllShortcuts() async {
+  final rows = await (select(shortcuts).join([
+    innerJoin(cards, cards.id.equalsExp(shortcuts.cardId)),
+  ])
+  ..orderBy([OrderingTerm(expression: shortcuts.sortOrder)]))
+  .get();
+  
+  return rows.map((row) {
+    final shortcut = row.readTable(shortcuts);
+    final card = row.readTable(cards);
+    return ShortcutWithCard(shortcut, card);
+  }).toList();
+}
+
+  // Toggle shortcut active status
+  Future<void> toggleShortcut(String shortcutId, bool isActive) async {
+    await (update(shortcuts)..where((tbl) => tbl.id.equals(shortcutId)))
+      .write(ShortcutsCompanion(isActive: Value(isActive)));
+  }
+
+  // Add new shortcut
+  Future<void> addShortcut(String cardId) async {
+    // Get max sort order
+    final maxOrder = await (selectOnly(shortcuts)
+      ..addColumns([shortcuts.sortOrder.max()]))
+      .getSingleOrNull();
+    
+    final nextOrder = (maxOrder?.read(shortcuts.sortOrder.max()) ?? 0) + 1;
+
+    await into(shortcuts).insert(
+      ShortcutsCompanion.insert(
+        id: const Uuid().v4(),
+        cardId: cardId,
+        sortOrder: nextOrder,
+        isDefault: const Value(false),
+        isActive: const Value(true),
+        createdAt: DateTime.now(),
+      ),
+    );
+  }
+
+  // Remove shortcut (only if not default)
+  Future<bool> removeShortcut(String shortcutId) async {
+    final shortcut = await (select(shortcuts)
+      ..where((tbl) => tbl.id.equals(shortcutId)))
+      .getSingleOrNull();
+    
+    if (shortcut == null || shortcut.isDefault) {
+      return false; // Cannot remove default shortcuts
+    }
+
+    await (delete(shortcuts)..where((tbl) => tbl.id.equals(shortcutId))).go();
+    return true;
+  }
+
+  // Reorder shortcuts
+  Future<void> reorderShortcuts(List<String> shortcutIds) async {
+    for (int i = 0; i < shortcutIds.length; i++) {
+      await (update(shortcuts)..where((tbl) => tbl.id.equals(shortcutIds[i])))
+        .write(ShortcutsCompanion(sortOrder: Value(i)));
+    }
+  }
+
+  // ========== EXISTING METHODS ==========
 
   // STREAM UNTUK RELASI CARD DAN CATEGORY
   Stream<List<CardWithCategory>> watchCardsWithCategories() {
@@ -194,19 +334,9 @@ class AppDatabase extends _$AppDatabase {
     });
   }
 
-  Stream<List<Card>> watchShortcutCards() {
-  return (select(cards)
-        ..where((tbl) => tbl.usageCount.isBiggerOrEqualValue(10))
-        ..orderBy([
-          (tbl) => OrderingTerm(
-              expression: tbl.usageCount,
-              mode: OrderingMode.desc)
-        ]))
-      .watch();
-}
-
   // Method untuk reset database (untuk testing)
   Future<void> resetDatabase() async {
+    await delete(shortcuts).go();  // Tambah ini
     await delete(cards).go();
     await delete(categories).go();
     print('Database reset complete');
@@ -218,6 +348,14 @@ class CardWithCategory {
   final Card card;
   final Category? category;
   CardWithCategory(this.card, this.category);
+}
+
+// MODEL UNTUK SHORTCUT DENGAN CARD DATA
+class ShortcutWithCard {
+  final Shortcut shortcut;
+  final Card card;
+  
+  ShortcutWithCard(this.shortcut, this.card);
 }
 
 // KONEKSI DATABASE

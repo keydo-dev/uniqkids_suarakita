@@ -1,3 +1,4 @@
+import 'package:SuaraKita/controllers/shortcut_controller.dart';
 import 'package:get/get.dart';
 import 'package:SuaraKita/controllers/card_controller.dart';
 import 'package:SuaraKita/controllers/category_controller.dart';
@@ -18,5 +19,7 @@ class AppBindings extends Bindings {
     Get.put<LanguagesController>(LanguagesController(), permanent: true);
     Get.put<CategoryController>(CategoryController(Get.find()), permanent: true);
     Get.put<CardController>(CardController(Get.find()), permanent: true);
+
+    Get.put<ShortcutController>(ShortcutController(Get.find()), permanent: true);
   }
 }

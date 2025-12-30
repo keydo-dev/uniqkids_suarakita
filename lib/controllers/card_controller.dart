@@ -110,8 +110,6 @@ class CardController extends GetxController {
         
         await Future.delayed(const Duration(milliseconds: 500));
       }
-      
-      await incrementUsage(card);
     }
     
     print('Finished playing ${selectedCards.length} cards');
@@ -125,31 +123,6 @@ class CardController extends GetxController {
     selectedCards.clear();
   }
 
-  // Stream untuk shortcut cards (usageCount >= 10)
-  Stream<List<Card>> watchShortcutCards() {
-    return db.watchShortcutCards();
-  }
-
-  // Increment usage count untuk satu card
-  Future<void> incrementUsage(Card card) async {
-    try {
-      // Ambil current usage count
-      final currentCount = card.usageCount;
-      
-      // Update ke database dengan nilai baru
-      await (db.update(db.cards)
-            ..where((tbl) => tbl.id.equals(card.id)))
-          .write(
-        CardsCompanion(
-          usageCount: drift.Value(currentCount + 1),
-        ),
-      );
-      
-      print('Incremented usage count for ${card.name}: ${currentCount} -> ${currentCount + 1}');
-    } catch (e) {
-      print('Error incrementing usage count for ${card.id}: $e');
-    }
-  }
 
   // Stream untuk ambil kartu berdasarkan kategori
   Stream<List<Card>> watchCardsByCategoryId(String categoryId) {

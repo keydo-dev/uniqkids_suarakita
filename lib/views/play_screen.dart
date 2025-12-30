@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'package:SuaraKita/controllers/shortcut_controller.dart';
+import 'package:SuaraKita/views/shortcut_setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:SuaraKita/const.dart';
@@ -359,24 +361,30 @@ class _PlayScreenState extends State<PlayScreen> {
           Expanded(
             child: ListView(
               children: [
-                StreamBuilder<List<db.Card>>(
-                  stream: cardController.watchShortcutCards(),
+                StreamBuilder<List<db.ShortcutWithCard>>(
+                  stream: Get.find<ShortcutController>().watchActiveShortcuts(),
                   builder: (context, shortcutSnapshot) {
                     // Hanya tampilkan jika ada shortcut cards
-                    if (!shortcutSnapshot.hasData || 
+                    if (!shortcutSnapshot.hasData ||
                         shortcutSnapshot.data!.isEmpty) {
                       return const SizedBox.shrink();
                     }
 
-                    final shortcutCards = shortcutSnapshot.data!;
+                    final shortcuts = shortcutSnapshot.data!;
                     const spacing = 8.0;
                     const padding = 8.0;
 
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // Header dengan icon dan settings button
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 8.0),
+                          padding: const EdgeInsets.fromLTRB(
+                            8.0,
+                            16.0,
+                            8.0,
+                            8.0,
+                          ),
                           child: Row(
                             children: [
                               const Icon(
@@ -387,7 +395,7 @@ class _PlayScreenState extends State<PlayScreen> {
                               const SizedBox(width: 8),
                               Text(
                                 langController.currentLanguage.value == 'en'
-                                    ? 'Shortcut'
+                                    ? 'Shortcuts'
                                     : 'Pintasan',
                                 style: const TextStyle(
                                   fontSize: 18,
@@ -396,34 +404,63 @@ class _PlayScreenState extends State<PlayScreen> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                '(${shortcutCards.length})',
+                                '(${shortcuts.length})',
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.grey.shade600,
                                 ),
                               ),
+                              const Spacer(),
+                              // Settings button
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.settings,
+                                  color: Colors.grey,
+                                ),
+                                onPressed: () {
+                                  Get.to(() => const ShortcutSettingsScreen());
+                                },
+                                tooltip:
+                                    langController.currentLanguage.value == 'en'
+                                    ? 'Manage Shortcuts'
+                                    : 'Kelola Pintasan',
+                              ),
                             ],
                           ),
                         ),
-                        
+
+                        // Grid shortcut cards
                         GridView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           padding: const EdgeInsets.all(padding),
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 11,
-                            childAspectRatio: 1,
-                            crossAxisSpacing: spacing,
-                            mainAxisSpacing: spacing,
-                          ),
-                          itemCount: shortcutCards.length,
+                                crossAxisCount: 11,
+                                childAspectRatio: 1,
+                                crossAxisSpacing: spacing,
+                                mainAxisSpacing: spacing,
+                              ),
+                          itemCount: shortcuts.length,
                           itemBuilder: (context, index) {
-                            final card = shortcutCards[index];
-                            return _buildShortcutCard(card);
+                            final shortcutItem = shortcuts[index];
+                            final card = shortcutItem.card;
+
+                            // Get category for the card
+                            return StreamBuilder<db.Category?>(
+                              stream: categoryController.watchCategoryById(
+                                card.categoryId,
+                              ),
+                              builder: (context, categorySnapshot) {
+                                final category = categorySnapshot.data;
+                                return _buildAvailableCard(
+                                  db.CardWithCategory(card, category),
+                                );
+                              },
+                            );
                           },
                         ),
-                        
+
                         const Padding(
                           padding: EdgeInsets.symmetric(vertical: 8.0),
                           child: Divider(thickness: 1),
@@ -504,7 +541,7 @@ class _PlayScreenState extends State<PlayScreen> {
                             );
                           },
                         );
-                      },).toList(),
+                      }).toList(),
                     );
                   },
                 ),
