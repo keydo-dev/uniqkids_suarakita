@@ -145,7 +145,7 @@ class ShortcutSettingsScreen extends StatelessWidget {
                   backgroundColor: btnPrimaryColor,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(30),
                   ),
                 ),
               ),
@@ -249,7 +249,7 @@ class ShortcutSettingsScreen extends StatelessWidget {
               onChanged: (value) {
                 shortcutController.toggleShortcut(shortcut.id, value);
               },
-              activeColor: Colors.green,
+              activeColor: Colors.deepOrangeAccent,
             ),
             const SizedBox(width: 8),
             if (!shortcut.isDefault)
@@ -331,9 +331,10 @@ class ShortcutSettingsScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Container(
-          width: MediaQuery.of(context).size.width * 0.9,
-          height: MediaQuery.of(context).size.height * 0.7,
-          padding: const EdgeInsets.all(16),
+          width: MediaQuery.of(context).size.width * 10,
+          height: MediaQuery.of(context).size.height * 0.8,
+          padding: const EdgeInsets.all(12),
+          color: Color(0xFFEEFEFF),
           child: Column(
             children: [
               Row(
@@ -374,7 +375,7 @@ class ShortcutSettingsScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   filled: true,
-                  fillColor: Colors.grey.shade100,
+                  fillColor: Colors.white,
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 16,
                     vertical: 12,
@@ -532,7 +533,7 @@ class ShortcutSettingsScreen extends StatelessWidget {
                     backgroundColor: btnPrimaryColor,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(30),
                     ),
                   ),
                 ),

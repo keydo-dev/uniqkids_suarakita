@@ -1,12 +1,7 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-import '../utils/asset_helper.dart';
 import '../controllers/category_controller.dart';
 import '../controllers/card_controller.dart';
-import '../controllers/languages_controller.dart';
-import '../services/audio_services.dart';
 import '../models/database.dart' as db;
 import 'package:SuaraKita/views/category_cards_screen.dart';
 import 'package:SuaraKita/views/widgets/add_category_dialog.dart';
@@ -55,6 +50,7 @@ class EditScreen extends StatelessWidget {
         'Pilih minimal satu kategori untuk dihapus',
         backgroundColor: Colors.red[100],
         colorText: Colors.red[900],
+        snackPosition: SnackPosition.TOP
       );
       return;
     }
@@ -89,6 +85,7 @@ class EditScreen extends StatelessWidget {
                 'Kategori berhasil dihapus',
                 backgroundColor: Colors.green[100],
                 colorText: Colors.green[900],
+                snackPosition: SnackPosition.TOP
               );
             },
             style: ElevatedButton.styleFrom(

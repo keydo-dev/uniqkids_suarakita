@@ -1,5 +1,6 @@
 // lib/controllers/shortcut_controller.dart
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:SuaraKita/models/database.dart';
 
@@ -44,14 +45,16 @@ class ShortcutController extends GetxController {
       Get.snackbar(
         'Success',
         isActive ? 'Shortcut activated' : 'Shortcut deactivated',
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.white
       );
     } catch (e) {
       print('Error toggling shortcut: $e');
       Get.snackbar(
         'Error',
         'Failed to toggle shortcut',
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.white
       );
     }
   }
@@ -72,7 +75,8 @@ class ShortcutController extends GetxController {
           Get.snackbar(
             'Info',
             'Card already in shortcuts',
-            snackPosition: SnackPosition.BOTTOM,
+            snackPosition: SnackPosition.TOP,
+            backgroundColor: Colors.white
           );
         }
         return;
@@ -84,14 +88,16 @@ class ShortcutController extends GetxController {
       Get.snackbar(
         'Success',
         'Added to shortcuts',
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.white
       );
     } catch (e) {
       print('Error adding shortcut: $e');
       Get.snackbar(
         'Error',
         'Failed to add shortcut',
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.white
       );
     }
   }
@@ -106,13 +112,15 @@ class ShortcutController extends GetxController {
         Get.snackbar(
           'Success',
           'Shortcut removed',
-          snackPosition: SnackPosition.BOTTOM,
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Colors.white
         );
       } else {
         Get.snackbar(
           'Info',
           'Cannot remove default shortcuts',
-          snackPosition: SnackPosition.BOTTOM,
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Colors.white
         );
       }
     } catch (e) {
@@ -120,7 +128,8 @@ class ShortcutController extends GetxController {
       Get.snackbar(
         'Error',
         'Failed to remove shortcut',
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.white
       );
     }
   }

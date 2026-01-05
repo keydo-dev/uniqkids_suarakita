@@ -1453,7 +1453,7 @@
       "id": "c163",
       "name": "Berenang",
       "enName": "Swim",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/berenang.png",
       "soundPath": "assets/sound/id/berenang.mp3",
       "enSoundPath": "assets/sound/en/swim.mp3"
@@ -1462,7 +1462,7 @@
       "id": "c164",
       "name": "Menulis",
       "enName": "Write",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menulis.png",
       "soundPath": "assets/sound/id/menulis.mp3",
       "enSoundPath": "assets/sound/en/write.mp3"
@@ -1489,7 +1489,7 @@
       "id": "c167",
       "name": "Memasak",
       "enName": "Cook",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/memasak.png",
       "soundPath": "assets/sound/id/memasak.mp3",
       "enSoundPath": "assets/sound/en/cook.mp3"
@@ -1516,7 +1516,7 @@
       "id": "c170",
       "name": "Bersepeda",
       "enName": "Biking",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/bersepeda.png",
       "soundPath": "assets/sound/id/bersepeda.mp3",
       "enSoundPath": "assets/sound/en/biking.mp3"
@@ -1525,7 +1525,7 @@
       "id": "c171",
       "name": "Membaca",
       "enName": "Read",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/membaca.png",
       "soundPath": "assets/sound/id/membaca.mp3",
       "enSoundPath": "assets/sound/en/read.mp3"
@@ -1534,7 +1534,7 @@
       "id": "c172",
       "name": "Menyikat Gigi",
       "enName": "Brushing Teeth",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menyikat gigi.png",
       "soundPath": "assets/sound/id/menyikat gigi.mp3",
       "enSoundPath": "assets/sound/en/brushing teeth.mp3"
@@ -1552,7 +1552,7 @@
       "id": "c174",
       "name": "Menyisir",
       "enName": "Combing",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menyisir.png",
       "soundPath": "assets/sound/id/menyisir.mp3",
       "enSoundPath": "assets/sound/en/combing.mp3"
@@ -1579,7 +1579,7 @@
       "id": "c177",
       "name": "Mandi",
       "enName": "Showering",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/mandi.png",
       "soundPath": "assets/sound/id/mandi.mp3",
       "enSoundPath": "assets/sound/en/showering.mp3"
@@ -1588,7 +1588,7 @@
       "id": "c178",
       "name": "Buang Sampah",
       "enName": "Throw to Bin",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/buang sampah.png",
       "soundPath": "assets/sound/id/buang sampah.mp3",
       "enSoundPath": "assets/sound/en/throw to bin.mp3"
@@ -1597,7 +1597,7 @@
       "id": "c179",
       "name": "Menggunting",
       "enName": "Cutting",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menggunting.png",
       "soundPath": "assets/sound/id/menggunting.mp3",
       "enSoundPath": "assets/sound/en/cutting.mp3"
@@ -1606,7 +1606,7 @@
       "id": "c180",
       "name": "Cebok",
       "enName": "Wash",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/cebok.png",
       "soundPath": "assets/sound/id/cebok.mp3",
       "enSoundPath": "assets/sound/en/wash (cebok).mp3"
@@ -1615,7 +1615,7 @@
       "id": "c181",
       "name": "Menuang",
       "enName": "Pour",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menuang.png",
       "soundPath": "assets/sound/id/menuang.mp3",
       "enSoundPath": "assets/sound/en/pour.mp3"
@@ -1624,7 +1624,7 @@
       "id": "c182",
       "name": "Merangkak",
       "enName": "Crawl",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/merangkak.png",
       "soundPath": "assets/sound/id/merangkak.mp3",
       "enSoundPath": "assets/sound/en/crawl.mp3"
@@ -1633,7 +1633,7 @@
       "id": "c183",
       "name": "Menendang",
       "enName": "Kick",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menendang.png",
       "soundPath": "assets/sound/id/menendang.mp3",
       "enSoundPath": "assets/sound/en/kick.mp3"
@@ -1642,7 +1642,7 @@
       "id": "c184",
       "name": "Berdoa",
       "enName": "Pray",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/berdoa.png",
       "soundPath": "assets/sound/id/berdoa.mp3",
       "enSoundPath": "assets/sound/en/pray.mp3"
@@ -1651,7 +1651,7 @@
       "id": "c185",
       "name": "Menyanyi",
       "enName": "Sing",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menyanyi.png",
       "soundPath": "assets/sound/id/menyanyi.mp3",
       "enSoundPath": "assets/sound/en/sing.mp3"
@@ -1660,7 +1660,7 @@
       "id": "c186",
       "name": "Menangis",
       "enName": "Cry",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menangis.png",
       "soundPath": "assets/sound/id/menangis.mp3",
       "enSoundPath": "assets/sound/en/cry.mp3"
@@ -1669,7 +1669,7 @@
       "id": "c187",
       "name": "Berkaca",
       "enName": "Mirroring",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/berkaca.png",
       "soundPath": "assets/sound/id/berkaca.mp3",
       "enSoundPath": "assets/sound/en/mirroring.mp3"
@@ -1678,7 +1678,7 @@
       "id": "c188",
       "name": "Berlari",
       "enName": "Run",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/berlari.png",
       "soundPath": "assets/sound/id/berlari.mp3",
       "enSoundPath": "assets/sound/en/run.mp3"
@@ -1687,7 +1687,7 @@
       "id": "c189",
       "name": "Menyetrika",
       "enName": "Ironing",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menyetrika.png",
       "soundPath": "assets/sound/id/menyetrika.mp3",
       "enSoundPath": "assets/sound/en/ironing.mp3"
@@ -1696,7 +1696,7 @@
       "id": "c190",
       "name": "Mengendarai",
       "enName": "Drive",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/mengendarai.png",
       "soundPath": "assets/sound/id/mengendarai.mp3",
       "enSoundPath": "assets/sound/en/drive.mp3"
@@ -1705,7 +1705,7 @@
       "id": "c191",
       "name": "Mengetuk",
       "enName": "Knock",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/mengetuk.png",
       "soundPath": "assets/sound/id/mengetuk.mp3",
       "enSoundPath": "assets/sound/en/knock.mp3"
@@ -1723,7 +1723,7 @@
       "id": "c193",
       "name": "Makan",
       "enName": "Eat",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/makan.png",
       "soundPath": "assets/sound/id/makan.mp3",
       "enSoundPath": "assets/sound/en/eat.mp3"
@@ -1732,7 +1732,7 @@
       "id": "c194",
       "name": "Meniup",
       "enName": "Blow",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/meniup.png",
       "soundPath": "assets/sound/id/meniup.mp3",
       "enSoundPath": "assets/sound/en/blow.mp3"
@@ -1750,7 +1750,7 @@
       "id": "c196",
       "name": "Mengepel",
       "enName": "Mop",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/mengepel.png",
       "soundPath": "assets/sound/id/mengepel.mp3",
       "enSoundPath": "assets/sound/en/mop.mp3"
@@ -1759,7 +1759,7 @@
       "id": "c197",
       "name": "Menyapu",
       "enName": "Brooming",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menyapu.png",
       "soundPath": "assets/sound/id/menyapu.mp3",
       "enSoundPath": "assets/sound/en/brooming.mp3"
@@ -1768,7 +1768,7 @@
       "id": "c198",
       "name": "Memotong",
       "enName": "Cutting",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/memotong.png",
       "soundPath": "assets/sound/id/memotong.mp3",
       "enSoundPath": "assets/sound/en/cutting.mp3"
@@ -1786,7 +1786,7 @@
       "id": "c200",
       "name": "Main",
       "enName": "Play",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/main.png",
       "soundPath": "assets/sound/id/main.mp3",
       "enSoundPath": "assets/sound/en/play.mp3"
@@ -1804,7 +1804,7 @@
       "id": "c202",
       "name": "Salaman",
       "enName": "Shake Hand",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/salaman.png",
       "soundPath": "assets/sound/id/salaman.mp3",
       "enSoundPath": "assets/sound/en/shake hand.mp3"
@@ -1831,7 +1831,7 @@
       "id": "c205",
       "name": "Menelepon",
       "enName": "Calling",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/menelpon.png",
       "soundPath": "assets/sound/id/menelepon.mp3",
       "enSoundPath": "assets/sound/en/calling.mp3"
@@ -1858,7 +1858,7 @@
       "id": "c208",
       "name": "Cuci Tangan",
       "enName": "Wash Hands",
-      "categoryId": "cat6",
+      "categoryId": "cat5",
       "imagePath": "assets/images/img_asset/cuci tangan.png",
       "soundPath": "assets/sound/id/cuci tangan.mp3",
       "enSoundPath": "assets/sound/en/wash hands.mp3"

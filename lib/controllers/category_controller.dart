@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:get/get.dart';
 import 'package:SuaraKita/models/database.dart';
 import 'package:uuid/uuid.dart';
@@ -90,4 +92,37 @@ class CategoryController extends GetxController {
       return null;
     }
   }
+
+  // Method untuk mendapatkan list warna dari categories.json
+List<Color> getAvailableColors() {
+  try {
+    // Ambil semua categories yang punya defaultColor
+    final categoriesWithColors = categories.where((cat) => cat.color != null).toList();
+    
+    if (categoriesWithColors.isEmpty) {
+      // Fallback ke warna default jika tidak ada data
+      return [const Color(0xFF6DB5C6)];
+    }
+    
+    // Extract unique colors
+    final Set<int> uniqueColorValues = {};
+    final List<Color> uniqueColors = [];
+    
+    for (var category in categoriesWithColors) {
+      final colorValue = category.color!;
+      if (!uniqueColorValues.contains(colorValue)) {
+        uniqueColorValues.add(colorValue);
+        uniqueColors.add(Color(colorValue));
+      }
+    }
+    
+    // Sort by color value untuk konsistensi
+    uniqueColors.sort((a, b) => a.value.compareTo(b.value));
+    
+    return uniqueColors;
+  } catch (e) {
+    print('Error getting available colors: $e');
+    return [const Color(0xFF6DB5C6)]; // Fallback
+  }
+}
 }

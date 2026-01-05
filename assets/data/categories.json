@@ -40,14 +40,6 @@
     "imagePath": "assets/images/img_asset/default_nofilled.png"
   },
   {
-    "id": "cat6",
-    "name": "Aktivitas",
-    "enName": "Activities",
-    "defaultColor": null,
-    "parent_id": "cat5",
-    "imagePath": "assets/images/img_asset/default_nofilled.png"
-  },
-  {
     "id": "cat7",
     "name": "Kata Sifat",
     "enName": "Adjectives",
@@ -67,7 +59,7 @@
     "id": "cat9",
     "name": "Kata Ganti Orang",
     "enName": "Pronouns",
-    "defaultColor": "#FF5857",
+    "defaultColor": "#F82424",
     "parent_id": null,
     "imagePath": "assets/images/img_asset/default_nofilled.png"
   },
@@ -113,8 +105,8 @@
   },
   {
     "id": "cat15",
-    "name": "Benda Umum",
-    "enName": "General Objects",
+    "name": "Kategori",
+    "enName": "Categories",
     "defaultColor": "#FFC300",
     "parent_id": null,
     "imagePath": "assets/images/img_asset/default_nofilled.png"
