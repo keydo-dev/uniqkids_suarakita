@@ -41,8 +41,11 @@ class _PlayScreenState extends State<PlayScreen> {
     return ReorderableDragStartListener(
       index: key,
       key: ValueKey(key),
-      child: Obx(
-        () => Container(
+      child: Obx(() {
+        final isTextMode = cardController.isTextMode.value;
+        final hasImage = card.imagePath != null && card.imagePath!.isNotEmpty;
+
+        return Container(
           width: 100,
           margin: const EdgeInsets.all(4),
           decoration: BoxDecoration(
@@ -56,7 +59,7 @@ class _PlayScreenState extends State<PlayScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (!cardController.isTextMode.value)
+                  if (!isTextMode && hasImage)
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -69,26 +72,22 @@ class _PlayScreenState extends State<PlayScreen> {
                                 child: CircularProgressIndicator(),
                               );
                             }
-                            if (snapshot.hasError ||
-                                !snapshot.hasData ||
-                                snapshot.data!.isEmpty) {
-                              return const Icon(
-                                Icons.image_not_supported,
-                                color: Colors.grey,
-                              );
-                            }
+                            if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                            return const SizedBox();
+                          }
                             final imagePath = snapshot.data!;
-                            return imagePath.startsWith('assets/')
-                                ? Image.asset(imagePath, fit: BoxFit.contain)
-                                : Image.file(
-                                    File(imagePath),
-                                    fit: BoxFit.contain,
-                                  );
+                          return imagePath.startsWith('assets/')
+                              ? Image.asset(imagePath, fit: BoxFit.contain)
+                              : Image.file(
+                                  File(imagePath),
+                                  fit: BoxFit.contain,
+                                );
                           },
                         ),
                       ),
                     ),
-                  if (cardController.isTextMode.value)
+                    
+                  if (isTextMode || !hasImage)
                     Expanded(
                       child: Center(
                         child: Padding(
@@ -104,14 +103,14 @@ class _PlayScreenState extends State<PlayScreen> {
                       ),
                     ),
                   // Text label (always show in image mode)
-                  if (!cardController.isTextMode.value)
+                  if (!isTextMode && hasImage)
                     Padding(
                       padding: const EdgeInsets.fromLTRB(
                         4.0,
                         0,
                         4.0,
                         18.0,
-                      ), // Extra padding bottom untuk strip
+                      ),
                       child: Text(
                         langController.currentLanguage.value == 'en'
                             ? card.enName ?? card.name
@@ -126,33 +125,34 @@ class _PlayScreenState extends State<PlayScreen> {
                       ),
                     ),
                   // Spacer for strip in text mode
-                  if (cardController.isTextMode.value)
-                    const SizedBox(height: 8),
+                  if (isTextMode || !hasImage)
+                  const SizedBox(height: 8),
                 ],
               ),
 
               // STRIP WARNA KATEGORI - Always at bottom
               Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: StreamBuilder<db.Category?>(
-                  stream: categoryController.watchCategoryById(card.categoryId),
-                  builder: (context, snapshot) {
-                    final category = snapshot.data;
-                    Color color = Colors.grey;
-                    if (category != null) {
-                      if (category.color != null) {
-                        color = Color(category.color!);
-                      } else {
-                        final parent = categoryController.getParentCategory(
-                          category,
-                        );
-                        if (parent?.color != null) {
-                          color = Color(parent!.color!);
-                        }
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: StreamBuilder<db.Category?>(
+                stream:
+                    categoryController.watchCategoryById(card.categoryId),
+                builder: (context, snapshot) {
+                  final category = snapshot.data;
+                  Color color = Colors.grey;
+
+                  if (category != null) {
+                    if (category.color != null) {
+                      color = Color(category.color!);
+                    } else {
+                      final parent =
+                          categoryController.getParentCategory(category);
+                      if (parent?.color != null) {
+                        color = Color(parent!.color!);
                       }
                     }
+                  }
                     return Container(
                       height: 8,
                       decoration: BoxDecoration(
@@ -182,8 +182,8 @@ class _PlayScreenState extends State<PlayScreen> {
               ),
             ],
           ),
-        ),
-      ),
+        );
+     }),
     );
   }
 
@@ -436,7 +436,7 @@ class _PlayScreenState extends State<PlayScreen> {
                           padding: const EdgeInsets.all(padding),
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 11,
+                                crossAxisCount: 8,
                                 childAspectRatio: 1,
                                 crossAxisSpacing: spacing,
                                 mainAxisSpacing: spacing,
@@ -488,7 +488,7 @@ class _PlayScreenState extends State<PlayScreen> {
                     const spacing = 8.0;
                     const padding = 8.0;
                     final itemWidth =
-                        (screenWidth - (10 * spacing) - (2 * padding)) / 11;
+                        (screenWidth - (10 * spacing) - (2 * padding)) / 8;
 
                     return Column(
                       children: categories.map((category) {
@@ -524,7 +524,7 @@ class _PlayScreenState extends State<PlayScreen> {
                                   padding: const EdgeInsets.all(padding),
                                   gridDelegate:
                                       const SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 11,
+                                        crossAxisCount: 8,
                                         childAspectRatio: 1,
                                         crossAxisSpacing: spacing,
                                         mainAxisSpacing: spacing,

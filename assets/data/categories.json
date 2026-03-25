@@ -110,5 +110,21 @@
     "defaultColor": "#FFC300",
     "parent_id": null,
     "imagePath": "assets/images/img_asset/default_nofilled.png"
+  },
+  {
+    "id": "cat16",
+    "name": "Kata Sambung",
+    "enName": "Conjunctions",
+    "defaultColor": "#1E1E1E",
+    "parent_id": null,
+    "imagePath": "assets/images/img_asset/default_nofilled-white.png"
+  },
+  {
+    "id": "cat17",
+    "name": "Lain-lain",
+    "enName": "Others",
+    "defaultColor": "#69B9BD",
+    "parent_id": null,
+    "imagePath": "assets/images/img_asset/default_nofilled.png"
   }
 ]

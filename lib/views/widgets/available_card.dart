@@ -40,22 +40,25 @@ class AvailableCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () => cardController.toggleCardSelection(card),
-      child: Obx(
-        () => Container(
+      child: Obx(() {
+        final isSelected = cardController.selectedCards.contains(card);
+        final isTextMode = cardController.isTextMode.value;
+        final hasImage = card.imagePath != null && card.imagePath!.isNotEmpty;
+
+        return Container(
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: cardController.selectedCards.contains(card)
-                  ? Colors.green
-                  : Colors.grey.shade300,
-              width: cardController.selectedCards.contains(card) ? 2.0 : 1.0,
+              color: isSelected ? Colors.green : Colors.grey.shade300,
+              width: isSelected ? 2.0 : 1.0,
             ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (!cardController.isTextMode.value)
+              // IMAGE MODE
+              if (!isTextMode && hasImage)
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -68,14 +71,11 @@ class AvailableCard extends StatelessWidget {
                             child: CircularProgressIndicator(),
                           );
                         }
-                        if (snapshot.hasError ||
-                            !snapshot.hasData ||
-                            snapshot.data!.isEmpty) {
-                          return const Icon(
-                            Icons.image_not_supported,
-                            color: Colors.grey,
-                          );
+
+                        if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                          return const SizedBox();
                         }
+
                         final imagePath = snapshot.data!;
                         return imagePath.startsWith('assets/')
                             ? Image.asset(imagePath, fit: BoxFit.contain)
@@ -84,8 +84,9 @@ class AvailableCard extends StatelessWidget {
                     ),
                   ),
                 ),
-              
-              if (cardController.isTextMode.value)
+
+              // TEXT ONLY MODE
+              if (isTextMode || !hasImage)
                 Expanded(
                   child: Center(
                     child: Padding(
@@ -95,17 +96,21 @@ class AvailableCard extends StatelessWidget {
                             ? card.enName ?? card.name
                             : card.name,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
                 ),
-              
-              if (!cardController.isTextMode.value)
+
+              // LABEL BAWAH IMAGE
+              if (!isTextMode && hasImage)
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(4.0, 0, 4.0, 0),
+                  padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
                   child: Text(
                     langController.currentLanguage.value == 'en'
                         ? card.enName ?? card.name
@@ -116,7 +121,7 @@ class AvailableCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-              
+
               Container(
                 height: 8,
                 decoration: BoxDecoration(
@@ -129,8 +134,8 @@ class AvailableCard extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
+        );
+      }),
     );
   }
 }

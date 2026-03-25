@@ -1,562 +1,31 @@
 {
   "cards": [
     {
-      "id": "c1",
-      "name": "Apel",
-      "enName": "Apple",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/apel.png",
-      "soundPath": "assets/sound/id/Apel.m4a",
-      "enSoundPath": "assets/sound/en/Apple.m4a"
+      "id": "c132",
+      "name": "Api",
+      "enName": "Fire",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/api.png",
+      "soundPath": "assets/sound/id/api.mp3",
+      "enSoundPath": "assets/sound/en/fire.mp3"
     },
     {
-      "id": "c2",
-      "name": "Meja",
-      "enName": "Table",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/meja.png",
-      "soundPath": "assets/sound/id/Meja.m4a",
-      "enSoundPath": "assets/sound/en/Table.m4a"
+      "id": "c81",
+      "name": "Crayon",
+      "enName": "Crayon",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/crayon.png",
+      "soundPath": "assets/sound/id/crayon indo.mp3",
+      "enSoundPath": "assets/sound/en/crayon.mp3"
     },
     {
-      "id": "c3",
-      "name": "Keju",
-      "enName": "Cheese",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/keju.png",
-      "soundPath": "assets/sound/id/Keju.m4a",
-      "enSoundPath": "assets/sound/en/Cheese.m4a"
-    },
-    {
-      "id": "c4",
-      "name": "Donat",
-      "enName": "Donut",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/donat.png",
-      "soundPath": "assets/sound/id/Donat.m4a",
-      "enSoundPath": "assets/sound/en/Donut.m4a"
-    },
-    {
-      "id": "c5",
-      "name": "Mobil",
-      "enName": "Car",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/mobil.png",
-      "soundPath": "assets/sound/id/Mobil.m4a",
-      "enSoundPath": "assets/sound/en/Car.m4a"
-    },
-    {
-      "id": "c6",
-      "name": "Kursi",
-      "enName": "Chair",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kursi.png",
-      "soundPath": "assets/sound/id/Kursi.m4a",
-      "enSoundPath": "assets/sound/en/Chair.m4a"
-    },
-    {
-      "id": "c7",
-      "name": "Lampu",
-      "enName": "Lamp",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/lampu.png",
-      "soundPath": "assets/sound/id/Lampu.m4a",
-      "enSoundPath": "assets/sound/en/Lamp.m4a"
-    },
-    {
-      "id": "c8",
-      "name": "Keranjang",
-      "enName": "Basket",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/keranjang.png",
-      "soundPath": "assets/sound/id/Keranjang.m4a",
-      "enSoundPath": "assets/sound/en/Basket.mp3"
-    },
-    {
-      "id": "c9",
-      "name": "Buku",
-      "enName": "Book",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/buku.png",
-      "soundPath": "assets/sound/id/Buku.m4a",
-      "enSoundPath": "assets/sound/en/book.mp3"
-    },
-    {
-      "id": "c10",
-      "name": "Sikat Gigi",
-      "enName": "Tooth Brush",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sikat gigi.png",
-      "soundPath": "assets/sound/id/Sikat gigi.m4a",
-      "enSoundPath": "assets/sound/en/tooth brush.mp3"
-    },
-    {
-      "id": "c11",
-      "name": "Odol",
-      "enName": "Tooth Paste",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/odol.png",
-      "soundPath": "assets/sound/id/Odol.m4a",
-      "enSoundPath": "assets/sound/en/tooth paste.mp3"
-    },
-    {
-      "id": "c12",
-      "name": "Topi",
-      "enName": "Hat",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/topi.png",
-      "soundPath": "assets/sound/id/Topi.m4a",
-      "enSoundPath": "assets/sound/en/hat.mp3"
-    },
-    {
-      "id": "c13",
-      "name": "Roti",
-      "enName": "Bread",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/roti.png",
-      "soundPath": "assets/sound/id/Roti.m4a",
-      "enSoundPath": "assets/sound/en/bread.mp3"
-    },
-    {
-      "id": "c14",
-      "name": "Botol",
-      "enName": "Bottle",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/botol.png",
-      "soundPath": "assets/sound/id/Botol.m4a",
-      "enSoundPath": "assets/sound/en/bottle.mp3"
-    },
-    {
-      "id": "c15",
-      "name": "Piring",
-      "enName": "Plate",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/piring.png",
-      "soundPath": "assets/sound/id/Piring.m4a",
-      "enSoundPath": "assets/sound/en/plate.mp3"
-    },
-    {
-      "id": "c16",
-      "name": "Sendok",
-      "enName": "Spoon",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sendok.png",
-      "soundPath": "assets/sound/id/Sendok.m4a",
-      "enSoundPath": "assets/sound/en/spoon.mp3"
-    },
-    {
-      "id": "c17",
-      "name": "Laba-laba",
-      "enName": "Spider",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/laba laba.png",
-      "soundPath": "assets/sound/id/Laba laba.m4a",
-      "enSoundPath": "assets/sound/en/spider.mp3"
-    },
-    {
-      "id": "c18",
-      "name": "Kalender",
-      "enName": "Calendar",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kalender.png",
-      "soundPath": "assets/sound/id/Kalender.m4a",
-      "enSoundPath": "assets/sound/en/calender.mp3"
-    },
-    {
-      "id": "c19",
-      "name": "Bola",
-      "enName": "Ball",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/bola.png",
-      "soundPath": "assets/sound/id/Bola.m4a",
-      "enSoundPath": "assets/sound/en/ball.mp3"
-    },
-    {
-      "id": "c20",
-      "name": "Sepatu",
-      "enName": "Shoes",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sepatu copy.png",
-      "soundPath": "assets/sound/id/Sepatu.m4a",
-      "enSoundPath": "assets/sound/en/shoes.mp3"
-    },
-    {
-      "id": "c21",
-      "name": "Kaus Kaki",
-      "enName": "Socks",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kaus kaki.png",
-      "soundPath": "assets/sound/id/Kaus kaki.m4a",
-      "enSoundPath": "assets/sound/en/socks.mp3"
-    },
-    {
-      "id": "c22",
-      "name": "Kacamata",
-      "enName": "Glasses",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kaca mata.png",
-      "soundPath": "assets/sound/id/Kaca mata.m4a",
-      "enSoundPath": "assets/sound/en/glasses.mp3"
-    },
-    {
-      "id": "c23",
-      "name": "Anjing",
-      "enName": "Dog",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/anjing.png",
-      "soundPath": "assets/sound/id/Anjing.m4a",
-      "enSoundPath": "assets/sound/en/dog.mp3"
-    },
-    {
-      "id": "c24",
-      "name": "Sabun",
-      "enName": "Soap",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sabun.png",
-      "soundPath": "assets/sound/id/Sabun.m4a",
-      "enSoundPath": "assets/sound/en/soap.mp3"
-    },
-    {
-      "id": "c25",
-      "name": "Burung",
-      "enName": "Bird",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/burung.png",
-      "soundPath": "assets/sound/id/Burung.m4a",
-      "enSoundPath": "assets/sound/en/bird.mp3"
-    },
-    {
-      "id": "c26",
-      "name": "Handuk",
-      "enName": "Towel",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/handuk.png",
-      "soundPath": "assets/sound/id/Handuk.m4a",
-      "enSoundPath": "assets/sound/en/towel.mp3"
-    },
-    {
-      "id": "c27",
-      "name": "Pisang",
-      "enName": "Banana",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/pisang.png",
-      "soundPath": "assets/sound/id/Pisang.m4a",
-      "enSoundPath": "assets/sound/en/banana.mp3"
-    },
-    {
-      "id": "c28",
-      "name": "Sendal",
-      "enName": "Sandal",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sendal.png",
-      "soundPath": "assets/sound/id/Sendal.m4a",
-      "enSoundPath": "assets/sound/en/sandal.mp3"
-    },
-    {
-      "id": "c29",
-      "name": "Mangkuk",
-      "enName": "Bowl",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/mangkuk.png",
-      "soundPath": "assets/sound/id/Mangkuk.m4a",
-      "enSoundPath": "assets/sound/en/bowl.mp3"
-    },
-    {
-      "id": "c30",
-      "name": "Ayam",
-      "enName": "Chicken",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/ayam.png",
-      "soundPath": "assets/sound/id/Ayam.m4a",
-      "enSoundPath": "assets/sound/en/chicken.mp3"
-    },
-    {
-      "id": "c31",
-      "name": "Motor",
-      "enName": "Motorbike",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/motor.png",
-      "soundPath": "assets/sound/id/Motor.m4a",
-      "enSoundPath": "assets/sound/en/motorbike.mp3"
-    },
-    {
-      "id": "c32",
-      "name": "Telepon",
-      "enName": "Phone",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/telepon.png",
-      "soundPath": "assets/sound/id/Telepon.m4a",
-      "enSoundPath": "assets/sound/en/phone.mp3"
-    },
-    {
-      "id": "c33",
-      "name": "Bebek",
-      "enName": "Duck",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/bebek.png",
-      "soundPath": "assets/sound/id/Bebek.m4a",
-      "enSoundPath": "assets/sound/en/duck.mp3"
-    },
-    {
-      "id": "c34",
-      "name": "Bunga",
-      "enName": "Flower",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/bunga.png",
-      "soundPath": "assets/sound/id/Bunga.m4a",
-      "enSoundPath": "assets/sound/en/flower.mp3"
-    },
-    {
-      "id": "c35",
-      "name": "Sofa",
-      "enName": "Sofa",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sofa.png",
-      "soundPath": "assets/sound/id/Sofa.m4a",
-      "enSoundPath": "assets/sound/en/sofa.mp3"
-    },
-    {
-      "id": "c36",
-      "name": "Tas",
-      "enName": "Bag",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/tas.png",
-      "soundPath": "assets/sound/id/Tas.m4a",
-      "enSoundPath": "assets/sound/en/bag.mp3"
-    },
-    {
-      "id": "c37",
-      "name": "AC",
-      "enName": "AC",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/ac.png",
-      "soundPath": "assets/sound/id/Ac.m4a",
-      "enSoundPath": "assets/sound/en/ac.mp3"
-    },
-    {
-      "id": "c38",
-      "name": "Gajah",
-      "enName": "Elephant",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/gajah.png",
-      "soundPath": "assets/sound/id/Gajah.m4a",
-      "enSoundPath": "assets/sound/en/elephant.mp3"
-    },
-    {
-      "id": "c39",
-      "name": "Pesawat",
-      "enName": "Plane",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/pesawat.png",
-      "soundPath": "assets/sound/id/Pesawat.mp3",
-      "enSoundPath": "assets/sound/en/plane.mp3"
-    },
-    {
-      "id": "c40",
-      "name": "Nanas",
-      "enName": "Pineapple",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/nanas.png",
-      "soundPath": "assets/sound/id/nanas.mp3",
-      "enSoundPath": "assets/sound/en/pineapple.mp3"
-    },
-    {
-      "id": "c41",
-      "name": "Sisir",
-      "enName": "Comb",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sisir.png",
-      "soundPath": "assets/sound/id/sisir.mp3",
-      "enSoundPath": "assets/sound/en/comb.mp3"
-    },
-    {
-      "id": "c42",
-      "name": "Rak Buku",
-      "enName": "Book Shelf",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/rak buku.png",
-      "soundPath": "assets/sound/id/rak buku.mp3",
-      "enSoundPath": "assets/sound/en/book shelf.mp3"
-    },
-    {
-      "id": "c43",
-      "name": "Ikan",
-      "enName": "Fish",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/ikan.png",
-      "soundPath": "assets/sound/id/ikan.mp3",
-      "enSoundPath": "assets/sound/en/fish.mp3"
-    },
-    {
-      "id": "c44",
-      "name": "Kucing",
-      "enName": "Cat",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/kucing.png",
-      "soundPath": "assets/sound/id/kucing.mp3",
-      "enSoundPath": "assets/sound/en/cat.mp3"
-    },
-    {
-      "id": "c45",
-      "name": "Botol Susu",
-      "enName": "Milk Bottle",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/botol susu.png",
-      "soundPath": "assets/sound/id/botol susu.mp3",
-      "enSoundPath": "assets/sound/en/milk bottle.mp3"
-    },
-    {
-      "id": "c46",
-      "name": "Ranjang",
-      "enName": "Bed",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/ranjang.png",
-      "soundPath": "assets/sound/id/ranjang.mp3",
-      "enSoundPath": "assets/sound/en/bed.mp3"
-    },
-    {
-      "id": "c47",
-      "name": "Pensil",
-      "enName": "Pencil",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/pensil.png",
-      "soundPath": "assets/sound/id/pensil.mp3",
-      "enSoundPath": "assets/sound/en/pencil.mp3"
-    },
-    {
-      "id": "c48",
-      "name": "Kodok",
-      "enName": "Frog",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/kodok.png",
-      "soundPath": "assets/sound/id/kodok.mp3",
-      "enSoundPath": "assets/sound/en/frog.mp3"
-    },
-    {
-      "id": "c50",
-      "name": "Lemari",
-      "enName": "Wardrobe",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/lemari.png",
-      "soundPath": "assets/sound/id/lemari.mp3",
-      "enSoundPath": "assets/sound/en/wardrop.mp3"
-    },
-    {
-      "id": "c51",
-      "name": "Jam Tangan",
-      "enName": "Watch",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/jam tangan.png",
-      "soundPath": "assets/sound/id/jam tangan.mp3",
-      "enSoundPath": "assets/sound/en/watch.mp3"
-    },
-    {
-      "id": "c52",
-      "name": "Ular",
-      "enName": "Snake",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/ular.png",
-      "soundPath": "assets/sound/id/ular.mp3",
-      "enSoundPath": "assets/sound/en/snake.mp3"
-    },
-    {
-      "id": "c53",
-      "name": "Jerapah",
-      "enName": "Giraffe",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/jerapah.png",
-      "soundPath": "assets/sound/id/jerapah.mp3",
-      "enSoundPath": "assets/sound/en/giraffe.mp3"
-    },
-    {
-      "id": "c54",
-      "name": "Rak Sepatu",
-      "enName": "Shoes Shelf",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/rak sepatu.png",
-      "soundPath": "assets/sound/id/rak sepatu.mp3",
-      "enSoundPath": "assets/sound/en/shoes shelf.mp3"
-    },
-    {
-      "id": "c55",
-      "name": "Troli",
-      "enName": "Trolley",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/troli.png",
-      "soundPath": "assets/sound/id/troli.mp3",
-      "enSoundPath": "assets/sound/en/trolley.mp3"
-    },
-    {
-      "id": "c56",
-      "name": "Balon",
-      "enName": "Balloon",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/balon.png",
-      "soundPath": "assets/sound/id/balon.mp3",
-      "enSoundPath": "assets/sound/en/ballon.mp3"
-    },
-    {
-      "id": "c57",
-      "name": "Ayunan",
-      "enName": "Swing",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/ayunan.png",
-      "soundPath": "assets/sound/id/ayunan.mp3",
-      "enSoundPath": "assets/sound/en/swing.mp3"
-    },
-    {
-      "id": "c58",
-      "name": "Bis",
-      "enName": "Bus",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/bis.png",
-      "soundPath": "assets/sound/id/bis.mp3",
-      "enSoundPath": "assets/sound/en/bus.mp3"
-    },
-    {
-      "id": "c59",
-      "name": "Gayung",
-      "enName": "Dipper",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/gayung.png",
-      "soundPath": "assets/sound/id/gayung.mp3",
-      "enSoundPath": "assets/sound/en/dipper.mp3"
-    },
-    {
-      "id": "c60",
-      "name": "Helikopter",
-      "enName": "Helicopter",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/helikopter.png",
-      "soundPath": "assets/sound/id/helikopter.mp3",
-      "enSoundPath": "assets/sound/en/helicopter.mp3"
-    },
-    {
-      "id": "c61",
-      "name": "Kuda",
-      "enName": "Horse",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/kuda.png",
-      "soundPath": "assets/sound/id/kuda.mp3",
-      "enSoundPath": "assets/sound/en/horse.mp3"
-    },
-    {
-      "id": "c62",
-      "name": "Jam Dinding",
-      "enName": "Clock",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/jam dinding.png",
-      "soundPath": "assets/sound/id/jam dinding.mp3",
-      "enSoundPath": "assets/sound/en/clock.mp3"
-    },
-    {
-      "id": "c63",
-      "name": "Kentang Goreng",
-      "enName": "French Fries",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kentang goreng.png",
-      "soundPath": "assets/sound/id/kentang goreng.mp3",
-      "enSoundPath": "assets/sound/en/french fries.mp3"
+      "id": "c113",
+      "name": "Ibu Jari",
+      "enName": "Thumb",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/ibu jari.png",
+      "soundPath": "assets/sound/id/ibu jari.mp3",
+      "enSoundPath": "assets/sound/en/thumb.mp3"
     },
     {
       "id": "c64",
@@ -568,13 +37,49 @@
       "enSoundPath": "assets/sound/en/drink.mp3"
     },
     {
-      "id": "c65",
-      "name": "Laci",
-      "enName": "Drawer",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/laci.png",
-      "soundPath": "assets/sound/id/laci.mp3",
-      "enSoundPath": "assets/sound/en/drawer.mp3"
+      "id": "c110",
+      "name": "Peace",
+      "enName": "Peace",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/peace.png",
+      "soundPath": "assets/sound/id/peace indo.mp3",
+      "enSoundPath": "assets/sound/en/peace.mp3"
+    },
+    {
+      "id": "c115",
+      "name": "Telunjuk",
+      "enName": "Point",
+      "categoryId": "cat1",
+      "imagePath": "assets/images/img_asset/telunjuk.png",
+      "soundPath": "assets/sound/id/telunjuk.mp3",
+      "enSoundPath": "assets/sound/en/point.mp3"
+    },
+    {
+      "id": "c77",
+      "name": "Anggur",
+      "enName": "Grape",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/anggur.png",
+      "soundPath": "assets/sound/id/anggur.mp3",
+      "enSoundPath": "assets/sound/en/grape.mp3"
+    },
+    {
+      "id": "c1",
+      "name": "Apel",
+      "enName": "Apple",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/apel.png",
+      "soundPath": "assets/sound/id/Apel.m4a",
+      "enSoundPath": "assets/sound/en/Apple.m4a"
+    },
+    {
+      "id": "c107",
+      "name": "Ayam",
+      "enName": "Fried Chicken",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/ayam copy.png",
+      "soundPath": "assets/sound/id/Ayam.m4a",
+      "enSoundPath": "assets/sound/en/Fried Chicken.mp3"
     },
     {
       "id": "c66",
@@ -595,49 +100,22 @@
       "enSoundPath": "assets/sound/en/chocolate.mp3"
     },
     {
-      "id": "c68",
-      "name": "Susu",
-      "enName": "Milk",
+      "id": "c4",
+      "name": "Donat",
+      "enName": "Donut",
       "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/susu.png",
-      "soundPath": "assets/sound/id/susu.mp3",
-      "enSoundPath": "assets/sound/en/milk.mp3"
+      "imagePath": "assets/images/img_asset/donat.png",
+      "soundPath": "assets/sound/id/Donat.m4a",
+      "enSoundPath": "assets/sound/en/Donut.m4a"
     },
     {
-      "id": "c69",
-      "name": "Bubbles",
-      "enName": "Bubbles",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/bubbles.png",
-      "soundPath": "assets/sound/id/bubbles indo.mp3",
-      "enSoundPath": "assets/sound/en/bubbles.mp3"
-    },
-    {
-      "id": "c70",
-      "name": "Kue",
-      "enName": "Cake",
+      "id": "c155",
+      "name": "Durian",
+      "enName": "Durian",
       "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/kue-1.png",
-      "soundPath": "assets/sound/id/kue.mp3",
-      "enSoundPath": "assets/sound/en/cake.mp3"
-    },
-    {
-      "id": "c71",
-      "name": "Permen",
-      "enName": "Candy",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/permen.png",
-      "soundPath": "assets/sound/id/permen.mp3",
-      "enSoundPath": "assets/sound/en/candy.mp3"
-    },
-    {
-      "id": "c72",
-      "name": "Puzzle",
-      "enName": "Puzzle",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/puzzle.png",
-      "soundPath": "assets/sound/id/puzzle indo.mp3",
-      "enSoundPath": "assets/sound/en/puzzle.mp3"
+      "imagePath": "assets/images/img_asset/durian.png",
+      "soundPath": "assets/sound/id/durian.mp3",
+      "enSoundPath": "assets/sound/en/durian.mp3"
     },
     {
       "id": "c73",
@@ -649,13 +127,22 @@
       "enSoundPath": "assets/sound/en/orange.mp3"
     },
     {
-      "id": "c74",
-      "name": "Uang",
-      "enName": "Money",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/uang.png",
-      "soundPath": "assets/sound/id/uang.mp3",
-      "enSoundPath": "assets/sound/en/money.mp3"
+      "id": "c3",
+      "name": "Keju",
+      "enName": "Cheese",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/keju.png",
+      "soundPath": "assets/sound/id/Keju.m4a",
+      "enSoundPath": "assets/sound/en/Cheese.m4a"
+    },
+    {
+      "id": "c70",
+      "name": "Kue",
+      "enName": "Cake",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/kue-1.png",
+      "soundPath": "assets/sound/id/kue.mp3",
+      "enSoundPath": "assets/sound/en/cake.mp3"
     },
     {
       "id": "c75",
@@ -667,274 +154,22 @@
       "enSoundPath": "assets/sound/en/cake.mp3"
     },
     {
-      "id": "c76",
-      "name": "Jepit Jemuran",
-      "enName": "Clothes Peg",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/jepit jemuran.png",
-      "soundPath": "assets/sound/id/jepit jemuran.mp3",
-      "enSoundPath": "assets/sound/en/clothes peg.mp3"
-    },
-    {
-      "id": "c77",
-      "name": "Anggur",
-      "enName": "Grape",
+      "id": "c112",
+      "name": "Mie",
+      "enName": "Noodle",
       "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/anggur.png",
-      "soundPath": "assets/sound/id/anggur.mp3",
-      "enSoundPath": "assets/sound/en/grape.mp3"
+      "imagePath": "assets/images/img_asset/mie.png",
+      "soundPath": "assets/sound/id/mie.mp3",
+      "enSoundPath": "assets/sound/en/noodle.mp3"
     },
     {
-      "id": "c78",
-      "name": "Keran Air",
-      "enName": "Faucet",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/keran air.png",
-      "soundPath": "assets/sound/id/keran air.mp3",
-      "enSoundPath": "assets/sound/en/faucet.mp3"
-    },
-    {
-      "id": "c79",
-      "name": "Sapi",
-      "enName": "Cow",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/sapi.png",
-      "soundPath": "assets/sound/id/sapi.mp3",
-      "enSoundPath": "assets/sound/en/cow.mp3"
-    },
-    {
-      "id": "c80",
-      "name": "Semangka",
-      "enName": "Watermelon",
+      "id": "c40",
+      "name": "Nanas",
+      "enName": "Pineapple",
       "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/semangka.png",
-      "soundPath": "assets/sound/id/semangka.mp3",
-      "enSoundPath": "assets/sound/en/watermelon.mp3"
-    },
-    {
-      "id": "c81",
-      "name": "Crayon",
-      "enName": "Crayon",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/crayon.png",
-      "soundPath": "assets/sound/id/crayon indo.mp3",
-      "enSoundPath": "assets/sound/en/crayon.mp3"
-    },
-    {
-      "id": "c82",
-      "name": "Cacing",
-      "enName": "Worm",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/cacing.png",
-      "soundPath": "assets/sound/id/cacing.mp3",
-      "enSoundPath": "assets/sound/en/worm.mp3"
-    },
-    {
-      "id": "c83",
-      "name": "Kelinci",
-      "enName": "Rabbit",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/kelinci.png",
-      "soundPath": "assets/sound/id/kelinci.mp3",
-      "enSoundPath": "assets/sound/en/rabbit.mp3"
-    },
-    {
-      "id": "c84",
-      "name": "Macara",
-      "enName": "Maraca",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/maraca.png",
-      "soundPath": "assets/sound/id/maraca indo.mp3",
-      "enSoundPath": "assets/sound/en/maraca.mp3"
-    },
-    {
-      "id": "c85",
-      "name": "Pizza",
-      "enName": "Pizza",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/pizza.png",
-      "soundPath": "assets/sound/id/pizza indo.mp3",
-      "enSoundPath": "assets/sound/en/pizza.mp3"
-    },
-    {
-      "id": "c86",
-      "name": "Celana Pendek",
-      "enName": "Short Pants",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/celana pendek.png",
-      "soundPath": "assets/sound/id/celana pendek.mp3",
-      "enSoundPath": "assets/sound/en/shortpant.mp3"
-    },
-    {
-      "id": "c87",
-      "name": "Kipas",
-      "enName": "Fan",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kipas.png",
-      "soundPath": "assets/sound/id/kipas.mp3",
-      "enSoundPath": "assets/sound/en/fan.mp3"
-    },
-    {
-      "id": "c88",
-      "name": "Garpu",
-      "enName": "Fork",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/garpu.png",
-      "soundPath": "assets/sound/id/garpu.mp3",
-      "enSoundPath": "assets/sound/en/fork.mp3"
-    },
-    {
-      "id": "c89",
-      "name": "Gunting",
-      "enName": "Scissor",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/gunting.png",
-      "soundPath": "assets/sound/id/gunting.mp3",
-      "enSoundPath": "assets/sound/en/scissor.mp3"
-    },
-    {
-      "id": "c90",
-      "name": "Pulpen",
-      "enName": "Pen",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/pen.png",
-      "soundPath": "assets/sound/id/pulpen.mp3",
-      "enSoundPath": "assets/sound/en/pen.mp3"
-    },
-    {
-      "id": "c91",
-      "name": "HP",
-      "enName": "HP",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/hp.png",
-      "soundPath": "assets/sound/id/hp.mp3",
-      "enSoundPath": "assets/sound/en/handphone.mp3"
-    },
-    {
-      "id": "c92",
-      "name": "Bantal",
-      "enName": "Pillow",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/bantal.png",
-      "soundPath": "assets/sound/id/bantal.mp3",
-      "enSoundPath": "assets/sound/en/pillow.mp3"
-    },
-    {
-      "id": "c93",
-      "name": "Balok",
-      "enName": "Block",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/balok.png",
-      "soundPath": "assets/sound/id/balok.mp3",
-      "enSoundPath": "assets/sound/en/block.mp3"
-    },
-    {
-      "id": "c94",
-      "name": "Bintang",
-      "enName": "Star",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/bintang.png",
-      "soundPath": "assets/sound/id/bintang.mp3",
-      "enSoundPath": "assets/sound/en/star.mp3"
-    },
-    {
-      "id": "c95",
-      "name": "Ember",
-      "enName": "Bucket",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/ember.png",
-      "soundPath": "assets/sound/id/ember.mp3",
-      "enSoundPath": "assets/sound/en/bucket.mp3"
-    },
-    {
-      "id": "c96",
-      "name": "Selang",
-      "enName": "Water Hose",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/selang.png",
-      "soundPath": "assets/sound/id/selang.mp3",
-      "enSoundPath": "assets/sound/en/water hose.mp3"
-    },
-    {
-      "id": "c97",
-      "name": "Ransel",
-      "enName": "Bag Pack",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/ransel.png",
-      "soundPath": "assets/sound/id/ransel.mp3",
-      "enSoundPath": "assets/sound/en/bag pack.mp3"
-    },
-    {
-      "id": "c98",
-      "name": "Komputer",
-      "enName": "Computer",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/komputer.png",
-      "soundPath": "assets/sound/id/komputer.mp3",
-      "enSoundPath": "assets/sound/en/computer.mp3"
-    },
-    {
-      "id": "c99",
-      "name": "Gantungan Baju",
-      "enName": "Hanger",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/gantungan baju.png",
-      "soundPath": "assets/sound/id/gantungan baju.mp3",
-      "enSoundPath": "assets/sound/en/hanger.mp3"
-    },
-    {
-      "id": "c100",
-      "name": "Kompor",
-      "enName": "Stove",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kompor.png",
-      "soundPath": "assets/sound/id/kompor.mp3",
-      "enSoundPath": "assets/sound/en/stove.mp3"
-    },
-    {
-      "id": "c101",
-      "name": "Stoberi",
-      "enName": "Strawberry",
-      "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/stroberi.png",
-      "soundPath": "assets/sound/id/stroberi.mp3",
-      "enSoundPath": "assets/sound/en/strawberry.mp3"
-    },
-    {
-      "id": "c102",
-      "name": "Tangga",
-      "enName": "Stair",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/tangga.png",
-      "soundPath": "assets/sound/id/tangga.mp3",
-      "enSoundPath": "assets/sound/en/stair.mp3"
-    },
-    {
-      "id": "c103",
-      "name": "Tissue",
-      "enName": "Tissue",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/tissue.png",
-      "soundPath": "assets/sound/id/tissu.mp3",
-      "enSoundPath": "assets/sound/en/tissue.mp3"
-    },
-    {
-      "id": "c104",
-      "name": "Kaos",
-      "enName": "Tshirt",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/t shirt.png",
-      "soundPath": "assets/sound/id/kaos.mp3",
-      "enSoundPath": "assets/sound/en/tshirt.mp3"
-    },
-    {
-      "id": "c105",
-      "name": "Playdough",
-      "enName": "Playdough",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/playdough.png",
-      "soundPath": "assets/sound/id/playdough indo.mp3",
-      "enSoundPath": "assets/sound/en/playdough.mp3"
+      "imagePath": "assets/images/img_asset/nanas.png",
+      "soundPath": "assets/sound/id/nanas.mp3",
+      "enSoundPath": "assets/sound/en/pineapple.mp3"
     },
     {
       "id": "c106",
@@ -946,148 +181,67 @@
       "enSoundPath": "assets/sound/en/rice.mp3"
     },
     {
-      "id": "c107",
-      "name": "Ayam",
-      "enName": "Fried Chicken",
+      "id": "c71",
+      "name": "Permen",
+      "enName": "Candy",
       "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/ayam copy.png",
-      "soundPath": "assets/sound/id/Ayam.m4a",
-      "enSoundPath": "assets/sound/en/Fried Chicken.mp3"
+      "imagePath": "assets/images/img_asset/permen.png",
+      "soundPath": "assets/sound/id/permen.mp3",
+      "enSoundPath": "assets/sound/en/candy.mp3"
     },
     {
-      "id": "c108",
-      "name": "Kemaja",
-      "enName": "Shirt",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kemeja.png",
-      "soundPath": "assets/sound/id/kemeja.mp3",
-      "enSoundPath": "assets/sound/en/shirt.mp3"
-    },
-    {
-      "id": "c109",
-      "name": "Perosotan",
-      "enName": "Slide",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/perosotan.png",
-      "soundPath": "assets/sound/id/prosotan.mp3",
-      "enSoundPath": "assets/sound/en/slide.mp3"
-    },
-    {
-      "id": "c110",
-      "name": "Peace",
-      "enName": "Peace",
-      "categoryId": "cat1",
-      "imagePath": "assets/images/img_asset/peace.png",
-      "soundPath": "assets/sound/id/peace indo.mp3",
-      "enSoundPath": "assets/sound/en/peace.mp3"
-    },
-    {
-      "id": "c111",
-      "name": "Celana Panjang",
-      "enName": "Pants",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/celana panjang.png",
-      "soundPath": "assets/sound/id/celana panjang.mp3",
-      "enSoundPath": "assets/sound/en/Pants.mp3"
-    },
-    {
-      "id": "c112",
-      "name": "Mie",
-      "enName": "Noodle",
+      "id": "c27",
+      "name": "Pisang",
+      "enName": "Banana",
       "categoryId": "cat2",
-      "imagePath": "assets/images/img_asset/mie.png",
-      "soundPath": "assets/sound/id/mie.mp3",
-      "enSoundPath": "assets/sound/en/noodle.mp3"
+      "imagePath": "assets/images/img_asset/pisang.png",
+      "soundPath": "assets/sound/id/Pisang.m4a",
+      "enSoundPath": "assets/sound/en/banana.mp3"
     },
     {
-      "id": "c113",
-      "name": "Ibu Jari",
-      "enName": "Thumb",
-      "categoryId": "cat1",
-      "imagePath": "assets/images/img_asset/ibu jari.png",
-      "soundPath": "assets/sound/id/ibu jari.mp3",
-      "enSoundPath": "assets/sound/en/thumb.mp3"
+      "id": "c85",
+      "name": "Pizza",
+      "enName": "Pizza",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/pizza.png",
+      "soundPath": "assets/sound/id/pizza indo.mp3",
+      "enSoundPath": "assets/sound/en/pizza.mp3"
     },
     {
-      "id": "c114",
-      "name": "Tempat Tidur",
-      "enName": "Bed",
+      "id": "c13",
+      "name": "Roti",
+      "enName": "Bread",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/roti.png",
+      "soundPath": "assets/sound/id/Roti.m4a",
+      "enSoundPath": "assets/sound/en/bread.mp3"
+    },
+    {
+      "id": "c80",
+      "name": "Semangka",
+      "enName": "Watermelon",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/semangka.png",
+      "soundPath": "assets/sound/id/semangka.mp3",
+      "enSoundPath": "assets/sound/en/watermelon.mp3"
+    },
+    {
+      "id": "c101",
+      "name": "Stoberi",
+      "enName": "Strawberry",
+      "categoryId": "cat2",
+      "imagePath": "assets/images/img_asset/stroberi.png",
+      "soundPath": "assets/sound/id/stroberi.mp3",
+      "enSoundPath": "assets/sound/en/strawberry.mp3"
+    },
+    {
+      "id": "c37",
+      "name": "AC",
+      "enName": "AC",
       "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/tempat tidur.png",
-      "soundPath": "assets/sound/id/tempat tidur.mp3",
-      "enSoundPath": "assets/sound/en/bed.mp3"
-    },
-    {
-      "id": "c115",
-      "name": "Telunjuk",
-      "enName": "Point",
-      "categoryId": "cat1",
-      "imagePath": "assets/images/img_asset/telunjuk.png",
-      "soundPath": "assets/sound/id/telunjuk.mp3",
-      "enSoundPath": "assets/sound/en/point.mp3"
-    },
-    {
-      "id": "c116",
-      "name": "Pohon",
-      "enName": "Tree",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/pohon.png",
-      "soundPath": "assets/sound/id/pohon.mp3",
-      "enSoundPath": "assets/sound/en/tree.mp3"
-    },
-    {
-      "id": "c117",
-      "name": "Semut",
-      "enName": "Ant",
-      "categoryId": "cat4",
-      "imagePath": "assets/images/img_asset/semut.png",
-      "soundPath": "assets/sound/id/semut.mp3",
-      "enSoundPath": "assets/sound/en/ant.mp3"
-    },
-    {
-      "id": "c118",
-      "name": "Pisau",
-      "enName": "Knife",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/pisau.png",
-      "soundPath": "assets/sound/id/pisau.mp3",
-      "enSoundPath": "assets/sound/en/knife.mp3"
-    },
-    {
-      "id": "c119",
-      "name": "Jungkat Jungkit",
-      "enName": "See Saw",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/jungkat jungkit.png",
-      "soundPath": "assets/sound/id/jukngkat jungkit.mp3",
-      "enSoundPath": "assets/sound/en/see saw.mp3"
-    },
-    {
-      "id": "c120",
-      "name": "Closet",
-      "enName": "Closet",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/closet.png",
-      "soundPath": "assets/sound/id/closet indo.mp3",
-      "enSoundPath": "assets/sound/en/closet.mp3"
-    },
-    {
-      "id": "c229",
-      "name": "Celana Pendek",
-      "enName": "Shortpant",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/celana pendek copy.png",
-      "soundPath": "assets/sound/id/celana pendek.mp3",
-      "enSoundPath": "assets/sound/en/shortpant.mp3"
-    },
-    {
-      "id": "c121",
-      "name": "Bra",
-      "enName": "Bra",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/bra.png",
-      "soundPath": "assets/sound/id/bra indo.mp3",
-      "enSoundPath": "assets/sound/en/bra.mp3"
+      "imagePath": "assets/images/img_asset/ac.png",
+      "soundPath": "assets/sound/id/Ac.m4a",
+      "enSoundPath": "assets/sound/en/ac.mp3"
     },
     {
       "id": "c122",
@@ -1099,31 +253,139 @@
       "enSoundPath": "assets/sound/en/shiver.mp3"
     },
     {
-      "id": "c123",
-      "name": "Jaket",
-      "enName": "Jacket",
+      "id": "c57",
+      "name": "Ayunan",
+      "enName": "Swing",
       "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/jacket.png",
-      "soundPath": "assets/sound/id/jaket.mp3",
-      "enSoundPath": "assets/sound/en/jacket.mp3"
+      "imagePath": "assets/images/img_asset/ayunan.png",
+      "soundPath": "assets/sound/id/ayunan.mp3",
+      "enSoundPath": "assets/sound/en/swing.mp3"
     },
     {
-      "id": "c124",
-      "name": "Saklar Lampu",
-      "enName": "Switch",
+      "id": "c93",
+      "name": "Balok",
+      "enName": "Block",
       "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/saklar lampu.png",
-      "soundPath": "assets/sound/id/saklar lampu.mp3",
-      "enSoundPath": "assets/sound/en/switch.mp3"
+      "imagePath": "assets/images/img_asset/balok.png",
+      "soundPath": "assets/sound/id/balok.mp3",
+      "enSoundPath": "assets/sound/en/block.mp3"
     },
     {
-      "id": "c126",
-      "name": "Sabun Cair",
-      "enName": "Soap",
+      "id": "c56",
+      "name": "Balon",
+      "enName": "Balloon",
       "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sabun cair.png",
-      "soundPath": "assets/sound/id/sabun cair.mp3",
-      "enSoundPath": "assets/sound/en/soup.mp3"
+      "imagePath": "assets/images/img_asset/balon.png",
+      "soundPath": "assets/sound/id/balon.mp3",
+      "enSoundPath": "assets/sound/en/ballon.mp3"
+    },
+    {
+      "id": "c92",
+      "name": "Bantal",
+      "enName": "Pillow",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/bantal.png",
+      "soundPath": "assets/sound/id/bantal.mp3",
+      "enSoundPath": "assets/sound/en/pillow.mp3"
+    },
+    {
+      "id": "c141",
+      "name": "Bedak",
+      "enName": "Powder",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/bedak.png",
+      "soundPath": "assets/sound/id/bedak.mp3",
+      "enSoundPath": "assets/sound/en/powder.mp3"
+    },
+    {
+      "id": "c94",
+      "name": "Bintang",
+      "enName": "Star",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/bintang.png",
+      "soundPath": "assets/sound/id/bintang.mp3",
+      "enSoundPath": "assets/sound/en/star.mp3"
+    },
+    {
+      "id": "c58",
+      "name": "Bis",
+      "enName": "Bus",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/bis.png",
+      "soundPath": "assets/sound/id/bis.mp3",
+      "enSoundPath": "assets/sound/en/bus.mp3"
+    },
+    {
+      "id": "c19",
+      "name": "Bola",
+      "enName": "Ball",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/bola.png",
+      "soundPath": "assets/sound/id/Bola.m4a",
+      "enSoundPath": "assets/sound/en/ball.mp3"
+    },
+    {
+      "id": "c14",
+      "name": "Botol",
+      "enName": "Bottle",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/botol.png",
+      "soundPath": "assets/sound/id/Botol.m4a",
+      "enSoundPath": "assets/sound/en/bottle.mp3"
+    },
+    {
+      "id": "c45",
+      "name": "Botol Susu",
+      "enName": "Milk Bottle",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/botol susu.png",
+      "soundPath": "assets/sound/id/botol susu.mp3",
+      "enSoundPath": "assets/sound/en/milk bottle.mp3"
+    },
+    {
+      "id": "c121",
+      "name": "Bra",
+      "enName": "Bra",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/bra.png",
+      "soundPath": "assets/sound/id/bra indo.mp3",
+      "enSoundPath": "assets/sound/en/bra.mp3"
+    },
+    {
+      "id": "c69",
+      "name": "Bubbles",
+      "enName": "Bubbles",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/bubbles.png",
+      "soundPath": "assets/sound/id/bubbles indo.mp3",
+      "enSoundPath": "assets/sound/en/bubbles.mp3"
+    },
+    {
+      "id": "c9",
+      "name": "Buku",
+      "enName": "Book",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/buku.png",
+      "soundPath": "assets/sound/id/Buku.m4a",
+      "enSoundPath": "assets/sound/en/book.mp3"
+    },
+    {
+      "id": "c34",
+      "name": "Bunga",
+      "enName": "Flower",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/bunga.png",
+      "soundPath": "assets/sound/id/Bunga.m4a",
+      "enSoundPath": "assets/sound/en/flower.mp3"
+    },
+    {
+      "id": "c144",
+      "name": "CCTV",
+      "enName": "CCTV",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/cctv.png",
+      "soundPath": "assets/sound/id/cctv.mp3",
+      "enSoundPath": "assets/sound/en/cctv.mp3"
     },
     {
       "id": "c127",
@@ -1135,6 +397,24 @@
       "enSoundPath": "assets/sound/en/underware.mp3"
     },
     {
+      "id": "c111",
+      "name": "Celana Panjang",
+      "enName": "Pants",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/celana panjang.png",
+      "soundPath": "assets/sound/id/celana panjang.mp3",
+      "enSoundPath": "assets/sound/en/Pants.mp3"
+    },
+    {
+      "id": "c86",
+      "name": "Celana Pendek",
+      "enName": "Short Pants",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/celana pendek.png",
+      "soundPath": "assets/sound/id/celana pendek.mp3",
+      "enSoundPath": "assets/sound/en/shortpant.mp3"
+    },
+    {
       "id": "c128",
       "name": "Cincin",
       "enName": "Ring",
@@ -1144,13 +424,67 @@
       "enSoundPath": "assets/sound/en/ring.mp3"
     },
     {
-      "id": "c129",
-      "name": "Obat",
-      "enName": "Medicine",
+      "id": "c120",
+      "name": "Closet",
+      "enName": "Closet",
       "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/obat.png",
-      "soundPath": "assets/sound/id/obat.mp3",
-      "enSoundPath": "assets/sound/en/medicine.mp3"
+      "imagePath": "assets/images/img_asset/closet.png",
+      "soundPath": "assets/sound/id/closet indo.mp3",
+      "enSoundPath": "assets/sound/en/closet.mp3"
+    },
+    {
+      "id": "c137",
+      "name": "Daun",
+      "enName": "Leaf",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/daun.png",
+      "soundPath": "assets/sound/id/daun.mp3",
+      "enSoundPath": "assets/sound/en/leaf.mp3"
+    },
+    {
+      "id": "c151",
+      "name": "Dompet",
+      "enName": "Wallet",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/dompet.png",
+      "soundPath": "assets/sound/id/dompet.mp3",
+      "enSoundPath": "assets/sound/en/wallet.mp3"
+    },
+    {
+      "id": "c95",
+      "name": "Ember",
+      "enName": "Bucket",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/ember.png",
+      "soundPath": "assets/sound/id/ember.mp3",
+      "enSoundPath": "assets/sound/en/bucket.mp3"
+    },
+    {
+      "id": "c99",
+      "name": "Gantungan Baju",
+      "enName": "Hanger",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/gantungan baju.png",
+      "soundPath": "assets/sound/id/gantungan baju.mp3",
+      "enSoundPath": "assets/sound/en/hanger.mp3"
+    },
+    {
+      "id": "c159",
+      "name": "Gantungan Baju",
+      "enName": "Hanger",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/gantungan baju-1.png",
+      "soundPath": "assets/sound/id/gantungan baju.mp3",
+      "enSoundPath": "assets/sound/en/hanger.mp3"
+    },
+    {
+      "id": "c88",
+      "name": "Garpu",
+      "enName": "Fork",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/garpu.png",
+      "soundPath": "assets/sound/id/garpu.mp3",
+      "enSoundPath": "assets/sound/en/fork.mp3"
     },
     {
       "id": "c130",
@@ -1162,22 +496,652 @@
       "enSoundPath": "assets/sound/en/dress.mp3"
     },
     {
-      "id": "c131",
-      "name": "Halte",
-      "enName": "Halte",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/halte.png",
-      "soundPath": "assets/sound/id/halte indo.mp3",
-      "enSoundPath": "assets/sound/en/halte.mp3"
+      "id": "c59",
+      "name": "Gayung",
+      "enName": "Dipper",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/gayung.png",
+      "soundPath": "assets/sound/id/gayung.mp3",
+      "enSoundPath": "assets/sound/en/dipper.mp3"
     },
     {
-      "id": "c132",
-      "name": "Api",
-      "enName": "Fire",
-      "categoryId": "cat1",
-      "imagePath": "assets/images/img_asset/api.png",
-      "soundPath": "assets/sound/id/api.mp3",
-      "enSoundPath": "assets/sound/en/fire.mp3"
+      "id": "c89",
+      "name": "Gunting",
+      "enName": "Scissor",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/gunting.png",
+      "soundPath": "assets/sound/id/gunting.mp3",
+      "enSoundPath": "assets/sound/en/scissor.mp3"
+    },
+    {
+      "id": "c150",
+      "name": "Hadiah",
+      "enName": "Gift",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/hadiah.png",
+      "soundPath": "assets/sound/id/hadiah.mp3",
+      "enSoundPath": "assets/sound/en/gift.mp3"
+    },
+    {
+      "id": "c26",
+      "name": "Handuk",
+      "enName": "Towel",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/handuk.png",
+      "soundPath": "assets/sound/id/Handuk.m4a",
+      "enSoundPath": "assets/sound/en/towel.mp3"
+    },
+    {
+      "id": "c60",
+      "name": "Helikopter",
+      "enName": "Helicopter",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/helikopter.png",
+      "soundPath": "assets/sound/id/helikopter.mp3",
+      "enSoundPath": "assets/sound/en/helicopter.mp3"
+    },
+    {
+      "id": "c91",
+      "name": "HP",
+      "enName": "HP",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/hp.png",
+      "soundPath": "assets/sound/id/hp.mp3",
+      "enSoundPath": "assets/sound/en/handphone.mp3"
+    },
+    {
+      "id": "c123",
+      "name": "Jaket",
+      "enName": "Jacket",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/jacket.png",
+      "soundPath": "assets/sound/id/jaket.mp3",
+      "enSoundPath": "assets/sound/en/jacket.mp3"
+    },
+    {
+      "id": "c62",
+      "name": "Jam Dinding",
+      "enName": "Clock",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/jam dinding.png",
+      "soundPath": "assets/sound/id/jam dinding.mp3",
+      "enSoundPath": "assets/sound/en/clock.mp3"
+    },
+    {
+      "id": "c51",
+      "name": "Jam Tangan",
+      "enName": "Watch",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/jam tangan.png",
+      "soundPath": "assets/sound/id/jam tangan.mp3",
+      "enSoundPath": "assets/sound/en/watch.mp3"
+    },
+    {
+      "id": "c76",
+      "name": "Jepit Jemuran",
+      "enName": "Clothes Peg",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/jepit jemuran.png",
+      "soundPath": "assets/sound/id/jepit jemuran.mp3",
+      "enSoundPath": "assets/sound/en/clothes peg.mp3"
+    },
+    {
+      "id": "c119",
+      "name": "Jungkat Jungkit",
+      "enName": "See Saw",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/jungkat jungkit.png",
+      "soundPath": "assets/sound/id/jukngkat jungkit.mp3",
+      "enSoundPath": "assets/sound/en/see saw.mp3"
+    },
+    {
+      "id": "c140",
+      "name": "Kabel",
+      "enName": "Cable",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kabel.png",
+      "soundPath": "assets/sound/id/kabel.mp3",
+      "enSoundPath": "assets/sound/en/cable.mp3"
+    },
+    {
+      "id": "c22",
+      "name": "Kacamata",
+      "enName": "Glasses",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kaca mata.png",
+      "soundPath": "assets/sound/id/Kaca mata.m4a",
+      "enSoundPath": "assets/sound/en/glasses.mp3"
+    },
+    {
+      "id": "c18",
+      "name": "Kalender",
+      "enName": "Calendar",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kalender.png",
+      "soundPath": "assets/sound/id/Kalender.m4a",
+      "enSoundPath": "assets/sound/en/calender.mp3"
+    },
+    {
+      "id": "c153",
+      "name": "Kamera",
+      "enName": "Camera",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kamera.png",
+      "soundPath": "assets/sound/id/kamera.mp3",
+      "enSoundPath": "assets/sound/en/camera.mp3"
+    },
+    {
+      "id": "c104",
+      "name": "Kaos",
+      "enName": "Tshirt",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/t shirt.png",
+      "soundPath": "assets/sound/id/kaos.mp3",
+      "enSoundPath": "assets/sound/en/tshirt.mp3"
+    },
+    {
+      "id": "c21",
+      "name": "Kaus Kaki",
+      "enName": "Socks",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kaus kaki.png",
+      "soundPath": "assets/sound/id/Kaus kaki.m4a",
+      "enSoundPath": "assets/sound/en/socks.mp3"
+    },
+    {
+      "id": "c108",
+      "name": "Kemeja",
+      "enName": "Shirt",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kemeja.png",
+      "soundPath": "assets/sound/id/kemeja.mp3",
+      "enSoundPath": "assets/sound/en/shirt.mp3"
+    },
+    {
+      "id": "c63",
+      "name": "Kentang Goreng",
+      "enName": "French Fries",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kentang goreng.png",
+      "soundPath": "assets/sound/id/kentang goreng.mp3",
+      "enSoundPath": "assets/sound/en/french fries.mp3"
+    },
+    {
+      "id": "c78",
+      "name": "Keran Air",
+      "enName": "Faucet",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/keran air.png",
+      "soundPath": "assets/sound/id/keran air.mp3",
+      "enSoundPath": "assets/sound/en/faucet.mp3"
+    },
+    {
+      "id": "c8",
+      "name": "Keranjang",
+      "enName": "Basket",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/keranjang.png",
+      "soundPath": "assets/sound/id/Keranjang.m4a",
+      "enSoundPath": "assets/sound/en/Basket.mp3"
+    },
+    {
+      "id": "c149",
+      "name": "Kereta Api",
+      "enName": "Train",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kereta api.png",
+      "soundPath": "assets/sound/id/kereta api.mp3",
+      "enSoundPath": "assets/sound/en/train.mp3"
+    },
+    {
+      "id": "c87",
+      "name": "Kipas",
+      "enName": "Fan",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kipas.png",
+      "soundPath": "assets/sound/id/kipas.mp3",
+      "enSoundPath": "assets/sound/en/fan.mp3"
+    },
+    {
+      "id": "c100",
+      "name": "Kompor",
+      "enName": "Stove",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kompor.png",
+      "soundPath": "assets/sound/id/kompor.mp3",
+      "enSoundPath": "assets/sound/en/stove.mp3"
+    },
+    {
+      "id": "c98",
+      "name": "Komputer",
+      "enName": "Computer",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/komputer.png",
+      "soundPath": "assets/sound/id/komputer.mp3",
+      "enSoundPath": "assets/sound/en/computer.mp3"
+    },
+    {
+      "id": "c143",
+      "name": "Kulkas",
+      "enName": "Fridge",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kulkas.png",
+      "soundPath": "assets/sound/id/kulkas.mp3",
+      "enSoundPath": "assets/sound/en/fridge.mp3"
+    },
+    {
+      "id": "c160",
+      "name": "Kunci",
+      "enName": "Key",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kunci.png",
+      "soundPath": "assets/sound/id/kunci.mp3",
+      "enSoundPath": "assets/sound/en/key.mp3"
+    },
+    {
+      "id": "c6",
+      "name": "Kursi",
+      "enName": "Chair",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/kursi.png",
+      "soundPath": "assets/sound/id/Kursi.m4a",
+      "enSoundPath": "assets/sound/en/Chair.m4a"
+    },
+    {
+      "id": "c65",
+      "name": "Laci",
+      "enName": "Drawer",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/laci.png",
+      "soundPath": "assets/sound/id/laci.mp3",
+      "enSoundPath": "assets/sound/en/drawer.mp3"
+    },
+    {
+      "id": "c7",
+      "name": "Lampu",
+      "enName": "Lamp",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/lampu.png",
+      "soundPath": "assets/sound/id/Lampu.m4a",
+      "enSoundPath": "assets/sound/en/Lamp.m4a"
+    },
+    {
+      "id": "c50",
+      "name": "Lemari",
+      "enName": "Wardrobe",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/lemari.png",
+      "soundPath": "assets/sound/id/lemari.mp3",
+      "enSoundPath": "assets/sound/en/wardrop.mp3"
+    },
+    {
+      "id": "c152",
+      "name": "Lipstik",
+      "enName": "Lipstick",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/lipstik.png",
+      "soundPath": "assets/sound/id/lipstik.mp3",
+      "enSoundPath": "assets/sound/en/lipstick.mp3"
+    },
+    {
+      "id": "c84",
+      "name": "Macara",
+      "enName": "Maraca",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/maraca.png",
+      "soundPath": "assets/sound/id/maraca indo.mp3",
+      "enSoundPath": "assets/sound/en/maraca.mp3"
+    },
+    {
+      "id": "c29",
+      "name": "Mangkuk",
+      "enName": "Bowl",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/mangkuk.png",
+      "soundPath": "assets/sound/id/Mangkuk.m4a",
+      "enSoundPath": "assets/sound/en/bowl.mp3"
+    },
+    {
+      "id": "c2",
+      "name": "Meja",
+      "enName": "Table",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/meja.png",
+      "soundPath": "assets/sound/id/Meja.m4a",
+      "enSoundPath": "assets/sound/en/Table.m4a"
+    },
+    {
+      "id": "c158",
+      "name": "Mesin Cuci",
+      "enName": "Washing Machine",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/mesin cuci.png",
+      "soundPath": "assets/sound/id/mesin cuci.mp3",
+      "enSoundPath": "assets/sound/en/washing mechine.mp3"
+    },
+    {
+      "id": "c5",
+      "name": "Mobil",
+      "enName": "Car",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/mobil.png",
+      "soundPath": "assets/sound/id/Mobil.m4a",
+      "enSoundPath": "assets/sound/en/Car.m4a"
+    },
+    {
+      "id": "c31",
+      "name": "Motor",
+      "enName": "Motorbike",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/motor.png",
+      "soundPath": "assets/sound/id/Motor.m4a",
+      "enSoundPath": "assets/sound/en/motorbike.mp3"
+    },
+    {
+      "id": "c129",
+      "name": "Obat",
+      "enName": "Medicine",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/obat.png",
+      "soundPath": "assets/sound/id/obat.mp3",
+      "enSoundPath": "assets/sound/en/medicine.mp3"
+    },
+    {
+      "id": "c11",
+      "name": "Odol",
+      "enName": "Tooth Paste",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/odol.png",
+      "soundPath": "assets/sound/id/Odol.m4a",
+      "enSoundPath": "assets/sound/en/tooth paste.mp3"
+    },
+    {
+      "id": "c154",
+      "name": "Penggaris",
+      "enName": "Ruler",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/penggaris.png",
+      "soundPath": "assets/sound/id/penggaris.mp3",
+      "enSoundPath": "assets/sound/en/ruler.mp3"
+    },
+    {
+      "id": "c47",
+      "name": "Pensil",
+      "enName": "Pencil",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/pensil.png",
+      "soundPath": "assets/sound/id/pensil.mp3",
+      "enSoundPath": "assets/sound/en/pencil.mp3"
+    },
+    {
+      "id": "c156",
+      "name": "Pepaya",
+      "enName": "Papaya",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/pepaya.png",
+      "soundPath": "assets/sound/id/pepaya.mp3",
+      "enSoundPath": "assets/sound/en/papaya.mp3"
+    },
+    {
+      "id": "c148",
+      "name": "Perahu",
+      "enName": "Boat",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/perahu.png",
+      "soundPath": "assets/sound/id/perahu.mp3",
+      "enSoundPath": "assets/sound/en/boat.mp3"
+    },
+    {
+      "id": "c109",
+      "name": "Perosotan",
+      "enName": "Slide",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/perosotan.png",
+      "soundPath": "assets/sound/id/prosotan.mp3",
+      "enSoundPath": "assets/sound/en/slide.mp3"
+    },
+    {
+      "id": "c39",
+      "name": "Pesawat",
+      "enName": "Plane",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/pesawat.png",
+      "soundPath": "assets/sound/id/Pesawat.mp3",
+      "enSoundPath": "assets/sound/en/plane.mp3"
+    },
+    {
+      "id": "c15",
+      "name": "Piring",
+      "enName": "Plate",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/piring.png",
+      "soundPath": "assets/sound/id/Piring.m4a",
+      "enSoundPath": "assets/sound/en/plate.mp3"
+    },
+    {
+      "id": "c118",
+      "name": "Pisau",
+      "enName": "Knife",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/pisau.png",
+      "soundPath": "assets/sound/id/pisau.mp3",
+      "enSoundPath": "assets/sound/en/knife.mp3"
+    },
+    {
+      "id": "c105",
+      "name": "Playdough",
+      "enName": "Playdough",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/playdough.png",
+      "soundPath": "assets/sound/id/playdough indo.mp3",
+      "enSoundPath": "assets/sound/en/playdough.mp3"
+    },
+    {
+      "id": "c116",
+      "name": "Pohon",
+      "enName": "Tree",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/pohon.png",
+      "soundPath": "assets/sound/id/pohon.mp3",
+      "enSoundPath": "assets/sound/en/tree.mp3"
+    },
+    {
+      "id": "c90",
+      "name": "Pulpen",
+      "enName": "Pen",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/pen.png",
+      "soundPath": "assets/sound/id/pulpen.mp3",
+      "enSoundPath": "assets/sound/en/pen.mp3"
+    },
+    {
+      "id": "c72",
+      "name": "Puzzle",
+      "enName": "Puzzle",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/puzzle.png",
+      "soundPath": "assets/sound/id/puzzle indo.mp3",
+      "enSoundPath": "assets/sound/en/puzzle.mp3"
+    },
+    {
+      "id": "c42",
+      "name": "Rak Buku",
+      "enName": "Book Shelf",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/rak buku.png",
+      "soundPath": "assets/sound/id/rak buku.mp3",
+      "enSoundPath": "assets/sound/en/book shelf.mp3"
+    },
+    {
+      "id": "c54",
+      "name": "Rak Sepatu",
+      "enName": "Shoes Shelf",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/rak sepatu.png",
+      "soundPath": "assets/sound/id/rak sepatu.mp3",
+      "enSoundPath": "assets/sound/en/shoes shelf.mp3"
+    },
+    {
+      "id": "c46",
+      "name": "Ranjang",
+      "enName": "Bed",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/ranjang.png",
+      "soundPath": "assets/sound/id/ranjang.mp3",
+      "enSoundPath": "assets/sound/en/bed.mp3"
+    },
+    {
+      "id": "c97",
+      "name": "Ransel",
+      "enName": "Bag Pack",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/ransel.png",
+      "soundPath": "assets/sound/id/ransel.mp3",
+      "enSoundPath": "assets/sound/en/bag pack.mp3"
+    },
+    {
+      "id": "c161",
+      "name": "Remot",
+      "enName": "Remote",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/remote.png",
+      "soundPath": "assets/sound/id/remot.mp3",
+      "enSoundPath": "assets/sound/en/remote.mp3"
+    },
+    {
+      "id": "c24",
+      "name": "Sabun",
+      "enName": "Soap",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sabun.png",
+      "soundPath": "assets/sound/id/Sabun.m4a",
+      "enSoundPath": "assets/sound/en/soap.mp3"
+    },
+    {
+      "id": "c126",
+      "name": "Sabun Cair",
+      "enName": "Soap",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sabun cair.png",
+      "soundPath": "assets/sound/id/sabun cair.mp3",
+      "enSoundPath": "assets/sound/en/soup.mp3"
+    },
+    {
+      "id": "c124",
+      "name": "Saklar Lampu",
+      "enName": "Switch",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/saklar lampu.png",
+      "soundPath": "assets/sound/id/saklar lampu.mp3",
+      "enSoundPath": "assets/sound/en/switch.mp3"
+    },
+    {
+      "id": "c96",
+      "name": "Selang",
+      "enName": "Water Hose",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/selang.png",
+      "soundPath": "assets/sound/id/selang.mp3",
+      "enSoundPath": "assets/sound/en/water hose.mp3"
+    },
+    {
+      "id": "c139",
+      "name": "Semprotan",
+      "enName": "Shower Jet",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/semprotan.png",
+      "soundPath": "assets/sound/id/semprotan.mp3",
+      "enSoundPath": "assets/sound/en/shower jet.mp3"
+    },
+    {
+      "id": "c28",
+      "name": "Sendal",
+      "enName": "Sandal",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sendal.png",
+      "soundPath": "assets/sound/id/Sendal.m4a",
+      "enSoundPath": "assets/sound/en/sandal.mp3"
+    },
+    {
+      "id": "c146",
+      "name": "Sendal",
+      "enName": "Sandal",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sendal copy.png",
+      "soundPath": "assets/sound/id/Sendal.m4a",
+      "enSoundPath": "assets/sound/en/sandal.mp3"
+    },
+    {
+      "id": "c16",
+      "name": "Sendok",
+      "enName": "Spoon",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sendok.png",
+      "soundPath": "assets/sound/id/Sendok.m4a",
+      "enSoundPath": "assets/sound/en/spoon.mp3"
+    },
+    {
+      "id": "c20",
+      "name": "Sepatu",
+      "enName": "Shoes",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sepatu copy.png",
+      "soundPath": "assets/sound/id/Sepatu.m4a",
+      "enSoundPath": "assets/sound/en/shoes.mp3"
+    },
+    {
+      "id": "c145",
+      "name": "Shower",
+      "enName": "Shower",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/shower.png",
+      "soundPath": "assets/sound/id/shower indo.mp3",
+      "enSoundPath": "assets/sound/en/shower.mp3"
+    },
+    {
+      "id": "c10",
+      "name": "Sikat Gigi",
+      "enName": "Tooth Brush",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sikat gigi.png",
+      "soundPath": "assets/sound/id/Sikat gigi.m4a",
+      "enSoundPath": "assets/sound/en/tooth brush.mp3"
+    },
+    {
+      "id": "c41",
+      "name": "Sisir",
+      "enName": "Comb",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sisir.png",
+      "soundPath": "assets/sound/id/sisir.mp3",
+      "enSoundPath": "assets/sound/en/comb.mp3"
+    },
+    {
+      "id": "c35",
+      "name": "Sofa",
+      "enName": "Sofa",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sofa.png",
+      "soundPath": "assets/sound/id/Sofa.m4a",
+      "enSoundPath": "assets/sound/en/sofa.mp3"
+    },
+    {
+      "id": "c142",
+      "name": "SunScreen",
+      "enName": "SunScreen",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sun screen.png",
+      "soundPath": "assets/sound/id/sunscreen indo.mp3",
+      "enSoundPath": "assets/sound/en/sunscreen.mp3"
+    },
+    {
+      "id": "c157",
+      "name": "Sup",
+      "enName": "Soup",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/sup.png",
+      "soundPath": "assets/sound/id/sup.mp3",
+      "enSoundPath": "assets/sound/en/soup.mp3"
     },
     {
       "id": "c133",
@@ -1187,6 +1151,78 @@
       "imagePath": "assets/images/img_asset/sweater.png",
       "soundPath": "assets/sound/id/sweater indo.mp3",
       "enSoundPath": "assets/sound/en/sweater.mp3"
+    },
+    {
+      "id": "c102",
+      "name": "Tangga",
+      "enName": "Stair",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/tangga.png",
+      "soundPath": "assets/sound/id/tangga.mp3",
+      "enSoundPath": "assets/sound/en/stair.mp3"
+    },
+    {
+      "id": "c36",
+      "name": "Tas",
+      "enName": "Bag",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/tas.png",
+      "soundPath": "assets/sound/id/Tas.m4a",
+      "enSoundPath": "assets/sound/en/bag.mp3"
+    },
+    {
+      "id": "c32",
+      "name": "Telepon",
+      "enName": "Phone",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/telepon.png",
+      "soundPath": "assets/sound/id/Telepon.m4a",
+      "enSoundPath": "assets/sound/en/phone.mp3"
+    },
+    {
+      "id": "c114",
+      "name": "Tempat Tidur",
+      "enName": "Bed",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/tempat tidur.png",
+      "soundPath": "assets/sound/id/tempat tidur.mp3",
+      "enSoundPath": "assets/sound/en/bed.mp3"
+    },
+    {
+      "id": "c147",
+      "name": "Tikus",
+      "enName": "Mouse",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/tikus.png",
+      "soundPath": "assets/sound/id/tikus.mp3",
+      "enSoundPath": "assets/sound/en/mouse.mp3"
+    },
+    {
+      "id": "c103",
+      "name": "Tissue",
+      "enName": "Tissue",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/tissue.png",
+      "soundPath": "assets/sound/id/tissu.mp3",
+      "enSoundPath": "assets/sound/en/tissue.mp3"
+    },
+    {
+      "id": "c12",
+      "name": "Topi",
+      "enName": "Hat",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/topi.png",
+      "soundPath": "assets/sound/id/Topi.m4a",
+      "enSoundPath": "assets/sound/en/hat.mp3"
+    },
+    {
+      "id": "c55",
+      "name": "Troli",
+      "enName": "Trolley",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/troli.png",
+      "soundPath": "assets/sound/id/troli.mp3",
+      "enSoundPath": "assets/sound/en/trolley.mp3"
     },
     {
       "id": "c134",
@@ -1207,6 +1243,123 @@
       "enSoundPath": "assets/sound/en/tv.mp3"
     },
     {
+      "id": "c74",
+      "name": "Uang",
+      "enName": "Money",
+      "categoryId": "cat3",
+      "imagePath": "assets/images/img_asset/uang.png",
+      "soundPath": "assets/sound/id/uang.mp3",
+      "enSoundPath": "assets/sound/en/money.mp3"
+    },
+    {
+      "id": "c23",
+      "name": "Anjing",
+      "enName": "Dog",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/anjing.png",
+      "soundPath": "assets/sound/id/Anjing.m4a",
+      "enSoundPath": "assets/sound/en/dog.mp3"
+    },
+    {
+      "id": "c30",
+      "name": "Ayam",
+      "enName": "Chicken",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/ayam.png",
+      "soundPath": "assets/sound/id/Ayam.m4a",
+      "enSoundPath": "assets/sound/en/chicken.mp3"
+    },
+    {
+      "id": "c33",
+      "name": "Bebek",
+      "enName": "Duck",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/bebek.png",
+      "soundPath": "assets/sound/id/Bebek.m4a",
+      "enSoundPath": "assets/sound/en/duck.mp3"
+    },
+    {
+      "id": "c25",
+      "name": "Burung",
+      "enName": "Bird",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/burung.png",
+      "soundPath": "assets/sound/id/Burung.m4a",
+      "enSoundPath": "assets/sound/en/bird.mp3"
+    },
+    {
+      "id": "c82",
+      "name": "Cacing",
+      "enName": "Worm",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/cacing.png",
+      "soundPath": "assets/sound/id/cacing.mp3",
+      "enSoundPath": "assets/sound/en/worm.mp3"
+    },
+    {
+      "id": "c38",
+      "name": "Gajah",
+      "enName": "Elephant",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/gajah.png",
+      "soundPath": "assets/sound/id/Gajah.m4a",
+      "enSoundPath": "assets/sound/en/elephant.mp3"
+    },
+    {
+      "id": "c43",
+      "name": "Ikan",
+      "enName": "Fish",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/ikan.png",
+      "soundPath": "assets/sound/id/ikan.mp3",
+      "enSoundPath": "assets/sound/en/fish.mp3"
+    },
+    {
+      "id": "c53",
+      "name": "Jerapah",
+      "enName": "Giraffe",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/jerapah.png",
+      "soundPath": "assets/sound/id/jerapah.mp3",
+      "enSoundPath": "assets/sound/en/giraffe.mp3"
+    },
+    {
+      "id": "c83",
+      "name": "Kelinci",
+      "enName": "Rabbit",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/kelinci.png",
+      "soundPath": "assets/sound/id/kelinci.mp3",
+      "enSoundPath": "assets/sound/en/rabbit.mp3"
+    },
+    {
+      "id": "c48",
+      "name": "Kodok",
+      "enName": "Frog",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/kodok.png",
+      "soundPath": "assets/sound/id/kodok.mp3",
+      "enSoundPath": "assets/sound/en/frog.mp3"
+    },
+    {
+      "id": "c44",
+      "name": "Kucing",
+      "enName": "Cat",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/kucing.png",
+      "soundPath": "assets/sound/id/kucing.mp3",
+      "enSoundPath": "assets/sound/en/cat.mp3"
+    },
+    {
+      "id": "c61",
+      "name": "Kuda",
+      "enName": "Horse",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/kuda.png",
+      "soundPath": "assets/sound/id/kuda.mp3",
+      "enSoundPath": "assets/sound/en/horse.mp3"
+    },
+    {
       "id": "c136",
       "name": "Kupu-kupu",
       "enName": "Butterfly",
@@ -1216,13 +1369,31 @@
       "enSoundPath": "assets/sound/en/butterfly.mp3"
     },
     {
-      "id": "c137",
-      "name": "Daun",
-      "enName": "Leaf",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/daun.png",
-      "soundPath": "assets/sound/id/daun.mp3",
-      "enSoundPath": "assets/sound/en/leaf.mp3"
+      "id": "c17",
+      "name": "Laba-laba",
+      "enName": "Spider",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/laba laba.png",
+      "soundPath": "assets/sound/id/Laba laba.m4a",
+      "enSoundPath": "assets/sound/en/spider.mp3"
+    },
+    {
+      "id": "c79",
+      "name": "Sapi",
+      "enName": "Cow",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/sapi.png",
+      "soundPath": "assets/sound/id/sapi.mp3",
+      "enSoundPath": "assets/sound/en/cow.mp3"
+    },
+    {
+      "id": "c117",
+      "name": "Semut",
+      "enName": "Ant",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/semut.png",
+      "soundPath": "assets/sound/id/semut.mp3",
+      "enSoundPath": "assets/sound/en/ant.mp3"
     },
     {
       "id": "c138",
@@ -1234,265 +1405,13 @@
       "enSoundPath": "assets/sound/en/shrimp.mp3"
     },
     {
-      "id": "c139",
-      "name": "Semprotan",
-      "enName": "Shower Jet",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/semprotan.png",
-      "soundPath": "assets/sound/id/semprotan.mp3",
-      "enSoundPath": "assets/sound/en/shower jet.mp3"
-    },
-    {
-      "id": "c140",
-      "name": "Kabel",
-      "enName": "Cable",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kabel.png",
-      "soundPath": "assets/sound/id/kabel.mp3",
-      "enSoundPath": "assets/sound/en/cable.mp3"
-    },
-    {
-      "id": "c141",
-      "name": "Bedak",
-      "enName": "Powder",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/bedak.png",
-      "soundPath": "assets/sound/id/bedak.mp3",
-      "enSoundPath": "assets/sound/en/powder.mp3"
-    },
-    {
-      "id": "c142",
-      "name": "SunScreen",
-      "enName": "SunScreen",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sun screen.png",
-      "soundPath": "assets/sound/id/sunscreen indo.mp3",
-      "enSoundPath": "assets/sound/en/sunscreen.mp3"
-    },
-    {
-      "id": "c143",
-      "name": "Kulkas",
-      "enName": "Fridge",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kulkas.png",
-      "soundPath": "assets/sound/id/kulkas.mp3",
-      "enSoundPath": "assets/sound/en/fridge.mp3"
-    },
-    {
-      "id": "c144",
-      "name": "CCTV",
-      "enName": "CCTV",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/cctv.png",
-      "soundPath": "assets/sound/id/cctv.mp3",
-      "enSoundPath": "assets/sound/en/cctv.mp3"
-    },
-    {
-      "id": "c145",
-      "name": "Shower",
-      "enName": "Shower",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/shower.png",
-      "soundPath": "assets/sound/id/shower indo.mp3",
-      "enSoundPath": "assets/sound/en/shower.mp3"
-    },
-    {
-      "id": "c146",
-      "name": "Sendal",
-      "enName": "Sandal",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sendal copy.png",
-      "soundPath": "assets/sound/id/Sendal.m4a",
-      "enSoundPath": "assets/sound/en/sandal.mp3"
-    },
-    {
-      "id": "c147",
-      "name": "Tikus",
-      "enName": "Mouse",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/tikus.png",
-      "soundPath": "assets/sound/id/tikus.mp3",
-      "enSoundPath": "assets/sound/en/mouse.mp3"
-    },
-    {
-      "id": "c148",
-      "name": "Perahu",
-      "enName": "Boat",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/perahu.png",
-      "soundPath": "assets/sound/id/perahu.mp3",
-      "enSoundPath": "assets/sound/en/boat.mp3"
-    },
-    {
-      "id": "c149",
-      "name": "Kereta Api",
-      "enName": "Train",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kereta api.png",
-      "soundPath": "assets/sound/id/kereta api.mp3",
-      "enSoundPath": "assets/sound/en/train.mp3"
-    },
-    {
-      "id": "c150",
-      "name": "Hadiah",
-      "enName": "Gift",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/hadiah.png",
-      "soundPath": "assets/sound/id/hadiah.mp3",
-      "enSoundPath": "assets/sound/en/gift.mp3"
-    },
-    {
-      "id": "c151",
-      "name": "Dompet",
-      "enName": "Wallet",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/dompet.png",
-      "soundPath": "assets/sound/id/dompet.mp3",
-      "enSoundPath": "assets/sound/en/wallet.mp3"
-    },
-    {
-      "id": "c152",
-      "name": "Lipstik",
-      "enName": "Lipstick",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/lipstik.png",
-      "soundPath": "assets/sound/id/lipstik.mp3",
-      "enSoundPath": "assets/sound/en/lipstick.mp3"
-    },
-    {
-      "id": "c153",
-      "name": "Kamera",
-      "enName": "Camera",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kamera.png",
-      "soundPath": "assets/sound/id/kamera.mp3",
-      "enSoundPath": "assets/sound/en/camera.mp3"
-    },
-    {
-      "id": "c154",
-      "name": "Penggaris",
-      "enName": "Ruler",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/penggaris.png",
-      "soundPath": "assets/sound/id/penggaris.mp3",
-      "enSoundPath": "assets/sound/en/ruler.mp3"
-    },
-    {
-      "id": "c155",
-      "name": "Durian",
-      "enName": "Durian",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/durian.png",
-      "soundPath": "assets/sound/id/durian.mp3",
-      "enSoundPath": "assets/sound/en/durian.mp3"
-    },
-    {
-      "id": "c156",
-      "name": "Pepaya",
-      "enName": "Papaya",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/pepaya.png",
-      "soundPath": "assets/sound/id/pepaya.mp3",
-      "enSoundPath": "assets/sound/en/papaya.mp3"
-    },
-    {
-      "id": "c157",
-      "name": "Sup",
-      "enName": "Soup",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/sup.png",
-      "soundPath": "assets/sound/id/sup.mp3",
-      "enSoundPath": "assets/sound/en/soup.mp3"
-    },
-    {
-      "id": "c158",
-      "name": "Mesin Cuci",
-      "enName": "Washing Machine",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/mesin cuci.png",
-      "soundPath": "assets/sound/id/mesin cuci.mp3",
-      "enSoundPath": "assets/sound/en/washing mechine.mp3"
-    },
-    {
-      "id": "c159",
-      "name": "Gantungan Baju",
-      "enName": "Hanger",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/gantungan baju-1.png",
-      "soundPath": "assets/sound/id/gantungan baju.mp3",
-      "enSoundPath": "assets/sound/en/hanger.mp3"
-    },
-    {
-      "id": "c160",
-      "name": "Kunci",
-      "enName": "Key",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/kunci.png",
-      "soundPath": "assets/sound/id/kunci.mp3",
-      "enSoundPath": "assets/sound/en/key.mp3"
-    },
-    {
-      "id": "c161",
-      "name": "Remot",
-      "enName": "Remote",
-      "categoryId": "cat3",
-      "imagePath": "assets/images/img_asset/remote.png",
-      "soundPath": "assets/sound/id/remot.mp3",
-      "enSoundPath": "assets/sound/en/remote.mp3"
-    },
-    {
-      "id": "c162",
-      "name": "Tangan di Pinggang",
-      "enName": "Hands on Hip",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/tangan dipinggang.png",
-      "soundPath": "assets/sound/id/tangan dipinggang.mp3",
-      "enSoundPath": "assets/sound/en/hand on hip.mp3"
-    },
-    {
-      "id": "c163",
-      "name": "Berenang",
-      "enName": "Swim",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/berenang.png",
-      "soundPath": "assets/sound/id/berenang.mp3",
-      "enSoundPath": "assets/sound/en/swim.mp3"
-    },
-    {
-      "id": "c164",
-      "name": "Menulis",
-      "enName": "Write",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menulis.png",
-      "soundPath": "assets/sound/id/menulis.mp3",
-      "enSoundPath": "assets/sound/en/write.mp3"
-    },
-    {
-      "id": "c165",
-      "name": "Minum",
-      "enName": "Drink",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/minum.png",
-      "soundPath": "assets/sound/id/minum.mp3",
-      "enSoundPath": "assets/sound/en/drink.mp3"
-    },
-    {
-      "id": "c166",
-      "name": "Jalan",
-      "enName": "Walk",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/jalan.png",
-      "soundPath": "assets/sound/id/jalan.mp3",
-      "enSoundPath": "assets/sound/en/walk.mp3"
-    },
-    {
-      "id": "c167",
-      "name": "Memasak",
-      "enName": "Cook",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/memasak.png",
-      "soundPath": "assets/sound/id/memasak.mp3",
-      "enSoundPath": "assets/sound/en/cook.mp3"
+      "id": "c52",
+      "name": "Ular",
+      "enName": "Snake",
+      "categoryId": "cat4",
+      "imagePath": "assets/images/img_asset/ular.png",
+      "soundPath": "assets/sound/id/ular.mp3",
+      "enSoundPath": "assets/sound/en/snake.mp3"
     },
     {
       "id": "c168",
@@ -1504,141 +1423,6 @@
       "enSoundPath": "assets/sound/en/stand up.mp3"
     },
     {
-      "id": "c169",
-      "name": "Naik",
-      "enName": "Going Up",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/naik.png",
-      "soundPath": "assets/sound/id/berdiri.mp3",
-      "enSoundPath": "assets/sound/en/going up.mp3"
-    },
-    {
-      "id": "c170",
-      "name": "Bersepeda",
-      "enName": "Biking",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/bersepeda.png",
-      "soundPath": "assets/sound/id/bersepeda.mp3",
-      "enSoundPath": "assets/sound/en/biking.mp3"
-    },
-    {
-      "id": "c171",
-      "name": "Membaca",
-      "enName": "Read",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/membaca.png",
-      "soundPath": "assets/sound/id/membaca.mp3",
-      "enSoundPath": "assets/sound/en/read.mp3"
-    },
-    {
-      "id": "c172",
-      "name": "Menyikat Gigi",
-      "enName": "Brushing Teeth",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menyikat gigi.png",
-      "soundPath": "assets/sound/id/menyikat gigi.mp3",
-      "enSoundPath": "assets/sound/en/brushing teeth.mp3"
-    },
-    {
-      "id": "c173",
-      "name": "Lompat",
-      "enName": "Jump",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/lompat.png",
-      "soundPath": "assets/sound/id/lompat.mp3",
-      "enSoundPath": "assets/sound/en/jump.mp3"
-    },
-    {
-      "id": "c174",
-      "name": "Menyisir",
-      "enName": "Combing",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menyisir.png",
-      "soundPath": "assets/sound/id/menyisir.mp3",
-      "enSoundPath": "assets/sound/en/combing.mp3"
-    },
-    {
-      "id": "c175",
-      "name": "Tidur",
-      "enName": "Sleep",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/tidur.png",
-      "soundPath": "assets/sound/id/tidur.mp3",
-      "enSoundPath": "assets/sound/en/sleep.mp3"
-    },
-    {
-      "id": "c176",
-      "name": "Duduk",
-      "enName": "Sit",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/duduk.png",
-      "soundPath": "assets/sound/id/duduk.mp3",
-      "enSoundPath": "assets/sound/en/sit.mp3"
-    },
-    {
-      "id": "c177",
-      "name": "Mandi",
-      "enName": "Showering",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/mandi.png",
-      "soundPath": "assets/sound/id/mandi.mp3",
-      "enSoundPath": "assets/sound/en/showering.mp3"
-    },
-    {
-      "id": "c178",
-      "name": "Buang Sampah",
-      "enName": "Throw to Bin",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/buang sampah.png",
-      "soundPath": "assets/sound/id/buang sampah.mp3",
-      "enSoundPath": "assets/sound/en/throw to bin.mp3"
-    },
-    {
-      "id": "c179",
-      "name": "Menggunting",
-      "enName": "Cutting",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menggunting.png",
-      "soundPath": "assets/sound/id/menggunting.mp3",
-      "enSoundPath": "assets/sound/en/cutting.mp3"
-    },
-    {
-      "id": "c180",
-      "name": "Cebok",
-      "enName": "Wash",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/cebok.png",
-      "soundPath": "assets/sound/id/cebok.mp3",
-      "enSoundPath": "assets/sound/en/wash (cebok).mp3"
-    },
-    {
-      "id": "c181",
-      "name": "Menuang",
-      "enName": "Pour",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menuang.png",
-      "soundPath": "assets/sound/id/menuang.mp3",
-      "enSoundPath": "assets/sound/en/pour.mp3"
-    },
-    {
-      "id": "c182",
-      "name": "Merangkak",
-      "enName": "Crawl",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/merangkak.png",
-      "soundPath": "assets/sound/id/merangkak.mp3",
-      "enSoundPath": "assets/sound/en/crawl.mp3"
-    },
-    {
-      "id": "c183",
-      "name": "Menendang",
-      "enName": "Kick",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menendang.png",
-      "soundPath": "assets/sound/id/menendang.mp3",
-      "enSoundPath": "assets/sound/en/kick.mp3"
-    },
-    {
       "id": "c184",
       "name": "Berdoa",
       "enName": "Pray",
@@ -1648,22 +1432,13 @@
       "enSoundPath": "assets/sound/en/pray.mp3"
     },
     {
-      "id": "c185",
-      "name": "Menyanyi",
-      "enName": "Sing",
+      "id": "c163",
+      "name": "Berenang",
+      "enName": "Swim",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menyanyi.png",
-      "soundPath": "assets/sound/id/menyanyi.mp3",
-      "enSoundPath": "assets/sound/en/sing.mp3"
-    },
-    {
-      "id": "c186",
-      "name": "Menangis",
-      "enName": "Cry",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menangis.png",
-      "soundPath": "assets/sound/id/menangis.mp3",
-      "enSoundPath": "assets/sound/en/cry.mp3"
+      "imagePath": "assets/images/img_asset/berenang.png",
+      "soundPath": "assets/sound/id/berenang.mp3",
+      "enSoundPath": "assets/sound/en/swim.mp3"
     },
     {
       "id": "c187",
@@ -1675,6 +1450,15 @@
       "enSoundPath": "assets/sound/en/mirroring.mp3"
     },
     {
+      "id": "c225",
+      "name": "Berkuda",
+      "enName": "Hourse Riding",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/berkuda.png",
+      "soundPath": "assets/sound/id/berkuda.mp3",
+      "enSoundPath": "assets/sound/en/horse riding.mp3"
+    },
+    {
       "id": "c188",
       "name": "Berlari",
       "enName": "Run",
@@ -1684,184 +1468,13 @@
       "enSoundPath": "assets/sound/en/run.mp3"
     },
     {
-      "id": "c189",
-      "name": "Menyetrika",
-      "enName": "Ironing",
+      "id": "c170",
+      "name": "Bersepeda",
+      "enName": "Biking",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menyetrika.png",
-      "soundPath": "assets/sound/id/menyetrika.mp3",
-      "enSoundPath": "assets/sound/en/ironing.mp3"
-    },
-    {
-      "id": "c190",
-      "name": "Mengendarai",
-      "enName": "Drive",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/mengendarai.png",
-      "soundPath": "assets/sound/id/mengendarai.mp3",
-      "enSoundPath": "assets/sound/en/drive.mp3"
-    },
-    {
-      "id": "c191",
-      "name": "Mengetuk",
-      "enName": "Knock",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/mengetuk.png",
-      "soundPath": "assets/sound/id/mengetuk.mp3",
-      "enSoundPath": "assets/sound/en/knock.mp3"
-    },
-    {
-      "id": "c192",
-      "name": "Senyum",
-      "enName": "Smile",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/senyum.png",
-      "soundPath": "assets/sound/id/senyum.mp3",
-      "enSoundPath": "assets/sound/en/smile.mp3"
-    },
-    {
-      "id": "c193",
-      "name": "Makan",
-      "enName": "Eat",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/makan.png",
-      "soundPath": "assets/sound/id/makan.mp3",
-      "enSoundPath": "assets/sound/en/eat.mp3"
-    },
-    {
-      "id": "c194",
-      "name": "Meniup",
-      "enName": "Blow",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/meniup.png",
-      "soundPath": "assets/sound/id/meniup.mp3",
-      "enSoundPath": "assets/sound/en/blow.mp3"
-    },
-    {
-      "id": "c195",
-      "name": "Tarik",
-      "enName": "Pull",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/tarik.png",
-      "soundPath": "assets/sound/id/tarik.mp3",
-      "enSoundPath": "assets/sound/en/pull.mp3"
-    },
-    {
-      "id": "c196",
-      "name": "Mengepel",
-      "enName": "Mop",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/mengepel.png",
-      "soundPath": "assets/sound/id/mengepel.mp3",
-      "enSoundPath": "assets/sound/en/mop.mp3"
-    },
-    {
-      "id": "c197",
-      "name": "Menyapu",
-      "enName": "Brooming",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menyapu.png",
-      "soundPath": "assets/sound/id/menyapu.mp3",
-      "enSoundPath": "assets/sound/en/brooming.mp3"
-    },
-    {
-      "id": "c198",
-      "name": "Memotong",
-      "enName": "Cutting",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/memotong.png",
-      "soundPath": "assets/sound/id/memotong.mp3",
-      "enSoundPath": "assets/sound/en/cutting.mp3"
-    },
-    {
-      "id": "c199",
-      "name": "Dorong",
-      "enName": "Push",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/dorong.png",
-      "soundPath": "assets/sound/id/dorong.mp3",
-      "enSoundPath": "assets/sound/en/push.mp3"
-    },
-    {
-      "id": "c200",
-      "name": "Main",
-      "enName": "Play",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/main.png",
-      "soundPath": "assets/sound/id/main.mp3",
-      "enSoundPath": "assets/sound/en/play.mp3"
-    },
-    {
-      "id": "c201",
-      "name": "Diam",
-      "enName": "Quite",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/diam.png",
-      "soundPath": "assets/sound/id/diam.mp3",
-      "enSoundPath": "assets/sound/en/quite.mp3"
-    },
-    {
-      "id": "c202",
-      "name": "Salaman",
-      "enName": "Shake Hand",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/salaman.png",
-      "soundPath": "assets/sound/id/salaman.mp3",
-      "enSoundPath": "assets/sound/en/shake hand.mp3"
-    },
-    {
-      "id": "c203",
-      "name": "Jatuh",
-      "enName": "Fell Down",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/jatuh.png",
-      "soundPath": "assets/sound/id/jatuh.mp3",
-      "enSoundPath": "assets/sound/en/fell down.mp3"
-    },
-    {
-      "id": "c204",
-      "name": "Pegang",
-      "enName": "Touch",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/pegang.png",
-      "soundPath": "assets/sound/id/pegang.mp3",
-      "enSoundPath": "assets/sound/en/touch.mp3"
-    },
-    {
-      "id": "c205",
-      "name": "Menelepon",
-      "enName": "Calling",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menelpon.png",
-      "soundPath": "assets/sound/id/menelepon.mp3",
-      "enSoundPath": "assets/sound/en/calling.mp3"
-    },
-    {
-      "id": "c206",
-      "name": "Tunjuk",
-      "enName": "Point to",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/tunjuk.png",
-      "soundPath": "assets/sound/id/tunjuk.mp3",
-      "enSoundPath": "assets/sound/en/point to.mp3"
-    },
-    {
-      "id": "c207",
-      "name": "Tepuk Tangan",
-      "enName": "Clap Hands",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/tepuk tangan.png",
-      "soundPath": "assets/sound/id/tepuk tangan.mp3",
-      "enSoundPath": "assets/sound/en/clap hands.mp3"
-    },
-    {
-      "id": "c208",
-      "name": "Cuci Tangan",
-      "enName": "Wash Hands",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/cuci tangan.png",
-      "soundPath": "assets/sound/id/cuci tangan.mp3",
-      "enSoundPath": "assets/sound/en/wash hands.mp3"
+      "imagePath": "assets/images/img_asset/bersepeda.png",
+      "soundPath": "assets/sound/id/bersepeda.mp3",
+      "enSoundPath": "assets/sound/en/biking.mp3"
     },
     {
       "id": "c209",
@@ -1873,6 +1486,33 @@
       "enSoundPath": "assets/sound/en/crossleg.mp3"
     },
     {
+      "id": "c178",
+      "name": "Buang Sampah",
+      "enName": "Throw to Bin",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/buang sampah.png",
+      "soundPath": "assets/sound/id/buang sampah.mp3",
+      "enSoundPath": "assets/sound/en/throw to bin.mp3"
+    },
+    {
+      "id": "c180",
+      "name": "Cebok",
+      "enName": "Wash",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/cebok.png",
+      "soundPath": "assets/sound/id/cebok.mp3",
+      "enSoundPath": "assets/sound/en/wash (cebok).mp3"
+    },
+    {
+      "id": "c208",
+      "name": "Cuci Tangan",
+      "enName": "Wash Hands",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/cuci tangan.png",
+      "soundPath": "assets/sound/id/cuci tangan.mp3",
+      "enSoundPath": "assets/sound/en/wash hands.mp3"
+    },
+    {
       "id": "c210",
       "name": "Dadah",
       "enName": "Bye bye",
@@ -1882,40 +1522,40 @@
       "enSoundPath": "assets/sound/en/bye bye.mp3"
     },
     {
-      "id": "c211",
-      "name": "Mengaduk",
-      "enName": "Stiring",
+      "id": "c199",
+      "name": "Dorong",
+      "enName": "Push",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/mengaduk.png",
-      "soundPath": "assets/sound/id/mengaduk.mp3",
-      "enSoundPath": "assets/sound/en/stiring.mp3"
+      "imagePath": "assets/images/img_asset/dorong.png",
+      "soundPath": "assets/sound/id/dorong.mp3",
+      "enSoundPath": "assets/sound/en/push.mp3"
     },
     {
-      "id": "c212",
-      "name": "Pipis",
-      "enName": "Pee",
+      "id": "c176",
+      "name": "Duduk",
+      "enName": "Sit",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/pipis.png",
-      "soundPath": "assets/sound/id/pipis.mp3",
-      "enSoundPath": "assets/sound/en/pee.mp3"
+      "imagePath": "assets/images/img_asset/duduk.png",
+      "soundPath": "assets/sound/id/duduk.mp3",
+      "enSoundPath": "assets/sound/en/sit.mp3"
     },
     {
-      "id": "c213",
-      "name": "Tangan ke Samping",
-      "enName": "Hand to the Air",
+      "id": "c166",
+      "name": "Jalan",
+      "enName": "Walk",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/tangan ke samping.png",
-      "soundPath": "assets/sound/id/tangan ke samping.mp3",
-      "enSoundPath": "assets/sound/en/hand o the air.mp3"
+      "imagePath": "assets/images/img_asset/jalan.png",
+      "soundPath": "assets/sound/id/jalan.mp3",
+      "enSoundPath": "assets/sound/en/walk.mp3"
     },
     {
-      "id": "c214",
-      "name": "Tangan ke Atas",
-      "enName": "Hands Up",
+      "id": "c203",
+      "name": "Jatuh",
+      "enName": "Fell Down",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/tangan ke atas.png",
-      "soundPath": "assets/sound/id/tangan ke atas.mp3",
-      "enSoundPath": "assets/sound/en/hands up.mp3"
+      "imagePath": "assets/images/img_asset/jatuh.png",
+      "soundPath": "assets/sound/id/jatuh.mp3",
+      "enSoundPath": "assets/sound/en/fell down.mp3"
     },
     {
       "id": "c215",
@@ -1927,33 +1567,6 @@
       "enSoundPath": "assets/sound/en/squat.mp3"
     },
     {
-      "id": "c216",
-      "name": "Tangan Dilipat",
-      "enName": "Fold Hands",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/tangan dilipat.png",
-      "soundPath": "assets/sound/id/tangan dilipat.mp3",
-      "enSoundPath": "assets/sound/en/fold hands.mp3"
-    },
-    {
-      "id": "c217",
-      "name": "Menguap",
-      "enName": "Yawn",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menguap.png",
-      "soundPath": "assets/sound/id/menguap.mp3",
-      "enSoundPath": "assets/sound/en/yawn.mp3"
-    },
-    {
-      "id": "c218",
-      "name": "Pup",
-      "enName": "Poo",
-      "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/pup.png",
-      "soundPath": "assets/sound/id/pup.mp3",
-      "enSoundPath": "assets/sound/en/poo.mp3"
-    },
-    {
       "id": "c219",
       "name": "Lempar",
       "enName": "Throw",
@@ -1963,13 +1576,76 @@
       "enSoundPath": "assets/sound/en/throw.mp3"
     },
     {
-      "id": "c220",
-      "name": "Tos",
-      "enName": "High Five",
+      "id": "c173",
+      "name": "Lompat",
+      "enName": "Jump",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/tos.png",
-      "soundPath": "assets/sound/id/tos.mp3",
-      "enSoundPath": "assets/sound/en/high five.mp3"
+      "imagePath": "assets/images/img_asset/lompat.png",
+      "soundPath": "assets/sound/id/lompat.mp3",
+      "enSoundPath": "assets/sound/en/jump.mp3"
+    },
+    {
+      "id": "c200",
+      "name": "Main",
+      "enName": "Play",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/main.png",
+      "soundPath": "assets/sound/id/main.mp3",
+      "enSoundPath": "assets/sound/en/play.mp3"
+    },
+    {
+      "id": "c193",
+      "name": "Makan",
+      "enName": "Eat",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/makan.png",
+      "soundPath": "assets/sound/id/makan.mp3",
+      "enSoundPath": "assets/sound/en/eat.mp3"
+    },
+    {
+      "id": "c177",
+      "name": "Mandi",
+      "enName": "Showering",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/mandi.png",
+      "soundPath": "assets/sound/id/mandi.mp3",
+      "enSoundPath": "assets/sound/en/showering.mp3"
+    },
+    {
+      "id": "c167",
+      "name": "Memasak",
+      "enName": "Cook",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/memasak.png",
+      "soundPath": "assets/sound/id/memasak.mp3",
+      "enSoundPath": "assets/sound/en/cook.mp3"
+    },
+    {
+      "id": "c171",
+      "name": "Membaca",
+      "enName": "Read",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/membaca.png",
+      "soundPath": "assets/sound/id/membaca.mp3",
+      "enSoundPath": "assets/sound/en/read.mp3"
+    },
+    {
+      "id": "c198",
+      "name": "Memotong",
+      "enName": "Cutting",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/memotong.png",
+      "soundPath": "assets/sound/id/memotong.mp3",
+      "enSoundPath": "assets/sound/en/cutting.mp3"
+    },
+    {
+      "id": "c186",
+      "name": "Menangis",
+      "enName": "Cry",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menangis.png",
+      "soundPath": "assets/sound/id/menangis.mp3",
+      "enSoundPath": "assets/sound/en/cry.mp3"
     },
     {
       "id": "c221",
@@ -1981,6 +1657,78 @@
       "enSoundPath": "assets/sound/en/catch.mp3"
     },
     {
+      "id": "c205",
+      "name": "Menelepon",
+      "enName": "Calling",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menelpon.png",
+      "soundPath": "assets/sound/id/menelepon.mp3",
+      "enSoundPath": "assets/sound/en/calling.mp3"
+    },
+    {
+      "id": "c183",
+      "name": "Menendang",
+      "enName": "Kick",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menendang.png",
+      "soundPath": "assets/sound/id/menendang.mp3",
+      "enSoundPath": "assets/sound/en/kick.mp3"
+    },
+    {
+      "id": "c211",
+      "name": "Mengaduk",
+      "enName": "Stiring",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/mengaduk.png",
+      "soundPath": "assets/sound/id/mengaduk.mp3",
+      "enSoundPath": "assets/sound/en/stiring.mp3"
+    },
+    {
+      "id": "c190",
+      "name": "Mengendarai",
+      "enName": "Drive",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/mengendarai.png",
+      "soundPath": "assets/sound/id/mengendarai.mp3",
+      "enSoundPath": "assets/sound/en/drive.mp3"
+    },
+    {
+      "id": "c196",
+      "name": "Mengepel",
+      "enName": "Mop",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/mengepel.png",
+      "soundPath": "assets/sound/id/mengepel.mp3",
+      "enSoundPath": "assets/sound/en/mop.mp3"
+    },
+    {
+      "id": "c227",
+      "name": "Mengetik",
+      "enName": "Typing",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/mengetik.png",
+      "soundPath": "assets/sound/id/mengetik.mp3",
+      "enSoundPath": "assets/sound/en/typing.mp3"
+    },
+    {
+      "id": "c191",
+      "name": "Mengetuk",
+      "enName": "Knock",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/mengetuk.png",
+      "soundPath": "assets/sound/id/mengetuk.mp3",
+      "enSoundPath": "assets/sound/en/knock.mp3"
+    },
+    {
+      "id": "c226",
+      "name": "Menggambar",
+      "enName": "Drawing",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menggambar.png",
+      "soundPath": "assets/sound/id/menggambar.mp3",
+      "enSoundPath": "assets/sound/en/drawing.mp3"
+    },
+    {
       "id": "c222",
       "name": "Menggaruk",
       "enName": "Scratch",
@@ -1988,6 +1736,150 @@
       "imagePath": "assets/images/img_asset/menggaruk.png",
       "soundPath": "assets/sound/id/menggaruk.mp3",
       "enSoundPath": "assets/sound/en/scratch.mp3"
+    },
+    {
+      "id": "c179",
+      "name": "Menggunting",
+      "enName": "Cutting",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menggunting.png",
+      "soundPath": "assets/sound/id/menggunting.mp3",
+      "enSoundPath": "assets/sound/en/cutting.mp3"
+    },
+    {
+      "id": "c217",
+      "name": "Menguap",
+      "enName": "Yawn",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menguap.png",
+      "soundPath": "assets/sound/id/menguap.mp3",
+      "enSoundPath": "assets/sound/en/yawn.mp3"
+    },
+    {
+      "id": "c194",
+      "name": "Meniup",
+      "enName": "Blow",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/meniup.png",
+      "soundPath": "assets/sound/id/meniup.mp3",
+      "enSoundPath": "assets/sound/en/blow.mp3"
+    },
+    {
+      "id": "c181",
+      "name": "Menuang",
+      "enName": "Pour",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menuang.png",
+      "soundPath": "assets/sound/id/menuang.mp3",
+      "enSoundPath": "assets/sound/en/pour.mp3"
+    },
+    {
+      "id": "c164",
+      "name": "Menulis",
+      "enName": "Write",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menulis.png",
+      "soundPath": "assets/sound/id/menulis.mp3",
+      "enSoundPath": "assets/sound/en/write.mp3"
+    },
+    {
+      "id": "c185",
+      "name": "Menyanyi",
+      "enName": "Sing",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menyanyi.png",
+      "soundPath": "assets/sound/id/menyanyi.mp3",
+      "enSoundPath": "assets/sound/en/sing.mp3"
+    },
+    {
+      "id": "c197",
+      "name": "Menyapu",
+      "enName": "Brooming",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menyapu.png",
+      "soundPath": "assets/sound/id/menyapu.mp3",
+      "enSoundPath": "assets/sound/en/brooming.mp3"
+    },
+    {
+      "id": "c189",
+      "name": "Menyetrika",
+      "enName": "Ironing",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menyetrika.png",
+      "soundPath": "assets/sound/id/menyetrika.mp3",
+      "enSoundPath": "assets/sound/en/ironing.mp3"
+    },
+    {
+      "id": "c172",
+      "name": "Menyikat Gigi",
+      "enName": "Brushing Teeth",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menyikat gigi.png",
+      "soundPath": "assets/sound/id/menyikat gigi.mp3",
+      "enSoundPath": "assets/sound/en/brushing teeth.mp3"
+    },
+    {
+      "id": "c174",
+      "name": "Menyisir",
+      "enName": "Combing",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/menyisir.png",
+      "soundPath": "assets/sound/id/menyisir.mp3",
+      "enSoundPath": "assets/sound/en/combing.mp3"
+    },
+    {
+      "id": "c182",
+      "name": "Merangkak",
+      "enName": "Crawl",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/merangkak.png",
+      "soundPath": "assets/sound/id/merangkak.mp3",
+      "enSoundPath": "assets/sound/en/crawl.mp3"
+    },
+    {
+      "id": "c165",
+      "name": "Minum",
+      "enName": "Drink",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/minum.png",
+      "soundPath": "assets/sound/id/minum.mp3",
+      "enSoundPath": "assets/sound/en/drink.mp3"
+    },
+    {
+      "id": "c169",
+      "name": "Naik",
+      "enName": "Going Up",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/naik.png",
+      "soundPath": "assets/sound/id/berdiri.mp3",
+      "enSoundPath": "assets/sound/en/going up.mp3"
+    },
+    {
+      "id": "c204",
+      "name": "Pegang",
+      "enName": "Touch",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/pegang.png",
+      "soundPath": "assets/sound/id/pegang.mp3",
+      "enSoundPath": "assets/sound/en/touch.mp3"
+    },
+    {
+      "id": "c212",
+      "name": "Pipis",
+      "enName": "Pee",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/pipis.png",
+      "soundPath": "assets/sound/id/pipis.mp3",
+      "enSoundPath": "assets/sound/en/pee.mp3"
+    },
+    {
+      "id": "c218",
+      "name": "Pup",
+      "enName": "Poo",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/pup.png",
+      "soundPath": "assets/sound/id/pup.mp3",
+      "enSoundPath": "assets/sound/en/poo.mp3"
     },
     {
       "id": "c223",
@@ -2008,49 +1900,121 @@
       "enSoundPath": "assets/sound/en/tummy ache.mp3"
     },
     {
-      "id": "c225",
-      "name": "Berkuda",
-      "enName": "Hourse Riding",
+      "id": "c202",
+      "name": "Salaman",
+      "enName": "Shake Hand",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/berkuda.png",
-      "soundPath": "assets/sound/id/berkuda.mp3",
-      "enSoundPath": "assets/sound/en/horse riding.mp3"
+      "imagePath": "assets/images/img_asset/salaman.png",
+      "soundPath": "assets/sound/id/salaman.mp3",
+      "enSoundPath": "assets/sound/en/shake hand.mp3"
     },
     {
-      "id": "c226",
-      "name": "Menggambar",
-      "enName": "Drawing",
+      "id": "c192",
+      "name": "Senyum",
+      "enName": "Smile",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/menggambar.png",
-      "soundPath": "assets/sound/id/menggambar.mp3",
-      "enSoundPath": "assets/sound/en/drawing.mp3"
+      "imagePath": "assets/images/img_asset/senyum.png",
+      "soundPath": "assets/sound/id/senyum.mp3",
+      "enSoundPath": "assets/sound/en/smile.mp3"
     },
     {
-      "id": "c227",
-      "name": "Mengetik",
-      "enName": "Typing",
+      "id": "c162",
+      "name": "Tangan di Pinggang",
+      "enName": "Hands on Hip",
       "categoryId": "cat5",
-      "imagePath": "assets/images/img_asset/mengetik.png",
-      "soundPath": "assets/sound/id/mengetik.mp3",
-      "enSoundPath": "assets/sound/en/typing.mp3"
+      "imagePath": "assets/images/img_asset/tangan dipinggang.png",
+      "soundPath": "assets/sound/id/tangan dipinggang.mp3",
+      "enSoundPath": "assets/sound/en/hand on hip.mp3"
     },
     {
-      "id": "c228",
-      "name": "Keriting",
-      "enName": "Curly",
+      "id": "c216",
+      "name": "Tangan Dilipat",
+      "enName": "Fold Hands",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/tangan dilipat.png",
+      "soundPath": "assets/sound/id/tangan dilipat.mp3",
+      "enSoundPath": "assets/sound/en/fold hands.mp3"
+    },
+    {
+      "id": "c214",
+      "name": "Tangan ke Atas",
+      "enName": "Hands Up",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/tangan ke atas.png",
+      "soundPath": "assets/sound/id/tangan ke atas.mp3",
+      "enSoundPath": "assets/sound/en/hands up.mp3"
+    },
+    {
+      "id": "c213",
+      "name": "Tangan ke Samping",
+      "enName": "Hand to the Air",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/tangan ke samping.png",
+      "soundPath": "assets/sound/id/tangan ke samping.mp3",
+      "enSoundPath": "assets/sound/en/hand o the air.mp3"
+    },
+    {
+      "id": "c195",
+      "name": "Tarik",
+      "enName": "Pull",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/tarik.png",
+      "soundPath": "assets/sound/id/tarik.mp3",
+      "enSoundPath": "assets/sound/en/pull.mp3"
+    },
+    {
+      "id": "c207",
+      "name": "Tepuk Tangan",
+      "enName": "Clap Hands",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/tepuk tangan.png",
+      "soundPath": "assets/sound/id/tepuk tangan.mp3",
+      "enSoundPath": "assets/sound/en/clap hands.mp3"
+    },
+    {
+      "id": "c175",
+      "name": "Tidur",
+      "enName": "Sleep",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/tidur.png",
+      "soundPath": "assets/sound/id/tidur.mp3",
+      "enSoundPath": "assets/sound/en/sleep.mp3"
+    },
+    {
+      "id": "c220",
+      "name": "Tos",
+      "enName": "High Five",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/tos.png",
+      "soundPath": "assets/sound/id/tos.mp3",
+      "enSoundPath": "assets/sound/en/high five.mp3"
+    },
+    {
+      "id": "c206",
+      "name": "Tunjuk",
+      "enName": "Point to",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/tunjuk.png",
+      "soundPath": "assets/sound/id/tunjuk.mp3",
+      "enSoundPath": "assets/sound/en/point to.mp3"
+    },
+    {
+      "id": "c236",
+      "name": "Basah",
+      "enName": "Wet",
       "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/keriting.png",
-      "soundPath": "assets/sound/id/keriting.mp3",
-      "enSoundPath": "assets/sound/en/curly.mp3"
+      "imagePath": "assets/images/img_asset/basah.png",
+      "soundPath": "assets/sound/id/basah.mp3",
+      "enSoundPath": "assets/sound/en/wet.mp3"
     },
     {
-      "id": "c229",
-      "name": "Lurus",
-      "enName": "Straight",
+      "id": "c235",
+      "name": "Bersih",
+      "enName": "Clean",
       "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/lurus.png",
-      "soundPath": "assets/sound/id/lurus.mp3",
-      "enSoundPath": "assets/sound/en/straight.mp3"
+      "imagePath": "assets/images/img_asset/bersih.png",
+      "soundPath": "assets/sound/id/bersih.mp3",
+      "enSoundPath": "assets/sound/en/clean.mp3"
     },
     {
       "id": "c230",
@@ -2062,6 +2026,33 @@
       "enSoundPath": "assets/sound/en/big.mp3"
     },
     {
+      "id": "c241",
+      "name": "Cerah",
+      "enName": "Shiny",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/cerah.png",
+      "soundPath": "assets/sound/id/cerah.mp3",
+      "enSoundPath": "assets/sound/en/shiny.mp3"
+    },
+    {
+      "id": "c238",
+      "name": "Dingin",
+      "enName": "Cold",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/dingin.png",
+      "soundPath": "assets/sound/id/dingin.mp3",
+      "enSoundPath": "assets/sound/en/cold.mp3"
+    },
+    {
+      "id": "c240",
+      "name": "Hujan",
+      "enName": "Rain",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/hujan.png",
+      "soundPath": "assets/sound/id/hujan.mp3",
+      "enSoundPath": "assets/sound/en/rain.mp3"
+    },
+    {
       "id": "c231",
       "name": "Kecil",
       "enName": "Small",
@@ -2069,6 +2060,69 @@
       "imagePath": "assets/images/img_asset/kecil.png",
       "soundPath": "assets/sound/id/kecil.mp3",
       "enSoundPath": "assets/sound/en/small.mp3"
+    },
+    {
+      "id": "c237",
+      "name": "Kering",
+      "enName": "Dry",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/kering.png",
+      "soundPath": "assets/sound/id/kering.mp3",
+      "enSoundPath": "assets/sound/en/dry.mp3"
+    },
+    {
+      "id": "c228",
+      "name": "Keriting",
+      "enName": "Curly",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/keriting.png",
+      "soundPath": "assets/sound/id/keriting.mp3",
+      "enSoundPath": "assets/sound/en/curly.mp3"
+    },
+    {
+      "id": "c234",
+      "name": "Kotor",
+      "enName": "Dirty",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/kotor.png",
+      "soundPath": "assets/sound/id/kotor.mp3",
+      "enSoundPath": "assets/sound/en/dirty.mp3"
+    },
+    {
+      "id": "c229",
+      "name": "Lurus",
+      "enName": "Straight",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/lurus.png",
+      "soundPath": "assets/sound/id/lurus.mp3",
+      "enSoundPath": "assets/sound/en/straight.mp3"
+    },
+    {
+      "id": "c243",
+      "name": "Mati",
+      "enName": "Off",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/mati.png",
+      "soundPath": "assets/sound/id/mati.mp3",
+      "enSoundPath": "assets/sound/en/off.mp3"
+    },
+    {
+      "id": "c242",
+      "name": "Nyala",
+      "enName": "On",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/nyala.png",
+      "soundPath": "assets/sound/id/nyala.mp3",
+      "enSoundPath": "assets/sound/en/on.mp3"
+    },
+    {
+      "id": "c239",
+      "name": "Panas",
+      "enName": "Hot",
+      "categoryId": "cat7",
+      "imagePath": "assets/images/img_asset/panas.png",
+      "soundPath": "assets/sound/id/panas.mp3",
+      "enSoundPath": "assets/sound/en/hot.mp3"
     },
     {
       "id": "c232",
@@ -2089,94 +2143,13 @@
       "enSoundPath": "assets/sound/en/short.mp3"
     },
     {
-      "id": "c234",
-      "name": "Kotor",
-      "enName": "Dirty",
+      "id": "c245",
+      "name": "Rendah",
+      "enName": "Low",
       "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/kotor.png",
-      "soundPath": "assets/sound/id/kotor.mp3",
-      "enSoundPath": "assets/sound/en/dirty.mp3"
-    },
-    {
-      "id": "c235",
-      "name": "Bersih",
-      "enName": "Clean",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/bersih.png",
-      "soundPath": "assets/sound/id/bersih.mp3",
-      "enSoundPath": "assets/sound/en/clean.mp3"
-    },
-    {
-      "id": "c236",
-      "name": "Basah",
-      "enName": "Wet",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/basah.png",
-      "soundPath": "assets/sound/id/basah.mp3",
-      "enSoundPath": "assets/sound/en/wet.mp3"
-    },
-    {
-      "id": "c237",
-      "name": "Kering",
-      "enName": "Dry",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/kering.png",
-      "soundPath": "assets/sound/id/kering.mp3",
-      "enSoundPath": "assets/sound/en/dry.mp3"
-    },
-    {
-      "id": "c238",
-      "name": "Dingin",
-      "enName": "Cold",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/dingin.png",
-      "soundPath": "assets/sound/id/dingin.mp3",
-      "enSoundPath": "assets/sound/en/cold.mp3"
-    },
-    {
-      "id": "c239",
-      "name": "Panas",
-      "enName": "Hot",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/panas.png",
-      "soundPath": "assets/sound/id/panas.mp3",
-      "enSoundPath": "assets/sound/en/hot.mp3"
-    },
-    {
-      "id": "c240",
-      "name": "Hujan",
-      "enName": "Rain",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/hujan.png",
-      "soundPath": "assets/sound/id/hujan.mp3",
-      "enSoundPath": "assets/sound/en/rain.mp3"
-    },
-    {
-      "id": "c241",
-      "name": "Cerah",
-      "enName": "Shiny",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/cerah.png",
-      "soundPath": "assets/sound/id/cerah.mp3",
-      "enSoundPath": "assets/sound/en/shiny.mp3"
-    },
-    {
-      "id": "c242",
-      "name": "Nyala",
-      "enName": "On",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/nyala.png",
-      "soundPath": "assets/sound/id/nyala.mp3",
-      "enSoundPath": "assets/sound/en/on.mp3"
-    },
-    {
-      "id": "c243",
-      "name": "Mati",
-      "enName": "Off",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/mati.png",
-      "soundPath": "assets/sound/id/mati.mp3",
-      "enSoundPath": "assets/sound/en/off.mp3"
+      "imagePath": "assets/images/img_asset/rendah.png",
+      "soundPath": "assets/sound/id/rendah.mp3",
+      "enSoundPath": "assets/sound/en/low.mp3"
     },
     {
       "id": "c244",
@@ -2188,130 +2161,139 @@
       "enSoundPath": "assets/sound/en/high.mp3"
     },
     {
-      "id": "c245",
-      "name": "Rendah",
-      "enName": "Low",
-      "categoryId": "cat7",
-      "imagePath": "assets/images/img_asset/rendah.png",
-      "soundPath": "assets/sound/id/rendah.mp3",
-      "enSoundPath": "assets/sound/en/low.mp3"
+      "id": "c321",
+      "name": "Aku",
+      "enName": "I am",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/saya.png",
+      "soundPath": "assets/sound/id/aku.mov",
+      "enSoundPath": "assets/sound/en/i am.mov"
     },
     {
-      "id": "c246",
-      "name": "Kuning",
-      "enName": "Yellow",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/kuning.png",
-      "soundPath": "assets/sound/id/kuning.mov",
-      "enSoundPath": "assets/sound/en/yellow.mov"
+      "id": "c312",
+      "name": "Anak laki-laki",
+      "enName": "Boy",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/anak laki-laki.png",
+      "soundPath": "assets/sound/id/anak laki-laki.mov",
+      "enSoundPath": "assets/sound/en/boy.mov"
     },
     {
-      "id": "c247",
-      "name": "Hitam",
-      "enName": "Black",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/hitam.png",
-      "soundPath": "assets/sound/id/hitam.mov",
-      "enSoundPath": "assets/sound/en/black.mov"
+      "id": "c311",
+      "name": "Anak perempuan",
+      "enName": "Girl",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/anak perempuan.png",
+      "soundPath": "assets/sound/id/anak perempuan.mov",
+      "enSoundPath": "assets/sound/en/girl.mov"
     },
     {
-      "id": "c248",
-      "name": "Oren",
-      "enName": "Orange",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/orage.png",
-      "soundPath": "assets/sound/id/oren.mov",
-      "enSoundPath": "assets/sound/en/orange.mov"
+      "id": "c319",
+      "name": "Dia",
+      "enName": "Him",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/dia.png",
+      "soundPath": "assets/sound/id/dia.mov",
+      "enSoundPath": "assets/sound/en/him.mov"
     },
     {
-      "id": "c249",
-      "name": "Biru",
-      "enName": "Blue",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/biru.png",
-      "soundPath": "assets/sound/id/biru.mov",
-      "enSoundPath": "assets/sound/en/blue.mov"
+      "id": "c322",
+      "name": "Dia",
+      "enName": "Her",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/dia.png",
+      "soundPath": "assets/sound/id/dia.mov",
+      "enSoundPath": "assets/sound/en/her.mov"
     },
     {
-      "id": "c250",
-      "name": "Ungu",
-      "enName": "Purple",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/ungu.png",
-      "soundPath": "assets/sound/id/ungu.mov",
-      "enSoundPath": "assets/sound/en/purple.mov"
+      "id": "c316",
+      "name": "Dokter",
+      "enName": "Doctor",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/dokter.png",
+      "soundPath": "assets/sound/id/dokter.mov",
+      "enSoundPath": "assets/sound/en/doctor.mov"
     },
     {
-      "id": "c251",
-      "name": "Merah",
-      "enName": "Red",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/merah.png",
-      "soundPath": "assets/sound/id/merah.mov",
-      "enSoundPath": "assets/sound/en/red.mov"
+      "id": "c317",
+      "name": "Kamu",
+      "enName": "You",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/kamu.png",
+      "soundPath": "assets/sound/id/kamu.mov",
+      "enSoundPath": "assets/sound/en/you.mov"
     },
     {
-      "id": "c252",
-      "name": "Coklat",
-      "enName": "Brown",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/coklat-warna.png",
-      "soundPath": "assets/sound/id/coklat.mov",
-      "enSoundPath": "assets/sound/en/brown.mov"
+      "id": "c314",
+      "name": "Laki-laki",
+      "enName": "Man",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/laki-laki.png",
+      "soundPath": "assets/sound/id/laki-laki.mov",
+      "enSoundPath": "assets/sound/en/man.mov"
     },
     {
-      "id": "c253",
-      "name": "Putih",
-      "enName": "White",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/putih.png",
-      "soundPath": "assets/sound/id/putih.mov",
-      "enSoundPath": "assets/sound/en/white.mov"
+      "id": "c318",
+      "name": "Mereka",
+      "enName": "Them",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/mereka.png",
+      "soundPath": "assets/sound/id/mereka.mov",
+      "enSoundPath": "assets/sound/en/them.mov"
     },
     {
-      "id": "c254",
-      "name": "Abu-abu",
-      "enName": "Grey",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/abu-abu.png",
-      "soundPath": "assets/sound/id/abu-abu.mov",
-      "enSoundPath": "assets/sound/en/grey.mov"
+      "id": "c313",
+      "name": "Perempuan",
+      "enName": "Woman",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/perempuan.png",
+      "soundPath": "assets/sound/id/anak perempuan.mov",
+      "enSoundPath": "assets/sound/en/women.mov"
     },
     {
-      "id": "c255",
-      "name": "Hijau",
-      "enName": "Green",
-      "categoryId": "cat11",
-      "imagePath": "assets/images/img_asset/hijau.png",
-      "soundPath": "assets/sound/id/hijau.mov",
-      "enSoundPath": "assets/sound/en/green.mov"
+      "id": "c315",
+      "name": "Polisi",
+      "enName": "Police",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/polisi.png",
+      "soundPath": "assets/sound/id/polisi.mov",
+      "enSoundPath": "assets/sound/en/police.mov"
     },
     {
-      "id": "c256",
-      "name": "Berapa Umurmu?",
-      "enName": "How Old?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/berapa umurmu.png",
-      "soundPath": "assets/sound/id/berapa umurmu.mov",
-      "enSoundPath": "assets/sound/en/how old.mov"
+      "id": "c320",
+      "name": "Saya",
+      "enName": "Me",
+      "categoryId": "cat9",
+      "imagePath": "assets/images/img_asset/saya.png",
+      "soundPath": "assets/sound/id/saya.mov",
+      "enSoundPath": "assets/sound/en/me.mov"
     },
     {
-      "id": "c257",
-      "name": "Nama Kakek?",
-      "enName": "What is your grandad's name?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/nama kakek.png",
-      "soundPath": "assets/sound/id/nama kakek.mov",
-      "enSoundPath": "assets/sound/en/what is your grandad's name?.mov"
+      "id": "c293",
+      "name": "Bahu",
+      "enName": "Shoulder",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/bahu.png",
+      "soundPath": "assets/sound/id/bahu.mov",
+      "enSoundPath": "assets/sound/en/shoulder.mov"
     },
     {
-      "id": "c258",
-      "name": "Nama Kakak?",
-      "enName": "What is your brother's name?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/nama kakak.png",
-      "soundPath": "assets/sound/id/nama kakak.mov",
-      "enSoundPath": "assets/sound/en/what is your brother's name?.mov"
+      "id": "c278",
+      "name": "Dagu",
+      "enName": "Chin",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/dagu.png",
+      "soundPath": "assets/sound/id/dagu.mov",
+      "enSoundPath": "assets/sound/en/chin.mov"
+    },
+    {
+      "id": "c285",
+      "name": "Gigi",
+      "enName": "Teeth",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/gigi.png",
+      "soundPath": "assets/sound/id/gigi.mov",
+      "enSoundPath": "assets/sound/en/teeth.mov"
     },
     {
       "id": "c259",
@@ -2323,130 +2305,22 @@
       "enSoundPath": "assets/sound/en/nose.mov"
     },
     {
-      "id": "c260",
-      "name": "Siku",
-      "enName": "Elbow",
+      "id": "c294",
+      "name": "Jari",
+      "enName": "Fingers",
       "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/siku.png",
-      "soundPath": "assets/sound/id/siku.mov",
-      "enSoundPath": "assets/sound/en/elbow.mov"
+      "imagePath": "assets/images/img_asset/jari.png",
+      "soundPath": "assets/sound/id/jari.mov",
+      "enSoundPath": "assets/sound/en/fingers.mov"
     },
     {
-      "id": "c261",
-      "name": "Siapa nama?",
-      "enName": "What is your name?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/siapa nama.png",
-      "soundPath": "assets/sound/id/siapa nama.mov",
-      "enSoundPath": "assets/sound/en/what is your name?.mov"
-    },
-    {
-      "id": "c262",
-      "name": "Nama nenek?",
-      "enName": "What is your grandma's name?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/nama nenek.png",
-      "soundPath": "assets/sound/id/nama nenek.mov",
-      "enSoundPath": "assets/sound/en/what is your grandma's name?.mov"
-    },
-    {
-      "id": "c263",
-      "name": "Nama adik?",
-      "enName": "What is your sister's name?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/nama adik.png",
-      "soundPath": "assets/sound/id/nama adik.mov",
-      "enSoundPath": "assets/sound/en/what is your sister's name?.mov"
-    },
-    {
-      "id": "c264",
-      "name": "Lingkaran",
-      "enName": "Circle",
-      "categoryId": "cat12",
-      "imagePath": "assets/images/img_asset/lingkaran.png",
-      "soundPath": "assets/sound/id/lingkaran.mov",
-      "enSoundPath": "assets/sound/en/circle.mov"
-    },
-    {
-      "id": "c265",
-      "name": "Dimana rumah?",
-      "enName": "Where do you live?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/dimana rumah.png",
-      "soundPath": "assets/sound/id/dimana rumah.mov",
-      "enSoundPath": "assets/sound/en/where do you live?.mov"
-    },
-    {
-      "id": "c266",
-      "name": "Nama mama?",
-      "enName": "What is your mama's name?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/nama mama.png",
-      "soundPath": "assets/sound/id/nama mama.mov",
-      "enSoundPath": "assets/sound/en/what is your mama's name?.mov"
-    },
-    {
-      "id": "c267",
-      "name": "Nama papa?",
-      "enName": "What is your dad's name?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/nama papa.png",
-      "soundPath": "assets/sound/id/nama papa.mov",
-      "enSoundPath": "assets/sound/en/what is your dad's name?.mov"
-    },
-    {
-      "id": "c268",
-      "name": "Mulut",
-      "enName": "Mouth",
+      "id": "c281",
+      "name": "Kaki",
+      "enName": "Foot",
       "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/mulut.png",
-      "soundPath": "assets/sound/id/mulut.mov",
-      "enSoundPath": "assets/sound/en/mouth.mov"
-    },
-    {
-      "id": "c269",
-      "name": "Lutut",
-      "enName": "Knee",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/lutut.png",
-      "soundPath": "assets/sound/id/lutut.mov",
-      "enSoundPath": "assets/sound/en/knee.mov"
-    },
-    {
-      "id": "c270",
-      "name": "Persegi panjang",
-      "enName": "Ractangle",
-      "categoryId": "cat12",
-      "imagePath": "assets/images/img_asset/persegi panjang.png",
-      "soundPath": "assets/sound/id/persegi panjang.mov",
-      "enSoundPath": "assets/sound/en/rectangle.mov"
-    },
-    {
-      "id": "c271",
-      "name": "Hati",
-      "enName": "Heart",
-      "categoryId": "cat12",
-      "imagePath": "assets/images/img_asset/hati.png",
-      "soundPath": "assets/sound/id/hati.mov",
-      "enSoundPath": "assets/sound/en/heart.mov"
-    },
-    {
-      "id": "c272",
-      "name": "Mata",
-      "enName": "Eyes",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/mata.png",
-      "soundPath": "assets/sound/id/mata.mov",
-      "enSoundPath": "assets/sound/en/eyes.mov"
-    },
-    {
-      "id": "c273",
-      "name": "Kiri",
-      "enName": "Left",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/kiri.png",
-      "soundPath": "assets/sound/id/kiri.mov",
-      "enSoundPath": "assets/sound/en/left.mov"
+      "imagePath": "assets/images/img_asset/kaki.png",
+      "soundPath": "assets/sound/id/kaki.mov",
+      "enSoundPath": "assets/sound/en/foot.mov"
     },
     {
       "id": "c274",
@@ -2458,13 +2332,76 @@
       "enSoundPath": "assets/sound/en/right.mov"
     },
     {
-      "id": "c275",
-      "name": "Mau",
-      "enName": "Want",
+      "id": "c273",
+      "name": "Kiri",
+      "enName": "Left",
       "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/mau.png",
-      "soundPath": "assets/sound/id/mau.mov",
-      "enSoundPath": "assets/sound/en/want.mov"
+      "imagePath": "assets/images/img_asset/kiri.png",
+      "soundPath": "assets/sound/id/kiri.mov",
+      "enSoundPath": "assets/sound/en/left.mov"
+    },
+    {
+      "id": "c269",
+      "name": "Lutut",
+      "enName": "Knee",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/lutut.png",
+      "soundPath": "assets/sound/id/lutut.mov",
+      "enSoundPath": "assets/sound/en/knee.mov"
+    },
+    {
+      "id": "c272",
+      "name": "Mata",
+      "enName": "Eyes",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/mata.png",
+      "soundPath": "assets/sound/id/mata.mov",
+      "enSoundPath": "assets/sound/en/eyes.mov"
+    },
+    {
+      "id": "c268",
+      "name": "Mulut",
+      "enName": "Mouth",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/mulut.png",
+      "soundPath": "assets/sound/id/mulut.mov",
+      "enSoundPath": "assets/sound/en/mouth.mov"
+    },
+    {
+      "id": "c283",
+      "name": "Perut",
+      "enName": "Tummy",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/perut.png",
+      "soundPath": "assets/sound/id/perut.mov",
+      "enSoundPath": "assets/sound/en/tummy.mov"
+    },
+    {
+      "id": "c282",
+      "name": "Pipi",
+      "enName": "Cheek",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/pipi.png",
+      "soundPath": "assets/sound/id/pipi.mov",
+      "enSoundPath": "assets/sound/en/cheek.mov"
+    },
+    {
+      "id": "c286",
+      "name": "Rambut",
+      "enName": "Hair",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/rambut.png",
+      "soundPath": "assets/sound/id/rambut.mov",
+      "enSoundPath": "assets/sound/en/hair.mov"
+    },
+    {
+      "id": "c260",
+      "name": "Siku",
+      "enName": "Elbow",
+      "categoryId": "cat10",
+      "imagePath": "assets/images/img_asset/siku.png",
+      "soundPath": "assets/sound/id/siku.mov",
+      "enSoundPath": "assets/sound/en/elbow.mov"
     },
     {
       "id": "c276",
@@ -2475,87 +2412,8 @@
       "soundPath": "assets/sound/id/tangan.mov",
       "enSoundPath": "assets/sound/en/hand.mov"
     },
-    { "id": "c277",
-      "name": "Segitiga",
-      "enName": "Triangle",
-      "categoryId": "cat12",
-      "imagePath": "assets/images/img_asset/segitiga.png",
-      "soundPath": "assets/sound/id/segitiga.mov",
-      "enSoundPath": "assets/sound/en/triangle.mov"
-    },
-    { "id": "c278",
-      "name": "Dagu",
-      "enName": "Chin",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/dagu.png",
-      "soundPath": "assets/sound/id/dagu.mov",
-      "enSoundPath": "assets/sound/en/chin.mov"
-    },
-    { "id": "c279",
-      "name": "Ini",
-      "enName": "This is",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/ini.png",
-      "soundPath": "assets/sound/id/ini.mov",
-      "enSoundPath": "assets/sound/en/this is.mov"
-    },
-    { "id": "c280",
-      "name": "Diamond",
-      "enName": "Diamond",
-      "categoryId": "cat12",
-      "imagePath": "assets/images/img_asset/diamond.png",
-      "soundPath": "assets/sound/id/diamond indo.mov",
-      "enSoundPath": "assets/sound/en/diamond.mov"
-    },
-    { "id": "c281",
-      "name": "Kaki",
-      "enName": "Foot",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/kaki.png",
-      "soundPath": "assets/sound/id/kaki.mov",
-      "enSoundPath": "assets/sound/en/foot.mov"
-    },
-    { "id": "c282",
-      "name": "Pipi",
-      "enName": "Cheek",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/pipi.png",
-      "soundPath": "assets/sound/id/pipi.mov",
-      "enSoundPath": "assets/sound/en/cheek.mov"
-    },
-    { "id": "c283",
-      "name": "Perut",
-      "enName": "Tummy",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/perut.png",
-      "soundPath": "assets/sound/id/perut.mov",
-      "enSoundPath": "assets/sound/en/tummy.mov"
-    },
-    { "id": "c284",
-      "name": "Sedih",
-      "enName": "Angry",
-      "categoryId": "cat14",
-      "imagePath": "assets/images/img_asset/sedih.png",
-      "soundPath": "assets/sound/id/sedih.mov",
-      "enSoundPath": "assets/sound/en/angry.mov"
-    },
-    { "id": "c285",
-      "name": "Gigi",
-      "enName": "Teeth",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/gigi.png",
-      "soundPath": "assets/sound/id/gigi.mov",
-      "enSoundPath": "assets/sound/en/teeth.mov"
-    },
-    { "id": "c286",
-      "name": "Rambut",
-      "enName": "Hair",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/rambut.png",
-      "soundPath": "assets/sound/id/rambut.mov",
-      "enSoundPath": "assets/sound/en/hair.mov"
-    },
-    { "id": "c287",
+    {
+      "id": "c287",
       "name": "Telinga",
       "enName": "Ear",
       "categoryId": "cat10",
@@ -2563,55 +2421,125 @@
       "soundPath": "assets/sound/id/telinga.mov",
       "enSoundPath": "assets/sound/en/ear.mov"
     },
-    { "id": "c288",
-      "name": "Kapan?",
-      "enName": "When?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/kapan.png",
-      "soundPath": "assets/sound/id/kapan.mov",
-      "enSoundPath": "assets/sound/en/when.mov"
+    {
+      "id": "c254",
+      "name": "Abu-abu",
+      "enName": "Grey",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/abu-abu.png",
+      "soundPath": "assets/sound/id/abu-abu.mov",
+      "enSoundPath": "assets/sound/en/grey.mov"
     },
-    { "id": "c289",
-      "name": "Sebelum",
-      "enName": "Before",
+    {
+      "id": "c249",
+      "name": "Biru",
+      "enName": "Blue",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/biru.png",
+      "soundPath": "assets/sound/id/biru.mov",
+      "enSoundPath": "assets/sound/en/blue.mov"
+    },
+    {
+      "id": "c252",
+      "name": "Coklat",
+      "enName": "Brown",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/coklat-warna.png",
+      "soundPath": "assets/sound/id/coklat.mov",
+      "enSoundPath": "assets/sound/en/brown.mov"
+    },
+    {
+      "id": "c255",
+      "name": "Hijau",
+      "enName": "Green",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/hijau.png",
+      "soundPath": "assets/sound/id/hijau.mov",
+      "enSoundPath": "assets/sound/en/green.mov"
+    },
+    {
+      "id": "c247",
+      "name": "Hitam",
+      "enName": "Black",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/hitam.png",
+      "soundPath": "assets/sound/id/hitam.mov",
+      "enSoundPath": "assets/sound/en/black.mov"
+    },
+    {
+      "id": "c246",
+      "name": "Kuning",
+      "enName": "Yellow",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/kuning.png",
+      "soundPath": "assets/sound/id/kuning.mov",
+      "enSoundPath": "assets/sound/en/yellow.mov"
+    },
+    {
+      "id": "c251",
+      "name": "Merah",
+      "enName": "Red",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/merah.png",
+      "soundPath": "assets/sound/id/merah.mov",
+      "enSoundPath": "assets/sound/en/red.mov"
+    },
+    {
+      "id": "c248",
+      "name": "Oren",
+      "enName": "Orange",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/orage.png",
+      "soundPath": "assets/sound/id/oren.mov",
+      "enSoundPath": "assets/sound/en/orange.mov"
+    },
+    {
+      "id": "c349",
+      "name": "Pink",
+      "enName": "Pink",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/pink.png",
+      "soundPath": "assets/sound/id/pink.mov",
+      "enSoundPath": "assets/sound/en/pink.mov"
+    },
+    {
+      "id": "c253",
+      "name": "Putih",
+      "enName": "White",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/putih.png",
+      "soundPath": "assets/sound/id/putih.mov",
+      "enSoundPath": "assets/sound/en/white.mov"
+    },
+    {
+      "id": "c250",
+      "name": "Ungu",
+      "enName": "Purple",
+      "categoryId": "cat11",
+      "imagePath": "assets/images/img_asset/ungu.png",
+      "soundPath": "assets/sound/id/ungu.mov",
+      "enSoundPath": "assets/sound/en/purple.mov"
+    },
+    {
+      "id": "c280",
+      "name": "Diamond",
+      "enName": "Diamond",
       "categoryId": "cat12",
-      "imagePath": "assets/images/img_asset/sebelum.png",
-      "soundPath": "assets/sound/id/sebelum.mov",
-      "enSoundPath": "assets/sound/en/before.mov"
+      "imagePath": "assets/images/img_asset/diamond.png",
+      "soundPath": "assets/sound/id/diamond indo.mov",
+      "enSoundPath": "assets/sound/en/diamond.mov"
     },
-    { "id": "c290",
-      "name": "Sesudah",
-      "enName": "After",
+    {
+      "id": "c271",
+      "name": "Hati",
+      "enName": "Heart",
       "categoryId": "cat12",
-      "imagePath": "assets/images/img_asset/sesudah.png",
-      "soundPath": "assets/sound/id/sesudah.mov",
-      "enSoundPath": "assets/sound/en/after.mov"
+      "imagePath": "assets/images/img_asset/hati.png",
+      "soundPath": "assets/sound/id/hati.mov",
+      "enSoundPath": "assets/sound/en/heart.mov"
     },
-    { "id": "c291",
-      "name": "Berapa?",
-      "enName": "How many?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/berapa.png",
-      "soundPath": "assets/sound/id/berapa.mov",
-      "enSoundPath": "assets/sound/en/how many?.mov"
-    },
-    { "id": "c293",
-      "name": "Bahu",
-      "enName": "Shoulder",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/bahu.png",
-      "soundPath": "assets/sound/id/bahu.mov",
-      "enSoundPath": "assets/sound/en/shoulder.mov"
-    },
-    { "id": "c294",
-      "name": "Jari",
-      "enName": "Fingers",
-      "categoryId": "cat10",
-      "imagePath": "assets/images/img_asset/jari.png",
-      "soundPath": "assets/sound/id/jari.mov",
-      "enSoundPath": "assets/sound/en/fingers.mov"
-    },
-    { "id": "c295",
+    {
+      "id": "c295",
       "name": "Kotak",
       "enName": "Square",
       "categoryId": "cat12",
@@ -2619,15 +2547,17 @@
       "soundPath": "assets/sound/id/kotak.mov",
       "enSoundPath": "assets/sound/en/square.mov"
     },
-    { "id": "c296",
-      "name": "Dimana?",
-      "enName": "Where?",
-      "categoryId": "cat13",
-      "imagePath": "assets/images/img_asset/dimana.png",
-      "soundPath": "assets/sound/id/diamond indo.mov",
-      "enSoundPath": "assets/sound/en/where.mov"
+    {
+      "id": "c264",
+      "name": "Lingkaran",
+      "enName": "Circle",
+      "categoryId": "cat12",
+      "imagePath": "assets/images/img_asset/lingkaran.png",
+      "soundPath": "assets/sound/id/lingkaran.mov",
+      "enSoundPath": "assets/sound/en/circle.mov"
     },
-    { "id": "c297",
+    {
+      "id": "c297",
       "name": "Oval",
       "enName": "Oval",
       "categoryId": "cat12",
@@ -2635,7 +2565,152 @@
       "soundPath": "assets/sound/id/oval indo.mov",
       "enSoundPath": "assets/sound/en/oval.mov"
     },
-    { "id": "c298",
+    {
+      "id": "c270",
+      "name": "Persegi panjang",
+      "enName": "Ractangle",
+      "categoryId": "cat12",
+      "imagePath": "assets/images/img_asset/persegi panjang.png",
+      "soundPath": "assets/sound/id/persegi panjang.mov",
+      "enSoundPath": "assets/sound/en/rectangle.mov"
+    },
+    {
+      "id": "c289",
+      "name": "Sebelum",
+      "enName": "Before",
+      "categoryId": "cat12",
+      "imagePath": "assets/images/img_asset/sebelum.png",
+      "soundPath": "assets/sound/id/sebelum.mov",
+      "enSoundPath": "assets/sound/en/before.mov"
+    },
+    {
+      "id": "c277",
+      "name": "Segitiga",
+      "enName": "Triangle",
+      "categoryId": "cat12",
+      "imagePath": "assets/images/img_asset/segitiga.png",
+      "soundPath": "assets/sound/id/segitiga.mov",
+      "enSoundPath": "assets/sound/en/triangle.mov"
+    },
+    {
+      "id": "c290",
+      "name": "Sesudah",
+      "enName": "After",
+      "categoryId": "cat12",
+      "imagePath": "assets/images/img_asset/sesudah.png",
+      "soundPath": "assets/sound/id/sesudah.mov",
+      "enSoundPath": "assets/sound/en/after.mov"
+    },
+    {
+      "id": "c256",
+      "name": "Berapa Umurmu?",
+      "enName": "How Old?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/berapa umurmu.png",
+      "soundPath": "assets/sound/id/berapa umurmu.mov",
+      "enSoundPath": "assets/sound/en/how old.mov"
+    },
+    {
+      "id": "c291",
+      "name": "Berapa?",
+      "enName": "How many?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/berapa.png",
+      "soundPath": "assets/sound/id/berapa.mov",
+      "enSoundPath": "assets/sound/en/how many?.mov"
+    },
+    {
+      "id": "c265",
+      "name": "Dimana rumah?",
+      "enName": "Where do you live?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/dimana rumah.png",
+      "soundPath": "assets/sound/id/dimana rumah.mov",
+      "enSoundPath": "assets/sound/en/where do you live?.mov"
+    },
+    {
+      "id": "c296",
+      "name": "Dimana?",
+      "enName": "Where?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/dimana.png",
+      "soundPath": "assets/sound/id/diamond indo.mov",
+      "enSoundPath": "assets/sound/en/where.mov"
+    },
+    {
+      "id": "c288",
+      "name": "Kapan?",
+      "enName": "When?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/kapan.png",
+      "soundPath": "assets/sound/id/kapan.mov",
+      "enSoundPath": "assets/sound/en/when.mov"
+    },
+    {
+      "id": "c263",
+      "name": "Nama adik?",
+      "enName": "What is your sister's name?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/nama adik.png",
+      "soundPath": "assets/sound/id/nama adik.mov",
+      "enSoundPath": "assets/sound/en/what is your sister's name?.mov"
+    },
+    {
+      "id": "c258",
+      "name": "Nama Kakak?",
+      "enName": "What is your brother's name?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/nama kakak.png",
+      "soundPath": "assets/sound/id/nama kakak.mov",
+      "enSoundPath": "assets/sound/en/what is your brother's name?.mov"
+    },
+    {
+      "id": "c257",
+      "name": "Nama Kakek?",
+      "enName": "What is your grandad's name?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/nama kakek.png",
+      "soundPath": "assets/sound/id/nama kakek.mov",
+      "enSoundPath": "assets/sound/en/what is your grandad's name?.mov"
+    },
+    {
+      "id": "c266",
+      "name": "Nama mama?",
+      "enName": "What is your mama's name?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/nama mama.png",
+      "soundPath": "assets/sound/id/nama mama.mov",
+      "enSoundPath": "assets/sound/en/what is your mama's name?.mov"
+    },
+    {
+      "id": "c262",
+      "name": "Nama nenek?",
+      "enName": "What is your grandma's name?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/nama nenek.png",
+      "soundPath": "assets/sound/id/nama nenek.mov",
+      "enSoundPath": "assets/sound/en/what is your grandma's name?.mov"
+    },
+    {
+      "id": "c267",
+      "name": "Nama papa?",
+      "enName": "What is your dad's name?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/nama papa.png",
+      "soundPath": "assets/sound/id/nama papa.mov",
+      "enSoundPath": "assets/sound/en/what is your dad's name?.mov"
+    },
+    {
+      "id": "c261",
+      "name": "Siapa nama?",
+      "enName": "What is your name?",
+      "categoryId": "cat13",
+      "imagePath": "assets/images/img_asset/siapa nama.png",
+      "soundPath": "assets/sound/id/siapa nama.mov",
+      "enSoundPath": "assets/sound/en/what is your name?.mov"
+    },
+    {
+      "id": "c298",
       "name": "Warna apa?",
       "enName": "What color?",
       "categoryId": "cat13",
@@ -2643,23 +2718,8 @@
       "soundPath": "assets/sound/id/warna apa.mov",
       "enSoundPath": "assets/sound/en/what color?.mov"
     },
-    { "id": "c299",
-      "name": "Senang",
-      "enName": "Happy",
-      "categoryId": "cat14",
-      "imagePath": "assets/images/img_asset/senang.png",
-      "soundPath": "assets/sound/id/senang.mov",
-      "enSoundPath": "assets/sound/en/happy.mov"
-    },
-    { "id": "c300",
-      "name": "Takut",
-      "enName": "Afraid",
-      "categoryId": "cat14",
-      "imagePath": "assets/images/img_asset/takut.png",
-      "soundPath": "assets/sound/id/takut.mov",
-      "enSoundPath": "assets/sound/en/afraid.mov"
-    },
-    { "id": "c301",
+    {
+      "id": "c301",
       "name": "Marah",
       "enName": "Angry",
       "categoryId": "cat14",
@@ -2667,255 +2727,35 @@
       "soundPath": "assets/sound/id/marah.mov",
       "enSoundPath": "assets/sound/en/angry.mov"
     },
-    { "id": "c302",
-      "name": "Mencuci Piring",
-      "enName": "Washing Dishes",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/mencuci piring.png",
-      "soundPath": "assets/sound/id/mencuci piring.mov",
-      "enSoundPath": "assets/sound/en/washing dishes.mov"
+    {
+      "id": "c284",
+      "name": "Sedih",
+      "enName": "Angry",
+      "categoryId": "cat14",
+      "imagePath": "assets/images/img_asset/sedih.png",
+      "soundPath": "assets/sound/id/sedih.mov",
+      "enSoundPath": "assets/sound/en/angry.mov"
     },
-    { "id": "c303",
-      "name": "Dibawah",
-      "enName": "Under",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/di bawah.png",
-      "soundPath": "assets/sound/id/dibawah.mov",
-      "enSoundPath": "assets/sound/en/under.mov"
+    {
+      "id": "c299",
+      "name": "Senang",
+      "enName": "Happy",
+      "categoryId": "cat14",
+      "imagePath": "assets/images/img_asset/senang.png",
+      "soundPath": "assets/sound/id/senang.mov",
+      "enSoundPath": "assets/sound/en/happy.mov"
     },
-    { "id": "c304",
-      "name": "Diatas",
-      "enName": "On",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/di atas.png",
-      "soundPath": "assets/sound/id/diatas.mov",
-      "enSoundPath": "assets/sound/en/under.mov"
+    {
+      "id": "c300",
+      "name": "Takut",
+      "enName": "Afraid",
+      "categoryId": "cat14",
+      "imagePath": "assets/images/img_asset/takut.png",
+      "soundPath": "assets/sound/id/takut.mov",
+      "enSoundPath": "assets/sound/en/afraid.mov"
     },
-    { "id": "c305",
-      "name": "Di depan",
-      "enName": "In front of",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/di depan.png",
-      "soundPath": "assets/sound/id/di depan.mov",
-      "enSoundPath": "assets/sound/en/in front of.mov"
-    },
-    { "id": "c306",
-      "name": "Di belakang",
-      "enName": "Behind",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/di belakang.png",
-      "soundPath": "assets/sound/id/di belakang.mov",
-      "enSoundPath": "assets/sound/en/behind.mov"
-    },
-    { "id": "c307",
-      "name": "Di dalam",
-      "enName": "In",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/di dalam.png",
-      "soundPath": "assets/sound/id/di dalam.mov",
-      "enSoundPath": "assets/sound/en/in.mov"
-    },
-    { "id": "c308",
-      "name": "Itu",
-      "enName": "That is",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/itu.png",
-      "soundPath": "assets/sound/id/itu.mov",
-      "enSoundPath": "assets/sound/en/that is.mov"
-    },
-    { "id": "c309",
-      "name": "Di samping",
-      "enName": "Beside",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/di samping.png",
-      "soundPath": "assets/sound/id/di samping.mov",
-      "enSoundPath": "assets/sound/en/beside.mov"
-    },
-    { "id": "c310",
-      "name": "Diantara",
-      "enName": "Between",
-      "categoryId": "cat8",
-      "imagePath": "assets/images/img_asset/di antara.png",
-      "soundPath": "assets/sound/id/diantara.mov",
-      "enSoundPath": "assets/sound/en/between.mov"
-    },
-    { "id": "c311",
-      "name": "Anak perempuan",
-      "enName": "Girl",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/anak perempuan.png",
-      "soundPath": "assets/sound/id/anak perempuan.mov",
-      "enSoundPath": "assets/sound/en/girl.mov"
-    },
-    { "id": "c312",
-      "name": "Anak laki-laki",
-      "enName": "Boy",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/anak laki-laki.png",
-      "soundPath": "assets/sound/id/anak laki-laki.mov",
-      "enSoundPath": "assets/sound/en/boy.mov"
-    },
-    { "id": "c313",
-      "name": "Perempuan",
-      "enName": "Woman",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/perempuan.png",
-      "soundPath": "assets/sound/id/anak perempuan.mov",
-      "enSoundPath": "assets/sound/en/women.mov"
-    },
-    { "id": "c314",
-      "name": "Laki-laki",
-      "enName": "Man",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/laki-laki.png",
-      "soundPath": "assets/sound/id/laki-laki.mov",
-      "enSoundPath": "assets/sound/en/man.mov"
-    },
-    { "id": "c315",
-      "name": "Polisi",
-      "enName": "Police",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/polisi.png",
-      "soundPath": "assets/sound/id/polisi.mov",
-      "enSoundPath": "assets/sound/en/police.mov"
-    },
-    { "id": "c316",
-      "name": "Dokter",
-      "enName": "Doctor",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/dokter.png",
-      "soundPath": "assets/sound/id/dokter.mov",
-      "enSoundPath": "assets/sound/en/doctor.mov"
-    },
-    { "id": "c317",
-      "name": "Kamu",
-      "enName": "You",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/kamu.png",
-      "soundPath": "assets/sound/id/kamu.mov",
-      "enSoundPath": "assets/sound/en/you.mov"
-    },
-    { "id": "c318",
-      "name": "Mereka",
-      "enName": "Them",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/mereka.png",
-      "soundPath": "assets/sound/id/mereka.mov",
-      "enSoundPath": "assets/sound/en/them.mov"
-    },
-    { "id": "c319",
-      "name": "Dia",
-      "enName": "Him",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/dia.png",
-      "soundPath": "assets/sound/id/dia.mov",
-      "enSoundPath": "assets/sound/en/him.mov"
-    },
-    { "id": "c320",
-      "name": "Saya",
-      "enName": "Me",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/saya.png",
-      "soundPath": "assets/sound/id/saya.mov",
-      "enSoundPath": "assets/sound/en/me.mov"
-    },
-    { "id": "c321",
-      "name": "Aku",
-      "enName": "I am",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/saya.png",
-      "soundPath": "assets/sound/id/aku.mov",
-      "enSoundPath": "assets/sound/en/i am.mov"
-    },
-    { "id": "c322",
-      "name": "Dia",
-      "enName": "Her",
-      "categoryId": "cat9",
-      "imagePath": "assets/images/img_asset/dia.png",
-      "soundPath": "assets/sound/id/dia.mov",
-      "enSoundPath": "assets/sound/en/her.mov"
-    },
-    { "id": "c323",
-      "name": "Furniture",
-      "enName": "Furniture",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/furniture.png",
-      "soundPath": "assets/sound/id/furniture indo.mov",
-      "enSoundPath": "assets/sound/en/furniture.mov"
-    },
-    { "id": "c324",
-      "name": "Pakaian",
-      "enName": "Clothes",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/pakaian.png",
-      "soundPath": "assets/sound/id/pakaian.mov",
-      "enSoundPath": "assets/sound/en/clothes.mov"
-    },
-    { "id": "c325",
-      "name": "Elektronik",
-      "enName": "Electronic",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/elektronik.png",
-      "soundPath": "assets/sound/id/elektronik.mov",
-      "enSoundPath": "assets/sound/en/electronic.mov"
-    },
-    { "id": "c326",
-      "name": "Tidak berkaki",
-      "enName": "No legs",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/tidak berkaki.png",
-      "soundPath": "assets/sound/id/tidak berkaki.mov",
-      "enSoundPath": "assets/sound/en/no legs.mov"
-    },
-    { "id": "c327",
-      "name": "Kendaraan",
-      "enName": "Vehicle",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/kendaraan.png",
-      "soundPath": "assets/sound/id/kendaraan.mov",
-      "enSoundPath": "assets/sound/en/vehicle.mov"
-    },
-    { "id": "c328",
-      "name": "Binatang",
-      "enName": "Animal",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/binatang.png",
-      "soundPath": "assets/sound/id/binatang.mov",
-      "enSoundPath": "assets/sound/en/animal.mov"
-    },
-    { "id": "c329",
-      "name": "Sayuran",
-      "enName": "Vegetables",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/sayuran.png",
-      "soundPath": "assets/sound/id/sayuran.mov",
-      "enSoundPath": "assets/sound/en/vegetables.mov"
-    },
-    { "id": "c330",
-      "name": "Kolam renang",
-      "enName": "Swim pool",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/kolam renang.png",
-      "soundPath": "assets/sound/id/kolam renang.mov",
-      "enSoundPath": "assets/sound/en/swim pool.mov"
-    },
-    { "id": "c331",
-      "name": "Buah",
-      "enName": "Fruit",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/buah.png",
-      "soundPath": "assets/sound/id/buah.mov",
-      "enSoundPath": "assets/sound/en/fruit.mov"
-    },
-    { "id": "c332",
-      "name": "Peralatan minum",
-      "enName": "Drink set",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/peralatan minum.png",
-      "soundPath": "assets/sound/id/peralatan minum.mov",
-      "enSoundPath": "assets/sound/en/drink set.mov"
-    },
-    { "id": "c333",
+    {
+      "id": "c333",
       "name": "Bentuk",
       "enName": "Shape",
       "categoryId": "cat15",
@@ -2923,31 +2763,8 @@
       "soundPath": "assets/sound/id/bentuk.mov",
       "enSoundPath": "assets/sound/en/shape.mov"
     },
-    { "id": "c334",
-      "name": "Masjid",
-      "enName": "Mosque",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/masjid.png",
-      "soundPath": "assets/sound/id/masjid.mov",
-      "enSoundPath": "assets/sound/en/mosque.mov"
-    },
-    { "id": "c335",
-      "name": "Berkaki empat",
-      "enName": "Four legs",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/berkaki empat.png",
-      "soundPath": "assets/sound/id/berkaki empat.mov",
-      "enSoundPath": "assets/sound/en/four legs.mov"
-    },
-    { "id": "c336",
-      "name": "Makanan",
-      "enName": "Food",
-      "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/makanan.png",
-      "soundPath": "assets/sound/id/makanan.mov",
-      "enSoundPath": "assets/sound/en/food.mov"
-    },
-    { "id": "c337",
+    {
+      "id": "c337",
       "name": "Berkaki banyak",
       "enName": "Have lots of leg",
       "categoryId": "cat15",
@@ -2955,31 +2772,35 @@
       "soundPath": "assets/sound/id/berkaki banyak.mov",
       "enSoundPath": "assets/sound/en/have lots of leg.mov"
     },
-    { "id": "c338",
-      "name": "Geraja",
-      "enName": "Church",
+    {
+      "id": "c335",
+      "name": "Berkaki empat",
+      "enName": "Four legs",
       "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/kereja.png",
-      "soundPath": "assets/sound/id/gereja.mov",
-      "enSoundPath": "assets/sound/en/Church.mov"
+      "imagePath": "assets/images/img_asset/berkaki empat.png",
+      "soundPath": "assets/sound/id/berkaki empat.mov",
+      "enSoundPath": "assets/sound/en/four legs.mov"
     },
-    { "id": "c339",
-      "name": "Kamar",
-      "enName": "Sleeping room",
+    {
+      "id": "c328",
+      "name": "Binatang",
+      "enName": "Animal",
       "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/kamar.png",
-      "soundPath": "assets/sound/id/kamar.mov",
-      "enSoundPath": "assets/sound/en/sleeping room.mov"
+      "imagePath": "assets/images/img_asset/binatang.png",
+      "soundPath": "assets/sound/id/binatang.mov",
+      "enSoundPath": "assets/sound/en/animal.mov"
     },
-    { "id": "c340",
-      "name": "Kamar mandi",
-      "enName": "Bathroom",
+    {
+      "id": "c331",
+      "name": "Buah",
+      "enName": "Fruit",
       "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/kamar mandi.png",
-      "soundPath": "assets/sound/id/kamar mandi.mov",
-      "enSoundPath": "assets/sound/en/bathroom.mov"
+      "imagePath": "assets/images/img_asset/buah.png",
+      "soundPath": "assets/sound/id/buah.mov",
+      "enSoundPath": "assets/sound/en/fruit.mov"
     },
-    { "id": "c341",
+    {
+      "id": "c341",
       "name": "Dapur",
       "enName": "Kitchen",
       "categoryId": "cat15",
@@ -2987,15 +2808,107 @@
       "soundPath": "assets/sound/id/dapur.mov",
       "enSoundPath": "assets/sound/en/kitchen.mov"
     },
-    { "id": "c342",
-      "name": "Pegunungan",
-      "enName": "Mountain",
+    {
+      "id": "c325",
+      "name": "Elektronik",
+      "enName": "Electronic",
       "categoryId": "cat15",
-      "imagePath": "assets/images/img_asset/pegunungan.png",
-      "soundPath": "assets/sound/id/pegunungan.mov",
-      "enSoundPath": "assets/sound/en/mountain.mov"
+      "imagePath": "assets/images/img_asset/elektronik.png",
+      "soundPath": "assets/sound/id/elektronik.mov",
+      "enSoundPath": "assets/sound/en/electronic.mov"
     },
-    { "id": "c343",
+    {
+      "id": "c323",
+      "name": "Furniture",
+      "enName": "Furniture",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/furniture.png",
+      "soundPath": "assets/sound/id/furniture indo.mov",
+      "enSoundPath": "assets/sound/en/furniture.mov"
+    },
+    {
+      "id": "c338",
+      "name": "Gereja",
+      "enName": "Church",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/kereja.png",
+      "soundPath": "assets/sound/id/gereja.mov",
+      "enSoundPath": "assets/sound/en/Church.mov"
+    },
+    {
+      "id": "c131",
+      "name": "Halte",
+      "enName": "Halte",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/halte.png",
+      "soundPath": "assets/sound/id/halte indo.mp3",
+      "enSoundPath": "assets/sound/en/halte.mp3"
+    },
+    {
+      "id": "c339",
+      "name": "Kamar",
+      "enName": "Sleeping room",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/kamar.png",
+      "soundPath": "assets/sound/id/kamar.mov",
+      "enSoundPath": "assets/sound/en/sleeping room.mov"
+    },
+    {
+      "id": "c340",
+      "name": "Kamar mandi",
+      "enName": "Bathroom",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/kamar mandi.png",
+      "soundPath": "assets/sound/id/kamar mandi.mov",
+      "enSoundPath": "assets/sound/en/bathroom.mov"
+    },
+    {
+      "id": "c327",
+      "name": "Kendaraan",
+      "enName": "Vehicle",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/kendaraan.png",
+      "soundPath": "assets/sound/id/kendaraan.mov",
+      "enSoundPath": "assets/sound/en/vehicle.mov"
+    },
+    {
+      "id": "c330",
+      "name": "Kolam renang",
+      "enName": "Swim pool",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/kolam renang.png",
+      "soundPath": "assets/sound/id/kolam renang.mov",
+      "enSoundPath": "assets/sound/en/swim pool.mov"
+    },
+    {
+      "id": "c336",
+      "name": "Makanan",
+      "enName": "Food",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/makanan.png",
+      "soundPath": "assets/sound/id/makanan.mov",
+      "enSoundPath": "assets/sound/en/food.mov"
+    },
+    {
+      "id": "c334",
+      "name": "Masjid",
+      "enName": "Mosque",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/masjid.png",
+      "soundPath": "assets/sound/id/masjid.mov",
+      "enSoundPath": "assets/sound/en/mosque.mov"
+    },
+    {
+      "id": "c324",
+      "name": "Pakaian",
+      "enName": "Clothes",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/pakaian.png",
+      "soundPath": "assets/sound/id/pakaian.mov",
+      "enSoundPath": "assets/sound/en/clothes.mov"
+    },
+    {
+      "id": "c343",
       "name": "Pantai",
       "enName": "Beach",
       "categoryId": "cat15",
@@ -3003,13 +2916,194 @@
       "soundPath": "assets/sound/id/pantai.mov",
       "enSoundPath": "assets/sound/en/beach.mov"
     },
-    { "id": "c344",
+    {
+      "id": "c342",
+      "name": "Pegunungan",
+      "enName": "Mountain",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/pegunungan.png",
+      "soundPath": "assets/sound/id/pegunungan.mov",
+      "enSoundPath": "assets/sound/en/mountain.mov"
+    },
+    {
+      "id": "c332",
+      "name": "Peralatan minum",
+      "enName": "Drink set",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/peralatan minum.png",
+      "soundPath": "assets/sound/id/peralatan minum.mov",
+      "enSoundPath": "assets/sound/en/drink set.mov"
+    },
+    {
+      "id": "c329",
+      "name": "Sayuran",
+      "enName": "Vegetables",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/sayuran.png",
+      "soundPath": "assets/sound/id/sayuran.mov",
+      "enSoundPath": "assets/sound/en/vegetables.mov"
+    },
+    {
+      "id": "c326",
+      "name": "Tidak berkaki",
+      "enName": "No legs",
+      "categoryId": "cat15",
+      "imagePath": "assets/images/img_asset/tidak berkaki.png",
+      "soundPath": "assets/sound/id/tidak berkaki.mov",
+      "enSoundPath": "assets/sound/en/no legs.mov"
+    },
+    {
+      "id": "c344",
       "name": "Warna",
       "enName": "Colors",
       "categoryId": "cat15",
       "imagePath": "assets/images/img_asset/warna apa.png",
       "soundPath": "assets/sound/id/warna.mov",
       "enSoundPath": "assets/sound/en/colors.mov"
+    },
+    {
+      "id": "c346",
+      "name": "adalah",
+      "enName": "is",
+      "categoryId": "cat16",
+      "imagePath": null,
+      "soundPath": "assets/sound/id/adalah.mov",
+      "enSoundPath": "assets/sound/en/is.mov"
+    },
+    {
+      "id": "c347",
+      "name": "ini",
+      "enName": "This is",
+      "categoryId": "cat16",
+      "imagePath": null,
+      "soundPath": "assets/sound/id/ini.mov",
+      "enSoundPath": "assets/sound/en/this is.mov"
+    },
+    {
+      "id": "c348",
+      "name": "lalu",
+      "enName": "then",
+      "categoryId": "cat16",
+      "imagePath": null,
+      "soundPath": "assets/sound/id/lalu.mov",
+      "enSoundPath": "assets/sound/en/then.mov"
+    },
+    {
+      "id": "c275",
+      "name": "Mau",
+      "enName": "Want",
+      "categoryId": "cat16",
+      "imagePath": "assets/images/img_asset/mau.png",
+      "soundPath": "assets/sound/id/mau.mov",
+      "enSoundPath": "assets/sound/en/want.mov"
+    },
+    {
+      "id": "c345",
+      "name": "sedang",
+      "enName": "is",
+      "categoryId": "cat16",
+      "imagePath": null,
+      "soundPath": "assets/sound/id/sedang.mov",
+      "enSoundPath": "assets/sound/en/is.mov"
+    },
+    {
+      "id": "c201",
+      "name": "Diam",
+      "enName": "Quite",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/diam.png",
+      "soundPath": "assets/sound/id/diam.mp3",
+      "enSoundPath": "assets/sound/en/quite.mp3"
+    },
+    {
+      "id": "c306",
+      "name": "Di belakang",
+      "enName": "Behind",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/di belakang.png",
+      "soundPath": "assets/sound/id/di belakang.mov",
+      "enSoundPath": "assets/sound/en/behind.mov"
+    },
+    {
+      "id": "c307",
+      "name": "Di dalam",
+      "enName": "In",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/di dalam.png",
+      "soundPath": "assets/sound/id/di dalam.mov",
+      "enSoundPath": "assets/sound/en/in.mov"
+    },
+    {
+      "id": "c305",
+      "name": "Di depan",
+      "enName": "In front of",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/di depan.png",
+      "soundPath": "assets/sound/id/di depan.mov",
+      "enSoundPath": "assets/sound/en/in front of.mov"
+    },
+    {
+      "id": "c309",
+      "name": "Di samping",
+      "enName": "Beside",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/di samping.png",
+      "soundPath": "assets/sound/id/di samping.mov",
+      "enSoundPath": "assets/sound/en/beside.mov"
+    },
+    {
+      "id": "c310",
+      "name": "Diantara",
+      "enName": "Between",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/di antara.png",
+      "soundPath": "assets/sound/id/diantara.mov",
+      "enSoundPath": "assets/sound/en/between.mov"
+    },
+    {
+      "id": "c304",
+      "name": "Diatas",
+      "enName": "On",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/di atas.png",
+      "soundPath": "assets/sound/id/diatas.mov",
+      "enSoundPath": "assets/sound/en/under.mov"
+    },
+    {
+      "id": "c303",
+      "name": "Dibawah",
+      "enName": "Under",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/di bawah.png",
+      "soundPath": "assets/sound/id/dibawah.mov",
+      "enSoundPath": "assets/sound/en/under.mov"
+    },
+    {
+      "id": "c279",
+      "name": "Ini",
+      "enName": "This is",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/ini.png",
+      "soundPath": "assets/sound/id/ini.mov",
+      "enSoundPath": "assets/sound/en/this is.mov"
+    },
+    {
+      "id": "c308",
+      "name": "Itu",
+      "enName": "That is",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/itu.png",
+      "soundPath": "assets/sound/id/itu.mov",
+      "enSoundPath": "assets/sound/en/that is.mov"
+    },
+    {
+      "id": "c302",
+      "name": "Mencuci Piring",
+      "enName": "Washing Dishes",
+      "categoryId": "cat17",
+      "imagePath": "assets/images/img_asset/mencuci piring.png",
+      "soundPath": "assets/sound/id/mencuci piring.mov",
+      "enSoundPath": "assets/sound/en/washing dishes.mov"
     }
   ]
 }

@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:SuaraKita/bindings/app_bidings.dart';
-import 'package:SuaraKita/models/database.dart';
 import 'package:SuaraKita/routes/app_pages.dart';
 import 'package:SuaraKita/translations/app_translation.dart';
 
-import 'package:SuaraKita/services/audio_services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

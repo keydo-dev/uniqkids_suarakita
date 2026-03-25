@@ -77,7 +77,6 @@ class CategoryCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // IMAGE HEADER (opsional)
                     if (category.imagePath != null &&
                         category.imagePath!.isNotEmpty)
                       Padding(

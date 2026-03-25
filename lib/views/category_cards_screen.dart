@@ -183,7 +183,7 @@ class _CategoryCardsScreenState extends State<CategoryCardsScreen> {
           return GridView.builder(
             padding: const EdgeInsets.all(8.0),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 11,
+              crossAxisCount: 6,
               childAspectRatio: 0.8,
               crossAxisSpacing: 8.0,
               mainAxisSpacing: 8.0,

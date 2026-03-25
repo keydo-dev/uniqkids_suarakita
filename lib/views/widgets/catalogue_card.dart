@@ -25,6 +25,7 @@ class CatalogueCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final card = cardWithCategory.card;
     final category = cardWithCategory.category;
+    
     Color color = Colors.grey;
     if (category != null) {
       if (category.color != null) {
@@ -37,65 +38,98 @@ class CatalogueCard extends StatelessWidget {
       }
     }
 
+    final hasImage = card.imagePath != null && card.imagePath!.isNotEmpty;
+
     return Container(
       height: 200,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: Colors.grey.shade300,
-          width: 1.0,
-        ),
+        border: Border.all(color: Colors.grey.shade300, width: 1.0),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FutureBuilder<String>(
-                future: AssetHelper.getImage(card.imagePath),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState ==
-                      ConnectionState.waiting) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                  if (snapshot.hasError ||
-                      !snapshot.hasData ||
-                      snapshot.data!.isEmpty) {
-                    return const Icon(
-                      Icons.image_not_supported,
-                      color: Colors.grey,
-                    );
-                  }
-                  final imagePath = snapshot.data!;
-                                                    return imagePath.startsWith('assets/')
-                                                        ? Image.asset(
-                                                              imagePath,
-                                                              fit: BoxFit.contain,
-                                                            )
-                                                        : Image.file(
-                                                              File(imagePath),
-                                                              fit: BoxFit.contain,
-                                                            );
-                },
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (hasImage) ...[
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: FutureBuilder<String>(
+                        future: AssetHelper.getImage(card.imagePath),
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState == ConnectionState.waiting) {
+                            return const Center(child: CircularProgressIndicator());
+                          }
+                          
+                          if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                            return Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  langController.currentLanguage.value == 'en'
+                                      ? card.enName ?? card.name
+                                      : card.name,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            );
+                          }
+                          
+                          final imagePath = snapshot.data!;
+                          return imagePath.startsWith('assets/')
+                              ? Image.asset(imagePath, fit: BoxFit.contain)
+                              : Image.file(File(imagePath), fit: BoxFit.contain);
+                        },
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
+                    child: Text(
+                      langController.currentLanguage.value == 'en'
+                          ? card.enName ?? card.name
+                          : card.name,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ]
+                else ...[
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        langController.currentLanguage.value == 'en'
+                            ? card.enName ?? card.name
+                            : card.name,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                ],
+              ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Text(
-              langController.currentLanguage.value == 'en'
-                  ? card.enName ?? card.name
-                  : card.name,
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
+          
+          // Audio button
           IconButton(
             icon: const Icon(Icons.volume_up),
             onPressed: () async {
@@ -107,6 +141,7 @@ class CatalogueCard extends StatelessWidget {
               audioService.playFile(soundPath);
             },
           ),
+          
           Container(
             height: 8,
             decoration: BoxDecoration(
