@@ -1504,6 +1504,15 @@
       "enSoundPath": "assets/sound/en/wash (cebok).mp3"
     },
     {
+      "id": "c302",
+      "name": "Mencuci Piring",
+      "enName": "Washing Dishes",
+      "categoryId": "cat5",
+      "imagePath": "assets/images/img_asset/mencuci piring.png",
+      "soundPath": "assets/sound/id/mencuci piring.mov",
+      "enSoundPath": "assets/sound/en/washing dishes.mov"
+    },
+    {
       "id": "c208",
       "name": "Cuci Tangan",
       "enName": "Wash Hands",
@@ -3007,19 +3016,10 @@
       "enSoundPath": "assets/sound/en/is.mov"
     },
     {
-      "id": "c201",
-      "name": "Diam",
-      "enName": "Quite",
-      "categoryId": "cat17",
-      "imagePath": "assets/images/img_asset/diam.png",
-      "soundPath": "assets/sound/id/diam.mp3",
-      "enSoundPath": "assets/sound/en/quite.mp3"
-    },
-    {
       "id": "c306",
       "name": "Di belakang",
       "enName": "Behind",
-      "categoryId": "cat17",
+      "categoryId": "cat8",
       "imagePath": "assets/images/img_asset/di belakang.png",
       "soundPath": "assets/sound/id/di belakang.mov",
       "enSoundPath": "assets/sound/en/behind.mov"
@@ -3028,7 +3028,7 @@
       "id": "c307",
       "name": "Di dalam",
       "enName": "In",
-      "categoryId": "cat17",
+      "categoryId": "cat8",
       "imagePath": "assets/images/img_asset/di dalam.png",
       "soundPath": "assets/sound/id/di dalam.mov",
       "enSoundPath": "assets/sound/en/in.mov"
@@ -3037,7 +3037,7 @@
       "id": "c305",
       "name": "Di depan",
       "enName": "In front of",
-      "categoryId": "cat17",
+      "categoryId": "cat8",
       "imagePath": "assets/images/img_asset/di depan.png",
       "soundPath": "assets/sound/id/di depan.mov",
       "enSoundPath": "assets/sound/en/in front of.mov"
@@ -3046,7 +3046,7 @@
       "id": "c309",
       "name": "Di samping",
       "enName": "Beside",
-      "categoryId": "cat17",
+      "categoryId": "cat8",
       "imagePath": "assets/images/img_asset/di samping.png",
       "soundPath": "assets/sound/id/di samping.mov",
       "enSoundPath": "assets/sound/en/beside.mov"
@@ -3055,7 +3055,7 @@
       "id": "c310",
       "name": "Diantara",
       "enName": "Between",
-      "categoryId": "cat17",
+      "categoryId": "cat8",
       "imagePath": "assets/images/img_asset/di antara.png",
       "soundPath": "assets/sound/id/diantara.mov",
       "enSoundPath": "assets/sound/en/between.mov"
@@ -3064,7 +3064,7 @@
       "id": "c304",
       "name": "Diatas",
       "enName": "On",
-      "categoryId": "cat17",
+      "categoryId": "cat8",
       "imagePath": "assets/images/img_asset/di atas.png",
       "soundPath": "assets/sound/id/diatas.mov",
       "enSoundPath": "assets/sound/en/under.mov"
@@ -3073,7 +3073,7 @@
       "id": "c303",
       "name": "Dibawah",
       "enName": "Under",
-      "categoryId": "cat17",
+      "categoryId": "cat8",
       "imagePath": "assets/images/img_asset/di bawah.png",
       "soundPath": "assets/sound/id/dibawah.mov",
       "enSoundPath": "assets/sound/en/under.mov"
@@ -3082,7 +3082,7 @@
       "id": "c279",
       "name": "Ini",
       "enName": "This is",
-      "categoryId": "cat17",
+      "categoryId": "cat8",
       "imagePath": "assets/images/img_asset/ini.png",
       "soundPath": "assets/sound/id/ini.mov",
       "enSoundPath": "assets/sound/en/this is.mov"
@@ -3091,19 +3091,19 @@
       "id": "c308",
       "name": "Itu",
       "enName": "That is",
-      "categoryId": "cat17",
+      "categoryId": "cat8",
       "imagePath": "assets/images/img_asset/itu.png",
       "soundPath": "assets/sound/id/itu.mov",
       "enSoundPath": "assets/sound/en/that is.mov"
     },
     {
-      "id": "c302",
-      "name": "Mencuci Piring",
-      "enName": "Washing Dishes",
+      "id": "c201",
+      "name": "Diam",
+      "enName": "Quite",
       "categoryId": "cat17",
-      "imagePath": "assets/images/img_asset/mencuci piring.png",
-      "soundPath": "assets/sound/id/mencuci piring.mov",
-      "enSoundPath": "assets/sound/en/washing dishes.mov"
+      "imagePath": "assets/images/img_asset/diam.png",
+      "soundPath": "assets/sound/id/diam.mp3",
+      "enSoundPath": "assets/sound/en/quite.mp3"
     }
   ]
 }
