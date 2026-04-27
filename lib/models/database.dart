@@ -5,6 +5,7 @@ import 'package:drift/native.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
 part 'database.g.dart';
@@ -59,7 +60,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase._internal() : super(_openConnection());
 
   @override
-  int get schemaVersion => 4;  // Increment version
+  int get schemaVersion => 5;
 
   @override
   MigrationStrategy get migration {
@@ -72,8 +73,10 @@ class AppDatabase extends _$AppDatabase {
           await m.addColumn(cards, cards.isAsset);
         }
         if (from < 4) {
-          // Tambah table shortcuts
           await m.createTable(shortcuts);
+        }
+        if (from < 5) {
+          await m.addColumn(cards, cards.usageCount);
         }
       },
     );
@@ -165,9 +168,9 @@ class AppDatabase extends _$AppDatabase {
       }
 
       print('=== INITIALIZATION COMPLETE ===');
-      
-      // Initialize default shortcuts
-      await initializeDefaultShortcuts();
+
+      // Seed / migrate the recommended shortcut set.
+      await ensureRecommendedShortcuts();
       
       // Verifikasi data terinsert
       final finalCategories = await select(categories).get();
@@ -184,55 +187,93 @@ class AppDatabase extends _$AppDatabase {
   }
 
   // ========== SHORTCUT METHODS ==========
-  
-  // Initialize default shortcuts
-  Future<void> initializeDefaultShortcuts() async {
-    print('=== INITIALIZE DEFAULT SHORTCUTS ===');
-    
-    // Check if already initialized
-    final existing = await select(shortcuts).get();
-    if (existing.isNotEmpty) {
-      print('Shortcuts already initialized');
-      return;
-    }
 
-    final defaultShortcutCardIds = [
-      'c193',
-      'c165',
-      'c175',
-      'c215',
-      'c220',
-      'c226',
-    ];
+  // Bump this when the recommended list below changes — every install will
+  // be migrated up to the new set on next launch (user-added shortcuts are
+  // preserved; only defaults are replaced).
+  static const int _kRecommendedShortcutsVersion = 2;
+  static const String _kRecommendedShortcutsPrefKey =
+      'shortcuts.recommendedVersion';
 
-    for (int i = 0; i < defaultShortcutCardIds.length; i++) {
-      try {
-        // Verify card exists
-        final card = await (select(cards)
-          ..where((tbl) => tbl.id.equals(defaultShortcutCardIds[i])))
+  /// High-utility AAC core vocabulary — the words a child will combine into
+  /// almost every sentence. One row in the play screen's shortcut grid.
+  static const List<String> recommendedShortcutCardIds = [
+    'c320', // Saya  - I / Me
+    'c275', // Mau   - Want
+    'c193', // Makan - Eat
+    'c165', // Minum - Drink
+    'c175', // Tidur - Sleep
+    'c299', // Senang - Happy
+    'c284', // Sedih  - Sad
+    'c354', // Selesai - Done
+  ];
+
+  /// Make sure the recommended set is present.
+  /// - Fresh install: seeds them.
+  /// - Existing install on an older recommended version: replaces the
+  ///   default shortcuts (isDefault=true) with the current set, preserving
+  ///   any user-added shortcuts.
+  /// - `force: true` re-applies regardless of stored version (used by the
+  ///   "Restore recommended" button in shortcut settings).
+  Future<void> ensureRecommendedShortcuts({bool force = false}) async {
+    final prefs = await SharedPreferences.getInstance();
+    final installed = prefs.getInt(_kRecommendedShortcutsPrefKey) ?? 0;
+    if (!force && installed >= _kRecommendedShortcutsVersion) return;
+
+    print('=== ENSURE RECOMMENDED SHORTCUTS (v$_kRecommendedShortcutsVersion, force=$force) ===');
+
+    // Wipe old defaults; user-added shortcuts (isDefault=false) untouched.
+    await (delete(shortcuts)..where((tbl) => tbl.isDefault.equals(true))).go();
+
+    for (int i = 0; i < recommendedShortcutCardIds.length; i++) {
+      final cardId = recommendedShortcutCardIds[i];
+      final card = await (select(cards)
+            ..where((tbl) => tbl.id.equals(cardId)))
           .getSingleOrNull();
-        
-        if (card != null) {
-          await into(shortcuts).insert(
-            ShortcutsCompanion.insert(
-              id: const Uuid().v4(),
-              cardId: defaultShortcutCardIds[i],
-              sortOrder: i,
-              isDefault: const Value(true),
-              isActive: const Value(true),
-              createdAt: DateTime.now(),
-            ),
-          );
-          print('Added default shortcut: ${card.name}');
-        } else {
-          print('Card not found: ${defaultShortcutCardIds[i]}');
-        }
-      } catch (e) {
-        print('Error adding default shortcut: $e');
+      if (card == null) {
+        print('Recommended card not in dataset: $cardId');
+        continue;
       }
+
+      // If the user already added this card themselves, leave it as theirs.
+      final existing = await (select(shortcuts)
+            ..where((tbl) => tbl.cardId.equals(cardId)))
+          .getSingleOrNull();
+      if (existing != null) continue;
+
+      await into(shortcuts).insert(
+        ShortcutsCompanion.insert(
+          id: const Uuid().v4(),
+          cardId: cardId,
+          sortOrder: i,
+          isDefault: const Value(true),
+          isActive: const Value(true),
+          createdAt: DateTime.now(),
+        ),
+      );
+      print('Seeded recommended shortcut: ${card.name}');
     }
-    
-    print('=== DEFAULT SHORTCUTS INITIALIZED ===');
+
+    // Re-number so defaults appear first in the play screen, then user picks.
+    final all = await (select(shortcuts)
+          ..orderBy([
+            (t) => OrderingTerm(
+                  expression: t.isDefault,
+                  mode: OrderingMode.desc,
+                ),
+            (t) => OrderingTerm(expression: t.sortOrder),
+          ]))
+        .get();
+    for (int i = 0; i < all.length; i++) {
+      await (update(shortcuts)..where((t) => t.id.equals(all[i].id)))
+          .write(ShortcutsCompanion(sortOrder: Value(i)));
+    }
+
+    await prefs.setInt(
+      _kRecommendedShortcutsPrefKey,
+      _kRecommendedShortcutsVersion,
+    );
+    print('=== RECOMMENDED SHORTCUTS READY ===');
   }
 
   // Stream untuk watch active shortcuts dengan card data

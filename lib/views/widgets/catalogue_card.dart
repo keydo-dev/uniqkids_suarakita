@@ -1,11 +1,11 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:SuaraKita/controllers/category_controller.dart';
 import 'package:SuaraKita/controllers/languages_controller.dart';
+import 'package:SuaraKita/controllers/voice_controller.dart';
 import 'package:SuaraKita/models/database.dart' as db;
 import 'package:SuaraKita/services/audio_services.dart';
+import 'package:SuaraKita/services/tts_service.dart';
 import 'package:SuaraKita/utils/asset_helper.dart';
 
 class CatalogueCard extends StatelessWidget {
@@ -13,6 +13,8 @@ class CatalogueCard extends StatelessWidget {
   final CategoryController categoryController;
   final LanguagesController langController;
   final AudioService audioService = Get.find<AudioService>();
+  final TtsService ttsService = Get.find<TtsService>();
+  final VoiceController voiceController = Get.find<VoiceController>();
 
   CatalogueCard({
     super.key,
@@ -58,39 +60,7 @@ class CatalogueCard extends StatelessWidget {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: FutureBuilder<String>(
-                        future: AssetHelper.getImage(card.imagePath),
-                        builder: (context, snapshot) {
-                          if (snapshot.connectionState == ConnectionState.waiting) {
-                            return const Center(child: CircularProgressIndicator());
-                          }
-                          
-                          if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                            return Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  langController.currentLanguage.value == 'en'
-                                      ? card.enName ?? card.name
-                                      : card.name,
-                                  textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            );
-                          }
-                          
-                          final imagePath = snapshot.data!;
-                          return imagePath.startsWith('assets/')
-                              ? Image.asset(imagePath, fit: BoxFit.contain)
-                              : Image.file(File(imagePath), fit: BoxFit.contain);
-                        },
-                      ),
+                      child: AssetHelper.cardImage(card.imagePath),
                     ),
                   ),
                   Padding(
@@ -129,14 +99,21 @@ class CatalogueCard extends StatelessWidget {
             ),
           ),
           
-          // Audio button
+          // Audio button — TTS when natural voice is enabled, otherwise the
+          // card's recorded clip (or the language's default fallback).
           IconButton(
             icon: const Icon(Icons.volume_up),
             onPressed: () async {
+              final lang = langController.currentLanguage.value;
+              if (voiceController.useTts.value) {
+                final word = lang == 'en'
+                    ? (card.enName ?? card.name)
+                    : card.name;
+                await ttsService.speak(word, langCode: lang);
+                return;
+              }
               final soundPath = await AssetHelper.getSound(
-                langController.currentLanguage.value == 'en'
-                    ? card.enSoundPath
-                    : card.soundPath,
+                lang == 'en' ? card.enSoundPath : card.soundPath,
               );
               audioService.playFile(soundPath);
             },

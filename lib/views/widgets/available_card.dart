@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:SuaraKita/controllers/card_controller.dart';
@@ -26,6 +24,9 @@ class AvailableCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final card = cardWithCategory.card;
     final category = cardWithCategory.category;
+
+    // Resolve the category color once at build time. The strip doesn't
+    // depend on observable state — no need to keep it inside an Obx.
     Color color = Colors.grey;
     if (category != null) {
       if (category.color != null) {
@@ -38,104 +39,86 @@ class AvailableCard extends StatelessWidget {
       }
     }
 
-    return GestureDetector(
-      onTap: () => cardController.toggleCardSelection(card),
-      child: Obx(() {
-        final isSelected = cardController.selectedCards.contains(card);
-        final isTextMode = cardController.isTextMode.value;
-        final hasImage = card.imagePath != null && card.imagePath!.isNotEmpty;
+    final hasImage = card.imagePath != null && card.imagePath!.isNotEmpty;
+    // Decoded once, reused on every selection toggle.
+    final imageWidget = hasImage
+        ? RepaintBoundary(child: AssetHelper.cardImage(card.imagePath))
+        : null;
 
-        return Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: isSelected ? Colors.green : Colors.grey.shade300,
-              width: isSelected ? 2.0 : 1.0,
+    return RepaintBoundary(
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => cardController.toggleCardSelection(card),
+        child: Obx(() {
+          final isSelected = cardController.isSelected(card.id);
+          final isTextMode = cardController.isTextMode.value;
+          final lang = langController.currentLanguage.value;
+          final label = lang == 'en' ? (card.enName ?? card.name) : card.name;
+          final showImage = !isTextMode && imageWidget != null;
+
+          return Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                color: isSelected ? Colors.green : Colors.grey.shade300,
+                width: isSelected ? 2.0 : 1.0,
+              ),
             ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // IMAGE MODE
-              if (!isTextMode && hasImage)
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FutureBuilder<String>(
-                      future: AssetHelper.getImage(card.imagePath),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }
-
-                        if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                          return const SizedBox();
-                        }
-
-                        final imagePath = snapshot.data!;
-                        return imagePath.startsWith('assets/')
-                            ? Image.asset(imagePath, fit: BoxFit.contain)
-                            : Image.file(File(imagePath), fit: BoxFit.contain);
-                      },
-                    ),
-                  ),
-                ),
-
-              // TEXT ONLY MODE
-              if (isTextMode || !hasImage)
-                Expanded(
-                  child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (showImage)
+                  Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        langController.currentLanguage.value == 'en'
-                            ? card.enName ?? card.name
-                            : card.name,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                      child: imageWidget,
+                    ),
+                  )
+                else
+                  Expanded(
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          label,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
-                ),
-
-              // LABEL BAWAH IMAGE
-              if (!isTextMode && hasImage)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
-                  child: Text(
-                    langController.currentLanguage.value == 'en'
-                        ? card.enName ?? card.name
-                        : card.name,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                if (showImage)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
+                    child: Text(
+                      label,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                Container(
+                  height: 8,
+                  decoration: BoxDecoration(
+                    color: color,
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(7),
+                      bottomRight: Radius.circular(7),
+                    ),
                   ),
                 ),
-
-              Container(
-                height: 8,
-                decoration: BoxDecoration(
-                  color: color,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(7),
-                    bottomRight: Radius.circular(7),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      }),
+              ],
+            ),
+          );
+        }),
+      ),
     );
   }
 }

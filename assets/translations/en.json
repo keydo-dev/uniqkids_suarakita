@@ -55,5 +55,21 @@
   "edit_enter_indonesian_word_hint": "Enter Indonesian Word",
   "edit_enter_english_word_hint": "Enter English Word",
   "edit_recording_text": "Recording...",
-  "edit_rec_text": "Rec"
+  "edit_rec_text": "Rec",
+  "settings_title": "Voice Settings",
+  "settings_use_tts": "Natural voice (TTS)",
+  "settings_use_tts_hint": "Speak the whole sentence with a natural voice instead of stitched recordings.",
+  "settings_voice_gender": "Voice",
+  "voice_female": "Female",
+  "voice_male": "Male",
+  "settings_voice_picker": "Voice variant",
+  "voice_kids_tag": "kids",
+  "voice_no_voices": "No voices installed for this language",
+  "settings_close": "Close",
+  "shortcuts_restore_recommended": "Restore recommended",
+  "shortcuts_restore_confirm_title": "Restore recommended shortcuts?",
+  "shortcuts_restore_confirm_body": "Default shortcuts will be replaced with the recommended set. Your custom shortcuts will be kept.",
+  "shortcuts_restore_confirm_action": "Restore",
+  "recommended_shortcuts_restored": "Recommended shortcuts restored",
+  "recommended_shortcuts_failed": "Failed to restore shortcuts"
 }

@@ -30,6 +30,13 @@ class ShortcutSettingsScreen extends StatelessWidget {
           onPressed: () => Get.back(),
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.restart_alt, color: Colors.white),
+            tooltip: 'shortcuts_restore_recommended'.tr,
+            onPressed: () => _confirmRestoreRecommended(shortcutController),
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -308,6 +315,35 @@ class ShortcutSettingsScreen extends StatelessWidget {
               langController.currentLanguage.value == 'en'
                   ? 'Remove'
                   : 'Hapus',
+              style: const TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _confirmRestoreRecommended(ShortcutController controller) {
+    Get.dialog(
+      AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        title: Text('shortcuts_restore_confirm_title'.tr),
+        content: Text('shortcuts_restore_confirm_body'.tr),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(),
+            child: Text('edit_cancel'.tr),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: btnPrimaryColor),
+            onPressed: () async {
+              Get.back();
+              await controller.resetToRecommended();
+            },
+            child: Text(
+              'shortcuts_restore_confirm_action'.tr,
               style: const TextStyle(color: Colors.white),
             ),
           ),

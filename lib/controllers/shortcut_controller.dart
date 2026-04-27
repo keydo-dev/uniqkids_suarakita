@@ -174,4 +174,27 @@ class ShortcutController extends GetxController {
   int get userShortcutsCount {
     return shortcuts.where((s) => !s.shortcut.isDefault).length;
   }
+
+  /// Replace default shortcuts with the current recommended set.
+  /// User-added shortcuts are preserved.
+  Future<void> resetToRecommended() async {
+    try {
+      await db.ensureRecommendedShortcuts(force: true);
+      await loadShortcuts();
+      Get.snackbar(
+        'Success',
+        'recommended_shortcuts_restored'.tr,
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.white,
+      );
+    } catch (e) {
+      print('Error restoring recommended shortcuts: $e');
+      Get.snackbar(
+        'Error',
+        'recommended_shortcuts_failed'.tr,
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.white,
+      );
+    }
+  }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:SuaraKita/const.dart';
 import 'package:SuaraKita/controllers/languages_controller.dart';
+import 'package:SuaraKita/views/widgets/voice_settings_dialog.dart';
 
 import 'package:flutter/services.dart';
 
@@ -81,9 +82,31 @@ class MainMenuScreen extends StatelessWidget {
                 ),
               ),
               Positioned(top: 20, right: 20, child: _buildLanguageToggle()),
+              Positioned(top: 20, left: 20, child: _buildSettingsButton()),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildSettingsButton() {
+    return GestureDetector(
+      onTap: () => Get.dialog(const VoiceSettingsDialog()),
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 10,
+              offset: Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Icon(Icons.settings, size: 22, color: textprimaryColor),
       ),
     );
   }

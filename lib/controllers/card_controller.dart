@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 import 'package:SuaraKita/controllers/languages_controller.dart';
+import 'package:SuaraKita/controllers/voice_controller.dart';
 import 'package:SuaraKita/models/database.dart';
 import 'package:SuaraKita/services/audio_services.dart';
+import 'package:SuaraKita/services/tts_service.dart';
 import 'package:uuid/uuid.dart';
 import 'package:drift/drift.dart' as drift;
 
@@ -9,11 +11,18 @@ class CardController extends GetxController {
   final AppDatabase db;
   final _uuid = const Uuid();
   final _audioService = Get.find<AudioService>();
+  final _ttsService = Get.find<TtsService>();
   final langController = Get.find<LanguagesController>();
+  final voiceController = Get.find<VoiceController>();
 
   var cards = <Card>[].obs;
   var selectedCards = <Card>[].obs;
+  // Mirror of `selectedCards` keyed by id for O(1) `contains` checks in the
+  // grid build path (called once per visible card on every selection change).
+  final RxSet<String> selectedIds = <String>{}.obs;
   var isTextMode = false.obs;
+
+  bool isSelected(String cardId) => selectedIds.contains(cardId);
 
   CardController(this.db);
 
@@ -70,16 +79,19 @@ class CardController extends GetxController {
 
   // Toggle card selection
   void toggleCardSelection(Card card) {
-    if (selectedCards.contains(card)) {
-      selectedCards.remove(card);
+    if (selectedIds.contains(card.id)) {
+      selectedCards.removeWhere((c) => c.id == card.id);
+      selectedIds.remove(card.id);
     } else {
       selectedCards.add(card);
+      selectedIds.add(card.id);
     }
   }
 
   // Hapus kartu dari daftar terpilih
   void removeCard(Card card) {
-    selectedCards.remove(card);
+    selectedCards.removeWhere((c) => c.id == card.id);
+    selectedIds.remove(card.id);
   }
 
   // Reorder posisi kartu di daftar terpilih
@@ -94,33 +106,50 @@ class CardController extends GetxController {
     isTextMode.value = !isTextMode.value;
   }
 
-  // Putar suara dari semua kartu terpilih
+  // Putar suara dari semua kartu terpilih sebagai satu kalimat.
+  // Pakai TTS (suara natural, satu utterance) bila diaktifkan; bila tidak,
+  // fallback ke pemutaran berurutan klip rekaman.
   Future<void> playSelectedCards() async {
-  if (selectedCards.isEmpty) return;
+    if (selectedCards.isEmpty) return;
 
-  try {
-    for (var card in selectedCards) {
-      final langController = Get.find<LanguagesController>();
-      final soundPath = langController.currentLanguage.value == 'en' 
-          ? card.enSoundPath ?? card.soundPath 
-          : card.soundPath;
-      
-      if (soundPath != null && soundPath.isNotEmpty) {
-        await _audioService.playMultipleFiles([soundPath]);
-        
-        await Future.delayed(const Duration(milliseconds: 500));
+    final lang = langController.currentLanguage.value;
+
+    try {
+      if (voiceController.useTts.value) {
+        final sentence = selectedCards
+            .map((c) {
+              final word = lang == 'en' ? (c.enName ?? c.name) : c.name;
+              return word.trim();
+            })
+            .where((w) => w.isNotEmpty)
+            .join(' ');
+
+        if (sentence.isEmpty) return;
+        await _ttsService.speak(sentence, langCode: lang);
+        return;
       }
+
+      final paths = selectedCards
+          .map((card) {
+            final p = lang == 'en'
+                ? (card.enSoundPath ?? card.soundPath)
+                : card.soundPath;
+            return (p != null && p.isNotEmpty) ? p : null;
+          })
+          .whereType<String>()
+          .toList();
+
+      if (paths.isEmpty) return;
+      await _audioService.playMultipleFiles(paths);
+    } catch (e) {
+      print('Error playing selected cards: $e');
     }
-    
-    print('Finished playing ${selectedCards.length} cards');
-  } catch (e) {
-    print('Error playing selected cards: $e');
   }
-}
 
   // Hapus semua kartu yang terpilih
   void clearSelection() {
     selectedCards.clear();
+    selectedIds.clear();
   }
 
 

@@ -55,5 +55,21 @@
   "edit_enter_indonesian_word_hint": "Masukkan Kata Indonesia",
   "edit_enter_english_word_hint": "Masukkan Kata English",
   "edit_recording_text": "Merekam...",
-  "edit_rec_text": "Rekam"
+  "edit_rec_text": "Rekam",
+  "settings_title": "Pengaturan Suara",
+  "settings_use_tts": "Suara natural (TTS)",
+  "settings_use_tts_hint": "Bacakan seluruh kalimat dengan suara natural, bukan menyambung rekaman per kata.",
+  "settings_voice_gender": "Jenis Suara",
+  "voice_female": "Perempuan",
+  "voice_male": "Laki-laki",
+  "settings_voice_picker": "Varian suara",
+  "voice_kids_tag": "anak",
+  "voice_no_voices": "Belum ada suara terpasang untuk bahasa ini",
+  "settings_close": "Tutup",
+  "shortcuts_restore_recommended": "Pulihkan rekomendasi",
+  "shortcuts_restore_confirm_title": "Pulihkan pintasan rekomendasi?",
+  "shortcuts_restore_confirm_body": "Pintasan bawaan akan diganti dengan set rekomendasi. Pintasan kustom Anda tetap utuh.",
+  "shortcuts_restore_confirm_action": "Pulihkan",
+  "recommended_shortcuts_restored": "Pintasan rekomendasi dipulihkan",
+  "recommended_shortcuts_failed": "Gagal memulihkan pintasan"
 }

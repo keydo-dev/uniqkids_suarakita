@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -79,39 +80,66 @@ class AudioService {
     _isStopped = true;
   }
 
-  // Play beberapa file secara berurutan
+  // Play beberapa file secara berurutan tanpa jeda (gapless).
   Future<void> playMultipleFiles(List<String?> filePaths) async {
     if (!_initialized) await init();
     if (filePaths.isEmpty || _player == null) return;
-    if (_player!.isPlaying) return; // cegah overlap
+    if (_player!.isPlaying) {
+      await _player!.stopPlayer();
+    }
 
     _isStopped = false;
 
-    for (final filePath in filePaths) {
+    final paths = filePaths
+        .where((p) => p != null && p.isNotEmpty)
+        .cast<String>()
+        .toList();
+    if (paths.isEmpty) return;
+
+    // Pre-load semua asset buffer secara paralel sebelum playback dimulai
+    // supaya tidak ada delay loading antar klip.
+    final buffers = await Future.wait(paths.map((p) async {
+      if (!p.startsWith('assets/')) return null;
+      try {
+        final data = await rootBundle.load(p);
+        return data.buffer.asUint8List();
+      } catch (e) {
+        print('Error loading asset $p: $e');
+        return null;
+      }
+    }));
+
+    for (var i = 0; i < paths.length; i++) {
       if (_isStopped) break;
 
-      if (filePath == null) continue;
+      final path = paths[i];
+      final buffer = buffers[i];
+      final completer = Completer<void>();
 
-      if (filePath.startsWith('assets/')) {
-        try {
-          final data = await rootBundle.load(filePath);
-          await _player!.startPlayer(fromDataBuffer: data.buffer.asUint8List());
-        } catch (e) {
-          print('Error playing asset $filePath: $e');
+      void onFinished() {
+        if (!completer.isCompleted) completer.complete();
+      }
+
+      try {
+        if (buffer != null) {
+          await _player!.startPlayer(
+            fromDataBuffer: buffer,
+            whenFinished: onFinished,
+          );
+        } else if (!path.startsWith('assets/')) {
+          await _player!.startPlayer(
+            fromURI: path,
+            whenFinished: onFinished,
+          );
+        } else {
           continue;
         }
-      } else {
-        await _player!.startPlayer(fromURI: filePath);
+      } catch (e) {
+        print('Error starting player for $path: $e');
+        continue;
       }
 
-      while (_player!.isPlaying) {
-        await Future.delayed(const Duration(milliseconds: 1));
-        if (_isStopped) {
-          await _player!.stopPlayer();
-          break;
-        }
-      }
-      await Future.delayed(const Duration(milliseconds: 1));
+      await completer.future;
     }
   }
 

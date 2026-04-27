@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:SuaraKita/controllers/shortcut_controller.dart';
 import 'package:SuaraKita/views/shortcut_setting_screen.dart';
 import 'package:flutter/material.dart';
@@ -38,163 +37,121 @@ class _PlayScreenState extends State<PlayScreen> {
   }
 
   Widget _buildSelectedCard(db.Card card, int key) {
+    // Resolve category color synchronously from the controller's cache.
+    final category = categoryController.getCategoryById(card.categoryId);
+    Color stripColor = Colors.grey;
+    if (category != null) {
+      if (category.color != null) {
+        stripColor = Color(category.color!);
+      } else {
+        final parent = categoryController.getParentCategory(category);
+        if (parent?.color != null) {
+          stripColor = Color(parent!.color!);
+        }
+      }
+    }
+
+    final hasImage = card.imagePath != null && card.imagePath!.isNotEmpty;
+    final imageWidget = hasImage
+        ? RepaintBoundary(child: AssetHelper.cardImage(card.imagePath))
+        : null;
+
     return ReorderableDragStartListener(
       index: key,
-      key: ValueKey(key),
-      child: Obx(() {
-        final isTextMode = cardController.isTextMode.value;
-        final hasImage = card.imagePath != null && card.imagePath!.isNotEmpty;
+      key: ValueKey(card.id),
+      child: RepaintBoundary(
+        child: Obx(() {
+          final isTextMode = cardController.isTextMode.value;
+          final lang = langController.currentLanguage.value;
+          final label = lang == 'en' ? (card.enName ?? card.name) : card.name;
+          final showImage = !isTextMode && imageWidget != null;
 
-        return Container(
-          width: 100,
-          margin: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.grey.shade300),
-          ),
-          child: Stack(
-            children: [
-              // Main content (image/text)
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (!isTextMode && hasImage)
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: FutureBuilder<String>(
-                          future: AssetHelper.getImage(card.imagePath),
-                          builder: (context, snapshot) {
-                            if (snapshot.connectionState ==
-                                ConnectionState.waiting) {
-                              return const Center(
-                                child: CircularProgressIndicator(),
-                              );
-                            }
-                            if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                            return const SizedBox();
-                          }
-                            final imagePath = snapshot.data!;
-                          return imagePath.startsWith('assets/')
-                              ? Image.asset(imagePath, fit: BoxFit.contain)
-                              : Image.file(
-                                  File(imagePath),
-                                  fit: BoxFit.contain,
-                                );
-                          },
-                        ),
-                      ),
-                    ),
-                    
-                  if (isTextMode || !hasImage)
-                    Expanded(
-                      child: Center(
+          return Container(
+            width: 100,
+            margin: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.grey.shade300),
+            ),
+            child: Stack(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (showImage)
+                      Expanded(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            langController.currentLanguage.value == 'en'
-                                ? card.enName ?? card.name
-                                : card.name,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          child: imageWidget,
+                        ),
+                      )
+                    else
+                      Expanded(
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              label,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  // Text label (always show in image mode)
-                  if (!isTextMode && hasImage)
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(
-                        4.0,
-                        0,
-                        4.0,
-                        18.0,
-                      ),
-                      child: Text(
-                        langController.currentLanguage.value == 'en'
-                            ? card.enName ?? card.name
-                            : card.name,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
+                    if (showImage)
+                      Padding(
+                        padding:
+                            const EdgeInsets.fromLTRB(4.0, 0, 4.0, 18.0),
+                        child: Text(
+                          label,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  // Spacer for strip in text mode
-                  if (isTextMode || !hasImage)
-                  const SizedBox(height: 8),
-                ],
-              ),
-
-              // STRIP WARNA KATEGORI - Always at bottom
-              Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: StreamBuilder<db.Category?>(
-                stream:
-                    categoryController.watchCategoryById(card.categoryId),
-                builder: (context, snapshot) {
-                  final category = snapshot.data;
-                  Color color = Colors.grey;
-
-                  if (category != null) {
-                    if (category.color != null) {
-                      color = Color(category.color!);
-                    } else {
-                      final parent =
-                          categoryController.getParentCategory(category);
-                      if (parent?.color != null) {
-                        color = Color(parent!.color!);
-                      }
-                    }
-                  }
-                    return Container(
-                      height: 8,
-                      decoration: BoxDecoration(
-                        color: color,
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(7),
-                          bottomRight: Radius.circular(7),
-                        ),
-                      ),
-                    );
-                  },
+                      )
+                    else
+                      const SizedBox(height: 8),
+                  ],
                 ),
-              ),
-
-              // Close button
-              Positioned(
-                top: 0,
-                right: 0,
-                child: GestureDetector(
-                  onTap: () => cardController.removeCard(card),
-                  child: const CircleAvatar(
-                    radius: 12,
-                    backgroundColor: Colors.red,
-                    child: Icon(Icons.close, color: Colors.white, size: 16),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: 8,
+                    decoration: BoxDecoration(
+                      color: stripColor,
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(7),
+                        bottomRight: Radius.circular(7),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        );
-     }),
-    );
-  }
-
-  // Widget untuk shortcut card (menggunakan format yang sama dengan available card)
-  Widget _buildShortcutCard(db.Card card) {
-    return StreamBuilder<db.Category?>(
-      stream: categoryController.watchCategoryById(card.categoryId),
-      builder: (context, snapshot) {
-        final category = snapshot.data;
-        return _buildAvailableCard(db.CardWithCategory(card, category));
-      },
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: GestureDetector(
+                    onTap: () => cardController.removeCard(card),
+                    child: const CircleAvatar(
+                      radius: 12,
+                      backgroundColor: Colors.red,
+                      child: Icon(Icons.close, color: Colors.white, size: 16),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }),
+      ),
     );
   }
 
@@ -443,20 +400,11 @@ class _PlayScreenState extends State<PlayScreen> {
                               ),
                           itemCount: shortcuts.length,
                           itemBuilder: (context, index) {
-                            final shortcutItem = shortcuts[index];
-                            final card = shortcutItem.card;
-
-                            // Get category for the card
-                            return StreamBuilder<db.Category?>(
-                              stream: categoryController.watchCategoryById(
-                                card.categoryId,
-                              ),
-                              builder: (context, categorySnapshot) {
-                                final category = categorySnapshot.data;
-                                return _buildAvailableCard(
-                                  db.CardWithCategory(card, category),
-                                );
-                              },
+                            final card = shortcuts[index].card;
+                            final category = categoryController
+                                .getCategoryById(card.categoryId);
+                            return _buildAvailableCard(
+                              db.CardWithCategory(card, category),
                             );
                           },
                         ),
@@ -484,11 +432,8 @@ class _PlayScreenState extends State<PlayScreen> {
                       );
                     }
 
-                    final screenWidth = MediaQuery.of(context).size.width;
                     const spacing = 8.0;
                     const padding = 8.0;
-                    final itemWidth =
-                        (screenWidth - (10 * spacing) - (2 * padding)) / 8;
 
                     return Column(
                       children: categories.map((category) {
