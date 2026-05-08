@@ -24,6 +24,9 @@ class _PlayScreenState extends State<PlayScreen> {
   final LanguagesController langController = Get.find<LanguagesController>();
   final AudioService audioService = Get.find<AudioService>();
 
+  // Card yang disembunyikan di Play Screen
+  static const _hiddenCardIds = {'c64'}; // Minum/Drink
+
   @override
   void initState() {
     super.initState();
@@ -37,7 +40,6 @@ class _PlayScreenState extends State<PlayScreen> {
   }
 
   Widget _buildSelectedCard(db.Card card, int key) {
-    // Resolve category color synchronously from the controller's cache.
     final category = categoryController.getCategoryById(card.categoryId);
     Color stripColor = Colors.grey;
     if (category != null) {
@@ -103,8 +105,7 @@ class _PlayScreenState extends State<PlayScreen> {
                       ),
                     if (showImage)
                       Padding(
-                        padding:
-                            const EdgeInsets.fromLTRB(4.0, 0, 4.0, 18.0),
+                        padding: const EdgeInsets.fromLTRB(4.0, 0, 4.0, 18.0),
                         child: Text(
                           label,
                           textAlign: TextAlign.center,
@@ -195,7 +196,6 @@ class _PlayScreenState extends State<PlayScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header + tombol
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -252,18 +252,14 @@ class _PlayScreenState extends State<PlayScreen> {
                               onPressed: (index) {
                                 cardController.toggleViewMode();
                               },
-                              children: [
+                              children: const [
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 8,
-                                  ),
+                                  padding: EdgeInsets.symmetric(horizontal: 8),
                                   child: Text('ABC'),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 8,
-                                  ),
-                                  child: const Icon(Icons.image),
+                                  padding: EdgeInsets.symmetric(horizontal: 8),
+                                  child: Icon(Icons.image),
                                 ),
                               ],
                             ),
@@ -318,10 +314,10 @@ class _PlayScreenState extends State<PlayScreen> {
           Expanded(
             child: ListView(
               children: [
+                // Shortcuts section
                 StreamBuilder<List<db.ShortcutWithCard>>(
                   stream: Get.find<ShortcutController>().watchActiveShortcuts(),
                   builder: (context, shortcutSnapshot) {
-                    // Hanya tampilkan jika ada shortcut cards
                     if (!shortcutSnapshot.hasData ||
                         shortcutSnapshot.data!.isEmpty) {
                       return const SizedBox.shrink();
@@ -334,21 +330,11 @@ class _PlayScreenState extends State<PlayScreen> {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Header dengan icon dan settings button
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(
-                            8.0,
-                            16.0,
-                            8.0,
-                            8.0,
-                          ),
+                          padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 8.0),
                           child: Row(
                             children: [
-                              const Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                                size: 24,
-                              ),
+                              const Icon(Icons.star, color: Colors.amber, size: 24),
                               const SizedBox(width: 8),
                               Text(
                                 langController.currentLanguage.value == 'en'
@@ -368,25 +354,18 @@ class _PlayScreenState extends State<PlayScreen> {
                                 ),
                               ),
                               const Spacer(),
-                              // Settings button
                               IconButton(
-                                icon: const Icon(
-                                  Icons.settings,
-                                  color: Colors.grey,
-                                ),
+                                icon: const Icon(Icons.settings, color: Colors.grey),
                                 onPressed: () {
                                   Get.to(() => const ShortcutSettingsScreen());
                                 },
-                                tooltip:
-                                    langController.currentLanguage.value == 'en'
+                                tooltip: langController.currentLanguage.value == 'en'
                                     ? 'Manage Shortcuts'
                                     : 'Kelola Pintasan',
                               ),
                             ],
                           ),
                         ),
-
-                        // Grid shortcut cards
                         GridView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
@@ -408,7 +387,6 @@ class _PlayScreenState extends State<PlayScreen> {
                             );
                           },
                         ),
-
                         const Padding(
                           padding: EdgeInsets.symmetric(vertical: 8.0),
                           child: Divider(thickness: 1),
@@ -418,6 +396,7 @@ class _PlayScreenState extends State<PlayScreen> {
                   },
                 ),
 
+                // Categories + Cards section
                 StreamBuilder<List<db.Category>>(
                   stream: categoryController.watchCategories(),
                   builder: (context, categorySnapshot) {
@@ -426,10 +405,9 @@ class _PlayScreenState extends State<PlayScreen> {
                     }
 
                     final categories = categorySnapshot.data!;
+
                     if (categories.isEmpty) {
-                      return const Center(
-                        child: Text('No categories available.'),
-                      );
+                      return const Center(child: Text('No categories available.'));
                     }
 
                     const spacing = 8.0;
@@ -438,16 +416,17 @@ class _PlayScreenState extends State<PlayScreen> {
                     return Column(
                       children: categories.map((category) {
                         return StreamBuilder<List<db.Card>>(
-                          stream: cardController.watchCardsByCategoryId(
-                            category.id,
-                          ),
+                          stream: cardController.watchCardsByCategoryId(category.id),
                           builder: (context, cardSnapshot) {
-                            if (!cardSnapshot.hasData ||
-                                cardSnapshot.data!.isEmpty) {
-                              return SizedBox.shrink(); // Hide category if no cards
-                            }
+                            if (!cardSnapshot.hasData) return const SizedBox.shrink();
 
-                            final cards = cardSnapshot.data!;
+                            // Sembunyikan card Minum/Drink (c64) di Play Screen
+                            final cards = cardSnapshot.data!
+                                .where((card) => !_hiddenCardIds.contains(card.id))
+                                .toList();
+
+                            if (cards.isEmpty) return const SizedBox.shrink();
+
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
