@@ -50,7 +50,6 @@ class AvailableCard extends StatelessWidget {
         behavior: HitTestBehavior.opaque,
         onTap: () => cardController.toggleCardSelection(card),
         child: Obx(() {
-          final isSelected = cardController.isSelected(card.id);
           final isTextMode = cardController.isTextMode.value;
           final lang = langController.currentLanguage.value;
           final label = lang == 'en' ? (card.enName ?? card.name) : card.name;
@@ -61,8 +60,8 @@ class AvailableCard extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
-                color: isSelected ? Colors.green : Colors.grey.shade300,
-                width: isSelected ? 2.0 : 1.0,
+                color: Colors.grey.shade300,
+                width: 1.0,
               ),
             ),
             child: Column(

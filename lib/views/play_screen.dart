@@ -60,7 +60,7 @@ class _PlayScreenState extends State<PlayScreen> {
 
     return ReorderableDragStartListener(
       index: key,
-      key: ValueKey(card.id),
+      key: ValueKey('selected_${key}'),
       child: RepaintBoundary(
         child: Obx(() {
           final isTextMode = cardController.isTextMode.value;
@@ -140,7 +140,7 @@ class _PlayScreenState extends State<PlayScreen> {
                   top: 0,
                   right: 0,
                   child: GestureDetector(
-                    onTap: () => cardController.removeCard(card),
+                    onTap: () => cardController.removeCard(card, key),
                     child: const CircleAvatar(
                       radius: 12,
                       backgroundColor: Colors.red,

@@ -79,18 +79,13 @@ class CardController extends GetxController {
 
   // Toggle card selection
   void toggleCardSelection(Card card) {
-    if (selectedIds.contains(card.id)) {
-      selectedCards.removeWhere((c) => c.id == card.id);
-      selectedIds.remove(card.id);
-    } else {
-      selectedCards.add(card);
-      selectedIds.add(card.id);
-    }
+    selectedCards.add(card);
+    selectedIds.add(card.id);
   }
 
   // Hapus kartu dari daftar terpilih
-  void removeCard(Card card) {
-    selectedCards.removeWhere((c) => c.id == card.id);
+  void removeCard(Card card, int index) {
+    selectedCards.removeAt(index);
     selectedIds.remove(card.id);
   }
 
